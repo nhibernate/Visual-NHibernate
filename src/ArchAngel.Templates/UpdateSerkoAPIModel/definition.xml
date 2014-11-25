@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ROOT about="This file is the settings file for an ArchAngel template project.">
+  <namespaces>System.Xml,System,System.Text,ArchAngel.Providers.Database.Model,ArchAngel.Providers.Database.Helper</namespaces>
+  <referencedfiles>..\..\ArchAngel.Providers.Database\bin\Release\ArchAngel.Providers.Database.dll|False</referencedfiles>
+  <config>
+    <project>
+      <name>UpdateSerkoAPIModel</name>
+      <description>Setup</description>
+      <compilefile>..\UpdateSerkoAPIModel.aal</compilefile>
+      <version>0.0.0</version>
+      <projecttype>Template</projecttype>
+      <optionCategories>
+        <category>General</category>
+      </optionCategories>
+      <options />
+      <rootoutput>
+        <rootfolder />
+      </rootoutput>
+    </project>
+  </config>
+  <function name="GetUpdatedColumnName" returntype="String" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="name" type="String" />string alias = "";
+string[] ary = name.Split('_');
+if (ary.Length &gt; 1)
+{
+	alias = "";
+	for (int i=1; i&lt;ary.Length; i++)
+	{
+		if (i==1 &amp;&amp; ary[i].Length &gt; 1)
+		{
+			// Remove datatype indicator
+			alias += ArchAngel.Providers.Database.Helper.Script.GetTitleCase(ary[i].Substring(1, ary[i].Length - 1));
+		}
+		else
+		{
+			alias += ArchAngel.Providers.Database.Helper.Script.GetTitleCase(ary[i]);
+		}
+	}
+}
+
+return alias;</function>
+  <function name="GetUpdatedMapColumnName" returntype="String" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="name" type="String" />string alias = "";
+string[] ary = name.Split('_');
+if (ary.Length &gt; 1)
+{
+	alias = "";
+	for (int i=0; i&lt;ary.Length; i++)
+	{
+		alias += ArchAngel.Providers.Database.Helper.Script.GetTitleCase(ary[i]);
+	}
+}
+
+return alias;</function>
+  <function name="UpdateDatabase" returntype="void" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="database" type="Database" />foreach(ScriptObject scriptObject in database.ScriptObjects)
+{
+	scriptObject.Alias = scriptObject.Alias.Replace("_", "");
+	
+	foreach (Column column in scriptObject.Columns)
+	{
+		column.Alias = GetUpdatedColumnName(column.Name);
+	}
+	
+	if (scriptObject.GetType() == typeof(Table))
+	{
+		Table table = (Table)scriptObject;
+		foreach(MapColumn mapColumn in table.MapColumns)
+		{
+			mapColumn.Alias = GetUpdatedMapColumnName(table.Alias + "_" + GetUpdatedColumnName(mapColumn.PrimaryColumns[0].Name) + "_" + GetUpdatedColumnName(mapColumn.ForeignColumn.Name));
+		}
+	}
+	
+	foreach (Relationship relationship in scriptObject.Relationships)
+	{
+		relationship.Alias = relationship.Alias.Replace("_", "");
+	}
+	
+	foreach (Filter filter in scriptObject.Filters)
+	{
+		string filterAlias = "Get";
+		if (filter.IsReturnTypeCollection)
+		{
+			filterAlias += Script.GetPlural(scriptObject.Alias);
+		}
+		else
+		{
+			filterAlias += scriptObject.Alias;
+		}
+		
+		if (filter.FilterColumns.Length &gt; 0)
+		{
+			filterAlias += "By";
+		}
+		
+		if (Script.GetAliasCount(scriptObject.Filters, filter.Alias) &gt; 1)
+		{
+			filterAlias += "XX";
+		}
+		
+		foreach (Filter.FilterColumn filterColumn in filter.FilterColumns)
+		{
+			filterAlias += filterColumn.LogicalOperator + GetUpdatedColumnName(filterColumn.Column.Name);
+		}
+		
+		filter.Alias = filterAlias;
+	}
+	
+	// Rebuild duplicates
+	foreach (Filter filter in scriptObject.Filters)
+	{
+		if (Script.GetAliasCount(scriptObject.Filters, filter.Alias) == 1)
+		{
+			continue;
+		}
+		
+		string filterAlias = "Get";
+		if (filter.IsReturnTypeCollection)
+		{
+			filterAlias += Script.GetPlural(scriptObject.Alias);
+		}
+		else
+		{
+			filterAlias += scriptObject.Alias;
+		}
+		
+		if (filter.FilterColumns.Length &gt; 0)
+		{
+			filterAlias += "By";
+		}
+		
+		foreach (Filter.FilterColumn filterColumn in filter.FilterColumns)
+		{
+			filterAlias += filterColumn.LogicalOperator + "XX" + GetUpdatedColumnName(filterColumn.Column.Name);
+		}
+		
+		filter.Alias = filterAlias;
+	}
+}</function>
+  <function name="UpdateStoredProcedure" returntype="void" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="storedProcedure" type="View" />foreach(Column column in storedProcedure.Columns)
+{
+	
+}</function>
+  <function name="UpdateTable" returntype="void" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="table" type="Table" />foreach (Column column in table.Columns)
+{
+	
+}
+
+foreach (Relationship relationship in table.Relationships)
+{
+	if (relationship.PrimaryColumns.Length != relationship.ForeignColumns.Length)
+	{
+		throw new Exception("relationship PrimaryColumns.Length must equal ForeignColumns.Length");
+	}
+	
+	/*for (int i=0; i&lt;relationship.PrimaryColumns.Length; i++)
+	{
+		Column primaryColumn = relationship.PrimaryColumns[i];
+		Column foreignColumn = relationship.ForeignColumns[i];
+		
+		Column column = Script.GetColumnByColumnAlias(table.Columns, foreignColumn.Parent.Alias);
+		if (column != null)
+		{
+			column.Alias += foreignColumn.Alias;
+		}
+		
+		if (relationship.Alias == relationship.Parent.Alias)
+		{
+			relationship.Alias = "Parent" + relationship.Alias;
+		}
+		
+		if (relationship.Alias == relationship.Parent.AliasPlural &amp;&amp; 
+			relationship.GetType() != typeof(OneToOneRelationship) &amp;&amp; relationship.GetType() != typeof(ManyToManyRelationship))
+		{
+			relationship.Alias = "Child" + relationship.Alias;
+		}
+	}*/
+}</function>
+  <function name="UpdateView" returntype="void" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="view" type="View" />foreach (Column column in view.Columns)
+{
+	
+}</function>
+</ROOT>

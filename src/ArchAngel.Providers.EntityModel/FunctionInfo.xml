@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FunctionInformation version="1">
+	<Function type="ArchAngel.Providers.EntityModel.Model.DatabaseLayer.ScriptBase" name="NameValidate">
+		<Parameter>System.String&amp;</Parameter>
+		<BodyText>	failReason = "";	object retVal;	if (ApiExtensionHelper.RunIfExtended(GetType(), "NameValidate", out retVal, failReason)) 	{		return (bool) retVal;	}	if (!Enabled) 	{		return true;	}	return ValidateSpacesAndEmptyness(Name, out failReason, "Name");</BodyText>
+		<XmlComments />
+	</Function>
+</FunctionInformation>

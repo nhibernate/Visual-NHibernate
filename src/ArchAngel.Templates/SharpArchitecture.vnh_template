@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-16"?>
+<visual-nhibernate-template version="1" delimiter-style="T4">
+	<folder name="lib" iterator="None">
+		<static-file id="9" name="Antlr3.Runtime.dll" iterator="None" resource-name="Antlr3.Runtime.dll" />
+		<static-file id="10" name="Castle.Core.dll" iterator="None" resource-name="Castle.Core.dll" />
+		<static-file id="11" name="Castle.Core.xml" iterator="None" resource-name="Castle.Core.xml" />
+		<static-file id="12" name="Castle.Services.Logging.Log4netIntegration.dll" iterator="None" resource-name="Castle.Services.Logging.Log4netIntegration.dll" />
+		<static-file id="13" name="Castle.Windsor.dll" iterator="None" resource-name="Castle.Windsor.dll" />
+		<static-file id="14" name="Castle.Windsor.xml" iterator="None" resource-name="Castle.Windsor.xml" />
+		<static-file id="15" name="CommonServiceLocator.WindsorAdapter.dll" iterator="None" resource-name="CommonServiceLocator.WindsorAdapter.dll" />
+		<static-file id="16" name="FluentNHibernate.dll" iterator="None" resource-name="FluentNHibernate.dll" />
+		<static-file id="17" name="FluentNHibernate.XML" iterator="None" resource-name="FluentNHibernate.XML" />
+		<static-file id="18" name="Gallio.dll" iterator="None" resource-name="Gallio.dll" />
+		<static-file id="19" name="Iesi.Collections.dll" iterator="None" resource-name="Iesi.Collections.dll" />
+		<static-file id="20" name="Iesi.Collections.license.txt" iterator="None" resource-name="Iesi.Collections.license.txt" />
+		<static-file id="21" name="Iesi.Collections.xml" iterator="None" resource-name="Iesi.Collections.xml" />
+		<static-file id="22" name="Inflector.Net.dll" iterator="None" resource-name="Inflector.Net.dll" />
+		<static-file id="25" name="log4net.dll" iterator="None" resource-name="log4net.dll" />
+		<static-file id="26" name="log4net.license.txt" iterator="None" resource-name="log4net.license.txt" />
+		<static-file id="27" name="log4net.xml" iterator="None" resource-name="log4net.xml" />
+		<static-file id="28" name="MbUnit.dll" iterator="None" resource-name="MbUnit.dll" />
+		<static-file id="29" name="Microsoft.Practices.ServiceLocation.dll" iterator="None" resource-name="Microsoft.Practices.ServiceLocation.dll" />
+		<static-file id="30" name="Microsoft.Web.Mvc.dll" iterator="None" resource-name="Microsoft.Web.Mvc.dll" />
+		<static-file id="35" name="Moq.dll" iterator="None" resource-name="Moq.dll" />
+		<static-file id="36" name="Moq.xml" iterator="None" resource-name="Moq.xml" />
+		<static-file id="37" name="MvcContrib.dll" iterator="None" resource-name="MvcContrib.dll" />
+		<static-file id="38" name="MvcContrib.FluentHtml.dll" iterator="None" resource-name="MvcContrib.FluentHtml.dll" />
+		<static-file id="39" name="MvcContrib.FluentHtml.xml" iterator="None" resource-name="MvcContrib.FluentHtml.xml" />
+		<static-file id="40" name="MvcContrib.TestHelper.dll" iterator="None" resource-name="MvcContrib.TestHelper.dll" />
+		<static-file id="41" name="MvcContrib.TestHelper.XML" iterator="None" resource-name="MvcContrib.TestHelper.XML" />
+		<static-file id="42" name="MvcContrib.XML" iterator="None" resource-name="MvcContrib.XML" />
+		<static-file id="43" name="Newtonsoft.Json.dll" iterator="None" resource-name="Newtonsoft.Json.dll" />
+		<static-file id="44" name="Newtonsoft.Json.xml" iterator="None" resource-name="Newtonsoft.Json.xml" />
+		<static-file id="45" name="NHibernate.ByteCode.Castle.dll" iterator="None" resource-name="NHibernate.ByteCode.Castle.dll" />
+		<static-file id="46" name="NHibernate.ByteCode.Castle.xml" iterator="None" resource-name="NHibernate.ByteCode.Castle.xml" />
+		<static-file id="47" name="NHibernate.dll" iterator="None" resource-name="NHibernate.dll" />
+		<static-file id="48" name="NHibernate.license.txt" iterator="None" resource-name="NHibernate.license.txt" />
+		<static-file id="49" name="NHibernate.Validator.dll" iterator="None" resource-name="NHibernate.Validator.dll" />
+		<static-file id="50" name="NHibernate.Validator.Specific.dll" iterator="None" resource-name="NHibernate.Validator.Specific.dll" />
+		<static-file id="51" name="NHibernate.Validator.Specific.xml" iterator="None" resource-name="NHibernate.Validator.Specific.xml" />
+		<static-file id="52" name="NHibernate.Validator.xml" iterator="None" resource-name="NHibernate.Validator.xml" />
+		<static-file id="53" name="NHibernate.xml" iterator="None" resource-name="NHibernate.xml" />
+		<static-file id="54" name="nhibernate-configuration.xsd" iterator="None" resource-name="nhibernate-configuration.xsd" />
+		<static-file id="55" name="nhibernate-mapping.xsd" iterator="None" resource-name="nhibernate-mapping.xsd" />
+		<static-file id="56" name="nunit.framework.dll" iterator="None" resource-name="nunit.framework.dll" />
+		<static-file id="57" name="nunit.framework.xml" iterator="None" resource-name="nunit.framework.xml" />
+		<static-file id="58" name="Remotion.Data.Linq.dll" iterator="None" resource-name="Remotion.Data.Linq.dll" />
+		<static-file id="59" name="Rhino.Mocks.dll" iterator="None" resource-name="Rhino.Mocks.dll" />
+		<static-file id="60" name="Rhino.Mocks.xml" iterator="None" resource-name="Rhino.Mocks.xml" />
+		<static-file id="63" name="SharpArch.dll" iterator="None" resource-name="SharpArch.dll" />
+		<static-file id="64" name="SharpArch.pdb" iterator="None" resource-name="SharpArch.pdb" />
+		<static-file id="65" name="System.Data.SQLite.DLL" iterator="None" resource-name="System.Data.SQLite.DLL" />
+		<static-file id="66" name="System.Web.Abstractions.dll" iterator="None" resource-name="System.Web.Abstractions.dll" />
+		<static-file id="67" name="System.Web.Mvc.dll" iterator="None" resource-name="System.Web.Mvc.dll" />
+		<static-file id="68" name="System.Web.Mvc.xml" iterator="None" resource-name="System.Web.Mvc.xml" />
+	</folder>
+	<folder name="app" iterator="None">
+		<folder name="&lt;#=Project.Settings.Name#&gt;.Core" iterator="None">
+			<folder name="Properties" iterator="None">
+				<file id="5" name="AssemblyInfo.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<folder name="RepositoryInterfaces" iterator="None">
+				<file id="56" name="I&lt;#=entity.Name#&gt;Repository.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<folder name="QueryDtos" iterator="None">
+				<file id="57" name="&lt;#=entity.Name#&gt;Dto" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<file id="3" name="Class1.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			<file id="4" name="&lt;#=Project.Settings.Name#&gt;.Core.csproj" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+			<file id="48" name="&lt;#=entity.Name#&gt;.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			<file id="65" name="&lt;#=component.Name#&gt;.cs" iterator="Component" syntax="CSharp" encoding="Unicode" />
+		</folder>
+		<folder name="&lt;#=Project.Settings.Name#&gt;.ApplicationServices" iterator="None">
+			<folder name="Properties" iterator="None">
+				<file id="2" name="AssemblyInfo.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<folder name="ViewModels" iterator="None">
+				<file id="58" name="&lt;#=entity.Name#&gt;FormViewModel" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<file id="1" name="&lt;#=Project.Settings.Name#&gt;.ApplicationServices.csproj" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+			<file id="59" name="&lt;#=entity.Name#&gt;ManagementService" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			<file id="60" name="I&lt;#=entity.Name#&gt;ManagementService.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+		</folder>
+		<folder name="&lt;#=Project.Settings.Name#&gt;.Data" iterator="None">
+			<folder name="NHibernateMaps" iterator="None">
+				<folder name="Conventions" iterator="None">
+					<file id="9" name="ForeignKeyConvention.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+					<file id="10" name="HasManyConvention.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+					<file id="11" name="HasManyToManyConvention.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+					<file id="12" name="ManyToManyTableNameConvention.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+					<file id="13" name="PrimaryKeyConvention.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+					<file id="14" name="ReferenceConvention.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+					<file id="15" name="TableNameConvention.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+				</folder>
+				<file id="7" name="AutomappingConfiguration.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+				<file id="8" name="AutoPersistenceModelGenerator.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+				<file id="66" name="&lt;#=entity.Name#&gt;Map.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<folder name="Properties" iterator="None">
+				<file id="16" name="AssemblyInfo.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<file id="6" name="&lt;#=Project.Settings.Name#&gt;.Data.csproj" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+		</folder>
+		<folder name="&lt;#=Project.Settings.Name#&gt;.Web" iterator="None">
+			<folder name="CastleWindsor" iterator="None">
+				<file id="24" name="ComponentRegistrar.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<folder name="Content" iterator="None">
+				<folder name="Images" iterator="None">
+					<static-file id="1" name="sharp_arch.jpg" iterator="None" resource-name="sharp_arch.jpg" />
+					<static-file id="2" name="sharp_arch_small.gif" iterator="None" resource-name="sharp_arch_small.gif" />
+				</folder>
+				<file id="25" name="Site.css" iterator="None" syntax="Css" encoding="Unicode" />
+			</folder>
+			<folder name="Properties" iterator="None">
+				<file id="26" name="AssemblyInfo.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<folder name="Scripts" iterator="None">
+				<static-file id="3" name="jquery-1.4.2.js" iterator="None" resource-name="jquery-1.4.2.js" />
+				<static-file id="4" name="jquery-1.4.2.min.js" iterator="None" resource-name="jquery-1.4.2.min.js" />
+				<static-file id="5" name="MicrosoftAjax.debug.js" iterator="None" resource-name="MicrosoftAjax.debug.js" />
+				<static-file id="6" name="MicrosoftAjax.js" iterator="None" resource-name="MicrosoftAjax.js" />
+				<static-file id="7" name="MicrosoftMvcAjax.debug.js" iterator="None" resource-name="MicrosoftMvcAjax.debug.js" />
+				<static-file id="8" name="MicrosoftMvcAjax.js" iterator="None" resource-name="MicrosoftMvcAjax.js" />
+			</folder>
+			<folder name="Views" iterator="None">
+				<folder name="Home" iterator="None">
+					<file id="28" name="Index.aspx" iterator="None" syntax="Html" encoding="Unicode" />
+				</folder>
+				<folder name="Shared" iterator="None">
+					<file id="29" name="DebugFormSubmission.ascx" iterator="None" syntax="Html" encoding="Unicode" />
+					<file id="30" name="Error.aspx" iterator="None" syntax="Html" encoding="Unicode" />
+					<file id="31" name="Site.Master" iterator="None" syntax="Html" encoding="Unicode" />
+				</folder>
+				<folder name="&lt;#=entity.NamePlural#&gt;" iterator="Entity">
+					<file id="50" name="Create.aspx" iterator="Entity" syntax="Html" encoding="Unicode" />
+					<file id="51" name="Index.aspx" iterator="Entity" syntax="Html" encoding="Unicode" />
+					<file id="52" name="Edit.aspx" iterator="Entity" syntax="Html" encoding="Unicode" />
+					<file id="53" name="Show.aspx" iterator="Entity" syntax="Html" encoding="Unicode" />
+					<file id="54" name="&lt;#=entity.Name#&gt;Form.ascx" iterator="Entity" syntax="Html" encoding="Unicode" />
+				</folder>
+			</folder>
+			<folder name="WcfServices" iterator="None">
+				<file id="55" name="&lt;#=entity.Name#&gt;WcfServiceFactory.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<file id="17" name="Default.aspx" iterator="None" syntax="Html" encoding="Unicode" />
+			<file id="18" name="Default.aspx.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			<file id="19" name="Global.asax" iterator="None" syntax="CSharp" encoding="Unicode" />
+			<file id="20" name="Global.asax.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			<file id="21" name="NHibernate.config" iterator="None" syntax="Xml" encoding="Unicode" />
+			<file id="22" name="Web.config" iterator="None" syntax="Xml" encoding="Unicode" />
+			<file id="23" name="&lt;#=Project.Settings.Name#&gt;.Web.csproj" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+		</folder>
+		<folder name="&lt;#=Project.Settings.Name#&gt;.Web.Controllers" iterator="None">
+			<folder name="Properties" iterator="None">
+				<file id="36" name="AssemblyInfo.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<file id="32" name="ControllerEnums.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			<file id="33" name="HomeController.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			<file id="34" name="RouteRegistrar.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			<file id="35" name="&lt;#=Project.Settings.Name#&gt;.Web.Controllers.csproj" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+			<file id="47" name="&lt;#=entity.NamePlural#&gt;Controller.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			<file id="61" name="AreaRegistration.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+		</folder>
+		<folder name="&lt;#=Project.Settings.Name#&gt;.Wcf" iterator="None">
+			<folder name="Properties" iterator="None">
+				<file id="64" name="AssemblyInfo.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<folder name="Dtos" iterator="None">
+				<file id="68" name="&lt;#=entity.Name#&gt;Dto.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<file id="67" name="&lt;#=Project.Settings.Name#&gt;.Wcf.csproj" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+			<file id="69" name="I&lt;#=entity.NamePlural#&gt;WcfService.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			<file id="70" name="&lt;#=entity.NamePlural#&gt;WcfService.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			<file id="71" name="&lt;#=entity.NamePlural#&gt;WcfServiceClient.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+		</folder>
+		<folder name="&lt;#=Project.Settings.Name#&gt;.Wcf.Web" iterator="None">
+			<folder name="CastleWindsor" iterator="None">
+				<file id="72" name="ComponentRegistrar.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<folder name="Properties" iterator="None">
+				<file id="79" name="AssemblyInfo.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			</folder>
+			<file id="73" name="Global.asax" iterator="None" syntax="CSharp" encoding="Unicode" />
+			<file id="74" name="Global.asax.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+			<file id="75" name="NHibernate.config" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+			<file id="76" name="&lt;#=entity.NamePlural#&gt;Service.svc" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+			<file id="77" name="Web.config" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+			<file id="78" name="&lt;#=Project.Settings.Name#&gt;.Wcf.Web.csproj" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+		</folder>
+	</folder>
+	<folder name="logs" iterator="None">
+		<file id="37" name="SharpArch.VSharpArchTemplate.log" iterator="None" syntax="CSharp" encoding="Unicode" />
+		<file id="38" name="&lt;#=Project.Settings.Name#&gt;.Web.log" iterator="None" syntax="CSharp" encoding="Unicode" />
+	</folder>
+	<file id="62" name="CommonAssemblyInfo.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+	<file id="63" name="&lt;#=Project.Settings.Name#&gt;.sln" iterator="None" syntax="PlainText" encoding="Unicode" />
+</visual-nhibernate-template>

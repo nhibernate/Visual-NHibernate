@@ -1,0 +1,47 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:Controller/d:DatabaseLayer/f:SQLServer2005DatabaseLoader.cs" caret="853" fromTop="13" />
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:Controller/d:DatabaseLayer/f:SQLServer2005DatabaseConnector.cs" caret="5063" fromTop="17" />
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:Controller/d:DatabaseLayer/f:SqlServerExpressDatabaseLoader.cs" caret="0" fromTop="0" />
+      <File id="CD04EC14-7CB9-42B0-97B4-F06E59F65257/d:ContentItems/f:Output.cs" caret="0" fromTop="0" />
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:UI/f:EditModel.cs" caret="0" fromTop="0" />
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:UI/d:Editors/d:UserControls/f:DatabaseChanges.cs" caret="0" fromTop="0" />
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:Model/d:EntityLayer/f:Reference.cs" caret="0" fromTop="0" />
+      <File id="DA1B3DC6-85E3-4501-8239-E10A4C64DCEC/f:NHibernateProjectPreprocessor.cs" caret="0" fromTop="0" />
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:Controller/d:Validation/d:Rules/f:AllReferencesHaveBackingDataRule.cs" caret="0" fromTop="0" />
+      <File id="CD04EC14-7CB9-42B0-97B4-F06E59F65257/d:ContentItems/f:Options.cs" caret="28251" fromTop="12" />
+      <File id="27118B67-F8BD-49B3-97CE-56B3E051F0A8/f:NHibernateEnums.cs" caret="846" fromTop="17" />
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:Model/d:EntityLayer/f:EntitySetDeserialisationScheme.cs" caret="11944" fromTop="0" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:Controller/d:DatabaseLayer/f:SQLServer2005DatabaseConnector.cs" caret="5429" fromTop="33" />
+      <File id="8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258/d:Controller/d:DatabaseLayer/f:SQLServer2005DatabaseConnector.cs" caret="4865" fromTop="8" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="throw" priority="31" />
+      <Item value="new" priority="31" />
+      <Item value="Exception" priority="29" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

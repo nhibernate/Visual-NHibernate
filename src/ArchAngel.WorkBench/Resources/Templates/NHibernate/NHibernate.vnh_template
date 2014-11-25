@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="utf-16"?>
+<visual-nhibernate-template name="[Default] NHibernate" version="1">
+	<folder name="Properties" iterator="None">
+		<file name="AssemblyInfo.cs" iterator="None">
+			<script syntax="CSharp"><![CDATA[using System;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("<%=Project.Settings.ProjectName%>")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Example Company")]
+[assembly: AssemblyProduct("<%=Project.Settings.ProjectName%>")]
+[assembly: AssemblyCopyright("Copyright © Example Company 2009")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: CLSCompliantAttribute(true)]
+
+// Log4Net configuration file location
+// When the first log4net call is made, it will load this config file.
+[assembly: log4net.Config.XmlConfigurator(ConfigFile="log4net.xml")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("<%=Project.Settings.ProjectGuid%>")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]]]></script>
+		</file>
+	</folder>
+	<folder name="Model" iterator="None">
+		<folder name="Mappings" iterator="None">
+			<file name="&lt;%=entity.Name%&gt;.hbm.xml" iterator="Entity">
+				<script syntax="Xml"><![CDATA[<% if (!entity.IsMapped) 
+{
+	SkipThisFile = true; 
+	return "The entity has no mappings.";
+}
+if (Project.Settings.UseFluentNHibernate)
+{
+	SkipThisFile = true;
+	return "Fluent NHibernate is being used instead of HBM XML.";
+}
+string xml = Helper.GetHbmXml(entity, Project.Settings.ProjectNamespace, Project.Settings.ProjectNamespace + ".Model", Project.Settings.AutoImport, Project.Settings.DefaultAccess, Project.Settings.DefaultCascade, Project.Settings.DefaultLazy);
+Write(xml);%>]]></script>
+			</file>
+			<file name="&lt;%=entity.Name%&gt;.nhv.xml" iterator="Entity">
+				<script syntax="Xml"><![CDATA[<% 
+var nhvMapping = new ArchAngel.NHibernateHelper.NHValidatorMapping();
+string xml = Helper.GetNhValidatorXml(entity, Project.Settings.ProjectNamespace, Project.Settings.ProjectNamespace + ".Model");
+Write(xml);
+%>]]></script>
+			</file>
+			<file name="&lt;%=entity.Name%&gt;Mapping.cs" iterator="Entity">
+				<script syntax="CSharp"><![CDATA[<%
+if(Project.Settings.UseFluentNHibernate == false)
+{
+	SkipThisFile = true;
+	return "Project.Settings.UseFluentNHibernate is false";
+}
+%>using System;
+using FluentNHibernate.Mapping;
+
+namespace <%=Project.Settings.ProjectNamespace%>.Model.Mappings
+{
+	public class <%=entity.Name%>Mapping : ClassMap<%=entity.Name%>
+	{
+		public <%=entity.Name%>Mapping()
+		{
+<% 
+			/////////////////////////////////////////////////////////////////////////////
+			// ID Spec
+			/////////////////////////////////////////////////////////////////////////////
+			if (entity.Key.KeyType == KeyTypes.Properties)
+			{
+				if (entity.Key.Properties.Count() == 1)
+				{
+					var property = entity.Key.Properties[0];
+					string args = "";
+					
+					if (property.MappedColumn.Name != property.Name)
+						args = string.Format(", \"{0}\"", property.MappedColumn.Name);
+						
+%>			Id(x => x.<%=property.Name%><%=args%>);<%
+				}
+				else
+				{
+					// Composite Key
+%>			CompositeId()<% 
+					foreach(var prop in entity.Key.Properties)
+					{%>
+				.KeyProperty(x => x.<%=prop.Name%>, "<%=prop.MappedColumn.Name%>")<%					
+					}
+			%>;
+<%
+				}
+			}
+			else if(entity.Key.KeyType == KeyTypes.Component)
+				throw new NotImplementedException("We do not support Component Keys in Fluent Mappings yet");
+			
+			/////////////////////////////////////////////////////////////////////////////
+			// Column Mappings
+			/////////////////////////////////////////////////////////////////////////////
+			
+			foreach(var prop in entity.Properties)
+			{
+				if (prop.MappedColumn == null)
+					continue;
+
+				// Skip key properties 
+				if (prop.IsKeyProperty)
+					continue;
+%>
+			Map(x => x.<%=prop.Name%>)<%
+				if(prop.Name != prop.MappedColumn.Name)
+				{
+%>
+				.Column("<%=prop.MappedColumn.Name%>")<%
+				}
+				%>;<%
+			}
+			
+			/////////////////////////////////////////////////////////////////////////////
+			// Component Mappings
+			/////////////////////////////////////////////////////////////////////////////			
+			foreach (ComponentProperty component in entity.Components)
+			{%>
+			Component(x => x.<%=component.Name%>, m =>
+			{<%
+					foreach (Field property in component.Properties)
+					{%>
+				m.Map(y => y.<%=property.MappedColumn.Name%>);<%
+					}%>
+			}<%
+			}
+			
+			/////////////////////////////////////////////////////////////////////////////
+			// Reference Mappings
+			/////////////////////////////////////////////////////////////////////////////
+			foreach (Reference directedReference in entity.References)
+			{	
+				if (directedReference.ReferenceType == ReferenceTypes.OneToOne) // OneToOne references
+				{
+					// if this side has the foreign key, it gets the References() call
+					if (directedReference.KeyType == ReferenceKeyTypes.Foreign)
+					{
+%>
+			References(x => x.<%=directedReference.Name%>)
+				.Unique()<%
+						if(directedReference.KeyColumns.Count > 1)
+						{
+%>
+				.Columns("<%=directedReference.KeyColumns[0].Name %>"<%
+							foreach (var column in directedReference.KeyColumns.Skip(1))
+							{
+								%>, "<%=column.Name%>"<%
+							}
+							%>);<%
+						}
+						else
+						{
+							if (directedReference.KeyColumns[0].Name != directedReference.Name)
+							{
+%>	
+				.Column("<%=directedReference.KeyColumns[0].Name%>")<%
+							}
+							%>;<%
+						}
+					}
+					else // It gets the HasOne call
+					{
+%>
+			HasOne(x => x.<%=directedReference.Name%>)
+				.Class(typeof(<%=directedReference.ToEntity.Name%>))
+				.PropertyRef(x => x.<%=directedReference.ToName%>)
+				.Cascade
+				.All();<%
+
+					}
+				}
+				else if (directedReference.ReferenceType == ReferenceTypes.OneToMany) // OneToMany references
+				{
+%>
+			References(x => x.<%=directedReference.Name%>)
+				.Class(typeof(<%=directedReference.ToEntity.Name%>))
+				.Not.Nullable()<%
+			
+					if(directedReference.KeyColumns.Count > 1)
+					{
+%>
+				.Columns("<%=directedReference.KeyColumns[0].Name %>"<%
+						foreach (var column in directedReference.KeyColumns.Skip(1))
+						{
+							%>, "<%=column.Name%>"<%
+						}
+						%>);<%
+					}
+					else
+					{
+						if (directedReference.KeyColumns[0].Name != directedReference.Name)
+						{
+%>	
+				.Column("<%=directedReference.KeyColumns[0].Name%>")<%
+						}
+						%>;<%
+					}
+				}
+				else if (directedReference.ReferenceType == ReferenceTypes.ManyToOne) // ManyToOne references
+				{
+				
+%>
+			HasMany(x => x.<%=directedReference.Name%>)<%
+					if (directedReference.KeyColumns.Count > 1)
+					{
+%>
+				.KeyColumns("<%=directedReference.KeyColumns[0].Name %>"<%
+						foreach (var column in directedReference.KeyColumns.Skip(1))
+						{
+							%>, "<%=column.Name%>"<%
+						}
+						%>)<%
+					}
+					else
+					{
+%>
+				.KeyColumn("<%=directedReference.KeyColumns[0].Name%>")<%
+					}				
+					switch (directedReference.CollectionType)
+					{
+						case CollectionTypes.Set:
+%>
+				.AsSet();<%
+							break;
+						case CollectionTypes.Map:
+%>
+				.AsMap("<%=directedReference.CollectionIndexColumn.Name%>");<%
+							break;
+						case CollectionTypes.Bag:
+%>
+				.AsBag();<%
+							break;
+						case CollectionTypes.List:
+%>
+				.AsList(l => l.Column("<%=directedReference.CollectionIndexColumn.Name%>"));<%
+							break;
+						default:
+							throw new ArgumentOutOfRangeException();
+					}
+				}
+				else if (directedReference.ReferenceType == ReferenceTypes.ManyToMany) // ManyToMany references
+				{
+%>
+			HasManyToMany(x => x.<%=directedReference.Name%>)<%
+					
+					if (directedReference.KeyColumns.Count == 1)
+					{%>
+				.ChildKeyColumn("<%=directedReference.KeyColumns[0].Name%>")<%					
+					}
+					else
+					{%>
+				// .ChildKeyColumn = ???
+				throw new System.NotImplementedException("Many-to-many relationships with multiple columns in the key are not handled by Visual NHibernate yet."); // TODO: contact Slyce Software<%
+					}
+					if (directedReference.ToKeyColumns.Count == 1)
+					{%>
+				.ParentKeyColumn("<%=directedReference.ToKeyColumns[0].Name%>")<%					
+					}
+					else
+					{%>
+				// .ParentKeyColumn = ???
+				throw new System.NotImplementedException("Many-to-many relationships with multiple columns in the key are not handled by Visual NHibernate yet."); // TODO: contact Slyce Software<%
+					}		
+%>
+				.Table("<%=directedReference.ManyToManyAssociationTable.Name%>")<%
+		
+					switch (directedReference.CollectionType)
+					{
+						case CollectionTypes.Set:
+%>
+				.AsSet();<%
+							break;
+						case CollectionTypes.Bag:
+%>
+				.AsBag();<%
+							break;
+						case CollectionTypes.Map:
+%>
+				.AsMap("<%=directedReference.CollectionIndexColumn.Name%>");<%
+							break;
+						case CollectionTypes.List:
+%>
+				.AsList(l => l.Column("<%=directedReference.CollectionIndexColumn.Name%>"));<%
+							break;
+						default:
+							throw new ArgumentOutOfRangeException();
+					}
+				}
+			
+			}
+			%>
+		}
+	}
+}]]></script>
+			</file>
+		</folder>
+		<file name="&lt;%=entity.Name%&gt;.cs" iterator="Entity">
+			<script syntax="CSharp"><![CDATA[using System;
+using System.Collections.Generic;
+using Iesi.Collections.Generic;
+
+namespace <%=Project.Settings.ProjectNamespace%>.Model
+{
+	[Serializable]
+	public partial class <%=entity.Name%><% WriteIf(entity.IsInherited, " : " + entity.ParentName)%>
+	{<% 
+		/* START Property Definitions */
+		foreach (Property property in entity.Properties)
+		{%>
+		public <%WriteIf(property.IsInherited, "override", "virtual")%> <%=property.Type%> <%=property.Name%>
+		{
+			get;
+			<%WriteIf(property.IsSetterPrivate, "private ")%>set;
+		}<%
+		}
+		/* END Property Definitions */
+		
+		/* Start Reference Definitions */
+		foreach (Reference reference in entity.References)
+		{%>
+		public virtual <%=reference.Type%> <%=reference.Name%>
+		{
+			get;
+			<%WriteIf(reference.IsSetterPrivate, "private ")%>set;
+		}<%
+		}
+		/* END Reference Definitions */
+		
+		/* START Component Definitions */
+		foreach (var component in entity.Components)
+		{%>
+		public virtual <%=component.Type%> <%=component.Name%>
+		{
+			get;
+			<%WriteIf(component.IsSetterPrivate, "private ")%>set;
+		}<%
+		}
+		/* END Component Definitions */
+		
+ 		if (entity.Settings.ImplementEqualityMembers)
+		{%>
+		
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(this, obj))
+				return true;
+				
+			return Equals(obj as <%=entity.Name%>);
+		}
+		
+		public virtual bool Equals(<%=entity.Name%> obj)
+		{
+			if (obj == null) return false;
+<%			foreach(var property in entity.Properties)
+			{%>
+			if (Equals(<%=property.Name%>, obj.<%=property.Name%>) == false)
+				return false;
+<%			}%>
+			return true;
+		}
+		
+		public override int GetHashCode()
+		{
+			int result = 1;
+<%			foreach(var property in entity.Properties)
+			{
+%>
+			result = (result * 397) ^ (<%=property.Name%> != null ? <%=property.Name%>.GetHashCode() : 0);<%
+			} %>			
+			return result;
+		}<%
+		}%>
+	}
+}]]></script>
+		</file>
+		<file name="&lt;%=component.Name%&gt;.cs" iterator="Component">
+			<script syntax="CSharp"><![CDATA[using System;
+
+namespace <%=Project.Settings.ProjectNamespace%>.Model
+{
+	[Serializable]
+	public partial class <%=component.Name%>
+	{<% 		
+		foreach (Field property in component.Properties)
+		{
+%>
+		public virtual <%= property.Type %> <%=property.Name%> { get; <%WriteIf(property.IsSetterPrivate, "private ")%>set; }<%	
+		}%>
+		public override bool Equals(object obj)
+		{
+			if(ReferenceEquals(this, obj))
+				return true;
+			return Equals(obj as <%=component.Name%>);
+		}
+		
+		public virtual bool Equals(<%=component.Name%> obj)
+		{
+			if(obj == null) return false;
+<%			foreach(Field property in component.Properties)
+			{%>
+			if(Equals(<%=property.Name%>, obj.<%=property.Name%>) == false)
+				return false;
+<%			}%>
+			return true;
+		}
+		
+		public override int GetHashCode()
+		{
+			int result = 1;
+<%			foreach(Field property in component.Properties)
+			{
+%>
+			  result = (result * 397) ^ (<%=property.Name%> != null ? <%=property.Name%>.GetHashCode() : 0);<%
+			} %>			
+			return result;
+		}
+	}
+}]]></script>
+		</file>
+		<file name="Validation.cs" iterator="None">
+			<script syntax="CSharp"><![CDATA[using NHibernate.Validator.Engine;
+
+namespace <%=Project.Settings.ProjectNamespace%>.Model
+{
+	public static class Validation
+	{
+		///<remarks>
+		/// The output of this function should be either put into your IoC container or cached somewhere to prevent
+		/// re-reading of the config files.
+		///</remarks>
+		public static ValidatorEngine CreateValidationEngine()
+		{
+			var validator = new ValidatorEngine();
+			validator.Configure();
+			
+			return validator;
+		}
+	}
+}]]></script>
+		</file>
+	</folder>
+	<folder name="Libraries" iterator="None" />
+	<file name="nhvalidator.cfg.xml" iterator="None">
+		<script syntax="Xml"><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<nhv-configuration xmlns="urn:nhv-configuration-1.0">
+  <property name="apply_to_ddl">true</property>
+  <property name="autoregister_listeners">true</property>
+  <property name="default_validator_mode">UseExternal</property>
+  <mapping assembly="<%=Project.Settings.ProjectName%>"/>
+</nhv-configuration>]]></script>
+	</file>
+	<file name="log4net.xml" iterator="None">
+		<script syntax="Xml"><![CDATA[<log4net>
+	<appender name="ConsoleAppender"
+		type="log4net.Appender.ConsoleAppender, log4net">
+		<layout type="log4net.Layout.PatternLayout, log4net">
+			<param name="ConversionPattern" value="%logger: %m%newline" />
+		</layout>
+	</appender>
+	<root>
+		<priority value="WARN" />
+		<appender-ref ref="ConsoleAppender" />
+	</root>
+</log4net>]]></script>
+	</file>
+	<file name="hibernate.cfg.xml" iterator="None">
+		<script syntax="Xml"><![CDATA[<%
+string xml;
+
+if (System.IO.File.Exists(Project.NHibernateConfig.ExistingFilePath))
+{
+	CurrentFilePath = Project.NHibernateConfig.ExistingFilePath;
+    xml = System.IO.File.ReadAllText(CurrentFilePath);
+}
+else
+	xml = @"<?xml version=""1.0"" encoding=""utf-8"" ?><hibernate-configuration xmlns=""urn:nhibernate-configuration-2.2"" />";
+
+string bytecodeProvider;
+
+if (Project.Settings.BytecodeGenerator == BytecodeGenerator.Spring)
+	bytecodeProvider = "NHibernate.ByteCode.Spring.ProxyFactoryFactory, NHibernate.ByteCode.Spring";
+else if (Project.Settings.BytecodeGenerator == BytecodeGenerator.LinFu)
+	bytecodeProvider = "NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu";
+else
+	bytecodeProvider = "NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle";
+
+System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+doc.LoadXml(xml);
+		
+XmlNode nhConfigNode;
+
+if (xml.IndexOf("urn:nhibernate-configuration-2.2") > 0)
+{
+    System.Xml.XmlNamespaceManager ns = new System.Xml.XmlNamespaceManager(doc.NameTable);
+    ns.AddNamespace("nh", "urn:nhibernate-configuration-2.2");
+
+    XmlExtensions.NamespaceManager = ns;
+    XmlExtensions.NamespacePrefix = "nh";
+	nhConfigNode = doc.SelectSingleNode("//nh:hibernate-configuration", ns);
+}
+else
+	nhConfigNode = doc.SelectSingleNode("//hibernate-configuration");
+		
+if (nhConfigNode == null)
+{
+	XmlNode rootNode = doc.SelectSingleNode("/*");
+	nhConfigNode = doc.CreateElement("hibernate-configuration", "urn:nhibernate-configuration-2.2");
+	rootNode.AppendChild(nhConfigNode);
+}
+XmlNode sessionFactoryNode = nhConfigNode.EnsureChildNodeExists("session-factory");
+XmlNode propertyNode;
+// connection.provider
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "connection.provider", false));
+// dialect
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "dialect", false));
+propertyNode.InnerText = Project.Settings.UseSpatial ? Project.NHibernateConfig.DialectSpatial : Project.NHibernateConfig.Dialect;
+// connection.driver_class
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "connection.driver_class", false));
+propertyNode.InnerText = Project.NHibernateConfig.Driver;
+// connection.connection_string
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "connection.connection_string", false));
+propertyNode.InnerText = Project.NHibernateConfig.ConnectionString;
+// show_sql
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", "true", new RequiredAttribute("name", "show_sql", false));
+// proxyfactory.factory_class
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "proxyfactory.factory_class", false));
+propertyNode.InnerText = bytecodeProvider;
+		
+// cache.provider_class
+if (!string.IsNullOrEmpty(Project.Settings.CacheProviderClass))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.provider_class", false));
+	propertyNode.InnerText = Project.Settings.CacheProviderClass;
+}
+// cache.query_cache_factory
+if (!string.IsNullOrEmpty(Project.Settings.CacheQueryCacheFactory))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.query_cache_factory", false));
+	propertyNode.InnerText = Project.Settings.CacheProviderClass;
+}
+// cache.region_prefix
+if (!string.IsNullOrEmpty(Project.Settings.CacheRegionPrefix))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.region_prefix", false));
+	propertyNode.InnerText = Project.Settings.CacheRegionPrefix;
+}
+// cache.use_minimal_puts
+if (Project.Settings.CacheUserMinimalPuts.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.use_minimal_puts", false));
+	propertyNode.InnerText = Project.Settings.CacheUserMinimalPuts.ToString().ToLower();
+}
+// cache.use_query_cache
+if (Project.Settings.CacheUserQueryCache.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.use_query_cache", false));
+	propertyNode.InnerText = Project.Settings.CacheUserQueryCache.ToString();
+}
+// generate_statistics
+if (Project.Settings.GenerateStatistics.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "generate_statistics", false));
+	propertyNode.InnerText = Project.Settings.GenerateStatistics.Value.ToString().ToLower();
+}
+// max_fetch_depth
+if (Project.Settings.MaxFetchDepth.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "max_fetch_depth", false));
+	propertyNode.InnerText = Project.Settings.MaxFetchDepth.ToString();
+}
+// query_substitutions
+if (!string.IsNullOrEmpty(Project.Settings.QuerySubstitutions))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "query_substitutions", false));
+	propertyNode.InnerText = Project.Settings.QuerySubstitutions;
+}
+// show_sql
+if (Project.Settings.ShowSql.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "show_sql", false));
+	propertyNode.InnerText = Project.Settings.ShowSql.Value.ToString().ToLower();
+}
+// transaction_factory_class
+if (!string.IsNullOrEmpty(Project.Settings.TransactionFactoryClass))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "transaction_factory_class", false));
+	propertyNode.InnerText = Project.Settings.TransactionFactoryClass;
+}
+// use_outer_join
+if (Project.Settings.UseOuterJoin.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "use_outer_join", false));
+	propertyNode.InnerText = Project.Settings.UseOuterJoin.Value.ToString().ToLower();
+}
+// use_proxy_validator
+if (Project.Settings.UseProxyValidator.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "use_proxy_validator", false));
+	propertyNode.InnerText = Project.Settings.UseProxyValidator.Value.ToString().ToLower();
+}
+return doc.Beautify();%>]]></script>
+	</file>
+	<file name="&lt;%=Project.Settings.ProjectName%&gt;.csproj" iterator="None">
+		<script syntax="Xml"><![CDATA[<%
+if (Project.ExistingCsProjectFile != null && Project.ExistingCsProjectFile.FileExists)
+{
+	// Ensure we write out to the existing filepath
+	CurrentFilePath = Project.ExistingCsProjectFile.FilePath;
+	
+	Project.ExistingCsProjectFile.EnsurePropertyGroupItemExists("ProjectGuid", Project.Settings.ProjectGuid);
+	Project.ExistingCsProjectFile.EnsurePropertyGroupItemExists("RootNamespace", Project.Settings.ProjectName);
+	Project.ExistingCsProjectFile.EnsurePropertyGroupItemExists("AssemblyName", Project.Settings.ProjectName);
+	
+	Project.ExistingCsProjectFile.EnsureReferenceExists("NHibernate", "False", @"Libraries\NHibernate.dll");
+	Project.ExistingCsProjectFile.EnsureReferenceExists("NHibernate.Validator", "False", @"Libraries\NHibernate.Validator.dll");
+	Project.ExistingCsProjectFile.EnsureReferenceExists("Iesi.Collections", "False", @"Libraries\Iesi.Collections.dll");
+	Project.ExistingCsProjectFile.EnsureReferenceExists("Castle.Core", "False", @"Libraries\Castle.Core.dll");
+	Project.ExistingCsProjectFile.EnsureReferenceExists("Castle.DynamicProxy2", "False", @"Libraries\Castle.DynamicProxy2.dll");
+	Project.ExistingCsProjectFile.EnsureReferenceExists("NHibernate.ByteCode.Castle", "False", @"Libraries\NHibernate.ByteCode.Castle.dll");
+	Project.ExistingCsProjectFile.EnsureReferenceExists("log4net", "False", @"Libraries\log4net.dll");
+	Project.ExistingCsProjectFile.EnsureReferenceExists("nunit.framework", "False", @"Libraries\nunit.framework.dll");
+	Project.ExistingCsProjectFile.EnsureReferenceExists("Antlr3.Runtime", "False", @"Libraries\Antlr3.Runtime.dll");
+	
+	if (Project.Settings.UseFluentNHibernate)
+		Project.ExistingCsProjectFile.EnsureReferenceExists("Antlr3.Runtime", "False", @"Libraries\FluentNHibernate.dll");
+	
+	Project.ExistingCsProjectFile.EnsureNoneFileExists(@"Libraries\Iesi.Collections.license.txt", "Always");
+	Project.ExistingCsProjectFile.EnsureNoneFileExists(@"Libraries\NHibernate.license.txt", "Always");
+	Project.ExistingCsProjectFile.EnsureNoneFileExists(@"Libraries\log4net.license.txt", "Always");
+	Project.ExistingCsProjectFile.EnsureNoneFileExists("nhvalidator.cfg.xml", "Always");
+	Project.ExistingCsProjectFile.EnsureNoneFileExists("log4net.xml", "Always");
+	
+	if (Project.Settings.UseSpatial)
+	{
+		Project.ExistingCsProjectFile.EnsureReferenceExists("GeoAPI.dll", "False", @"Libraries\GeoAPI.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("NetTopologySuite.dll", "False", @"Libraries\NetTopologySuite.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("NHibernate.Spatial.dll", "False", @"Libraries\NHibernate.Spatial.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("NHibernate.Spatial.MsSql2008.dll", "False", @"Libraries\NHibernate.Spatial.MsSql2008.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("NHibernate.Spatial.MsSqlSpatial.dll", "False", @"Libraries\NHibernate.Spatial.MsSqlSpatial.dll");
+	}
+	if (Project.Settings.BytecodeGenerator == BytecodeGenerator.Spring)
+	{
+		Project.ExistingCsProjectFile.EnsureReferenceExists("antlr.runtime", "False", @"Libraries\antlr.runtime.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("Common.Logging", "False", @"Libraries\Common.Logging.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("NHibernate.ByteCode.Spring", "False", @"Libraries\NHibernate.ByteCode.Spring.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("Spring.Aop", "False", @"Libraries\Spring.Aop.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("Spring.Core", "False", @"Libraries\Spring.Core.dll");
+	}
+	else if (Project.Settings.BytecodeGenerator == BytecodeGenerator.LinFu)
+	{
+		Project.ExistingCsProjectFile.EnsureReferenceExists("LinFu.DynamicProxy", "False", @"Libraries\LinFu.DynamicProxy.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("NHibernate.ByteCode.LinFu", "False", @"Libraries\NHibernate.ByteCode.LinFu.dll");
+	}
+	else
+	{
+		Project.ExistingCsProjectFile.EnsureReferenceExists("Castle.Core", "False", @"Libraries\Castle.Core.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("Castle.DynamicProxy2", "False", @"Libraries\Castle.DynamicProxy2.dll");
+		Project.ExistingCsProjectFile.EnsureReferenceExists("NHibernate.ByteCode.Castle", "False", @"Libraries\NHibernate.ByteCode.Castle.dll");
+	}
+	if (!System.IO.File.Exists(Project.NHibernateConfig.ExistingFilePath))
+		Project.ExistingCsProjectFile.EnsureNoneFileExists("hibernate.cfg.xml", "Always");
+
+	Project.ExistingCsProjectFile.EnsureCompileFileExists(@"Model\Validation.cs");
+	
+	// Model files
+	// This removes the duplicates
+	HashSet<string> entityFilenames = new HashSet<string>();
+	
+	foreach (Entity entity in Project.Entities)
+		entityFilenames.Add(Helper.GetExistingRelativeFilepathForEntityClass(entity, CurrentFilePath));
+
+	foreach(string filename in entityFilenames)
+		Project.ExistingCsProjectFile.EnsureCompileFileExists(filename);
+
+	foreach (Component component in Project.Components)
+		Project.ExistingCsProjectFile.EnsureCompileFileExists(string.Format(@"Model\{0}.cs", component.Name));
+
+	// HBM ItemGroup
+	foreach (Entity entity in Project.Entities)
+	{
+		if (entity.HasMappedTables) 
+		{
+			Project.ExistingCsProjectFile.EnsureEmbeddedResourceExists(string.Format(@"Model\Mappings\{0}.nhv.xml", entity.Name));
+			
+			if (!Project.Settings.UseFluentNHibernate)
+				Project.ExistingCsProjectFile.EnsureEmbeddedResourceExists(string.Format(@"Model\Mappings\{0}.hbm.xml", entity.Name));
+			else
+				Project.ExistingCsProjectFile.EnsureCompileFileExists(string.Format(@"Model\Mappings\{0}Mapping.cs", entity.Name));
+		}
+	}
+	return Project.ExistingCsProjectFile.Xml;
+}
+%><Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProductVersion>8.0.50727</ProductVersion>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ProjectGuid>{<%=Project.Settings.ProjectGuid%>}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace><%=Project.Settings.ProjectName%></RootNamespace>
+		<AssemblyName><%=Project.Settings.ProjectName%></AssemblyName>
+		<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="System" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Xml" />
+		<Reference Include="System.Configuration" />
+		<Reference Include="NHibernate">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\NHibernate.dll</HintPath>
+		</Reference>
+		<Reference Include="NHibernate.Validator">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\NHibernate.Validator.dll</HintPath>
+		</Reference>
+		<Reference Include="Iesi.Collections">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\Iesi.Collections.dll</HintPath>
+		</Reference><% 
+	if(Project.Settings.BytecodeGenerator == BytecodeGenerator.Spring)
+	{%>
+		<Reference Include="antlr.runtime">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\antlr.runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Common.Logging">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\Common.Logging.dll</HintPath>
+		</Reference>
+		<Reference Include="NHibernate.ByteCode.Spring">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\NHibernate.ByteCode.Spring.dll</HintPath>
+		</Reference>
+		<Reference Include="Spring.Aop">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\Spring.Aop.dll</HintPath>
+		</Reference>
+		<Reference Include="Spring.Core">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\Spring.Core.dll</HintPath>
+		</Reference><%
+	}
+	else if(Project.Settings.BytecodeGenerator == BytecodeGenerator.LinFu)
+	{%>
+		<Reference Include="LinFu.DynamicProxy">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\LinFu.DynamicProxy.dll</HintPath>
+		</Reference>
+		<Reference Include="NHibernate.ByteCode.LinFu">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\NHibernate.ByteCode.LinFu.dll</HintPath>
+		</Reference><%
+	}
+	else
+	{%>
+		<Reference Include="Castle.Core">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\Castle.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Castle.DynamicProxy2">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\Castle.DynamicProxy2.dll</HintPath>
+		</Reference>
+		<Reference Include="NHibernate.ByteCode.Castle">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\NHibernate.ByteCode.Castle.dll</HintPath>
+		</Reference><%
+	}%>
+		<Reference Include="log4net">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\log4net.dll</HintPath>
+		</Reference>
+		<Reference Include="nunit.framework">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\nunit.framework.dll</HintPath>
+		</Reference>
+		<Reference Include="Antlr3.Runtime">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\Antlr3.Runtime.dll</HintPath>
+		</Reference><%
+	if(Project.Settings.UseFluentNHibernate)
+	{%>
+		<Reference Include="FluentNHibernate">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\FluentNHibernate.dll</HintPath>
+		</Reference><%
+	}
+	if(Project.Settings.UseSpatial)
+	{%>
+		<Reference Include="GeoApi">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\GeoAPI.dll</HintPath>
+		</Reference>
+		<Reference Include="NetTopologySuite">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\NetTopologySuite.dll</HintPath>
+		</Reference>
+		<Reference Include="NHibernate.Spatial">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\NHibernate.Spatial.dll</HintPath>
+		</Reference>
+		<Reference Include="NHibernate.Spatial.MsSql2008">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\NHibernate.Spatial.MsSql2008.dll</HintPath>
+		</Reference>
+		<Reference Include="NHibernate.Spatial.MsSqlSpatial">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Libraries\NHibernate.Spatial.MsSqlSpatial.dll</HintPath>
+		</Reference><%
+	}%>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Libraries\Iesi.Collections.license.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="Libraries\NHibernate.license.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="Libraries\log4net.license.txt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None><%
+	if (Project.NHibernateConfig.FileExists)
+	{%>
+		<None Include="<%=System.IO.Path.GetFileName(Project.NHibernateConfig.ExistingFilePath)%>">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None><%
+	}
+	else
+	{%>
+		<None Include="hibernate.cfg.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None><%
+	}
+%>		<None Include="nhvalidator.cfg.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="log4net.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<!-- Model ItemGroup -->
+		<Compile Include="Model\Validation.cs" /><%
+	// This removes the duplicates
+	HashSet<string> entityFilenames2 = new HashSet<string>();
+	
+	foreach (Entity entity in Project.Entities)
+		entityFilenames2.Add(ArchAngel.NHibernateHelper.HibernateMappingHelper.GetRelativeFilenameForEntityCSharpFile(entity, CurrentFilePath));
+
+	foreach(string filename in entityFilenames2)
+	{%>
+		<Compile Include="<%=filename%>" /><%
+	}
+	foreach (Component component in Project.Components)
+	{%>
+		<Compile Include="Model\\<%=component.Name%>.cs" /><%
+	}
+%>
+	</ItemGroup>
+	<ItemGroup>
+		<!-- HBM ItemGroup --><%
+	foreach (Entity entity in Project.Entities)
+	{
+		if (!entity.HasMappedTables) 
+			continue;
+%>
+		<EmbeddedResource Include="Model\Mappings\\<%=entity.Name%>.nhv.xml" /><%
+		if (!Project.Settings.UseFluentNHibernate)
+		{%>
+		<EmbeddedResource Include="Model\Mappings\\<%=entity.Name%>.hbm.xml" /><%
+		}
+		else
+		{%>
+		<Compile Include="Model\\Mappings\\<%=entity.Name%>Mapping.cs" /><%
+		}
+	}
+%>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
+	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+	<!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+		Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>]]></script>
+	</file>
+	<file name="&lt;%=Project.Settings.ProjectName%&gt;.sln" iterator="None">
+		<script syntax="CSharp"><![CDATA[<%
+if (System.IO.File.Exists(CurrentFilePath))
+{
+	SkipThisFile = true; 
+	return "File already exists, so we won't overwrite it.";
+}%>Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "<%=Project.Settings.ProjectName%>", "<%=Project.Settings.ProjectName%>.csproj", "{<%=Project.Settings.ProjectGuid.ToUpper()%>}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{<%=Project.Settings.ProjectGuid.ToUpper()%>}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{<%=Project.Settings.ProjectGuid.ToUpper()%>}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{<%=Project.Settings.ProjectGuid.ToUpper()%>}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{<%=Project.Settings.ProjectGuid.ToUpper()%>}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+]]></script>
+	</file>
+</visual-nhibernate-template>

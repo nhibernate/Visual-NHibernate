@@ -1,0 +1,987 @@
+<?xml version="1.0"?><doc><assembly><name>ActiproSoftware.UIStudio.NavigationBar.Net20</name></assembly><members><member name="T:ActiproSoftware.Products.UIStudio.NavigationBar.AssemblyInfo"><summary>
+            Provides a class for retrieving information about the <c>ActiproSoftware.UIStudio</c> assembly.
+            </summary></member><member name="P:ActiproSoftware.Products.UIStudio.NavigationBar.AssemblyInfo.Components"><summary>
+            Gets an array containing the components that must be licensed to be used in production applications.
+            </summary><value>An array containing the components that must be licensed to be used in production applications.</value></member><member name="P:ActiproSoftware.Products.UIStudio.NavigationBar.AssemblyInfo.Instance"><summary>
+            Gets the instance of the <see cref="T:ActiproSoftware.Products.AssemblyInfo" /> class for this assembly.
+            </summary><value>The instance of the <see cref="T:ActiproSoftware.Products.AssemblyInfo" /> class for this assembly.</value></member><member name="P:ActiproSoftware.Products.UIStudio.NavigationBar.AssemblyInfo.LicenseFormProductLogo"><summary>
+            Gets the product logo <see cref="T:System.Drawing.Image" /> to display on the license form.
+            </summary><value>The <see cref="T:System.Drawing.Image" /> resource that was retrieved.</value></member><member name="P:ActiproSoftware.Products.UIStudio.NavigationBar.AssemblyInfo.LicenseType"><summary>
+            Gets the type of license that is available for the assembly.
+            </summary><value>A <see cref="T:ActiproSoftware.Products.AssemblyLicenseType" /> specifying the type of license that is available for the assembly.</value></member><member name="P:ActiproSoftware.Products.UIStudio.NavigationBar.AssemblyInfo.Platform"><summary>
+            Gets the target platform for the assembly.
+            </summary><value>A <see cref="T:ActiproSoftware.Products.AssemblyPlatform" /> specifying the target platform for the assembly.</value></member><member name="P:ActiproSoftware.Products.UIStudio.NavigationBar.AssemblyInfo.ProductCode"><summary>
+            Gets the product code of the assembly.
+            </summary><value>A three-letter product code of the assembly.</value></member><member name="P:ActiproSoftware.Products.UIStudio.NavigationBar.AssemblyInfo.RedistributableFiles"><summary>
+            Gets an array containing the names of files that are permitted to be redistributed 
+            with your projects after you have licensed the product.
+            </summary><value>
+            An array containing the names of files that are permitted to be redistributed 
+            with your projects after you have licensed the product
+            </value></member><member name="P:ActiproSoftware.Products.UIStudio.NavigationBar.AssemblyInfo.Resources"><summary>
+            Gets a <see cref="T:ActiproSoftware.Products.UIStudio.NavigationBar.Resources" /> that provides access to the resources of the assembly.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.Products.UIStudio.NavigationBar.Resources" /> that provides access to the resources of the assembly.
+            </value></member><member name="T:ActiproSoftware.Products.UIStudio.NavigationBar.IconResource"><summary>
+            Specifies the type of icon resource that may be retrieved.
+            </summary></member><member name="F:ActiproSoftware.Products.UIStudio.NavigationBar.IconResource.ShowMoreButtons"><summary>
+            A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> show more buttons arrow.
+            </summary></member><member name="F:ActiproSoftware.Products.UIStudio.NavigationBar.IconResource.ShowFewerButtons"><summary>
+            A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> show fewer buttons arrow.
+            </summary></member><member name="T:ActiproSoftware.Products.UIStudio.NavigationBar.ImageResource"><summary>
+            Specifies the type of image resource that may be retrieved.
+            </summary></member><member name="F:ActiproSoftware.Products.UIStudio.NavigationBar.ImageResource.LicenseFormProductLogo"><summary>
+            The product logo to display on the license form.
+            </summary></member><member name="T:ActiproSoftware.Products.UIStudio.NavigationBar.Resources"><summary>
+            Provides a class for accessing the resources of an assembly.
+            </summary></member><member name="M:ActiproSoftware.Products.UIStudio.NavigationBar.Resources.GetIcon(ActiproSoftware.Products.UIStudio.NavigationBar.IconResource)"><summary>
+            Gets a <see cref="T:System.Drawing.Icon" /> from the resources.
+            </summary><param name="icon">The type of the icon resource to get.</param><returns>The <see cref="T:System.Drawing.Icon" /> resource that was retrieved.</returns></member><member name="M:ActiproSoftware.Products.UIStudio.NavigationBar.Resources.GetImage(ActiproSoftware.Products.UIStudio.NavigationBar.ImageResource)"><summary>
+            Gets a <see cref="T:System.Drawing.Image" /> from the resources.
+            </summary><param name="image">The type of the image resource to get.</param><returns>The <see cref="T:System.Drawing.Image" /> resource that was retrieved.</returns></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer"><summary>
+            Provides the base requirements for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control renderer.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.DrawNavigationBarBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.DrawNavigationBarHeader(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.DrawNavigationBarHeader(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Draws the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.DrawNavigationBarOverflowArea(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the overflow area of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.DrawNavigationBarOverflowMenuButton(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton)"><summary>
+            Draws the overflow menu button of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="menuButton">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.DrawNavigationBarPanelBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.DrawNavigationBarSplitter(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the splitter of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.DrawNavigationPaneBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationPane)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationPane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.DrawNavigationPaneButton(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton)"><summary>
+            Draws the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> in a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="button">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> to draw.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.MeasureNavigationBarHeader(System.Drawing.Graphics,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Measures the header for the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><param name="g">The <c>Graphics</c> object used to measure.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> whose header is being measured.</param><returns>The <see cref="T:System.Drawing.Size" /> of the header.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.MeasureNavigationBarHeader(System.Drawing.Graphics,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Measures the header for the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" />.
+            </summary><param name="g">The <c>Graphics</c> object used to measure.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> whose header is being measured.</param><returns>The <see cref="T:System.Drawing.Size" /> of the header.</returns></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.NavigationBarOverflowMenuButtonWidth"><summary>
+            Gets the width of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> overflow menu button.
+            </summary><value>The width of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> overflow menu button.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.NavigationBarSplitterHeight"><summary>
+            Gets the height of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> splitter.
+            </summary><value>The height of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> splitter.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.NavigationPaneButtonHeight"><summary>
+            Gets the height of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" />.
+            </summary><value>The height of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer.NavigationPaneButtonOverflowWidth"><summary>
+            Gets the width of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> in the overflow area.
+            </summary><value>The width of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> in the overflow area.</value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer"><summary>
+            Provides a base renderer for the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.Dispose(System.Boolean)"><summary>
+            Disposes any resources used by the object.
+            </summary><param name="disposing">Whether the object is being disposed.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DrawNavigationBarBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DrawNavigationBarHeader(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DrawNavigationBarHeader(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Draws the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DrawNavigationBarOverflowArea(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the overflow area of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DrawNavigationBarOverflowMenuButton(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton)"><summary>
+            Draws the overflow menu button of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="menuButton">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DrawNavigationBarPanelBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DrawNavigationBarSplitter(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the splitter of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DrawNavigationPaneBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationPane)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationPane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DrawNavigationPaneButton(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton)"><summary>
+            Draws the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> in a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="button">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> to draw.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.Equals(System.Object)"><summary>
+            Determines whether the specified <c>Object</c> is equal to the current <c>Object</c>. 
+            </summary><param name="obj">The <c>Object</c> to compare to the current <c>Object</c>.</param><returns><c>true</c> if the specified <c>Object</c> is equal to the current <c>Object</c>; 
+            otherwise, <c>false</c>. 
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.GetHashCode"><summary>
+            Returns a hash code for this object.
+            </summary><returns>An integer value that specifies a hash value for this object.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.MeasureNavigationBarHeader(System.Drawing.Graphics,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Measures the header for the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><param name="g">The <c>Graphics</c> object used to measure.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> whose header is being measured.</param><returns>The <see cref="T:System.Drawing.Size" /> of the header.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.MeasureNavigationBarHeader(System.Drawing.Graphics,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Measures the header for the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" />.
+            </summary><param name="g">The <c>Graphics</c> object used to measure.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> whose header is being measured.</param><returns>The <see cref="T:System.Drawing.Size" /> of the header.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetNavigationBarOverflowMenuButtonWidth"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationBarOverflowMenuButtonWidth" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ShouldSerializeNavigationBarOverflowMenuButtonWidth"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationBarOverflowMenuButtonWidth" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetNavigationBarSplitterHeight"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationBarSplitterHeight" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ShouldSerializeNavigationBarSplitterHeight"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationBarSplitterHeight" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetNavigationPaneButtonHeight"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationPaneButtonHeight" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ShouldSerializeNavigationPaneButtonHeight"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationPaneButtonHeight" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetNavigationPaneButtonOverflowWidth"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationPaneButtonOverflowWidth" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ShouldSerializeNavigationPaneButtonOverflowWidth"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationPaneButtonOverflowWidth" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.OnPropertyChanged(System.EventArgs)"><summary>
+            Raises the <c>PropertyChanged</c> event.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetAll(System.Boolean)"><summary>
+            Resets all property values to their defaults.
+            </summary><param name="force">Whether to force resetting.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetResetAllPropertiesOnSystemColorChange"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetAllPropertiesOnSystemColorChange" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ShouldSerializeResetAllPropertiesOnSystemColorChange"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetAllPropertiesOnSystemColorChange" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.#ctor"><summary>
+            Initializes a new instance of the <c>NavigationBarRenderer</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.DefaultRenderer"><summary>
+            Gets a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer" /> that should be used based on the current system settings.
+            </summary><value>A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer" /> that should be used based on the current system settings.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationBarOverflowMenuButtonWidth"><summary>
+            Gets or sets the width of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> overflow menu button.
+            </summary><value>The width of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> overflow menu button.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationBarSplitterHeight"><summary>
+            Gets or sets the height of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> splitter.
+            </summary><value>The height of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> splitter.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationPaneButtonHeight"><summary>
+            Gets or sets the height of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" />.
+            </summary><value>The height of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.NavigationPaneButtonOverflowWidth"><summary>
+            Gets or sets the width of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> in the overflow area.
+            </summary><value>The width of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> in the overflow area.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetAllPropertiesOnSystemColorChange"><summary>
+            Gets or sets whether to reset all properties when a system color change event occurs.
+            </summary><value><c>true</c> if all properties should be reset; otherwise, <c>false</c>.
+            </value></member><member name="E:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.PropertyChanged"><summary>
+            Occurs after a property is changed.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer"><summary>
+            Provides a renderer for the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control that has an Office 2003 color scheme.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeResetAllPropertiesOnSystemColorChange"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetAllPropertiesOnSystemColorChange" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.Dispose(System.Boolean)"><summary>
+            Disposes any resources used by the object.
+            </summary><param name="disposing">Whether the object is being disposed.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationBarBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationBarHeader(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationBarHeader(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Draws the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationBarOverflowArea(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the overflow area of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationBarOverflowMenuButton(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton)"><summary>
+            Draws the overflow menu button of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="menuButton">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationBarPanelBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationBarSplitter(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the splitter of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationBarSplitterDecoration(System.Windows.Forms.PaintEventArgs,System.Int32,System.Int32)"><summary>
+            Draws a decoration for a splitter of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="x">The x-coordinate at which to draw.</param><param name="y">The y-coordinate at which to draw.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationPaneBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationPane)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationPane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.DrawNavigationPaneButton(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton)"><summary>
+            Draws the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> in a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="button">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" /> to draw.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.MeasureNavigationBarHeader(System.Drawing.Graphics,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Measures the header for the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><param name="g">The <c>Graphics</c> object used to measure.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> whose header is being measured.</param><returns>The <see cref="T:System.Drawing.Size" /> of the header.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.MeasureNavigationBarHeader(System.Drawing.Graphics,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Measures the header for the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" />.
+            </summary><param name="g">The <c>Graphics</c> object used to measure.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> whose header is being measured.</param><returns>The <see cref="T:System.Drawing.Size" /> of the header.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarBorder"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarBorder" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarBorder"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarBorder" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarHeaderBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarHeaderBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarHeaderFont"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderFont" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarHeaderFont"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderFont" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarHeaderForeColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderForeColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarHeaderForeColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderForeColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarHeaderPadding"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderPadding" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarHeaderPadding"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderPadding" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarPanelBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarPanelBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarPanelBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarPanelBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarSplitterBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSplitterBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarSplitterBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSplitterBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarSplitterDecorationBackBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSplitterDecorationBackBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarSplitterDecorationBackBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSplitterDecorationBackBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarSplitterDecorationForeBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSplitterDecorationForeBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarSplitterDecorationForeBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSplitterDecorationForeBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarSubHeaderBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarSubHeaderBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarSubHeaderFont"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderFont" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarSubHeaderFont"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderFont" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarSubHeaderForeColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderForeColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarSubHeaderForeColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderForeColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationBarSubHeaderPadding"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderPadding" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationBarSubHeaderPadding"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderPadding" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationPaneDefaultBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationPaneDefaultButtonBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationPaneDefaultButtonDisabledForeColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonDisabledForeColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonDisabledForeColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonDisabledForeColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationPaneDefaultButtonFont"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonFont" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonFont"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonFont" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationPaneDefaultButtonForeColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonForeColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonForeColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonForeColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationPaneDefaultButtonHotBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonHotBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonHotBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonHotBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationPaneDefaultButtonHotPressedBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonHotPressedBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonHotPressedBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonHotPressedBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetNavigationPaneDefaultButtonPressedBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonPressedBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonPressedBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonPressedBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetAll(System.Boolean)"><summary>
+            Resets all property values to their defaults.
+            </summary><param name="force">Whether to force resetting.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.ResetResetAllPropertiesOnSystemColorChange"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarRenderer.ResetAllPropertiesOnSystemColorChange" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.#ctor"><summary>
+            Initializes a new instance of the <c>Office2003NavigationBarRenderer</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.#ctor(ActiproSoftware.Drawing.WindowsColorSchemeType)"><summary>
+            Initializes a new instance of the <c>Office2003NavigationBarRenderer</c> class. 
+            </summary><param name="colorSchemeType">The <see cref="T:ActiproSoftware.Drawing.WindowsColorSchemeType" /> to use as a base for the colors.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.#ctor(ActiproSoftware.Drawing.WindowsColorScheme)"><summary>
+            Initializes a new instance of the <c>Office2003NavigationBarRenderer</c> class. 
+            </summary><param name="colorScheme">The <see cref="T:ActiproSoftware.Drawing.WindowsColorScheme" /> to use as a base for the colors.</param></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.BaseColorSchemeType"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.WindowsColorSchemeType" /> to use as a base for the colors.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.WindowsColorSchemeType" /> to use as a base for the colors.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarBorder"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.Border" /> for a navigation bar.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.Border" /> for a navigation bar.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderFont"><summary>
+            Gets or sets the <see cref="T:System.Drawing.Font" /> to use when drawing the headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><value>The <see cref="T:System.Drawing.Font" /> to use when drawing the headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderForeColor"><summary>
+            Gets or sets the foreground color of the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><value>A <see cref="T:System.Drawing.Color" /> object specifying the foreground color of the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarHeaderPadding"><summary>
+            Gets or sets the padding to use when drawing the headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><value>The padding to use when drawing the headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarPanelBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" />.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSplitterBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation bar splitter.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation bar splitter.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSplitterDecorationBackBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a background navigation bar splitter decoration.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a background navigation bar splitter decoration.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSplitterDecorationForeBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a foreground navigation bar splitter decoration.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a foreground navigation bar splitter decoration.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for sub-headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for sub-headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderFont"><summary>
+            Gets or sets the <see cref="T:System.Drawing.Font" /> to use when drawing the sub-headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><value>The <see cref="T:System.Drawing.Font" /> to use when drawing the sub-headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderForeColor"><summary>
+            Gets or sets the foreground color of the sub-headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /></summary><value>A <see cref="T:System.Drawing.Color" /> object specifying the foreground color of the sub-headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationBarSubHeaderPadding"><summary>
+            Gets or sets the padding to use when drawing the sub-headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><value>The padding to use when drawing the sub-headers of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane button.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane button.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonDisabledForeColor"><summary>
+            Gets or sets the foreground color of a disabled navigation pane button.
+            </summary><value>A <see cref="T:System.Drawing.Color" /> object specifying the foreground color of a disabled navigation pane button.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonFont"><summary>
+            Gets or sets the <see cref="T:System.Drawing.Font" /> to use when drawing a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" />.
+            </summary><value>The <see cref="T:System.Drawing.Font" /> to use when drawing a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonForeColor"><summary>
+            Gets or sets the foreground color of a navigation pane button.
+            </summary><value>A <see cref="T:System.Drawing.Color" /> object specifying the foreground color of a navigation pane button.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonHotBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane button in a hot state.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane button in a hot state.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonHotPressedBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane button in a hot pressed state.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane button in a hot pressed state.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Office2003NavigationBarRenderer.NavigationPaneDefaultButtonPressedBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane button in a pressed state.
+            </summary><value>The <see cref="T:ActiproSoftware.Drawing.BackgroundFill" /> for a navigation pane button in a pressed state.</value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer"><summary>
+            Provides a renderer for the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control that has an Office 2007 color scheme.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.DrawNavigationBarHeader(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.DrawNavigationBarHeader(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel)"><summary>
+            Draws the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBarPanel">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.DrawNavigationBarSplitter(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBar)"><summary>
+            Draws the splitter of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="navigationBar">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> being painted.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ResetNavigationPaneDefaultButtonBackgroundFill"><summary>
+            Resets the <see cref="!:NavigationPaneDefaultButtonBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonBackgroundFill"><summary>
+            Indicates whether the <see cref="!:NavigationPaneDefaultButtonBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ResetNavigationPaneDefaultButtonHotBackgroundFill"><summary>
+            Resets the <see cref="!:NavigationPaneDefaultButtonHotBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonHotBackgroundFill"><summary>
+            Indicates whether the <see cref="!:NavigationPaneDefaultButtonHotBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ResetNavigationPaneDefaultButtonHotPressedBackgroundFill"><summary>
+            Resets the <see cref="!:NavigationPaneDefaultButtonHotPressedBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonHotPressedBackgroundFill"><summary>
+            Indicates whether the <see cref="!:NavigationPaneDefaultButtonHotPressedBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ResetNavigationPaneDefaultButtonPressedBackgroundFill"><summary>
+            Resets the <see cref="!:NavigationPaneDefaultButtonPressedBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ShouldSerializeNavigationPaneDefaultButtonPressedBackgroundFill"><summary>
+            Indicates whether the <see cref="!:NavigationPaneDefaultButtonPressedBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ResetNavigationBarSplitterHeight"><summary>
+            Resets the <see cref="!:NavigationBarSplitterHeight" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ShouldSerializeNavigationBarSplitterHeight"><summary>
+            Indicates whether the <see cref="!:NavigationBarSplitterHeight" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ResetNavigationBarSubHeaderBackgroundFill"><summary>
+            Resets the <see cref="!:NavigationBarSubHeaderBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.ShouldSerializeNavigationBarSubHeaderBackgroundFill"><summary>
+            Indicates whether the <see cref="!:NavigationBarSubHeaderBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.#ctor"><summary>
+            Initializes a new instance of the <c>Office2007NavigationBarRenderer</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.#ctor(ActiproSoftware.Drawing.WindowsColorSchemeType)"><summary>
+            Initializes a new instance of the <c>Office2007NavigationBarRenderer</c> class. 
+            </summary><param name="colorSchemeType">The <see cref="T:ActiproSoftware.Drawing.WindowsColorSchemeType" /> to use as a base for the colors.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Office2007NavigationBarRenderer.#ctor(ActiproSoftware.Drawing.WindowsColorScheme)"><summary>
+            Initializes a new instance of the <c>Office2007NavigationBarRenderer</c> class. 
+            </summary><param name="colorScheme">The <see cref="T:ActiproSoftware.Drawing.WindowsColorScheme" /> to use as a base for the colors.</param></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner"><summary>
+            Extends design-time behavior for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner.CanParent(System.Windows.Forms.Control)"><summary>
+            Indicates whether the specified control can be a child of the control managed by this designer.
+            </summary><param name="control">The <see cref="T:System.Windows.Forms.Control" /> to determine whether can be a child of the designer.</param><returns><c>true</c> if the specified control can be a child of the control managed by this designer; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner.GetHitTest(System.Drawing.Point)"><summary>
+            Indicates whether the specified point is within the bounds of the component.
+            </summary><param name="point">A <see cref="T:System.Drawing.Point" /> relative to the upper-left corner of the control.</param><returns><c>true</c> if the specified point is to be handled by the component; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner.Initialize(System.ComponentModel.IComponent)"><summary>
+            Initializes the designer with the specified component.
+            </summary><param name="component">The <c>IComponent</c> to associate the designer with.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner.InitializeVerbs"><summary>
+            Implemented by inheritors to initialize the <see cref="P:ActiproSoftware.WinUICore.Design.ActiproControlDesignerBase.VerbsCore" /> property.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner.OnDragOver(System.Windows.Forms.DragEventArgs)"><summary>
+            Called when a drag-and-drop object is dragged over the control designer view.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.DragEventArgs" /> that provides data for the event.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner.OnPaintAdornments(System.Windows.Forms.PaintEventArgs)"><summary>
+            Called when the control that the designer is managing has painted its surface so the designer can paint 
+            any additional adornments on top of the control.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> the designer can use to draw on the control.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner.#ctor"><summary>
+            Initializes a new instance of the <c>NavigationBarDesigner</c> class.
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner.DrawGrid"><summary>
+            Gets or sets a value indicating whether a grid should be drawn on the control for this designer.
+            </summary><value><c>true</c> if a grid should be drawn on the control in the designer; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarDesigner.NavigationBar"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> that is being designed.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> that is being designed.</value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarPanelDesigner"><summary>
+            Extends design-time behavior for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" />.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarPanelDesigner.InitializeVerbs"><summary>
+            Implemented by inheritors to initialize the <see cref="P:ActiproSoftware.WinUICore.Design.ActiproControlDesignerBase.VerbsCore" /> property.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarPanelDesigner.#ctor"><summary>
+            Initializes a new instance of the <c>NavigationBarPanelDesigner</c> class.
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationBarPanelDesigner.NavigationBarPanel"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> that is being designed.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> that is being designed.</value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationPaneDesigner"><summary>
+            Extends design-time behavior for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" />.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationPaneDesigner.CanBeParentedTo(System.ComponentModel.Design.IDesigner)"><summary>
+            Indicates whether the control managed by the specified designer can be a child of the control managed by this designer.
+            </summary><param name="parentDesigner">The <see cref="T:System.ComponentModel.Design.IDesigner" /> that manages the control to be tested.</param><returns><c>true</c> if the control managed by the specified designer can be parented to the control managed by this designer; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationPaneDesigner.Dispose(System.Boolean)"><summary>
+            Disposes any resources used by the object.
+            </summary><param name="disposing">Whether the object is being disposed.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationPaneDesigner.Initialize(System.ComponentModel.IComponent)"><summary>
+            Initializes the designer with the specified component.
+            </summary><param name="component">
+            The <c>IComponent</c> to associate the designer with. 
+            This component must always be an instance of, or derive from, <c>Control</c>. 
+            </param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationPaneDesigner.InitializeVerbs"><summary>
+            Implemented by inheritors to initialize the <see cref="P:ActiproSoftware.WinUICore.Design.ActiproControlDesignerBase.VerbsCore" /> property.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationPaneDesigner.#ctor"><summary>
+            Initializes a new instance of the <c>NavigationPaneDesigner</c> class.
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationPaneDesigner.NavigationPane"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> that is being designed.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> that is being designed.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationPaneDesigner.SelectionRules"><summary>
+            Gets the selection rules that indicate the movement capabilities of a component.
+            </summary><value>A bitwise combination of <see cref="P:ActiproSoftware.UIStudio.NavigationBar.Design.NavigationPaneDesigner.SelectionRules" /> values.</value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar"><summary>
+            Represents a navigation bar control.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.ArrangeCore"><summary>
+            Provides the place to perform arrange logic for the element.
+            </summary><remarks>
+            Element authors should override this method, call <see cref="M:ActiproSoftware.WinUICore.UIControl.Arrange(System.Drawing.Rectangle)" /> on each visible child element and position each child element.
+            It is required that a parent element calls <see cref="M:ActiproSoftware.WinUICore.UIControl.Arrange(System.Drawing.Rectangle)" /> on each child or they won't be rendered.
+            </remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.CreateChildren"><summary>
+            Invoked when the collection of child elements is to be created.
+            </summary><returns>The <see cref="T:System.Collections.IList" /> that should be assigned to the <see cref="P:ActiproSoftware.ComponentModel.ILogicalTreeNode.Children" /> property.</returns><remarks>By default no child collection is created.</remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.CreateControlsInstance"><summary>
+            Creates a new instance of the control collection for the control.
+            </summary><returns>A new instance of a <see cref="T:System.Windows.Forms.Control.ControlCollection" /> assigned to the control.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.Dispose(System.Boolean)"><summary>
+            Disposes any resources used by the object.
+            </summary><param name="disposing">Whether the object is being disposed.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.HitTest(System.Drawing.Point)"><summary>
+            Hit tests to find the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> whose button contains the specified coordinates.
+            </summary><param name="point">The <see cref="T:System.Drawing.Point" /> to test.</param><returns>A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> whose button contains the <see cref="T:System.Drawing.Point" />.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.ResetLargeImageList"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.LargeImageList" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.ShouldSerializeLargeImageList"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.LargeImageList" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.LoadLayoutFromFile(System.String)"><summary>
+            Load <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> layout data from a layout data file.
+            </summary><param name="path">Path to the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> layout data file.</param><remarks>
+            This method may throw an exception if the file is not found or if the layout data is invalid.
+            </remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.MeasureCore(System.Drawing.Graphics,System.Drawing.Size)"><summary>
+            Provides the place to perform measurement logic for the element.
+            </summary><param name="g">The <see cref="T:System.Drawing.Graphics" /> object to use for measurement.</param><param name="availableSize">
+            The available size that parent can give to the child.
+            The child can return bigger in hopes that the parent will become scrollable.
+            The value may also be infinity to indicate that the desired measurements of the element are wanted.
+            </param><returns><see cref="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.MeasureCore(System.Drawing.Graphics,System.Drawing.Size)" /> is designed to be the main customizability point for size control of layout. 
+            Element authors should override this method, call <see cref="M:ActiproSoftware.WinUICore.UIControl.Measure(System.Drawing.Graphics,System.Drawing.Size)" /> on each child element, 
+            and compute their desired size based upon the measurement of the children. 
+            The return value should be the desired size. 
+            It is required that a parent element calls <see cref="M:ActiproSoftware.WinUICore.UIControl.Measure(System.Drawing.Graphics,System.Drawing.Size)" /> on each child or they won't be sized/arranged.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OnContextMenuRequested(ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuEventArgs)"><summary>
+            Raises the <c>ContextMenuRequested</c> event.
+            </summary><param name="e">A <c>NavigationBarContextMenuEventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OnMaximumBarButtonCountChanged(System.EventArgs)"><summary>
+            Raises the <c>MaximumBarButtonCountChanged</c> event.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OnMouseLeave(System.EventArgs)"><summary>
+            Occurs when the mouse leaves the control.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OnMouseMove(System.Windows.Forms.MouseEventArgs)"><summary>
+            Occurs when the mouse moves.
+            </summary><param name="e">A <c>MouseEventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OnNavigationPaneActiveChanging(ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCancelEventArgs)"><summary>
+            Raises the <c>NavigationPaneActiveChanging</c> event.
+            </summary><param name="e">A <c>NavigationPaneCancelEventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OnNavigationPanesReordered(System.EventArgs)"><summary>
+            Raises the <c>NavigationPanesReordered</c> event.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OnSelectionChanged(System.EventArgs)"><summary>
+            Raises the <c>SelectionChanged</c> event.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OnSelectionChanging(ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCancelEventArgs)"><summary>
+            Raises the <c>SelectionChanging</c> event.
+            </summary><param name="e">A <c>NavigationPaneCancelEventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.SaveLayoutToFile(System.String)"><summary>
+            Saves the current layout of all the panes managed by this <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> to a layout data file.
+            </summary><param name="path">Path to the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> layout data file.</param><remarks>
+            The output layout data is stored in XML format.
+            </remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.ShowAboutForm"><summary>
+            Displays the About form for the component.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.ShowNavigationBarOptionsForm(System.Windows.Forms.Form)"><summary>
+            Displays the Navigation Bar Options form.
+            </summary><param name="ownerForm">The owner <see cref="T:System.Windows.Forms.Form" />.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.ResetSmallImageList"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.SmallImageList" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.ShouldSerializeSmallImageList"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.SmallImageList" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.WndProc(System.Windows.Forms.Message@)"><summary>
+            Occurs when a message is sent to the control.
+            </summary><param name="m">Information about the message.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.#ctor"><summary>
+            Initializes a new instance of the <c>NavigationBar</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.CanShowFewerBarButtons"><summary>
+            Gets whether the showing of fewer bar buttons is permitted.
+            </summary><value><c>true</c> if the showing of fewer bar buttons is permitted; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.CanShowMoreBarButtons"><summary>
+            Gets whether the showing of more bar buttons is permitted.
+            </summary><value><c>true</c> if the showing of more bar buttons is permitted; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.DefaultSize"><summary>
+            Gets the default size of the control.
+            </summary><value>The default <see cref="T:System.Drawing.Size" /> of the control.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.DisplayRectangle"><summary>
+            Gets the rectangle that represents the display area of the control.
+            </summary><value>A <see cref="T:System.Drawing.Rectangle" /> that represents the display area of the control.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.LargeImageList"><summary>
+            Gets or sets the <see cref="T:System.Windows.Forms.ImageList" /> used for large pane images. 
+            </summary><value>
+            An <c>ImageList</c>.  The default value is <see langword="null" />. 
+            </value><remarks>
+            The size of the images should be 32x32 however it looks best to leave some outer padding in the images themselves.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.LayoutData"><summary>
+            Gets or sets the current layout of all the panes managed by this <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><value>
+            An <c>XmlDocument</c> containing the layout data of the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> layout.
+            </value><remarks>
+            This property may throw an exception while loading if the layout data is invalid.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.MaximumBarButtonCount"><summary>
+            Gets or sets the maximum number of bar buttons to display.
+            </summary><value>The maximum number of bar buttons to display.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.OverflowMenuButtonVisible"><summary>
+            Gets or sets whether the overflow menu button is visible. 
+            </summary><value><c>true</c> if the overflow menu button is visible; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.Panes"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection" /> containing the panes in the control.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection" /> containing the panes in the control.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.Renderer"><summary>
+            Gets or sets the control-specific <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" /> used to render the control.
+            </summary><value>The control-specific <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" /> used to render the control.</value><remarks>
+            If this value is <see langword="null" />, then the global renderer will be used instead.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.RendererResolved"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" /> used to render the control.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" /> used to render the control.</value><remarks>
+            This property will return a global renderer if there is no control instance renderer override.
+            The registered renderer type with the <c>UIRendererManager</c> for this property is <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" />.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.SelectedIndex"><summary>
+            Gets or sets the index of the selected item. 
+            </summary><value>
+            The index of the selected item. 
+            If there are no items in the control, this property returns <c>-1</c>. 
+            </value><remarks>
+            The index is zero-based.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.SelectedPane"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> that is currently selected.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> that is currently selected.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.SmallImageList"><summary>
+            Gets or sets the <see cref="T:System.Windows.Forms.ImageList" /> used for small pane images. 
+            </summary><value>
+            An <c>ImageList</c>.  The default value is <see langword="null" />. 
+            </value><remarks>
+            The size of the images should be 16x16.
+            </remarks></member><member name="E:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.ContextMenuRequested"><summary>
+            Occurs when a context menu needs to be displayed.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>NavigationBarContextMenuEventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            The display of the default menu may be cancelled by setting the <c>Cancel</c> property of the event arguments to <c>true</c>.
+            </remarks></member><member name="E:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.MaximumBarButtonCountChanged"><summary>
+            Occurs when the value of the MaximumBarButtonCount has changed.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata></member><member name="E:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.NavigationPaneActiveChanging"><summary>
+            Occurs before the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Active" /> property on a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> changes.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>NavigationPaneCancelEventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Use this event to perform any processing that should occur before the 
+            <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Active" /> property on a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> changes.
+            The <c>NavigationPane</c> property of the event arguments indicates the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> that is affected.
+            The property change may be cancelled by setting the <c>Cancel</c> property of the event arguments to <c>true</c>.
+            </remarks></member><member name="E:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.NavigationPanesReordered"><summary>
+            Occurs when the panes are reordered via the Navigation Bar Options dialog.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata></member><member name="E:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.SelectionChanged"><summary>
+            Occurs after the selection changes.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Use this event to perform any processing that should occur after the selection changes.
+            </remarks></member><member name="E:ActiproSoftware.UIStudio.NavigationBar.NavigationBar.SelectionChanging"><summary>
+            Occurs before the selection changes.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>NavigationPaneCancelEventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Use this event to perform any processing that should occur before selection changes.
+            The <c>NavigationPane</c> property of the event arguments indicates the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> about to be selected.
+            The selection change may be cancelled by setting the <c>Cancel</c> property of the event arguments to <c>true</c>.
+            </remarks></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCancelEventArgs"><summary>
+            Provides data for cancellable events dealing with <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCancelEventArgs.NavigationPane" /> objects.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCancelEventArgs.#ctor(ActiproSoftware.UIStudio.NavigationBar.NavigationPane)"><summary>
+            Initializes a new instance of the <c>NavigationPaneCancelEventArgs</c> class. 
+            </summary><param name="navigationPane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> affected by this event.</param></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCancelEventArgs.NavigationPane"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> affected by this event.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> affected by this event.</value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuEventArgs"><summary>
+            Provides data for <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> context menu events.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuEventArgs.#ctor(ActiproSoftware.UIStudio.NavigationBar.NavigationPane,System.Drawing.Rectangle,ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource)"><summary>
+            Initializes a new instance of the <c>NavigationBarContextMenuEventArgs</c> class. 
+            </summary><param name="navigationPane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> affected by this event.</param><param name="bounds">The bounds around which the menu should be displayed.</param><param name="source">A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource" /> indicating the source of the event.</param></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuEventArgs.Bounds"><summary>
+            Gets the bounds around which the menu should be displayed.
+            </summary><value>
+            The bounds around which the menu should be displayed.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuEventArgs.Source"><summary>
+            Gets a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource" /> indicating the source of the event.
+            </summary><value>A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource" /> indicating the source of the event.</value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuEventHandler"><summary>
+            Represents the method that will handle various context menu events of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary><param name="sender">Sender of the event.</param><param name="e">A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuEventArgs" /> containing event data.</param><remarks>
+            When you create a <c>NavigationBarContextMenuEventHandler</c> delegate, you identify the method that will handle the event. 
+            To associate the event with your event handler, add an instance of the delegate to the event. 
+            The event handler is called whenever the event occurs, unless you remove the delegate.
+            </remarks></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource"><summary>
+            Specifies the source of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> context menu.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource.Unknown"><summary>
+            An unknown source.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource.OverflowMenuButtonLeftClick"><summary>
+            A left-click on the overflow menu button.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource.OverflowMenuButton"><summary>
+            A right-click on the overflow menu button.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource.OverflowArea"><summary>
+            A right-click on the empty overflow area.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource.NavigationBarHeader"><summary>
+            A right-click on the header of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationBarContextMenuSource.NavigationPaneButton"><summary>
+            A right-click on a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> button.  
+            The <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonLocation" /> property tells where the button is currently located.
+            </summary></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton"><summary>
+            Represents an overflow area menu button for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton.GetCursor(System.Drawing.Point)"><summary>
+            Gets the <see cref="T:System.Windows.Forms.Cursor" /> that should be used when the mouse is over the element at the specified <see cref="T:System.Drawing.Point" />.
+            </summary><param name="point">The <see cref="T:System.Drawing.Point" /> to examine.</param><returns>The <see cref="T:System.Windows.Forms.Cursor" /> that should be used when the mouse is over the element at the specified <see cref="T:System.Drawing.Point" />.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton.GetDrawState"><summary>
+            Gets the <see cref="T:ActiproSoftware.WinUICore.UIElementDrawState" /> for the element.
+            </summary><returns>The <see cref="T:ActiproSoftware.WinUICore.UIElementDrawState" /> for the element.</returns><remarks>The default implementation of this method returns <c>UIElementDrawState.None</c>.</remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton.OnMouseUp(System.Windows.Forms.MouseEventArgs)"><summary>
+            Raises the <see cref="E:ActiproSoftware.WinUICore.UIElement.MouseUp" /> event.
+            </summary><param name="e">A <c>MouseEventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton.#ctor"><summary>
+            Initializes a new instance of the <c>NavigationBarOverflowMenuButton</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton.CaptureMouseWhenPressed"><summary>
+            Indicates whether to automatically capture the mouse when the element is pressed.
+            </summary><value><c>true</c> if the mouse should automatically be captured when the element is pressed; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton.InvalidateOnMouseEvents"><summary>
+            Gets whether to invalidate the element when mouse events occur.
+            </summary><value><c>true</c> if the element should be invalidated when mouse events occur.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarOverflowMenuButton.NavigationBar"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> that contains the element.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> that contains the element.</value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel"><summary>
+            Represents a panel for a navigation bar control.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.ArrangeCore"><summary>
+            Provides the place to perform arrange logic for the element.
+            </summary><remarks>
+            Element authors should override this method, call <see cref="M:ActiproSoftware.WinUICore.UIControl.Arrange(System.Drawing.Rectangle)" /> on each visible child element and position each child element.
+            It is required that a parent element calls <see cref="M:ActiproSoftware.WinUICore.UIControl.Arrange(System.Drawing.Rectangle)" /> on each child or they won't be rendered.
+            </remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.CreateChildren"><summary>
+            Invoked when the collection of child elements is to be created.
+            </summary><returns>The <see cref="T:System.Collections.IList" /> that should be assigned to the <see cref="P:ActiproSoftware.ComponentModel.ILogicalTreeNode.Children" /> property.</returns><remarks>By default no child collection is created.</remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.Dispose(System.Boolean)"><summary>
+            Disposes any resources used by the object.
+            </summary><param name="disposing">Whether the object is being disposed.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.MeasureCore(System.Drawing.Graphics,System.Drawing.Size)"><summary>
+            Provides the place to perform measurement logic for the element.
+            </summary><param name="g">The <see cref="T:System.Drawing.Graphics" /> object to use for measurement.</param><param name="availableSize">
+            The available size that parent can give to the child.
+            The child can return bigger in hopes that the parent will become scrollable.
+            The value may also be infinity to indicate that the desired measurements of the element are wanted.
+            </param><returns><see cref="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.MeasureCore(System.Drawing.Graphics,System.Drawing.Size)" /> is designed to be the main customizability point for size control of layout. 
+            Element authors should override this method, call <see cref="M:ActiproSoftware.WinUICore.UIControl.Measure(System.Drawing.Graphics,System.Drawing.Size)" /> on each child element, 
+            and compute their desired size based upon the measurement of the children. 
+            The return value should be the desired size. 
+            It is required that a parent element calls <see cref="M:ActiproSoftware.WinUICore.UIControl.Measure(System.Drawing.Graphics,System.Drawing.Size)" /> on each child or they won't be sized/arranged.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.OnTextChanged(System.EventArgs)"><summary>
+            Occurs when the <see cref="P:System.Windows.Forms.Control.Text" /> property is changed.
+            </summary><param name="e">Event arguments.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.ShowAboutForm"><summary>
+            Displays the About form for the component.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.#ctor"><summary>
+            Initializes a new instance of the <c>NavigationBarPanel</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.DefaultSize"><summary>
+            Gets the default size of the control.
+            </summary><value>The default <see cref="T:System.Drawing.Size" /> of the control.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.DisplayRectangle"><summary>
+            Gets the rectangle that represents the display area of the control.
+            </summary><value>A <see cref="T:System.Drawing.Rectangle" /> that represents the display area of the control.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.Image"><summary>
+            Gets or sets the image that is displayed on the header.
+            </summary><value>The <c>Image</c> displayed on the header. The default value is <see langword="null" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.Renderer"><summary>
+            Gets or sets the control-specific <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" /> used to render the control.
+            </summary><value>The control-specific <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" /> used to render the control.</value><remarks>
+            If this value is <see langword="null" />, then the global renderer will be used instead.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.RendererResolved"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" /> used to render the control.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" /> used to render the control.</value><remarks>
+            This property will return a global renderer if there is no control instance renderer override.
+            The registered renderer type with the <c>UIRendererManager</c> for this property is <see cref="T:ActiproSoftware.UIStudio.NavigationBar.INavigationBarRenderer" />.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.Style"><summary>
+            Gets or sets a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanelStyle" /> describing the rendering style of the control.
+            </summary><value>A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanelStyle" /> describing the rendering style of the control.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel.UseExtendedDoubleBuffering"><summary>
+            Gets or sets whether to use extended double buffering for rendering.
+            </summary><value><c>true</c> if extended double buffering should be used; otherwise, <c>false</c>.
+            </value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanelStyle"><summary>
+            Provides the style to use when rendering a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanel" /> control.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanelStyle.Normal"><summary>
+            Renders no header.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanelStyle.Header"><summary>
+            Renders a header similar to that at the top of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" />.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationBarPanelStyle.SubHeader"><summary>
+            Renders a sub-header.
+            </summary></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane"><summary>
+            Represents a pane for a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ResetBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ShouldSerializeBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ResetButtonBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ShouldSerializeButtonBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ResetButtonDisabledForeColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonDisabledForeColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ShouldSerializeButtonDisabledForeColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonDisabledForeColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ResetButtonFont"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonFont" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ShouldSerializeButtonFont"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonFont" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ResetButtonForeColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonForeColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ShouldSerializeButtonForeColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonForeColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ResetButtonHotBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonHotBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ShouldSerializeButtonHotBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonHotBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ResetButtonHotPressedBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonHotPressedBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ShouldSerializeButtonHotPressedBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonHotPressedBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ResetButtonPressedBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonPressedBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ShouldSerializeButtonPressedBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonPressedBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.CreateControlsInstance"><summary>
+            Creates a new instance of the control collection for the control.
+            </summary><returns>A new instance of a <see cref="T:System.Windows.Forms.Control.ControlCollection" /> assigned to the control.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.GetLargeImage"><summary>
+            Returns the large <c>Image</c> associated with the pane.
+            </summary><returns>The large <c>Image</c> associated with the pane.</returns><remarks>
+            If an image has been set to the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.LargeImage" /> property, that will be returned.
+            Otherwise, the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ImageIndex" /> property will be used to find an
+            image in a parent <c>ImageList</c>.
+            </remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.GetSmallImage"><summary>
+            Returns the small <c>Image</c> associated with the pane.
+            </summary><returns>The small <c>Image</c> associated with the pane.</returns><remarks>
+            If an image has been set to the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.SmallImage" /> property, that will be returned.
+            Otherwise, the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ImageIndex" /> property will be used to find an
+            image in a parent <c>ImageList</c>.
+            </remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.#ctor"><summary>
+            Initializes a new instance of the <c>NavigationPane</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.#ctor(System.String,System.String,System.Int32)"><summary>
+            Initializes a new instance of the <c>NavigationPane</c> class. 
+            </summary><param name="key">A string-based key that identifies an object within its parent collection.</param><param name="text">The text caption.</param><param name="imageIndex">The index of an image within an <c>ImageList</c>.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.#ctor(System.String,System.String,System.Drawing.Image,System.Drawing.Image)"><summary>
+            Initializes a new instance of the <c>NavigationPane</c> class. 
+            </summary><param name="key">A string-based key that identifies an object within its parent collection.</param><param name="text">The text caption.</param><param name="largeImage">The large <see cref="T:System.Drawing.Image" />.</param><param name="smallImage">The small <see cref="T:System.Drawing.Image" />.</param></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Active"><summary>
+            Gets or sets whether the pane is visible.
+            </summary><value><c>true</c> if the pane is visible; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Anchor"><summary>
+            Gets or sets which edges of the control are anchored to the edges of its container.
+            </summary><value>A bitwise combination of the <see cref="T:System.Windows.Forms.AnchorStyles" /> values. The default is <c>Top</c> and <c>Left</c>.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill"><summary>
+            Gets or sets the pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for the navigation pane.
+            </summary><value>The pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for the navigation pane.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonBackgroundFill"><summary>
+            Gets or sets the pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for a navigation pane button.
+            </summary><value>The pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for a navigation pane button.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonDisabledForeColor"><summary>
+            Gets or sets the pane-specific foreground color of a disabled navigation pane button.
+            </summary><value>A <see cref="T:System.Drawing.Color" /> object specifying the pane-specific foreground color of a disabled navigation pane button.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonFont"><summary>
+            Gets or sets the pane-specific <see cref="T:System.Drawing.Font" /> to use when drawing a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" />.
+            </summary><value>The pane-specific <see cref="T:System.Drawing.Font" /> to use when drawing a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonForeColor"><summary>
+            Gets or sets the pane-specific foreground color of a navigation pane button.
+            </summary><value>A <see cref="T:System.Drawing.Color" /> object specifying the pane-specific foreground color of a navigation pane button.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonHotBackgroundFill"><summary>
+            Gets or sets the pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for a navigation pane button in a hot state.
+            </summary><value>The pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for a navigation pane button in a hot state.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonHotPressedBackgroundFill"><summary>
+            Gets or sets the pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for a navigation pane button in a hot/pressed state.
+            </summary><value>The pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for a navigation pane button in a hot/pressed state.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonPressedBackgroundFill"><summary>
+            Gets or sets the pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for a navigation pane button in a pressed state.
+            </summary><value>The pane-specific <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.BackgroundFill" /> for a navigation pane button in a pressed state.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ButtonLocation"><summary>
+            Gets a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButtonLocation" /> indicating the current location of the pane.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButtonLocation" /> indicating the current location of the pane.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.DefaultActive"><summary>
+            Gets or sets the default value for the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Active" /> property that is set whenever the Reset button is pressed in
+            the Navigation Bar Options form.
+            </summary><value><c>true</c> if the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Active" /> property should be set by default; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.DefaultSortOrder"><summary>
+            Gets or sets the default sort order for the pane whenever the Reset button is pressed in
+            the Navigation Bar Options form.
+            </summary><value>A number indicating the default sort order.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Dock"><summary>
+            Gets or sets which edge of the parent container a control is docked to.
+            </summary><value>One of the <see cref="T:System.Windows.Forms.DockStyle" /> values. The default is <c>None</c>.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.ImageIndex"><summary>
+            Gets or sets the index of an image within an <c>ImageList</c> that is displayed on the pane.
+            </summary><value>
+            The index of an image within an <c>ImageList</c> that is displayed on the pane.
+            The default value is <c>-1</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.IsSelected"><summary>
+            Gets whether the pane is selected.
+            </summary><value><c>true</c> if the pane is selected; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Key"><summary>
+            Gets or sets a string-based key that identifies an object within its parent collection.
+            </summary><value>A string-based key that identifies an object within its parent collection.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.LargeImage"><summary>
+            Gets or sets the large image that is displayed on the pane.
+            </summary><value>The large <c>Image</c> displayed on the pane. The default value is <see langword="null" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.NavigationBar"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> that contains the pane.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> that contains the pane.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.SmallImage"><summary>
+            Gets or sets the small image that is displayed on the pane.
+            </summary><value>The small <c>Image</c> displayed on the pane. The default value is <see langword="null" />.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.TabIndex"><summary>
+            Gets or sets the tab order of the control within its container.
+            </summary><value>
+            The index value of the control within the set of controls within its container that are included in the tab order.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.TabStop"><summary>
+            Gets or sets a value indicating whether the user can give the focus to this control using the TAB key.
+            </summary><value><c>true</c> if the user can give the focus to the control using the TAB key; otherwise, <c>false</c>. The default is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Text"><summary>
+            Gets or sets the text caption.
+            </summary><value>The text caption.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.UseControlGraphicsForMeasure"><summary>
+            Gets or sets whether to use a call to the control's <c>CreateGraphics</c> method to obtain the <see cref="T:System.Drawing.Graphics" /> used for measure routines.
+            </summary><value><c>true</c> if the control's <c>CreateGraphics</c> method should be called; otherwise, <c>false</c>.
+            The default value is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.UseExtendedDoubleBuffering"><summary>
+            Gets or sets whether to use extended double buffering for rendering.
+            </summary><value><c>true</c> if extended double buffering should be used; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPane.Visible"><summary>
+            Gets or sets a value indicating whether the control is displayed.
+            </summary><value><c>true</c> if the control is displayed; otherwise, <c>false</c>. The default is <c>true</c>.
+            </value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton"><summary>
+            Represents a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> button for 
+            a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> control.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton.GetCursor(System.Drawing.Point)"><summary>
+            Gets the <see cref="T:System.Windows.Forms.Cursor" /> that should be used when the mouse is over the element at the specified <see cref="T:System.Drawing.Point" />.
+            </summary><param name="point">The <see cref="T:System.Drawing.Point" /> to examine.</param><returns>The <see cref="T:System.Windows.Forms.Cursor" /> that should be used when the mouse is over the element at the specified <see cref="T:System.Drawing.Point" />.</returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton.GetDrawState"><summary>
+            Gets the <see cref="T:ActiproSoftware.WinUICore.UIElementDrawState" /> for the element.
+            </summary><returns>The <see cref="T:ActiproSoftware.WinUICore.UIElementDrawState" /> for the element.</returns><remarks>The default implementation of this method returns <c>UIElementDrawState.None</c>.</remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton.OnMouseUp(System.Windows.Forms.MouseEventArgs)"><summary>
+            Raises the <see cref="E:ActiproSoftware.WinUICore.UIElement.MouseUp" /> event.
+            </summary><param name="e">A <c>MouseEventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton.CaptureMouseWhenPressed"><summary>
+            Indicates whether to automatically capture the mouse when the element is pressed.
+            </summary><value><c>true</c> if the mouse should automatically be captured when the element is pressed; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton.InvalidateOnMouseEvents"><summary>
+            Gets whether to invalidate the element when mouse events occur.
+            </summary><value><c>true</c> if the element should be invalidated when mouse events occur.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton.NavigationPane"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> that owns the element.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> that owns the element.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButton.NavigationBar"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> that contains the element.
+            </summary><value>The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationBar" /> that contains the element.</value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCancelEventHandler"><summary>
+            Represents the method that will handle cancellable events for <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> objects.
+            </summary><param name="sender">Sender of the event.</param><param name="e">A <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCancelEventArgs" /> containing event data.</param><remarks>
+            When you create a <c>NavigationPaneCancelEventHandler</c> delegate, you identify the method that will handle the event. 
+            To associate the event with your event handler, add an instance of the delegate to the event. 
+            The event handler is called whenever the event occurs, unless you remove the delegate.
+            </remarks></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection"><summary>
+            Encapsulates a collection of <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> components.
+            </summary><remarks>
+            This class is a zero-based indexed collection. 
+            </remarks><seealso cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.Add(ActiproSoftware.UIStudio.NavigationBar.NavigationPane)"><summary>
+            Adds the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to the collection. 
+            </summary><param name="pane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to add.</param><returns>
+            The index of the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> that was inserted.
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.AddRange(ActiproSoftware.UIStudio.NavigationBar.NavigationPane[])"><summary>
+            Adds the specified array of <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> controls to the collection. 
+            </summary><param name="panes">The array of <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> controls to add.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.Clear"><summary>
+            Removes all <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> objects from the collection.
+            </summary></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.Contains(ActiproSoftware.UIStudio.NavigationBar.NavigationPane)"><summary>
+            Determines whether the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> is in the collection. 
+            </summary><param name="pane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to look for.</param><returns><c>true</c> if the collection contains the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" />; otherwise, <c>false</c>. 
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.Contains(System.String)"><summary>
+            Determines whether the a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> with the specified key is in the collection. 
+            </summary><param name="key">The key of the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to look for.</param><returns><c>true</c> if the collection contains a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> with the specified key; otherwise, <c>false</c>. 
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.CopyTo(System.Array,System.Int32)"><summary>
+            Copies the entire collection to a compatible one-dimensional <c>Array</c>, 
+            starting at the specified index of the target array.
+            </summary><param name="array">
+            The one-dimensional <c>Array</c> that is the destination of the elements copied from the collection. 
+            The <c>Array</c> must have zero-based indexing. 
+            </param><param name="arrayIndex">The zero-based index in <paramref name="array" /> at which copying begins.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.GetEnumerator"><summary>
+            Retrieves an <c>IEnumerator</c> object for the entire collection.
+            </summary><returns>An <c>IEnumerator</c> object for the entire collection</returns><remarks>
+            Enumerators are intended to be used only to read data in the collection. 
+            Enumerators cannot be used to modify the underlying collection.
+            <para>
+            The enumerator does not have exclusive access to the collection.
+            </para><para>
+            When an enumerator is instantiated, it takes a snapshot of the current state of the collection. 
+            If changes are made to the collection, such as adding, modifying or deleting elements, the 
+            snapshot gets out of sync and the enumerator throws an <c>InvalidOperationException</c>. 
+            Two enumerators instantiated from the same collection at the same time can have 
+            different snapshots of the collection.
+            </para></remarks></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.IndexOf(ActiproSoftware.UIStudio.NavigationBar.NavigationPane)"><summary>
+            Returns the index of the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> in the collection.
+            </summary><param name="pane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to look for.</param><returns>
+            If found, the index where the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> is in the collection; otherwise, <c>-1</c>. 
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.IndexOf(System.String)"><summary>
+            Returns the index of the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> with the specified key in the collection.
+            </summary><param name="key">The key of the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to look for.</param><returns>
+            If found, the index where the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> is in the collection; otherwise, <c>-1</c>. 
+            </returns></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.Insert(System.Int32,ActiproSoftware.UIStudio.NavigationBar.NavigationPane)"><summary>
+            Inserts an <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> into the specified location in the collection. 
+            </summary><param name="index">The index at which to place the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" />.</param><param name="pane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to add.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.MoveTo(ActiproSoftware.UIStudio.NavigationBar.NavigationPane,System.Int32)"><summary>
+            Moves a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to the specified index.
+            </summary><param name="pane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to move.</param><param name="newIndex">The new index.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.Remove(ActiproSoftware.UIStudio.NavigationBar.NavigationPane)"><summary>
+            Removes the specified <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> from the collection.
+            </summary><param name="pane">The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to remove.</param></member><member name="M:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.RemoveAt(System.Int32)"><summary>
+            Removes the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> at the specified index from the collection.
+            </summary><param name="index">The index of the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to remove.</param></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.Count"><summary>
+            Gets the number of panes contained in the collection.
+            </summary><value>The number of panes contained in the collection.</value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.IsFixedSize"><summary>
+            Gets a value indicating whether the collection has a fixed size.
+            </summary><value><c>true</c> if the collection has a fixed size; otherwise, <c>false</c>.
+            </value><remarks>
+            A collection with a fixed size does not allow the addition or removal of elements, 
+            but it allows the modification of existing elements.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.IsReadOnly"><summary>
+            Gets a value indicating whether the collection is read-only.
+            </summary><value><c>true</c> if the collection is read-only; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.IsSynchronized"><summary>
+            Gets a value indicating whether access to the collection is synchronized (thread-safe).
+            </summary><value><c>true</c> if the collection is synchronized (thread-safe); otherwise, <c>false</c>.
+            </value><remarks>
+            To guarantee the thread safety of the collection, all operations must be done through 
+            the wrapper returned by the <see cref="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.SyncRoot" /> property.
+            </remarks></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.SyncRoot"><summary>
+            Gets an <c>Object</c> that can be used to synchronize access to the collection.
+            </summary><value>
+            An <c>Object</c> that can be used to synchronize access to the collection.
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.Item(System.Int32)"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> at the specified index. 
+            <para>
+            [C#] In C#, this property is the indexer for the <c>NavigationPaneCollection</c> class. 
+            </para></summary><param name="index">The index of the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to return.</param><value>
+            The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> at the specified index. 
+            </value></member><member name="P:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneCollection.Item(System.String)"><summary>
+            Gets the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> with the specified key. 
+            </summary><param name="key">The key of the <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> to return.</param><value>
+            The <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> with the specified key. 
+            </value></member><member name="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButtonLocation"><summary>
+            Specifies the location of a <see cref="T:ActiproSoftware.UIStudio.NavigationBar.NavigationPane" /> button.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButtonLocation.Bar"><summary>
+            The button is in the main bar area.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButtonLocation.Overflow"><summary>
+            The button is in the overflow area.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButtonLocation.Menu"><summary>
+            The button is in the overflow menu.
+            </summary></member><member name="F:ActiproSoftware.UIStudio.NavigationBar.NavigationPaneButtonLocation.None"><summary>
+            The button is not active.
+            </summary></member></members></doc>

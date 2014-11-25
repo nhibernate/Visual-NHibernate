@@ -1,0 +1,2 @@
+IF (Name.Text <> )  THEN  Next.Visible := True;
+IF (Name.Text = )  THEN  Next.Visible := False;

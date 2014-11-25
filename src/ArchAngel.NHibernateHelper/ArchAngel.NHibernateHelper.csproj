@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA1B3DC6-85E3-4501-8239-E10A4C64DCEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchAngel.NHibernateHelper</RootNamespace>
+    <AssemblyName>ArchAngel.NHibernateHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=8.1.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\3rd_Party_Libs\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\3rd_Party_Libs\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeInsertions\AttributeConstraintBuilder.cs" />
+    <Compile Include="CodeInsertions\ClassConstraintBuilder.cs" />
+    <Compile Include="CodeInsertions\FieldConstraintBuilder.cs" />
+    <Compile Include="CodeInsertions\FunctionConstraintBuilder.cs" />
+    <Compile Include="CodeInsertions\ImplementsConstraintBuilder.cs" />
+    <Compile Include="CodeInsertions\UsingStatementConstraintBuilder.cs" />
+    <Compile Include="CodeInsertions\PropertyConstraintBuilder.cs" />
+    <Compile Include="CodeInsertions\EntityCodeInsertions.cs" />
+    <Compile Include="CodeInsertions\EntityExtensions.cs" />
+    <Compile Include="EntityModelExtensionMethods.cs" />
+    <Compile Include="EntityModelPreprocessor.cs" />
+    <Compile Include="Enums\AssociationType.cs" />
+    <Compile Include="EntityLoader.cs" />
+    <Compile Include="Enums\BytecodeGenerator.cs" />
+    <Compile Include="Enums\CollectionFetchModes.cs" />
+    <Compile Include="Enums\FetchMode.cs" />
+    <Compile Include="Enums\NHibernateVersions.cs" />
+    <Compile Include="Enums\OptimisticLockModes.cs" />
+    <Compile Include="Enums\VisualStudioVersions.cs" />
+    <Compile Include="HibernateMappingHelper.cs" />
+    <Compile Include="Images.cs" />
+    <Compile Include="LoadProjectWizard\LoadExistingDatabase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadProjectWizard\LoadExistingDatabase.Designer.cs">
+      <DependentUpon>LoadExistingDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadProjectWizard\CustomNewProjectInformation.cs" />
+    <Compile Include="LoadProjectWizard\LoadExistingProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadProjectWizard\LoadExistingProject.Designer.cs">
+      <DependentUpon>LoadExistingProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadProjectWizard\NHibernateHBMLoadErrorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadProjectWizard\NHibernateHBMLoadErrorView.Designer.cs">
+      <DependentUpon>NHibernateHBMLoadErrorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadProjectWizard\Prefixes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadProjectWizard\Prefixes.Designer.cs">
+      <DependentUpon>Prefixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadProjectWizard\SelectDatabaseObjects.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadProjectWizard\SelectDatabaseObjects.Designer.cs">
+      <DependentUpon>SelectDatabaseObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadProjectWizard\SetNhConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoadProjectWizard\SetNhConfig.Designer.cs">
+      <DependentUpon>SetNhConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_Component.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_IDBag.cs" />
+    <Compile Include="MappingFiles\Version_2_2\EntityMapper.cs" />
+    <Compile Include="MappingFiles\Version_2_2\Enums.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_List.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_Bag.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_Class.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_CompositeId.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_Key.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_ManyToMany.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_ManyToOne.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_Map.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_nhibernatemapping.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_Property.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ExtensionMethods\ExtMethods_Set.cs" />
+    <Compile Include="MappingFiles\Version_2_2\nhibernate-mapping.cs" />
+    <Compile Include="MappingFiles\Version_2_2\NHibernateMappingException.cs" />
+    <Compile Include="MappingFiles\Version_2_2\ReferenceMapper.cs" />
+    <Compile Include="MappingFiles\Version_2_2\Utility.cs" />
+    <Compile Include="NHCollections.cs" />
+    <Compile Include="NHConfigFile.cs" />
+    <Compile Include="NHibernateFileVerifier.cs" />
+    <Compile Include="NHibernateLoaderException.cs" />
+    <Compile Include="NHibernateProjectPreprocessor.cs" />
+    <Compile Include="NHValidatorMapping.cs" />
+    <Compile Include="ProjectLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyTemplate.cs" />
+    <Compile Include="ProviderInfo.cs" />
+    <Compile Include="ReferenceLoader.cs" />
+    <Compile Include="Test.cs" />
+    <Compile Include="UI\FormErrors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormErrors.Designer.cs">
+      <DependentUpon>FormErrors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormSelectClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSelectClasses.Designer.cs">
+      <DependentUpon>FormSelectClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\CheckLazyPropertiesHaveLazyEntityRule.cs" />
+    <Compile Include="Validation\CheckReferenceCollectionTypeRule.cs" />
+    <Compile Include="Validation\CheckSchemaAgainstRealDatabaseRule.cs" />
+    <Compile Include="Validation\NHibernateProjectLoaderModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Common\ArchAngel.Common.csproj">
+      <Project>{48E0EF31-1EE1-484A-9387-55483922F310}</Project>
+      <Name>ArchAngel.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
+      <Project>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</Project>
+      <Name>ArchAngel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj">
+      <Project>{AA16CFFA-3659-4F91-9F07-C22360882B39}</Project>
+      <Name>ArchAngel.Providers.CodeProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.EntityModel\ArchAngel.Providers.EntityModel.csproj">
+      <Project>{8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258}</Project>
+      <Name>ArchAngel.Providers.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LoadProjectWizard\LoadExistingDatabase.resx">
+      <DependentUpon>LoadExistingDatabase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadProjectWizard\LoadExistingProject.resx">
+      <DependentUpon>LoadExistingProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadProjectWizard\SetNhConfig.resx">
+      <DependentUpon>SetNhConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhibernate-configuration.xsd" />
+    <EmbeddedResource Include="nhibernate-mapping.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LoadProjectWizard\NHibernateHBMLoadErrorView.resx">
+      <DependentUpon>NHibernateHBMLoadErrorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadProjectWizard\SelectDatabaseObjects.resx">
+      <DependentUpon>SelectDatabaseObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supported-nhibernate-mapping.xsd" />
+    <EmbeddedResource Include="nhv-configuration.xsd" />
+    <EmbeddedResource Include="nhv-mapping.xsd" />
+    <EmbeddedResource Include="UI\FormErrors.resx">
+      <DependentUpon>FormErrors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormSelectClasses.resx">
+      <DependentUpon>FormSelectClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="slyce_strong_name_key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\XSDSchema_NameSpaceIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LoadProjectWizard\Prefixes.resx">
+      <DependentUpon>Prefixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TableHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

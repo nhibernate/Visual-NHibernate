@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="Test" assembly="Test" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="BasicClass1" table="`Table1`">
+    <id name="ID" access="property" column="`ID`" type="int"/>
+    <property name="Property1" column="`Column1`" type="System.String"/>
+    <property name="Property2" column="Column2" type="Test.Class1"/>
+  </class>
+</hibernate-mapping>

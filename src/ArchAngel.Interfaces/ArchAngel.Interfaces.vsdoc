@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <!--   VSdocman config file for current project.-->
+    <!--   Example: <add key="settingName" value="settingValue"/> -->
+  </appSettings>
+  <activeProfile>default</activeProfile>
+</configuration>

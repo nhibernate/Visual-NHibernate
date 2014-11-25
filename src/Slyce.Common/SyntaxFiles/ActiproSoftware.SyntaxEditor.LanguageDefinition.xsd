@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+XSD Schema for Actipro SyntaxEditor XML Language Definition 4.0
+Copyright (c) 2001-2009 Actipro Software LLC.  All rights reserved.
+http://www.ActiproSoftware.com/Products/DotNet/
+
+-->
+<xs:schema id="LanguageDefinition" targetNamespace="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition" 
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition" elementFormDefault="qualified">
+	<!-- -->
+	<xs:simpleType name="Boolean">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="True">
+				<xs:annotation>
+					<xs:documentation>A true value.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="False">
+				<xs:annotation>
+					<xs:documentation>A false value.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>						
+	</xs:simpleType>
+	<!-- -->
+	<xs:simpleType name="CaseSensitivity">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Sensitive">
+				<xs:annotation>
+					<xs:documentation>Case sensitive - exact letter case is matched.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Insensitive">
+				<xs:annotation>
+					<xs:documentation>Case insensitive - upper and lower case of a letter is matched.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AutoCorrect">
+				<xs:annotation>
+					<xs:documentation>Treated the same as Insensitive however the text is converted to the exact pattern if not already equal to it.  This is useful for languages like VB.NET where keywords should be forced to be certain combinations of mixed case letters.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>						
+	</xs:simpleType>
+	<!-- -->
+	<xs:simpleType name="DefaultableBoolean">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Default">
+				<xs:annotation>
+					<xs:documentation>A default value.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="True">
+				<xs:annotation>
+					<xs:documentation>A true value.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="False">
+				<xs:annotation>
+					<xs:documentation>A false value.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>						
+	</xs:simpleType>
+	<!-- -->
+	<xs:simpleType name="HighlightingStyleBorderCornerStyle">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Square">
+				<xs:annotation>
+					<xs:documentation>Draw a square border.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SinglePixelRounded">
+				<xs:annotation>
+					<xs:documentation>Draws a single-pixel rounded border.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>						
+	</xs:simpleType>
+	<!-- -->
+	<xs:simpleType name="HighlightingStyleLineStyle">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Default">
+				<xs:annotation>
+					<xs:documentation>Use the default resolved settings.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Solid">
+				<xs:annotation>
+					<xs:documentation>Draw a solid line.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DashDot">
+				<xs:annotation>
+					<xs:documentation>Draw a line with a dash-dot pattern.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Dot">
+				<xs:annotation>
+					<xs:documentation>Draw a line with a dot pattern.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Dash">
+				<xs:annotation>
+					<xs:documentation>Draw a line with a dash pattern.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Wave">
+				<xs:annotation>
+					<xs:documentation>Draw a wave line.  If specified for a border, then a solid line will be drawn instead.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="None">
+				<xs:annotation>
+					<xs:documentation>Don't draw a line.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- -->
+	<xs:simpleType name="HighlightingStyleLineWeight">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Single">
+				<xs:annotation>
+					<xs:documentation>Draw a single line that is a single pixel in width.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Double">
+				<xs:annotation>
+					<xs:documentation>Draw two lines that each are a single pixel in width.  The lines are spaced a single pixel apart.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- -->
+	<xs:simpleType name="ModifierKeys">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Control">
+				<xs:annotation>
+					<xs:documentation>The Ctrl key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Shift">
+				<xs:annotation>
+					<xs:documentation>The Shift key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Alt">
+				<xs:annotation>
+					<xs:documentation>The Alt key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ControlShift">
+				<xs:annotation>
+					<xs:documentation>The Ctrl and Shift keys.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ControlAlt">
+				<xs:annotation>
+					<xs:documentation>The Ctrl and Alt keys.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ShiftAlt">
+				<xs:annotation>
+					<xs:documentation>The Shift and Alt keys.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ControlShiftAlt">
+				<xs:annotation>
+					<xs:documentation>The Ctrl, Shift, and Alt keys.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="None">
+				<xs:annotation>
+					<xs:documentation>No modifier keys.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AnyControl">
+				<xs:annotation>
+					<xs:documentation>The Ctrl key and optionally any other modifier key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AnyShift">
+				<xs:annotation>
+					<xs:documentation>The Shift key and optionally any other modifier key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AnyAlt">
+				<xs:annotation>
+					<xs:documentation>The Alt key and optionally any other modifier key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AnyControlShift">
+				<xs:annotation>
+					<xs:documentation>The Ctrl and Shift keys, and optionally any other modifier key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AnyControlAlt">
+				<xs:annotation>
+					<xs:documentation>The Ctrl and Alt keys, and optionally any other modifier key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AnyShiftAlt">
+				<xs:annotation>
+					<xs:documentation>The Shift and Alt keys, and optionally any other modifier key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Any">
+				<xs:annotation>
+					<xs:documentation>Any modifier key.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>						
+	</xs:simpleType>
+	<!-- -->
+	<xs:simpleType name="PatternGroupType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="StartScope">
+				<xs:annotation>
+					<xs:documentation>The lexical pattern group is the start of a scope.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EndScope">
+				<xs:annotation>
+					<xs:documentation>The lexical pattern group is the end of a scope.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>						
+	</xs:simpleType>
+	<!-- -->
+	<xs:complexType name="ExplicitPatternGroup">
+		<xs:sequence>
+			<xs:element name="ExplicitPattern" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A pattern within an explicit pattern group.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="Value" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>The pattern for the pattern group.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ExplicitPatterns" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A set of patterns within an explicit pattern group, delimited by whitespace.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Key" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>A string-based key that uniquely identifies the pattern.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TokenKey" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The key of the token that this pattern assigns.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TokenID" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The ID of the token that this pattern assigns.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Style" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The key of the highlighting style to use for tokens within the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="PatternValue" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The pattern for the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LookBehind" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The text regular expression for the look-behind.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LookAhead" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The text regular expression for the look-ahead.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="CaseSensitivity" type="CaseSensitivity" use="optional">
+			<xs:annotation>
+				<xs:documentation>How the lexical parser should handle case sensitivity for patterns in the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsWhitespace" type="Boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Whether the token represents whitespace.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsContentDivider" type="Boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Whether the token is a content divider.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="StartBracket" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The key of the lexical pattern group that should be used as a start bracket for this pattern group when bracket highlighting.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="EndBracket" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The key of the lexical pattern group that should be used as a end bracket for this pattern group when bracket highlighting.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Tag" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>String data that provides additional information about the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- -->
+	<xs:complexType name="ScopeExplicitPatternGroup">
+		<xs:attribute name="Type" type="PatternGroupType" use="required">
+			<xs:annotation>
+				<xs:documentation>The type of pattern.</xs:documentation>
+			</xs:annotation>			
+		</xs:attribute>
+		<xs:attribute name="Key" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>A string-based key that uniquely identifies the pattern.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TokenKey" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The key of the token that this pattern assigns.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TokenID" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The ID of the token that this pattern assigns.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Style" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The key of the highlighting style to use for tokens within the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="PatternValue" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The pattern for the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LookBehind" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The text regular expression for the look-behind.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LookAhead" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The text regular expression for the look-ahead.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="CaseSensitivity" type="CaseSensitivity" use="optional">
+			<xs:annotation>
+				<xs:documentation>How the lexical parser should handle case sensitivity for patterns in the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsWhitespace" type="Boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Whether the token represents whitespace.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsContentDivider" type="Boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Whether the token is a content divider.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Tag" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>String data that provides additional information about the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- -->
+	<xs:complexType name="RegexPatternGroup">
+		<xs:sequence>
+			<xs:element name="RegexPattern" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A pattern within a regular expression pattern group.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="Value" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>The pattern for the pattern group.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Key" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>A string-based key that uniquely identifies the pattern.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TokenKey" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The key of the token that this pattern assigns.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TokenID" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The ID of the token that this pattern assigns.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Style" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The key of the highlighting style to use for tokens within the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="PatternValue" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The pattern for the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LookBehind" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The text regular expression for the look-behind.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LookAhead" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The text regular expression for the look-ahead.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="CaseSensitivity" type="CaseSensitivity" use="optional">
+			<xs:annotation>
+				<xs:documentation>How the lexical parser should handle case sensitivity for patterns in the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsWhitespace" type="Boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Whether the token represents whitespace.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsContentDivider" type="Boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Whether the token is a content divider.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="StartBracket" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The key of the lexical pattern group that should be used as a start bracket for this pattern group when bracket highlighting.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="EndBracket" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The key of the lexical pattern group that should be used as a end bracket for this pattern group when bracket highlighting.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Tag" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>String data that provides additional information about the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- -->
+	<xs:complexType name="ScopeRegexPatternGroup">
+		<xs:attribute name="Type" type="PatternGroupType" use="optional">
+			<xs:annotation>
+				<xs:documentation>The type of pattern.</xs:documentation>
+			</xs:annotation>			
+		</xs:attribute>
+		<xs:attribute name="Key" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>A string-based key that uniquely identifies the pattern.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TokenKey" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The key of the token that this pattern assigns.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TokenID" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The ID of the token that this pattern assigns.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Style" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The key of the highlighting style to use for tokens within the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="PatternValue" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The pattern for the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LookBehind" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The text regular expression for the look-behind.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="LookAhead" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>The text regular expression for the look-ahead.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="CaseSensitivity" type="CaseSensitivity" use="optional">
+			<xs:annotation>
+				<xs:documentation>How the lexical parser should handle case sensitivity for patterns in the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsWhitespace" type="Boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Whether the token represents whitespace.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsContentDivider" type="Boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Whether the token is a content divider.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Tag" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>String data that provides additional information about the pattern group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- -->
+	<xs:element name="SyntaxLanguage">
+		<xs:annotation>
+			<xs:documentation>The root element for a dynamic language XML definition.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Properties" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A set of string-based properties that are assigned to the language.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="Property" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A string-based property that is assigned to the language.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Key" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>A string-based key that identifies the object.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Value" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The property value.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Triggers" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A set of triggers that fire when certain events occur.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element name="AutoReplaceTrigger" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A trigger that executes auto-replace functionality.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AutoReplaceTriggerActivators">
+											<xs:annotation>
+												<xs:documentation>A set of characters that cause the trigger to fire.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="AutoReplaceTriggerActivator" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>A character that causes the trigger to fire.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:attribute name="Character" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>A character that when typed into the editor, causes the trigger to fire.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="AutoReplaceTriggerValidStates" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>A set of the lexical states in which the trigger is valid.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="AutoReplaceTriggerValidState" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>A lexical state in which the trigger is valid.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:attribute name="State" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The key of a lexical state in which the trigger is valid.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Key" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The key of the auto-replace trigger.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>						
+									<xs:attribute name="AllowGlobalLookup" type="Boolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>Whether to allow global lookup of auto-replace entries if an auto-replace entry is not found within the current language.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="KeyPressTrigger" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A trigger that executes when a key is pressed while in a certain lexical state.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="KeyPressTriggerValidStates" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>A set of the lexical states in which the trigger is valid.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="KeyPressTriggerValidState" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>A lexical state in which the trigger is valid.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:attribute name="State" type="xs:string" use="required">
+																<xs:annotation>
+																	<xs:documentation>The key of a lexical state in which the trigger is valid.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Key" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The key of the key-press trigger.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>							
+									<xs:attribute name="Character" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>A character that when typed into the editor, causes the trigger to fire.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>							
+									<xs:attribute name="AllowInReadOnlyMode" type="Boolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>Whether the trigger can fire if the editor is in read-only mode.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Styles">
+					<xs:annotation>
+						<xs:documentation>A set of highlighting styles.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="Style" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A highlighting style definition.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Key" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The string-based key that uniquely identifies the highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Name" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The display name of the highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ForeColor" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The foreground color of the highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="BackColor" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The background color of the highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Bold" type="DefaultableBoolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>Whether the highlighting style uses boldface.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="BorderColor" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The border color of the highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="BorderCornerStyle" type="HighlightingStyleBorderCornerStyle" use="optional">
+										<xs:annotation>
+											<xs:documentation>The style of border corners.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="BorderStyle" type="HighlightingStyleLineStyle" use="optional">
+										<xs:annotation>
+											<xs:documentation>The style of border to use.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="CursorName" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The name of a built-in Cursor from the Cursors class to use when mouse is over text that uses this highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="CursorModifierKeys" type="ModifierKeys" use="optional">
+										<xs:annotation>
+											<xs:documentation>The modifier keys that allow the custom Cursor to display when the mouse over text that uses this highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="FontFamilyName" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The name of the font family to use for drawing text with the highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="FontSize" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The font to use for drawing text with the highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Italic" type="DefaultableBoolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>Whether the highlighting style uses italics.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="StrikeOutColor" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The strike-out color of the highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="StrikeOutStyle" type="HighlightingStyleLineStyle" use="optional">
+										<xs:annotation>
+											<xs:documentation>The style of strike-out to use.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="StrikeOutWeight" type="HighlightingStyleLineWeight" use="optional">
+										<xs:annotation>
+											<xs:documentation>The strike-out line weight to use.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="UnderlineColor" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The underline color of the highlighting style.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="UnderlineStyle" type="HighlightingStyleLineStyle" use="optional">
+										<xs:annotation>
+											<xs:documentation>The style of underlining to use.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="UnderlineWeight" type="HighlightingStyleLineWeight" use="optional">
+										<xs:annotation>
+											<xs:documentation>The underlining line weight to use.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Macros" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A set of lexical macros.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="Macro" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A macro definition.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Key" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The string-based key that uniquely identifies the macro.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Value" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>The regular expression pattern value of the macro.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="States">
+					<xs:annotation>
+						<xs:documentation>A set of lexical states within the language.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="State" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A lexical state definition.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Scopes" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>A set of lexical scopes that start and end the lexical state.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice maxOccurs="unbounded">
+													<xs:element name="Scope">
+														<xs:annotation>
+															<xs:documentation>A lexical scope definition.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:choice maxOccurs="unbounded">
+																<xs:element name="ExplicitPatternGroup" type="ScopeExplicitPatternGroup">
+																	<xs:annotation>
+																		<xs:documentation>An explicit pattern group the defines the lexical scope pattern.</xs:documentation>
+																	</xs:annotation>																	
+																</xs:element>
+																<xs:element name="RegexPatternGroup" type="ScopeRegexPatternGroup">
+																	<xs:annotation>
+																		<xs:documentation>An regular expression pattern group the defines the lexical scope pattern.</xs:documentation>
+																	</xs:annotation>																	
+																</xs:element>
+																<xs:element name="StateTransition">
+																	<xs:annotation>
+																		<xs:documentation>A state transition to another language that occurs when the scope is matched.</xs:documentation>
+																	</xs:annotation>																	
+																	<xs:complexType>
+																		<xs:choice>
+																			<xs:element name="ExplicitPatternGroup" type="ExplicitPatternGroup">
+																				<xs:annotation>
+																					<xs:documentation>An explicit pattern group that defines patterns that will exit the child language when matched.</xs:documentation>
+																				</xs:annotation>																	
+																			</xs:element>
+																			<xs:element name="RegexPatternGroup" type="RegexPatternGroup">
+																				<xs:annotation>
+																					<xs:documentation>A regular expression pattern group that defines patterns that will exit the child language when matched.</xs:documentation>
+																				</xs:annotation>																	
+																			</xs:element>
+																		</xs:choice>
+																		<xs:attribute name="Filename" type="xs:string" use="required">
+																			<xs:annotation>
+																				<xs:documentation>The filename containing the language to transition to.</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="State" type="xs:string" use="optional">
+																			<xs:annotation>
+																				<xs:documentation>The key of the lexical state to transition to.</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="ChildLanguageBackColor" type="xs:string" use="optional">
+																			<xs:annotation>
+																				<xs:documentation>The background color to apply to the child language.</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:choice>
+															<xs:attribute name="AncestorEndScopeCheckEnabled" type="Boolean" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Whether ancestor end scope checking is enabled while parsing inside the scope.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="BracketHighlight" type="Boolean" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Whether to bracket highlight the scope patterns.</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="PatternGroups" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>A set of lexical pattern groups that define the patterns recognized in the lexical state.</xs:documentation>
+											</xs:annotation>																	
+											<xs:complexType>
+												<xs:choice maxOccurs="unbounded">
+													<xs:element name="ExplicitPatternGroup" type="ExplicitPatternGroup">
+														<xs:annotation>
+															<xs:documentation>An explicit pattern group that defines patterns recognized in the lexical state.</xs:documentation>
+														</xs:annotation>																	
+													</xs:element>
+													<xs:element name="RegexPatternGroup" type="RegexPatternGroup">
+														<xs:annotation>
+															<xs:documentation>A regular expression pattern group that defines patterns recognized in the lexical state.</xs:documentation>
+														</xs:annotation>																	
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ChildStates" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>A set of child lexical states that can be entered from this lexical state if their start scope is recognized.</xs:documentation>
+											</xs:annotation>																	
+											<xs:complexType>
+												<xs:choice maxOccurs="unbounded">
+													<xs:element name="ChildState">
+														<xs:annotation>
+															<xs:documentation>A child lexical state that can be entered from this lexical state if its start scope is recognized.</xs:documentation>
+														</xs:annotation>																	
+														<xs:complexType>
+															<xs:attribute name="Key" type="xs:string" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Key" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>A string-based key that uniquely identifiers the lexical state.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ID" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>A numeric ID that uniquely identifiers the lexical state.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="TokenKey" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The key of the default token that this state assigns.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="TokenID" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The ID of the default token that this state assigns.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Style" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The key of the default style to use for tokens within the state.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Filename" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The filename containing the language to transition to.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ChildLanguageBackColor" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>The background color to apply to the child language.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ExampleText" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Example language code that can be used for testing lexical parsing.</xs:documentation>
+					</xs:annotation>																	
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Key" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>A string-based key that identifies the language.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="LanguageDefinitionVersion" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>The version of this language definition.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Secure" type="Boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Whether the language is secure.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="WordContainsAdditionalCharacters" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>The set of additional characters that can constitute the inside of a word, other than letters and digits.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="WordStandaloneCharacters" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>The set of characters that are intended to be single character words.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="SyntaxLanguageTypeName" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>The fully-qualified name of the type to use as a code-behind class for this XML language definition.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="StateIDTypeName" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>The fully-qualified name of the type to use when writing out lexical state ID attribute values to an XML language definition.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="TokenIDTypeName" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation>The fully-qualified name of the type to use when writing out token ID attribute values to an XML language definition.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- -->
+</xs:schema>

@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{538FC3A4-ADED-454E-A63C-769C018AE92D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slyce.IntelliMerge.UnitTesting</RootNamespace>
+    <AssemblyName>Slyce.IntelliMerge.UnitTesting</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.6.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Unit Testing\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework.extensions, Version=2.4.6.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Unit Testing\nunit.framework.extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.4.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Unit Testing\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assertions.cs" />
+    <Compile Include="Base2WaySpec.cs" />
+    <Compile Include="Base3WaySpec.cs" />
+    <Compile Include="Controller\CodeProvider\Secs_For_LINQ_Formatting.cs" />
+    <Compile Include="Controller\CodeProvider\Specs_For_Comments_And_PreProcessor.cs" />
+    <Compile Include="Controller\CodeProvider\Specs_For_Single_Base_Construct_Parsing.cs" />
+    <Compile Include="Controller\CodeProvider\Specs_For_Statement_Formatting.cs" />
+    <Compile Include="Controller\CodeProvider\Specs_For_CSharp_Parser.cs" />
+    <Compile Include="Controller\CodeProvider\Specs_For_Expression_Formatting.cs" />
+    <Compile Include="Controller\CodeProvider\Specs_For_Whatever.cs" />
+    <Compile Include="Controller\CodeProvider\Test_Entire_Projects.cs" />
+    <Compile Include="Controller\Specs_For_Base_Construct_Clone.cs" />
+    <Compile Include="Controller\Specs_For_Binary_FileInformation.cs" />
+    <Compile Include="Controller\Specs_For_CodeRootMapNode_GetMergedBaseConstruct.cs" />
+    <Compile Include="Controller\Specs_For_CodeRootMapNode_GetSiblingsOfType.cs" />
+    <Compile Include="Controller\Specs_For_CodeRootMap_Basic_Usage.cs" />
+    <Compile Include="Controller\Specs_For_CodeRootMap_Diff.cs" />
+    <Compile Include="Controller\Specs_For_CodeRootMap_Matching.cs" />
+    <Compile Include="Controller\Specs_For_CodeRootMap_MatchProcessor.cs" />
+    <Compile Include="Controller\Specs_For_CodeRootMap_Merge.cs" />
+    <Compile Include="Controller\Specs_For_Code_Root_Map_Region_Handling.cs" />
+    <Compile Include="Controller\Specs_For_CSharp_Code_Root_DiffTypes.cs" />
+    <Compile Include="Controller\Specs_For_FileInformation.cs" />
+    <Compile Include="Controller\TestBackupUtility.cs" />
+    <Compile Include="Controller\TestPrevGenUtility.cs" />
+    <Compile Include="CSharpFormatter\Specs_For_BaseContruct_WalkTree.cs" />
+    <Compile Include="CSharpFormatter\Specs_For_CSharp_BaseConstructs_FQName.cs" />
+    <Compile Include="CSharpFormatter\Specs_For_CSharp_BaseConstructs_UID.cs" />
+    <Compile Include="Helper.cs" />
+    <Content Include="Resources\CSharp\Class1.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithConstructor.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithEvent.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithTwoMethods.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithTwoMethods_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_ChangedMethodText.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_ExtraComments.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithEvent_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithField.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithField_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithOperator.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithOperator_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithConstant.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithConstant_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithPropertyAccessors.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithPropertyAccessors_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithPropertyAccessors_GetSet_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithDelegate.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithDelegate_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithConstructor_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithEnum.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithEnum_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithEnum_Values_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithIndexer.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithIndexer_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithIndexer_GetSet_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithUsingStatements.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithUsingStatements_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithAttributes.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithAttributes_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithRegion.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithRegion_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithStruct.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithStruct_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithInterface.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithInterface_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithInterface_Internally_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Resources\CSharp\AssemblyInfo.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\AssemblyInfoWithExtraAttribute.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Manifest\Manifest\X.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Manifest\SubDirsw\SubDir\Y.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Manifest\SubDirsw\X.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Manifest\SubDirs\.ArchAngel\{c1285b30-66b7-4e2f-a85c-6d169d9977c7}_TemplateName\X.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Manifest\SubDirs\SubDir\.ArchAngel\{c1285b30-66b7-4e2f-a85c-6d169d9977c7}_TemplateName\Y.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Manifest\TLDw\X.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Manifest\TLD\.ArchAngel\{c1285b30-66b7-4e2f-a85c-6d169d9977c7}_TemplateName\X.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Manifest\TLD\X.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Resources\CSharp\Class1_With_String_Method.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_With_String_Method_Changed_Param.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Manifest\SubDirs\SubDir\Y.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="slyce_strong_name_key.snk" />
+    <Content Include="Resources\CSharp\Class1_WithEmptyRegion.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\Class1_WithEmptyRegion_Reordered.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\CSharp\ScriptBase.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Resources\CSharp\PerformanceTest.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="SpecsForDiff.cs" />
+    <Compile Include="CodeInsertions\Specs_For_CodeInsertions_AddToClass.cs" />
+    <Compile Include="ThreeWayMerge.cs" />
+    <Compile Include="TwoWayDiff.cs" />
+    <Compile Include="UI\Specs_For_Visual_Diff_Output.cs" />
+    <Compile Include="UI\SyntaxEditorSetup_Change.cs" />
+    <Compile Include="UI\SyntaxEditorSetup_Delete.cs" />
+    <Compile Include="UI\SyntaxEditorSetup.cs" />
+    <Compile Include="UI\SyntaxEditorSetup_Add.cs" />
+    <Compile Include="UI\Specs_For_TwoWayVisualDiff.cs" />
+    <Compile Include="UI\Specs_For_TemplateVisualDiff.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notes.txt" />
+    <Content Include="Resources\Manifest\SubDirsw\__AAManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Manifest\SubDirsw\SubDir\__AAManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Manifest\SubDirs\.ArchAngel\{c1285b30-66b7-4e2f-a85c-6d169d9977c7}_TemplateName\__AAManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Manifest\SubDirs\SubDir\.ArchAngel\{c1285b30-66b7-4e2f-a85c-6d169d9977c7}_TemplateName\__AAManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Manifest\SubDirs\SubDir\__AAManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Manifest\TLDw\__AAManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Manifest\TLD\.ArchAngel\{c1285b30-66b7-4e2f-a85c-6d169d9977c7}_TemplateName\__AAManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\ThreeLines_MiddleLine_InsertAtMiddle.txt" />
+    <EmbeddedResource Include="Resources\ThreeLines_FirstLine_InsertAtStart.txt" />
+    <EmbeddedResource Include="Resources\ThreeLines_FirstLineDeleted.txt" />
+    <EmbeddedResource Include="Resources\ThreeOtherLines2.txt" />
+    <EmbeddedResource Include="Resources\TwoLinesWithEmptyLines.txt" />
+    <EmbeddedResource Include="Resources\FourLines_Expected.txt" />
+    <EmbeddedResource Include="Resources\FourLines_2Different.txt" />
+    <EmbeddedResource Include="Resources\FourLines.txt" />
+    <EmbeddedResource Include="Resources\AllLinesDifferent_Expected.txt" />
+    <EmbeddedResource Include="Resources\FirstLineDifferent_Expected.txt" />
+    <EmbeddedResource Include="Resources\LastLineDifferent_Expected.txt" />
+    <EmbeddedResource Include="Resources\MiddleLineDifferent_Expected.txt" />
+    <EmbeddedResource Include="Resources\MultiDiffs_Expected.txt" />
+    <EmbeddedResource Include="Resources\MultiDiffs_Left.txt" />
+    <EmbeddedResource Include="Resources\MultiDiffs_Right.txt" />
+    <EmbeddedResource Include="Resources\ThreeDiffLines.txt" />
+    <EmbeddedResource Include="Resources\ThreeLines.txt" />
+    <EmbeddedResource Include="Resources\ThreeLines_FirstLineChanged.txt" />
+    <EmbeddedResource Include="Resources\ThreeLines_LastLineChanged.txt" />
+    <EmbeddedResource Include="Resources\ThreeOtherLines.txt" />
+    <EmbeddedResource Include="Resources\TwoLines.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj">
+      <Project>{AA16CFFA-3659-4F91-9F07-C22360882B39}</Project>
+      <Name>ArchAngel.Providers.CodeProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.IntelliMerge\Slyce.IntelliMerge.csproj">
+      <Project>{694BB413-2742-4476-9984-474E033770C1}</Project>
+      <Name>Slyce.IntelliMerge</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

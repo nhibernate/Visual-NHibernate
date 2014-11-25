@@ -1,0 +1,5 @@
+IF (StaticText3.Caption <> Description)  THEN  InfoImage.Visible := True;
+IF (StaticText3.Caption <> Description)  THEN  StaticText3.Visible := True;
+IF (StaticText3.Caption = Description)  THEN  StaticText3.Visible := False;
+IF (StaticText3.Caption = Description)  THEN  InfoImage.Visible := False;
+IF (StaticText3.Caption = )  THEN  InfoImage.Visible := False;

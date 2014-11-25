@@ -1,0 +1,16 @@
+IF (Company.Text <> )  THEN  checkNext.Caption := YES;
+IF (Name.Text <> )  THEN  checkNext.Caption := YES;
+IF (Serial1.Text <> )  THEN  checkNext.Caption := YES;
+IF (Serial2.Text <> )  THEN  checkNext.Caption := YES;
+IF (Serial3.Text <> )  THEN  checkNext.Caption := YES;
+IF (Serial4.Text <> )  THEN  checkNext.Caption := YES;
+IF (Serial5.Text <> )  THEN  checkNext.Caption := YES;
+IF (Company.Text = )  THEN  checkNext.Caption := NO;
+IF (Name.Text = )  THEN  checkNext.Caption := NO;
+IF (Serial1.Text = )  THEN  checkNext.Caption := NO;
+IF (Serial2.Text = )  THEN  checkNext.Caption := NO;
+IF (Serial3.Text = )  THEN  checkNext.Caption := NO;
+IF (Serial4.Text = )  THEN  checkNext.Caption := NO;
+IF (Serial5.Text = )  THEN  checkNext.Caption := NO;
+IF (checkNext.Caption <> NO)  THEN  Next.Visible := True;
+IF (checkNext.Caption = NO)  THEN  Next.Visible := False;

@@ -1,0 +1,121 @@
+using System.Collections.Generic;
+using System;
+using SharpArch.Core;
+using <#=Project.Settings.Name#>.Core;
+using <#=Project.Settings.Name#>.ApplicationServices.ViewModels;
+using <#=Project.Settings.Name#>.Core.QueryDtos;
+using <#=Project.Settings.Name#>.Core.RepositoryInterfaces;
+
+namespace <#=Project.Settings.Name#>.ApplicationServices
+{
+    public class <#=entity.Name#>ManagementService : I<#=entity.Name#>ManagementService
+    {
+        public <#=entity.Name#>ManagementService(I<#=entity.Name#>Repository <#=entity.NameCamelCase#>Repository) {
+            Check.Require(<#=entity.NameCamelCase#>Repository != null, "<#=entity.NameCamelCase#>Repository may not be null");
+
+            this.<#=entity.NameCamelCase#>Repository = <#=entity.NameCamelCase#>Repository;
+        }
+
+        public <#=entity.Name#> Get(int id) {
+            return <#=entity.NameCamelCase#>Repository.Get(id);
+        }
+
+        public IList<<#=entity.Name#>> GetAll() {
+            return <#=entity.NameCamelCase#>Repository.GetAll();
+        }
+
+        public IList<<#=entity.Name#>Dto> Get<#=entity.Name#>Summaries() {
+            return <#=entity.NameCamelCase#>Repository.Get<#=entity.Name#>Summaries();
+        }
+
+        public <#=entity.Name#>FormViewModel CreateFormViewModel() {
+            <#=entity.Name#>FormViewModel viewModel = new <#=entity.Name#>FormViewModel();
+            return viewModel;
+        }
+
+        public <#=entity.Name#>FormViewModel CreateFormViewModelFor(int <#=entity.NameCamelCase#>Id) {
+            <#=entity.Name#> <#=entity.NameCamelCase#> = <#=entity.NameCamelCase#>Repository.Get(<#=entity.NameCamelCase#>Id);
+            return CreateFormViewModelFor(<#=entity.NameCamelCase#>);
+        }
+
+        public <#=entity.Name#>FormViewModel CreateFormViewModelFor(<#=entity.Name#> <#=entity.NameCamelCase#>) {
+            <#=entity.Name#>FormViewModel viewModel = CreateFormViewModel();
+            viewModel.<#=entity.Name#> = <#=entity.NameCamelCase#>;
+            return viewModel;
+        }
+
+        public ActionConfirmation SaveOrUpdate(<#=entity.Name#> <#=entity.NameCamelCase#>) {
+            if (<#=entity.NameCamelCase#>.IsValid()) {
+                <#=entity.NameCamelCase#>Repository.SaveOrUpdate(<#=entity.NameCamelCase#>);
+
+                ActionConfirmation saveOrUpdateConfirmation = ActionConfirmation.CreateSuccessConfirmation(
+                    "The <#=entity.NameCamelCase#> was successfully saved.");
+                saveOrUpdateConfirmation.Value = <#=entity.NameCamelCase#>;
+
+                return saveOrUpdateConfirmation;
+            }
+            else {
+                <#=entity.NameCamelCase#>Repository.DbContext.RollbackTransaction();
+
+                return ActionConfirmation.CreateFailureConfirmation(
+                    "The <#=entity.NameCamelCase#> could not be saved due to missing or invalid information.");
+            }
+        }
+
+        public ActionConfirmation UpdateWith(<#=entity.Name#> <#=entity.NameCamelCase#>FromForm, int idOf<#=entity.Name#>ToUpdate) {
+            <#=entity.Name#> <#=entity.NameCamelCase#>ToUpdate = 
+                <#=entity.NameCamelCase#>Repository.Get(idOf<#=entity.Name#>ToUpdate);
+            TransferFormValuesTo(<#=entity.NameCamelCase#>ToUpdate, <#=entity.NameCamelCase#>FromForm);
+
+            if (<#=entity.NameCamelCase#>ToUpdate.IsValid()) {
+                ActionConfirmation updateConfirmation = ActionConfirmation.CreateSuccessConfirmation(
+                    "The <#=entity.NameCamelCase#> was successfully updated.");
+                updateConfirmation.Value = <#=entity.NameCamelCase#>ToUpdate;
+
+                return updateConfirmation;
+            }
+            else {
+                <#=entity.NameCamelCase#>Repository.DbContext.RollbackTransaction();
+
+                return ActionConfirmation.CreateFailureConfirmation(
+                    "The <#=entity.NameCamelCase#> could not be saved due to missing or invalid information.");
+            }
+        }
+
+        public ActionConfirmation Delete(int id) {
+            <#=entity.Name#> <#=entity.NameCamelCase#>ToDelete = <#=entity.NameCamelCase#>Repository.Get(id);
+
+            if (<#=entity.NameCamelCase#>ToDelete != null) {
+                <#=entity.NameCamelCase#>Repository.Delete(<#=entity.NameCamelCase#>ToDelete);
+
+                try {
+                    <#=entity.NameCamelCase#>Repository.DbContext.CommitChanges();
+                    
+                    return ActionConfirmation.CreateSuccessConfirmation(
+                        "The <#=entity.NameCamelCase#> was successfully deleted.");
+                }
+                catch {
+                    <#=entity.NameCamelCase#>Repository.DbContext.RollbackTransaction();
+
+                    return ActionConfirmation.CreateFailureConfirmation(
+                        "A problem was encountered preventing the <#=entity.NameCamelCase#> from being deleted. " +
+                        "Another item likely depends on this <#=entity.NameCamelCase#>.");
+                }
+            }
+            else {
+                return ActionConfirmation.CreateFailureConfirmation(
+                    "The <#=entity.NameCamelCase#> could not be found for deletion. It may already have been deleted.");
+            }
+        }
+
+        private void TransferFormValuesTo(<#=entity.Name#> <#=entity.NameCamelCase#>ToUpdate, <#=entity.Name#> <#=entity.NameCamelCase#>FromForm) {<#
+
+foreach (var property in entity.Properties)
+{#>
+			<#=entity.NameCamelCase#>ToUpdate.<#=property.Name#> = <#=entity.NameCamelCase#>FromForm.<#=property.Name#>;<#
+}#>
+        }
+
+        I<#=entity.Name#>Repository <#=entity.NameCamelCase#>Repository;
+    }
+}

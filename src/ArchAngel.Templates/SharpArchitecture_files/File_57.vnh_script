@@ -1,0 +1,13 @@
+using System;
+
+namespace <#=Project.Settings.Name#>.Core.QueryDtos
+{
+    public class <#=entity.Name#>Dto
+    {
+        public int Id { get; set; }<#
+foreach (var property in entity.Properties)
+{#>
+		public <#=property.Type#> <#=property.Name#> { get; set; }<#
+}#>
+    }
+}

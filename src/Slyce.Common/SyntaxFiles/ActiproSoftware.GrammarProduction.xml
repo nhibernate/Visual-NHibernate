@@ -1,0 +1,188 @@
+<SyntaxLanguage Key="GrammarProduction" LanguageDefinitionVersion="4.0" Secure="True" xmlns="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition">
+
+	<!-- String Properties -->
+	<Properties>
+		<Property Key="Creator" Value="Actipro Software LLC" />
+		<Property Key="Copyright" Value="Copyright (c) 2001-2009 Actipro Software LLC.  All rights reserved." />
+	</Properties>
+
+	<!-- Highlighting Styles -->	
+	<Styles>
+		<Style Key="DefaultStyle" ForeColor="Black" Bold="True" />
+		<Style Key="CommentStyle" ForeColor="Green" Bold="True" />
+		<Style Key="TokenMatchStyle" ForeColor="Teal" />
+		<Style Key="ProductionMatchStyle" ForeColor="Purple" />
+		<Style Key="UserCodeDelimiterStyle" ForeColor="Black" BackColor="Yellow" />
+		<Style Key="ConditionalCodeDelimiterStyle" ForeColor="Black" BackColor="#80FFFF" />
+		<Style Key="ParameterCodeDelimiterStyle" ForeColor="Black" BackColor="#FF80FF" />
+		<Style Key="SuccessCodeDelimiterStyle" ForeColor="Black" BackColor="#80FF80" />
+		<Style Key="FailureCodeDelimiterStyle" ForeColor="Black" BackColor="#FF8080" />
+	</Styles>
+
+	<!-- States -->
+	<States>
+		<!-- Text -->
+		<State Key="DefaultState">
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<!-- Identifier -->
+				<RegexPatternGroup TokenKey="IdentifierToken" PatternValue="{AlphaMacro}({WordMacro})*" />
+				<!-- Whitespace -->
+				<RegexPatternGroup TokenKey="WhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="CommentState" />
+				<ChildState Key="TokenMatchState" />
+				<ChildState Key="ProductionMatchState" />
+				<ChildState Key="UserCodeState" />
+				<ChildState Key="ConditionalCodeState" />
+			</ChildStates>
+		</State>
+
+		<!-- Comments -->
+		<State Key="CommentState" TokenKey="CommentDefaultToken" Style="CommentStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentStyle" PatternValue="&lt;!--" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentStyle" PatternValue="--&gt;" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="CommentDefaultToken" PatternValue="[^\-]+" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Token Match -->
+		<State Key="TokenMatchState" TokenKey="TokenMatchDefaultToken" Style="TokenMatchStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="TokenMatchStartToken" Style="TokenMatchStyle" PatternValue="'" />
+					<RegexPatternGroup Type="EndScope" TokenKey="TokenMatchEndToken" Style="TokenMatchStyle" PatternValue="['\n]" />
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="TokenMatchDefaultToken" PatternValue="[^\'\n\&lt;]+" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="ParameterCodeState" />
+				<ChildState Key="SuccessCodeState" />
+				<ChildState Key="FailureCodeState" />
+			</ChildStates>
+		</State>
+
+		<!-- Production Match -->
+		<State Key="ProductionMatchState" TokenKey="ProductionMatchDefaultToken" Style="ProductionMatchStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="ProductionMatchStartToken" Style="ProductionMatchStyle" PatternValue="&quot;" />
+					<RegexPatternGroup Type="EndScope" TokenKey="ProductionMatchEndToken" Style="ProductionMatchStyle" PatternValue="[&quot;\n]" />
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="ProductionMatchDefaultToken" PatternValue="[^\&quot;\n&lt;]+" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="ParameterCodeState" />
+				<ChildState Key="SuccessCodeState" />
+				<ChildState Key="FailureCodeState" />
+			</ChildStates>
+		</State>
+
+		<!-- User Code Block -->
+		<State Key="UserCodeState" Filename="ActiproSoftware.CSharp.xml" ChildLanguageBackColor="WhiteSmoke">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="UserCodeStartToken" Style="UserCodeDelimiterStyle" PatternValue="&lt;%" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="UserCodeEndToken" Style="UserCodeDelimiterStyle" PatternValue="%&gt;" />
+				</Scope>
+			</Scopes>
+		</State>
+
+		<!-- Conditional Code Block -->
+		<State Key="ConditionalCodeState" Filename="ActiproSoftware.CSharp.xml" ChildLanguageBackColor="WhiteSmoke">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<RegexPatternGroup Type="StartScope" TokenKey="ConditionalCodeStartToken" Style="ConditionalCodeDelimiterStyle" PatternValue="\&lt;\?" LookBehind="[\[\{\(] {WhitespaceMacro}*" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="ConditionalCodeEndToken" Style="ConditionalCodeDelimiterStyle" PatternValue="?&gt;" />
+				</Scope>
+			</Scopes>
+		</State>
+
+		<!-- Parameter Code Block -->
+		<State Key="ParameterCodeState" Filename="ActiproSoftware.CSharp.xml" ChildLanguageBackColor="WhiteSmoke">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope AncestorEndScopeCheckEnabled="False">
+					<ExplicitPatternGroup Type="StartScope" TokenKey="ParameterCodeStartToken" Style="ParameterCodeDelimiterStyle" PatternValue="&lt;@" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="ParameterCodeEndToken" Style="ParameterCodeDelimiterStyle" PatternValue="@&gt;" />
+				</Scope>
+			</Scopes>
+		</State>
+
+		<!-- Success Code Block -->
+		<State Key="SuccessCodeState" Filename="ActiproSoftware.CSharp.xml" ChildLanguageBackColor="WhiteSmoke">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope AncestorEndScopeCheckEnabled="False">
+					<ExplicitPatternGroup Type="StartScope" TokenKey="SuccessCodeStartToken" Style="SuccessCodeDelimiterStyle" PatternValue="&lt;+" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="SuccessCodeEndToken" Style="SuccessCodeDelimiterStyle" PatternValue="+&gt;" />
+				</Scope>
+			</Scopes>
+		</State>
+
+		<!-- Failure Code Block -->
+		<State Key="FailureCodeState" Filename="ActiproSoftware.CSharp.xml" ChildLanguageBackColor="WhiteSmoke">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope AncestorEndScopeCheckEnabled="False">
+					<ExplicitPatternGroup Type="StartScope" TokenKey="FailureCodeStartToken" Style="FailureCodeDelimiterStyle" PatternValue="&lt;-" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="FailureCodeEndToken" Style="FailureCodeDelimiterStyle" PatternValue="-&gt;" />
+				</Scope>
+			</Scopes>
+		</State>
+
+	</States>
+
+	<!-- Example Text -->
+	<ExampleText>
+		<![CDATA[
+(% 
+	curlyBraceLevel = 0;
+	compilationUnit = new CompilationUnit();
+	compilationUnit.StartOffset = this.LookAheadToken.StartOffset;
+%)
+(%
+	bool errorReported = false;
+	while (!this.IsAtEnd) {
+		if (IsNonTerminal("FunctionDeclaration")) {
+			errorReported = false;
+	%)
+			{ "FunctionDeclaration" }
+	(% 
+		}
+		else {
+			// Error recovery:  Advance to the next token since nothing was matched
+			if (!errorReported) {
+				this.ReportSyntaxError("Function declaration expected.");
+				errorReported = true;
+			}
+			this.AdvanceToNext();
+		}
+	}
+	compilationUnit.EndOffset = this.LookAheadToken.EndOffset;
+%)
+		]]>
+	</ExampleText>
+
+</SyntaxLanguage>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE dotfuscator SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscator_v2.2.dtd">
+<dotfuscator version="2.2">
+  <!--This is application generated code. Do not edit manually.-->
+  <global>
+    <option>debug</option>
+  </global>
+  <input>
+    <asmlist>
+      <inputassembly>
+        <option>honoroas</option>
+        <option>stripoa</option>
+        <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.Licensing\bin\Release" name="ArchAngel.Licensing.dll" />
+      </inputassembly>
+      <inputassembly>
+        <option>honoroas</option>
+        <option>stripoa</option>
+        <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.Designer\bin\Release" name="ArchAngel.Designer.exe" />
+      </inputassembly>
+      <inputassembly>
+        <option>honoroas</option>
+        <option>stripoa</option>
+        <file dir="C:\Projects\Slyce\ArchAngel\trunk\3rd_Party_Libs" name="AlpineSoft.EZRSA.dll" />
+      </inputassembly>
+    </asmlist>
+  </input>
+  <output>
+    <file dir="${configdir}\Dotfuscated" />
+  </output>
+  <renaming>
+    <option>enhancedOI</option>
+    <option>explicitoverrides</option>
+    <excludelist>
+      <type name=".*" regex="true">
+        <customattribute name="DotfuscatorDoNotRename" regex="true" />
+        <customattribute name="ApiExtension" regex="true" />
+        <customattribute name="ActionAttribute" regex="true" />
+      </type>
+      <type name="ArchAngel.Workbench.ContentItems.Merge" excludetype="false">
+        <method name="AddTreeListNode" signature="DevExpress.XtraTreeList.Nodes.TreeListNode,string,string,string,string,object,ArchAngel.Workbench.ContentItems.Merge/NodeImages" />
+        <method name="AddTreeListNode" signature="string,ArchAngel.IntelliMerge.DiffItems.DiffFile,ArchAngel.Workbench.ContentItems.Merge/NodeImages,string,string,string" />
+        <method name="DisplayParseErrorNumbers" signature="" />
+        <method name="get_ParseErrors" signature="" />
+        <method name="set_ParseErrors" signature="System.Collections.Generic.List`1&lt;ArchAngel.Providers.ParseError&gt;" />
+      </type>
+      <type name="ArchAngel.Workbench.ContentItems.Merge/NodeImages" />
+      <type name="ArchAngel.Designer.Project" excludetype="false">
+        <method name="get_ProjectDescription" signature="string()" />
+        <method name="set_ProjectDescription" signature="void(string)" />
+        <method name="get_ProjectName" signature="string()" />
+        <method name="set_ProjectName" signature="void(string)" />
+        <propertymember name="ProjectDescription" />
+        <propertymember name="ProjectName" />
+      </type>
+      <type name="ArchAngel.Designer.Properties.Settings">
+        <method name="get_Default" signature="ArchAngel.Designer.Properties.Settings()" />
+        <field name="defaultInstance" signature="ArchAngel.Designer.Properties.Settings" />
+        <propertymember name="Default" />
+      </type>
+    </excludelist>
+    <mapping>
+      <mapoutput overwrite="true">
+        <file dir="${configdir}\Dotfuscated" name="Map.xml" />
+        <transform />
+      </mapoutput>
+    </mapping>
+    <referencerulelist />
+  </renaming>
+  <controlflow level="high">
+    <excludelist>
+      <type name=".*" regex="true">
+        <customattribute name="DotfuscatorDoNotAlterControlFlow" regex="true" />
+      </type>
+    </excludelist>
+  </controlflow>
+  <codeprotection />
+  <removal>
+    <triggerlist>
+      <type name=".*" regex="true">
+        <customattribute name="DotfuscatorDoNotRemove" regex="true" />
+      </type>
+      <type name="ArchAngel.Designer.Properties.Settings" />
+    </triggerlist>
+    <referencerulelist />
+  </removal>
+  <linking>
+    <linkedassembly>
+      <option>donotmangle</option>
+      <primaryinput>
+        <assembly>
+          <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.Designer\bin\Release" name="ArchAngel.Designer.exe" />
+        </assembly>
+      </primaryinput>
+      <assemblylist>
+        <assembly>
+          <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.Designer\bin\Release" name="ArchAngel.Designer.exe" />
+        </assembly>
+        <assembly>
+          <file dir="C:\Projects\Slyce\ArchAngel\trunk\3rd_Party_Libs" name="AlpineSoft.EZRSA.dll" />
+        </assembly>
+        <assembly>
+          <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.Licensing\bin\Release" name="ArchAngel.Licensing.dll" />
+        </assembly>
+      </assemblylist>
+      <outputassembly name="ArchAngel.Designer.exe">
+        <entrypoint>
+          <type name="ArchAngel.Designer.Program">
+            <method name="Main" signature="int32(string[])" />
+          </type>
+        </entrypoint>
+      </outputassembly>
+    </linkedassembly>
+  </linking>
+  <signing>
+    <resign>
+      <option>dontuseattributes</option>
+      <key>
+        <file dir="C:\Projects\Slyce\ArchAngel\trunk\Installer" name="slyce_strong_name_key.snk" />
+      </key>
+    </resign>
+  </signing>
+  <sos mergeruntime="false">
+    <option>disable</option>
+    <option>dontsendtamper</option>
+  </sos>
+  <licensing>
+    <permutation name="" />
+    <product versionmask="revision" />
+    <nolicenseaction name="showactivation" />
+    <unlockingfeature name="" />
+  </licensing>
+  <extattributes />
+  <smartobfuscation>
+    <smartobfuscationreport verbosity="all" overwrite="false" />
+  </smartobfuscation>
+</dotfuscator>

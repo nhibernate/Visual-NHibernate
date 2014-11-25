@@ -1,0 +1,2316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ActiproSoftware.SyntaxEditor.Addons.Web.Net20</name>
+    </assembly>
+    <members>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext">
+            <summary>
+            Contains context information about an element.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext.#ctor(ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType,System.Collections.Specialized.HybridDictionary,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement[],ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute)">
+            <summary>
+            Initializes a new instance of the <c>XmlContext</c> class. 
+            </summary>
+            <param name="type">An <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType"/> that specifies the type of context</param>
+            <param name="namespacePrefixes">The dictionary of namespace prefixes.</param>
+            <param name="elementHierarchy">An array of <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/> objects that describes the element hierarchy.</param>
+            <param name="targetElement">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/> that contains information related to the context element.</param>
+            <param name="targetAttribute">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute"/> that contains information related to the context attribute.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext.ToString">
+            <summary>
+            Creates and returns a string representation of the current object.
+            </summary>
+            <returns>A string representation of the current object.</returns>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext.ElementHierarchy">
+            <summary>
+            Gets an array of <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/> objects that describes the element hierarchy.
+            </summary>
+            <value>An array of <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/> objects that describes the element hierarchy.</value>
+            <remarks>
+            The element hierarchy is the list of parent elements that contain the current offset.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext.InitializationTextRange">
+            <summary>
+            Gets or sets the <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> with which the context was initialized.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> with which the context was initialized.</value>
+            <remarks>
+            If the context is for an attribute name for instance, this range will be the offset range of the attribute name.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext.NamespacePrefixes">
+            <summary>
+            Gets the <see cref="T:System.Collections.Specialized.HybridDictionary"/> of namespace names as keys and their prefixes as values.
+            </summary>
+            <value>The <see cref="T:System.Collections.Specialized.HybridDictionary"/> of namespace names as keys and their prefixes as values.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext.TargetAttribute">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute"/> that contains information related to the context attribute.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute"/> that contains information related to the context attribute.</value>
+            <remarks>
+            This is only populated if the context is related to an attribute.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext.TargetElement">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/> that contains information related to the context element.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/> that contains information related to the context element.</value>
+            <remarks>
+            This is only populated if the context is related to an element.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext.Type">
+            <summary>
+            Gets an <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType"/> that specifies the type of context.
+            </summary>
+            <value>An <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType"/> that specifies the type of context.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute">
+            <summary>
+            Contains context information about an attribute.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <c>XmlContextAttribute</c> class. 
+            </summary>
+            <param name="attributeNameOffset">The offset at which the attribute name appears.</param>
+            <param name="attributeName">The attribute name, including possible namespace prefix.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.SetSchemaAttribute(System.Xml.Schema.XmlSchemaAttribute)">
+            <summary>
+            Sets the value of the <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.SchemaAttribute"/> property.
+            </summary>
+            <param name="value">The value to set.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.UpdateNamespace(System.Collections.Hashtable)">
+            <summary>
+            Updates the <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.Namespace"/> if necessary based on the supplied <see cref="T:System.Collections.Hashtable"/> of defined namespace prefixes.
+            </summary>
+            <param name="namespacePrefixes">The <see cref="T:System.Collections.Hashtable"/> of defined namespace prefixes.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.ToString">
+            <summary>
+            Creates and returns a string representation of the current object.
+            </summary>
+            <returns>A string representation of the current object.</returns>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.AttributeName">
+            <summary>
+            Gets the name of the attribute.
+            </summary>
+            <value>The name of the attribute.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.AttributeNameOffset">
+            <summary>
+            Gets the offset at which the attribute name appears.
+            </summary>
+            <value>The offset at which the attribute name appears.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.Namespace">
+            <summary>
+            Gets the namespace that defines the attribute.
+            </summary>
+            <value>The namespace that defines the attribute.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.NamespacePrefix">
+            <summary>
+            Gets the prefix of the namespace that defines the attribute.
+            </summary>
+            <value>The prefix of the namespace that defines the attribute.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.QualifiedName">
+            <summary>
+            Gets the <see cref="T:System.Xml.XmlQualifiedName"/> representing the attribute.
+            </summary>
+            <value>The <see cref="T:System.Xml.XmlQualifiedName"/> representing the attribute.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute.SchemaAttribute">
+            <summary>
+            Gets the <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/> to which this attribute context refers.
+            </summary>
+            <value>The <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/> to which this attribute context refers.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver">
+            <summary>
+            Provides a class that is used to provide IntelliPrompt features for XML.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.AddSchema(System.String)">
+            <summary>
+            Adds another <see cref="T:System.Xml.Schema.XmlSchema"/> to the existing <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.SchemaSet"/>.
+            </summary>
+            <param name="schemaData">The XSD schema data.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.AddSchema(System.Xml.Schema.XmlSchema)">
+            <summary>
+            Adds another <see cref="T:System.Xml.Schema.XmlSchema"/> to the existing <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.SchemaSet"/>.
+            </summary>
+            <param name="schema">The <see cref="T:System.Xml.Schema.XmlSchema"/> to load.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.AddSchemaFile(System.String)">
+            <summary>
+            Adds another <see cref="T:System.Xml.Schema.XmlSchema"/> from a file to the existing <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.SchemaSet"/>.
+            </summary>
+            <param name="path">The path to the XSD schema file to load.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ClearSchemas">
+            <summary>
+            Clears the schemas that are used by the resolver.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.LoadSchema(System.String)">
+            <summary>
+            Clears any existing <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.SchemaSet"/> and loads a new single <see cref="T:System.Xml.Schema.XmlSchema"/>.
+            </summary>
+            <param name="schemaData">The XSD schema data.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.LoadSchema(System.Xml.Schema.XmlSchema)">
+            <summary>
+            Clears any existing <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.SchemaSet"/> and loads a new single <see cref="T:System.Xml.Schema.XmlSchema"/>.
+            </summary>
+            <param name="schema">The <see cref="T:System.Xml.Schema.XmlSchema"/> to load.</param>
+            <remarks>
+            This method first clears any schemas currently in use and then loads a single specified schema.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.LoadSchemaFile(System.String)">
+            <summary>
+            Clears any existing <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.SchemaSet"/> and loads a new single <see cref="T:System.Xml.Schema.XmlSchema"/> from a file.
+            </summary>
+            <param name="path">The path to the XSD schema file to load.</param>
+            <remarks>
+            This method first clears any schemas currently in use and then loads a single specified schema.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.LoadSchemaSet(System.Xml.Schema.XmlSchemaSet)">
+            <summary>
+            Clears any already-loaded schemas and loads a <see cref="T:System.Xml.Schema.XmlSchemaSet"/> to use for IntelliPrompt support.
+            </summary>
+            <param name="schemaSet">The <see cref="T:System.Xml.Schema.XmlSchemaSet"/> to load.</param>
+            <remarks>
+            This method first clears any schemas currently in use and then loads the specified <see cref="T:System.Xml.Schema.XmlSchemaSet"/>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.AddMemberListItemsForAttributes(System.Collections.Hashtable,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext,System.Boolean)">
+            <summary>
+            Adds <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> items that indicate the attributes to a <see cref="T:System.Collections.Hashtable"/>.
+            </summary>
+            <param name="memberListItemHashtable">A <see cref="T:System.Collections.Hashtable"/> of <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> objects, keyed by name.</param>
+            <param name="context">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> object describing the context.</param>
+            <param name="addQuotes">Whether to add quotes to the inserted attribute values.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.AddMemberListItemsForAttributeValues(System.Collections.Hashtable,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext)">
+            <summary>
+            Adds <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> items that indicate the attribute values to a <see cref="T:System.Collections.Hashtable"/>.
+            </summary>
+            <param name="memberListItemHashtable">A <see cref="T:System.Collections.Hashtable"/> of <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> objects, keyed by name.</param>
+            <param name="context">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> object describing the context.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.AddMemberListItemsForAttributeValues(System.Collections.Hashtable,System.Xml.Schema.XmlSchemaSimpleType)">
+            <summary>
+            Adds <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> items that indicate the attribute values for a <see cref="T:System.Xml.Schema.XmlSchemaSimpleType"/> to a <see cref="T:System.Collections.Hashtable"/>.
+            </summary>
+            <param name="memberListItemHashtable">A <see cref="T:System.Collections.Hashtable"/> of <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> objects, keyed by name.</param>
+            <param name="simpleType">The <see cref="T:System.Xml.Schema.XmlSchemaSimpleType"/> used to populate members.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.AddMemberListItemsForChildElements(System.Collections.Hashtable,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext,System.Boolean)">
+            <summary>
+            Adds <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> items that indicate the child elements to a <see cref="T:System.Collections.Hashtable"/>.
+            </summary>
+            <param name="memberListItemHashtable">A <see cref="T:System.Collections.Hashtable"/> of <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> objects, keyed by name.</param>
+            <param name="context">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> object describing the context.</param>
+            <param name="requiresStartBrace">Whether a start brace is required.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.AddMemberListItemsForElementValues(System.Collections.Hashtable,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext)">
+            <summary>
+            Adds <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> items that indicate the element values to a <see cref="T:System.Collections.Hashtable"/>.
+            </summary>
+            <param name="memberListItemHashtable">A <see cref="T:System.Collections.Hashtable"/> of <see cref="T:ActiproSoftware.SyntaxEditor.IntelliPromptMemberListItem"/> objects, keyed by name.</param>
+            <param name="context">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> object describing the context.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.AppendDocumentation(System.Xml.Schema.XmlSchemaAnnotated,System.Text.StringBuilder)">
+            <summary>
+            Appends XSD documentation for the specified source object, for use in quick info tips.
+            </summary>
+            <param name="source">The source <see cref="T:System.Xml.Schema.XmlSchemaAnnotated"/> for which the documentation is being appended.</param>
+            <param name="output">The <see cref="T:System.Text.StringBuilder"/> in which to append the documentation.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetCurrentNamespace(ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext)">
+            <summary>
+            Returns the current namespace for an <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/>.
+            </summary>
+            <param name="context">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> to examine.</param>
+            <returns>The current namespace.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetElementSimpleTypeRestriction(ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement)">
+            <summary>
+            Returns the <see cref="T:System.Xml.Schema.XmlSchemaSimpleTypeRestriction"/>, if any, of the specified <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/>.
+            </summary>
+            <param name="element">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/> to examine.</param>
+            <returns>The <see cref="T:System.Xml.Schema.XmlSchemaSimpleTypeRestriction"/>, if any, that was found.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetNamespacePrefix(ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext,System.String,System.String)">
+            <summary>
+            Returns the namespace prefix for the specified namespace name, based on the current context.
+            </summary>
+            <param name="context">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> object describing the context.</param>
+            <param name="currentNamespaceName">The name of the current namespace (for attributes when in an element with a namespace).</param>
+            <param name="namespaceName">The name of the namespace whose prefix is needed.</param>
+            <returns>The namespace prefix for the specified namespace name, based on the current context.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetQuickInfoForAttribute(System.Xml.Schema.XmlSchemaAttribute)">
+            <summary>
+            Returns the quick info tip text for the specified attribute.
+            </summary>
+            <param name="attribute">The <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/> to examine.</param>
+            <returns>The quick info tip text for the specified attribute.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetQuickInfoForAttribute(ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext)">
+            <summary>
+            Returns the quick info tip text for the attribute indicated by the specified context.
+            </summary>
+            <param name="context">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> object to examine.</param>
+            <returns>The quick info tip text for the attribute indicated by the specified context.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetQuickInfoForAttributeValue(System.Xml.Schema.XmlSchemaEnumerationFacet)">
+            <summary>
+            Returns the quick info tip text for the specified facet.
+            </summary>
+            <param name="facet">The <see cref="T:System.Xml.Schema.XmlSchemaEnumerationFacet"/> to examine.</param>
+            <returns>The quick info tip text for the specified facet.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetQuickInfoForElement(System.Xml.Schema.XmlSchemaElement)">
+            <summary>
+            Returns the quick info tip text for the specified element.
+            </summary>
+            <param name="element">The <see cref="T:System.Xml.Schema.XmlSchemaElement"/> to examine.</param>
+            <returns>The quick info tip text for the specified element.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetQuickInfoForElement(ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext)">
+            <summary>
+            Returns the quick info tip text for the element indicated by the specified context.
+            </summary>
+            <param name="context">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> object to examine.</param>
+            <returns>The quick info tip text for the element indicated by the specified context.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ResolveAttribute(System.Xml.Schema.XmlSchemaElement,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute)">
+            <summary>
+            Resolves a <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute"/> into a <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/>.
+            </summary>
+            <param name="element">The <see cref="T:System.Xml.Schema.XmlSchemaElement"/> to examine.</param>
+            <param name="attribute">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute"/> to examine.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ResolveElementHierarchy(ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement[])">
+            <summary>
+            Resolves each <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/> hierarchy item into a <see cref="T:System.Xml.Schema.XmlSchemaElement"/>.
+            </summary>
+            <param name="elementHierarchy">The array of <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement"/> objects to examine.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ScanElement(ActiproSoftware.SyntaxEditor.TextStream,System.Collections.Specialized.HybridDictionary,System.Collections.ArrayList,System.Collections.Specialized.StringCollection,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute,System.Boolean)">
+            <summary>
+            Scans the element that ends at the current offset in the stream.
+            </summary>
+            <param name="stream">The <see cref="T:ActiproSoftware.SyntaxEditor.TextStream"/> to use for scanning.  It must be resting on the end token of the element.</param>
+            <param name="namespacePrefixDictionary">The <see cref="T:System.Collections.Specialized.HybridDictionary"/> of namespace names as keys and their prefixes as values.</param>
+            <param name="elementHierarchyStack">The element hierarchy stack to update.</param>
+            <param name="endElementNameStack">The end element name stack to update.</param>
+            <param name="targetAttribute">The target attribute that should have its namespace updated.</param>
+            <param name="trackAttributes">Whether to track attributes.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ScanElement(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element,System.Collections.Specialized.HybridDictionary,System.Collections.ArrayList,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute)">
+            <summary>
+            Scans the element in the AST node.
+            </summary>
+            <param name="element">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element"/> to examine.</param>
+            <param name="namespacePrefixDictionary">The <see cref="T:System.Collections.Specialized.HybridDictionary"/> of namespace names as keys and their prefixes as values.</param>
+            <param name="elementHierarchyStack">The element hierarchy stack to update.</param>
+            <param name="targetAttribute">The target attribute that should have its namespace updated.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ValidateXml(System.String,System.Int32,ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Validates the XML using the schema.
+            </summary>
+            <param name="xml">The XML to validate.</param>
+            <param name="headerTextLength">The length of the document header text by which to offset syntax errors.</param>
+            <param name="autoDefaultNamespaceRange">The range of text that was auto-inserted for an xmlns specification.</param>
+            <returns>An <see cref="T:System.Collections.ICollection"/> of syntax errors.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ValidateXmlCallBack(System.Object,System.Xml.Schema.ValidationEventArgs)">
+            <summary>
+            Provides a callback for XML validation errors.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">A <c>ValidationEventArgs</c> that contains the event data.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.CreateValidationXmlReaderSettings">
+            <summary>
+            Creates the <see cref="T:System.Xml.XmlReaderSettings"/> to use for validation purposes.
+            </summary>
+            <returns>The <see cref="T:System.Xml.XmlReaderSettings"/> that was created.</returns>
+            <remarks>
+            Override this method to further customize the settings used during XML validation.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetContext(ActiproSoftware.SyntaxEditor.Document,System.Int32)">
+            <summary>
+            Gets an <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> object describing the context at the specified offset within the <see cref="T:ActiproSoftware.SyntaxEditor.Document"/>.
+            </summary>
+            <param name="document">The <see cref="T:ActiproSoftware.SyntaxEditor.Document"/> to examine.</param>
+            <param name="offset">The offset at which to built context data.</param>
+            <returns>An <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContext"/> object describing the context at the specified offset within the <see cref="T:ActiproSoftware.SyntaxEditor.Document"/>.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetDocumentation(System.Xml.Schema.XmlSchemaAnnotated)">
+            <summary>
+            Returns the XSD documentation for the specified source object, for use in quick info tips.
+            </summary>
+            <param name="source">The source <see cref="T:System.Xml.Schema.XmlSchemaAnnotated"/> for which the documentation is being retrieved.</param>
+            <returns>The documentation that was retrieved.</returns>
+            <remarks>
+            The default implementation of this method appends the inner text of all the <see cref="T:System.Xml.Schema.XmlSchemaDocumentation"/> child nodes together,
+            with whitespace in between.
+            Markup formatting may be used in the documentation results.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.CompileSchemaSetIfNeeded">
+            <summary>
+            Compiles the <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.SchemaSet"/>, if needed.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.FindSchemaElements(System.Xml.Schema.XmlSchemaParticle,System.Collections.Generic.Dictionary{System.Xml.Schema.XmlSchemaElement,System.Xml.Schema.XmlSchemaElement},System.String)">
+            <summary>
+            Recursively searches for <see cref="T:System.Xml.Schema.XmlSchemaElement"/> objects.
+            </summary>
+            <param name="particle">The <see cref="T:System.Xml.Schema.XmlSchemaParticle"/> to examine.</param>
+            <param name="elements">The list of <see cref="T:System.Xml.Schema.XmlSchemaElement"/> results.</param>
+            <param name="targetNamespace">The target namespace.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetChildSchemaElement(System.Xml.Schema.XmlSchemaElement,System.Xml.XmlQualifiedName)">
+            <summary>
+            Returns the child <see cref="T:System.Xml.Schema.XmlSchemaElement"/> that has the specified qualified name.
+            </summary>
+            <param name="parentElement">The parent <see cref="T:System.Xml.Schema.XmlSchemaElement"/>.</param>
+            <param name="name">The <see cref="T:System.Xml.XmlQualifiedName"/> for which to search.</param>
+            <returns>The child <see cref="T:System.Xml.Schema.XmlSchemaElement"/> that has the specified qualified name.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetChildSchemaElements(System.Xml.Schema.XmlSchemaElement)">
+            <summary>
+            Returns the child <see cref="T:System.Xml.Schema.XmlSchemaElement"/> objects.
+            </summary>
+            <param name="parentElement">The parent <see cref="T:System.Xml.Schema.XmlSchemaElement"/>.</param>
+            <returns>The child <see cref="T:System.Xml.Schema.XmlSchemaElement"/> objects.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetGlobalSchemaElement(System.Xml.XmlQualifiedName)">
+            <summary>
+            Returns the global <see cref="T:System.Xml.Schema.XmlSchemaElement"/> that has the specified qualified name.
+            </summary>
+            <param name="name">The <see cref="T:System.Xml.XmlQualifiedName"/> for which to search.</param>
+            <returns>The global <see cref="T:System.Xml.Schema.XmlSchemaElement"/> that has the specified qualified name.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetGlobalSchemaElementCore(System.Xml.XmlQualifiedName,ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList)">
+            <summary>
+            Returns the global <see cref="T:System.Xml.Schema.XmlSchemaElement"/> that has the specified qualified name.
+            </summary>
+            <param name="name">The <see cref="T:System.Xml.XmlQualifiedName"/> for which to search.</param>
+            <param name="namespaceList">The namespace list to use for filtering.</param>
+            <returns>The global <see cref="T:System.Xml.Schema.XmlSchemaElement"/> that has the specified qualified name.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetGlobalSchemaElements">
+            <summary>
+            Returns the collection of global <see cref="T:System.Xml.Schema.XmlSchemaElement"/> objects.
+            </summary>
+            <returns>The collection of global <see cref="T:System.Xml.Schema.XmlSchemaElement"/> objects.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetGlobalSchemaElementsCore(ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList)">
+            <summary>
+            Returns the collection of global <see cref="T:System.Xml.Schema.XmlSchemaElement"/> objects.
+            </summary>
+            <returns>The collection of global <see cref="T:System.Xml.Schema.XmlSchemaElement"/> objects.</returns>
+            <param name="namespaceList">The namespace list to use for filtering.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetSchemaAttributes(System.Xml.Schema.XmlSchemaElement)">
+            <summary>
+            Returns the child <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/> objects.
+            </summary>
+            <param name="parentElement">The parent <see cref="T:System.Xml.Schema.XmlSchemaElement"/>.</param>
+            <returns>The child <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/> objects.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetSchemaElementContentType(System.Xml.Schema.XmlSchemaElement)">
+            <summary>
+            Returns the <see cref="T:System.Xml.Schema.XmlSchemaContentType"/> for the specified <see cref="T:System.Xml.Schema.XmlSchemaElement"/>.
+            </summary>
+            <param name="element">The <see cref="T:System.Xml.Schema.XmlSchemaElement"/> to examine.</param>
+            <returns>The <see cref="T:System.Xml.Schema.XmlSchemaContentType"/> for the specified <see cref="T:System.Xml.Schema.XmlSchemaElement"/>.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.GetSchemaElementContentFacets(System.Xml.Schema.XmlSchemaElement)">
+            <summary>
+            Returns the <see cref="T:System.Xml.Schema.XmlSchemaFacet"/> objects that are allowed as content of the specified <see cref="T:System.Xml.Schema.XmlSchemaElement"/>.
+            </summary>
+            <param name="element">The <see cref="T:System.Xml.Schema.XmlSchemaElement"/> to examine.</param>
+            <returns>The <see cref="T:System.Xml.Schema.XmlSchemaFacet"/> objects that are allowed as content.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ResolveSchemaAttribute(System.Xml.Schema.XmlSchemaAttribute)">
+            <summary>
+            Resolves the specified <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/> in the event it is a reference to another <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/>.
+            </summary>
+            <param name="attribute">The <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/> to examine.</param>
+            <returns>The resolved <see cref="T:System.Xml.Schema.XmlSchemaAttribute"/>.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ResolveSchemaElement(System.Xml.Schema.XmlSchemaElement)">
+            <summary>
+            Resolves the specified <see cref="T:System.Xml.Schema.XmlSchemaElement"/> in the event it is a reference to another <see cref="T:System.Xml.Schema.XmlSchemaElement"/>.
+            </summary>
+            <param name="element">The <see cref="T:System.Xml.Schema.XmlSchemaElement"/> to examine.</param>
+            <returns>The resolved <see cref="T:System.Xml.Schema.XmlSchemaElement"/>.</returns>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.SchemaSet">
+            <summary>
+            Gets or sets the <see cref="T:System.Xml.Schema.XmlSchemaSet"/> to use.
+            </summary>
+            <value>The <see cref="T:System.Xml.Schema.XmlSchemaSet"/> to use.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.DefaultNamespace">
+            <summary>
+            Gets or sets the default namespace to use for any XML element branches that don't have an <c>xmlns</c> specified.
+            </summary>
+            <value>The default namespace to use for any XML element branches that don't have an <c>xmlns</c> specified.</value>
+            <remarks>
+            By setting this property to a namespace, a <c>xmlns</c> attribute doesn't need to be set on the root element.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.DtdPath">
+            <summary>
+            Gets or sets the path to the folder where DTDs are located.
+            </summary>
+            <value>The path to the folder where DTDs are located.</value>
+            <remarks>
+            This property is only used when the <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.DtdSupportEnabled"/> property is set to <c>true</c>.
+            If this property is left <see langword="null"/>, no explicit base path will be set for DTD loading.
+            If this property is set, it should be the path to the folder that contains the DTDs that may be referenced.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.DtdSupportEnabled">
+            <summary>
+            Gets or sets whether DTD support is enabled.
+            </summary>
+            <value>
+            <c>true</c> if DTD support is enabled.
+            </value>
+            <remarks>
+            When DTD support is enabled, if there is a DTD reference within the XML, it will attempt to be loaded and used for validation.
+            Note that DTDs cannot be used to provide automated IntelliPrompt.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaResolver.ValidationFlags">
+            <summary>
+            Gets or sets the <see cref="T:System.Xml.Schema.XmlSchemaValidationFlags"/> to use when validating XML using a schema.
+            </summary>
+            <value>
+            The <see cref="T:System.Xml.Schema.XmlSchemaValidationFlags"/> to use when validating XML using a schema.
+            The default value contains <c>AllowXmlAttributes</c> and <c>ProcessIdentityConstraints</c>.
+            </value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Declaration">
+            <summary>
+            Represents an <c>XML</c> declaration.
+            </summary>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode">
+            <summary>
+            Provides the base class for an AST node.
+            </summary>
+            <remarks>
+            <para>
+            Each AST node has a single parent and optional children.
+            The nodes may be navigated by parent to child or child to parent.
+            When a node is created, it initially has no parent node.
+            </para>
+            <para>
+            AST nodes implement the visitor pattern.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode.AstNodeContextIDBase">
+            <summary>
+            Gets the minimum context ID that should be used in your code for AST nodes inheriting this class.
+            </summary>
+            <value>The minimum context ID that should be used in your code for AST nodes inheriting this class.</value>
+            <remarks>
+            Base all your context ID constants off of this value.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode.#ctor">
+            <summary>
+            Initializes a new instance of the <c>AstNode</c> class. 
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode.#ctor(ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Initializes a new instance of the <c>AstNode</c> class. 
+            </summary>
+            <param name="textRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the AST node.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode.Accept(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor)">
+            <summary>
+            Accepts the specified visitor for visiting this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <remarks>This method is part of the visitor design pattern implementation.</remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode.AcceptChild(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor,ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode)">
+            <summary>
+            Accepts the specified visitor for visiting a child node of this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <param name="childNode">The child node to visit.</param>
+            <remarks>This method is part of the visitor design pattern implementation.</remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode.AcceptChildren(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor,ActiproSoftware.SyntaxEditor.IAstNodeList)">
+            <summary>
+            Accepts the specified visitor for visiting the child nodes of this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <param name="nodeList">The list of child nodes to visit.</param>
+            <remarks>This method is part of the visitor design pattern implementation.</remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode.AcceptCore(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor)">
+            <summary>
+            Accepts the specified visitor for visiting this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <remarks>
+            This method must be implemented by each AST node.  It will look like the following:
+            <code>
+            if (visitor.OnVisiting(this)) {
+            	// Visit children
+            	if (this.ChildNodeCount > 0)
+            		this.AcceptChildren(visitor, this.ChildNodes);
+            }
+            visitor.OnVisited(this);
+            </code>
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode.ContextID">
+            <summary>
+            Gets or sets a context value identifying the context of the AST node within its parent node.
+            </summary>
+            <value>A context value identifying the context of the AST node within its parent node.</value>
+            <remarks>
+            The context ID value is typically defined on the parent AST node as a constant.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode.NodeType">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.</value>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Declaration.#ctor(ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Initializes a new instance of the <c>Declaration</c> class. 
+            </summary>
+            <param name="textRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the AST node.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Declaration.AcceptCore(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor)">
+            <summary>
+            Accepts the specified visitor for visiting this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <remarks>This method is part of the visitor design pattern implementation.</remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Declaration.DisplayText">
+            <summary>
+            Gets text representing the node that can be used for display, such as in a document outline.
+            </summary>
+            <value>Text representing the node that can be used for display, such as in a document outline.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Declaration.ImageIndex">
+            <summary>
+            Gets the image index that is applicable for displaying this node in a user interface control.
+            </summary>
+            <value>The image index that is applicable for displaying this node in a user interface control.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Declaration.NavigationOffset">
+            <summary>
+            Gets the character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.
+            </summary>
+            <value>The character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.</value>
+            <remarks>
+            This property defaults to the same value as the <see cref="P:ActiproSoftware.SyntaxEditor.IAstNode.StartOffset"/> property.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Declaration.NodeType">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlFormatter">
+            <summary>
+            Provides token-based formatting routines for the the <c>XML</c> language.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlFormatter.FormatTextRange(ActiproSoftware.SyntaxEditor.Addons.Xml.XmlFormattingOptions,ActiproSoftware.SyntaxEditor.Document,ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Formats the code in the specified <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the <see cref="T:ActiproSoftware.SyntaxEditor.Document"/>.
+            </summary>
+            <param name="options">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlFormattingOptions"/> to use.</param>
+            <param name="document">The <see cref="T:ActiproSoftware.SyntaxEditor.Document"/> to format.</param>
+            <param name="textRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> to format.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlFormatter.GetIndentationForOffset(ActiproSoftware.SyntaxEditor.Document,System.Int32,System.Boolean@)">
+            <summary>
+            Returns the desired line indentation of the specified offset.
+            </summary>
+            <param name="document">The <see cref="T:ActiproSoftware.SyntaxEditor.Document"/> to examine.</param>
+            <param name="offset">The offset that requires desired indentation information.</param>
+            <param name="inSingleLineTagBlock">Returns whether the offset is directly within a single link tag block.</param>
+            <returns>The desired line indentation of the specified offset.</returns>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlEndTagQuickInfoMode">
+            <summary>
+            Specifies the mode to use for end tag quick info.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlEndTagQuickInfoMode.None">
+            <summary>
+            No quick info for end tags.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlEndTagQuickInfoMode.StartTagHidden">
+            <summary>
+            Full quick info (element and start tag code), only when the start tag is outside of the view.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlEndTagQuickInfoMode.Always">
+            <summary>
+            Full quick info (element and start tag code) always.
+            </summary>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage">
+            <summary>
+            Represents an <c>XML</c> language definition.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.#ctor">
+            <summary>
+            Initializes a new instance of the <c>XmlSyntaxLanguage</c> class. 
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            This constructor is for designer use only and should never be called by your code.
+            </summary>
+            <param name="container">An <see cref="T:System.ComponentModel.IContainer"></see> that represents the container for the component.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ActiproSoftware#SyntaxEditor#ISemanticParserServiceProcessor#Process(ActiproSoftware.SyntaxEditor.SemanticParserServiceRequest)">
+            <summary>
+            Performs a semantic parsing operation using the data in the <see cref="T:ActiproSoftware.SyntaxEditor.SemanticParserServiceRequest"/>.
+            </summary>
+            <param name="request">A <see cref="T:ActiproSoftware.SyntaxEditor.SemanticParserServiceRequest"/> containing data about what to parse.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.CompleteElementTag(ActiproSoftware.SyntaxEditor.SyntaxEditor,System.Int32)">
+            <summary>
+            Completes the element tag at the specified offset.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> to examine.</param>
+            <param name="offset">The offset at which to base the context.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ShowIntelliPromptMemberList(ActiproSoftware.SyntaxEditor.SyntaxEditor,System.Boolean)">
+            <summary>
+            Provides the core functionality to show an IntelliPrompt member list based on the current context in a <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/>.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will display the IntelliPrompt member list.</param>
+            <param name="completeWord">Whether to complete the word.</param>
+            <returns>
+            <c>true</c> if an auto-complete occurred or if a IntelliPrompt member list is displayed; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ResetAutomaticOutliningBehavior">
+            <summary>
+            Resets the <see cref="T:ActiproSoftware.SyntaxEditor.AutomaticOutliningBehavior"/> property to its default value.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ShouldSerializeAutomaticOutliningBehavior">
+            <summary>
+            Indicates whether the <see cref="T:ActiproSoftware.SyntaxEditor.AutomaticOutliningBehavior"/> property should be persisted.
+            </summary>
+            <returns>
+            <c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the object and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">
+            <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources. 
+            </param>
+            <remarks>
+            This method is called by the public <c>Dispose</c> method and the <c>Finalize</c> method. 
+            <c>Dispose</c> invokes this method with the <paramref name="disposing"/> parameter set to <c>true</c>. 
+            <c>Finalize</c> invokes this method with <paramref name="disposing"/> set to <c>false</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ResetErrorDisplayEnabled">
+            <summary>
+            Resets the <see cref="P:ActiproSoftware.SyntaxEditor.SyntaxLanguage.ErrorDisplayEnabled"/> property to its default value.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ShouldSerializeErrorDisplayEnabled">
+            <summary>
+            Indicates whether the <see cref="P:ActiproSoftware.SyntaxEditor.SyntaxLanguage.ErrorDisplayEnabled"/> property should be persisted.
+            </summary>
+            <returns>
+            <c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.FormatTextRange(ActiproSoftware.SyntaxEditor.Document,ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Formats the code in the specified <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the <see cref="T:ActiproSoftware.SyntaxEditor.Document"/>.
+            </summary>
+            <param name="document">The <see cref="T:ActiproSoftware.SyntaxEditor.Document"/> to format.</param>
+            <param name="textRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> to format.</param>
+            <remarks>
+            Only call this method if the <see cref="P:ActiproSoftware.SyntaxEditor.SyntaxLanguage.FormattingSupported"/> property is set to <c>true</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.GetTokenString(System.Int32)">
+            <summary>
+            Gets the token string representation for the specified token ID.
+            </summary>
+            <param name="tokenID">The ID of the token to examine.</param>
+            <returns>The token string representation for the specified token ID.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.IntelliPromptCompleteWord(ActiproSoftware.SyntaxEditor.SyntaxEditor)">
+            <summary>
+            Performs an auto-complete if the <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> context with which the IntelliPrompt member list is initialized causes a single selection.
+            Otherwise, displays a member list in the <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/>.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will display the IntelliPrompt member list.</param>
+            <returns>
+            <c>true</c> if an auto-complete occurred or if an IntelliPrompt member list is displayed; otherwise, <c>false</c>.
+            </returns>
+            <remarks>
+            Only call this method if the <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.IntelliPromptMemberListSupported"/> property is set to <c>true</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.OnSyntaxEditorIntelliPromptMemberListClosed(ActiproSoftware.SyntaxEditor.SyntaxEditor,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Occurs after the IntelliPrompt member list is closed.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will raise the event.</param>
+            <param name="e">An <c>CancelEventArgs</c> that contains the event data.</param>
+            <remarks>
+            The <see cref="T:System.ComponentModel.CancelEventArgs"/> indicates whether auto-complete was cancelled during the 
+            <see cref="E:ActiproSoftware.SyntaxEditor.SyntaxEditor.IntelliPromptMemberListClosing"/> event.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.OnSyntaxEditorIntelliPromptMemberListItemDescriptionRequested(ActiproSoftware.SyntaxEditor.SyntaxEditor,System.EventArgs)">
+            <summary>
+            Occurs when a description tip is about to be displayed for the selected IntelliPrompt member list item,
+            but the item has no description set.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will raise the event.</param>
+            <param name="e">An <c>EventArgs</c> that contains the event data.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.OnSyntaxEditorIntelliPromptMemberListPreFilter(ActiproSoftware.SyntaxEditor.SyntaxEditor,ActiproSoftware.SyntaxEditor.IntelliPromptMemberListPreFilterEventArgs)">
+            <summary>
+            Occurs before a member list is displayed for a <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/>, allowing for the filtering (removal)
+            or addition of member list items.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will raise the event.</param>
+            <param name="e">An <c>IntelliPromptMemberListPreFilterEventArgs</c> that contains the event data.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.OnSyntaxEditorKeyTyped(ActiproSoftware.SyntaxEditor.SyntaxEditor,ActiproSoftware.SyntaxEditor.KeyTypedEventArgs)">
+            <summary>
+            Occurs before a <see cref="E:ActiproSoftware.SyntaxEditor.SyntaxEditor.KeyTyped"/> event is raised 
+            for a <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that has a <see cref="T:ActiproSoftware.SyntaxEditor.Document"/> using this language.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will raise the event.</param>
+            <param name="e">An <c>KeyTypedEventArgs</c> that contains the event data.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.OnSyntaxEditorKeyTyping(ActiproSoftware.SyntaxEditor.SyntaxEditor,ActiproSoftware.SyntaxEditor.KeyTypingEventArgs)">
+            <summary>
+            Occurs before a <see cref="E:ActiproSoftware.SyntaxEditor.SyntaxEditor.KeyTyping"/> event is raised 
+            for a <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that has a <see cref="T:ActiproSoftware.SyntaxEditor.Document"/> using this language.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will raise the event.</param>
+            <param name="e">An <c>KeyTypingEventArgs</c> that contains the event data.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.OnSyntaxEditorSmartIndent(ActiproSoftware.SyntaxEditor.SyntaxEditor,ActiproSoftware.SyntaxEditor.SmartIndentEventArgs)">
+            <summary>
+            Occurs when a <see cref="E:ActiproSoftware.SyntaxEditor.SyntaxEditor.SmartIndent"/> event is raised 
+            for a <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that has a <see cref="T:ActiproSoftware.SyntaxEditor.Document"/> using this language.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will raise the event.</param>
+            <param name="e">A <c>SmartIndentEventArgs</c> that contains the event data.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.OnSyntaxEditorViewMouseHover(ActiproSoftware.SyntaxEditor.SyntaxEditor,ActiproSoftware.SyntaxEditor.EditorViewMouseEventArgs)">
+            <summary>
+            Occurs when the mouse is hovered over an <see cref="T:ActiproSoftware.SyntaxEditor.EditorView"/>.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will raise the event.</param>
+            <param name="e">An <c>EditorViewMouseEventArgs</c> that contains the event data.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.PerformAutomaticOutlining(ActiproSoftware.SyntaxEditor.Document,ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Performs automatic outlining over the specified <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the <see cref="T:ActiproSoftware.SyntaxEditor.Document"/>.
+            </summary>
+            <param name="document">The <see cref="T:ActiproSoftware.SyntaxEditor.Document"/> to examine.</param>
+            <param name="parseTextRange">A <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> indicating the offset range to parse.</param>
+            <returns>A <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> containing the offset range that was modified by outlining.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.PerformSemanticParse(ActiproSoftware.SyntaxEditor.Document,ActiproSoftware.SyntaxEditor.TextRange,ActiproSoftware.SyntaxEditor.SemanticParseFlags)">
+            <summary>
+            Semantically parses the specified <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the <see cref="T:ActiproSoftware.SyntaxEditor.Document"/>.
+            </summary>
+            <param name="document">The <see cref="T:ActiproSoftware.SyntaxEditor.Document"/> to examine.</param>
+            <param name="parseTextRange">A <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> indicating the offset range to parse.</param>
+            <param name="flags">A <see cref="T:ActiproSoftware.SyntaxEditor.SemanticParseFlags"/> that indicates semantic parse flags.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.PerformSemanticParse(ActiproSoftware.SyntaxEditor.MergableLexicalParserManager)">
+            <summary>
+            Semantically parses the text in the <see cref="T:ActiproSoftware.SyntaxEditor.MergableLexicalParserManager"/>.
+            </summary>
+            <param name="manager">The <see cref="T:ActiproSoftware.SyntaxEditor.MergableLexicalParserManager"/> that is managing the mergable language and the text to parse.</param>
+            <returns>An object that contains the results of the semantic parsing operation.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ShowAboutForm">
+            <summary>
+            Displays the <c>About</c> form for the component.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ShowIntelliPromptMemberList(ActiproSoftware.SyntaxEditor.SyntaxEditor)">
+            <summary>
+            Displays an IntelliPrompt member list in a <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> based on the current context.
+            </summary>
+            <param name="syntaxEditor">The <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/> that will display the IntelliPrompt member list.</param>
+            <returns>
+            <c>true</c> if an IntelliPrompt member list is displayed; otherwise, <c>false</c>.
+            </returns>
+            <remarks>
+            Only call this method if the <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.IntelliPromptMemberListSupported"/> property is set to <c>true</c>.
+            </remarks>
+        </member>
+        <member name="E:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.SyntaxEditorIntelliPromptMemberListPreFilter">
+            <summary>
+            Occurs before a member list is displayed for a <see cref="T:ActiproSoftware.SyntaxEditor.SyntaxEditor"/>, allowing for the filtering (removal)
+            or addition of member list items.
+            </summary>
+            <eventdata>
+            The event handler receives an argument of type <c>IntelliPromptMemberListPreFilterEventArgs</c> containing data related to this event.
+            </eventdata>
+            <remarks>
+            If you choose to perform any filtering, modify the <c>Items</c> property of the event arguments.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.DefinitionXml">
+            <summary>
+            This property is for designer use only and should never be called by your code.
+            </summary>
+            <value>The language definition XML represented by this language.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ElementAutoCompleteEnabled">
+            <summary>
+            Gets or sets whether element auto-complete is enabled.
+            </summary>
+            <value>
+            <c>true</c> if element auto-complete is enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.EndTagQuickInfoMode">
+            <summary>
+            Gets or sets a <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlEndTagQuickInfoMode"/> indicating when to display quick info for end tags.
+            </summary>
+            <value>A <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlEndTagQuickInfoMode"/> indicating when to display quick info for end tags.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.FormattingOptions">
+            <summary>
+            Gets a <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlFormattingOptions"/> that contains language formatting options.
+            </summary>
+            <value>A <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlFormattingOptions"/> that contains language formatting options.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.FormattingSupported">
+            <summary>
+            Gets whether code formatting features are supported by the language.
+            </summary>
+            <value>
+            <c>true</c> if code formatting features are supported by the language; otherwise, <c>false</c>.
+            </value>
+            <remarks>
+            If this property is <c>true</c>, then the <see cref="M:ActiproSoftware.SyntaxEditor.SyntaxLanguage.FormatDocument(ActiproSoftware.SyntaxEditor.Document)"/>, <see cref="M:ActiproSoftware.SyntaxEditor.SyntaxLanguage.FormatSelection(ActiproSoftware.SyntaxEditor.SyntaxEditor)"/>, and <see cref="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.FormatTextRange(ActiproSoftware.SyntaxEditor.Document,ActiproSoftware.SyntaxEditor.TextRange)"/> methods may be used.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.IntelliPromptMemberListEnabled">
+            <summary>
+            Gets or sets whether the automatic IntelliPrompt member list features are enabled.
+            </summary>
+            <value>
+            <c>true</c> if the automatic IntelliPrompt member list features are enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.IntelliPromptMemberListSupported">
+            <summary>
+            Gets whether IntelliPrompt member list features are supported by the language.
+            </summary>
+            <value>
+            <c>true</c> if IntelliPrompt member list features are supported by the language; otherwise, <c>false</c>.
+            </value>
+            <remarks>
+            If this property is <c>true</c>, then the <see cref="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.IntelliPromptCompleteWord(ActiproSoftware.SyntaxEditor.SyntaxEditor)"/> and <see cref="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.ShowIntelliPromptMemberList(ActiproSoftware.SyntaxEditor.SyntaxEditor,System.Boolean)"/> methods may be used.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.IntelliPromptQuickInfoEnabled">
+            <summary>
+            Gets or sets whether the automatic IntelliPrompt quick info features are enabled.
+            </summary>
+            <value>
+            <c>true</c> if the automatic IntelliPrompt quick info features are enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.IntelliPromptQuickInfoSupported">
+            <summary>
+            Gets whether IntelliPrompt quick info features are supported by the language.
+            </summary>
+            <value>
+            <c>true</c> if IntelliPrompt quick info features are supported by the language; otherwise, <c>false</c>.
+            </value>
+            <remarks>
+            If this property is <c>true</c>, then the <see cref="M:ActiproSoftware.SyntaxEditor.SyntaxLanguage.ShowIntelliPromptQuickInfo(ActiproSoftware.SyntaxEditor.SyntaxEditor)"/> method may be used.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.SchemaValidationEnabled">
+            <summary>
+            Gets or sets whether XSD schema validation of XML is enabled.
+            </summary>
+            <value>
+            <c>true</c> if XSD schema validation of XML is enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.SmartIndentSupported">
+            <summary>
+            Gets whether smart indent features are supported by the language.
+            </summary>
+            <value>
+            <c>true</c> if smart indent features are supported by the language; otherwise, <c>false</c>.
+            </value>
+            <remarks>
+            If this property is <c>true</c>, then the language has implemented smart indent handler code in <see cref="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage.OnSyntaxEditorSmartIndent(ActiproSoftware.SyntaxEditor.SyntaxEditor,ActiproSoftware.SyntaxEditor.SmartIndentEventArgs)"/>.
+            </remarks>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CData">
+            <summary>
+            Represents an <c>XML</c> CDATA section.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CData.#ctor(ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Initializes a new instance of the <c>CData</c> class. 
+            </summary>
+            <param name="textRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the AST node.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CData.AcceptCore(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor)">
+            <summary>
+            Accepts the specified visitor for visiting this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <remarks>This method is part of the visitor design pattern implementation.</remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CData.DisplayText">
+            <summary>
+            Gets text representing the node that can be used for display, such as in a document outline.
+            </summary>
+            <value>Text representing the node that can be used for display, such as in a document outline.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CData.ImageIndex">
+            <summary>
+            Gets the image index that is applicable for displaying this node in a user interface control.
+            </summary>
+            <value>The image index that is applicable for displaying this node in a user interface control.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CData.NavigationOffset">
+            <summary>
+            Gets the character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.
+            </summary>
+            <value>The character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.</value>
+            <remarks>
+            This property defaults to the same value as the <see cref="P:ActiproSoftware.SyntaxEditor.IAstNode.StartOffset"/> property.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CData.NodeType">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.</value>
+        </member>
+        <member name="T:ActiproSoftware.Products.SyntaxEditor.Addons.Web.Resources">
+            <summary>
+            Provides a class for accessing the resources of an assembly.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.Products.SyntaxEditor.Addons.Web.Resources.#ctor">
+            <summary>
+            Initializes a new instance of the <c>Resources</c> class.
+            </summary>
+            <remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.Products.SyntaxEditor.Addons.Web.Resources.GetImage(ActiproSoftware.Products.SyntaxEditor.Addons.Web.ImageResource)">
+            <summary>
+            Gets a <see cref="T:System.Drawing.Image"/> from the resources.
+            </summary>
+            <param name="image">The type of the image resource to get.</param>
+            <returns>The <see cref="T:System.Drawing.Image"/> resource that was retrieved.</returns>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Design.XmlSyntaxLanguageDesigner">
+            <summary>
+            Extends design-time behavior for an <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage"/>.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Design.XmlSyntaxLanguageDesigner.verb_About(System.Object,System.EventArgs)">
+            <summary>
+            Occurs when the user selects the About verb.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Design.XmlSyntaxLanguageDesigner.InitializeVerbs">
+            <summary>
+            Implemented by inheritors to initialize the <see cref="P:ActiproSoftware.WinUICore.Design.ActiproControlDesignerBase.VerbsCore"/> property.
+            </summary>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Design.XmlSyntaxLanguageDesigner.SyntaxLanguage">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage"/> that is being designed.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSyntaxLanguage"/> that is being designed.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID">
+            <summary>
+            Contains the token IDs for the <c>XML</c> language.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.Invalid">
+            <summary>
+            The Invalid token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.DocumentEnd">
+            <summary>
+            The DocumentEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.LanguageTransitionStart">
+            <summary>
+            The LanguageTransitionStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.LanguageTransitionEnd">
+            <summary>
+            The LanguageTransitionEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.Whitespace">
+            <summary>
+            The Whitespace token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.Default">
+            <summary>
+            The Default token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.Entity">
+            <summary>
+            The Entity token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.Identifier">
+            <summary>
+            The Identifier token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.StartTagStart">
+            <summary>
+            The StartTagStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.StartTagDefault">
+            <summary>
+            The StartTagDefault token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.StartTagName">
+            <summary>
+            The StartTagName token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.StartTagAttributeName">
+            <summary>
+            The StartTagAttributeName token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.StartTagAttributeValueStart">
+            <summary>
+            The StartTagAttributeValueStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.StartTagAttributeValueDefault">
+            <summary>
+            The StartTagAttributeValueDefault token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.StartTagAttributeValueEnd">
+            <summary>
+            The StartTagAttributeValueEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.StartTagNextTagStartToken">
+            <summary>
+            The StartTagNextTagStartToken token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.StartTagEnd">
+            <summary>
+            The StartTagEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.EndTagStart">
+            <summary>
+            The EndTagStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.EndTagDefault">
+            <summary>
+            The EndTagDefault token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.EndTagEnd">
+            <summary>
+            The EndTagEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.CommentStart">
+            <summary>
+            The CommentStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.CommentDefault">
+            <summary>
+            The CommentDefault token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.CommentEnd">
+            <summary>
+            The CommentEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.ProcessingInstructionStart">
+            <summary>
+            The ProcessingInstructionStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.ProcessingInstructionDefault">
+            <summary>
+            The ProcessingInstructionDefault token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.ProcessingInstructionEnd">
+            <summary>
+            The ProcessingInstructionEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.DocTypeDeclarationStart">
+            <summary>
+            The DocTypeDeclarationStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.DocTypeDeclarationEnd">
+            <summary>
+            The DocTypeDeclarationEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.DocTypeDeclarationInternalSubsetStart">
+            <summary>
+            The DocTypeDeclarationInternalSubsetStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.DocTypeDeclarationInternalSubsetDefault">
+            <summary>
+            The DocTypeDeclarationInternalSubsetDefault token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.DocTypeDeclarationInternalSubsetEnd">
+            <summary>
+            The DocTypeDeclarationInternalSubsetEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.DeclarationStart">
+            <summary>
+            The DeclarationStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.DeclarationDefault">
+            <summary>
+            The DeclarationDefault token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.DeclarationEnd">
+            <summary>
+            The DeclarationEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.CDATAStart">
+            <summary>
+            The CDATAStart token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.CDATADefault">
+            <summary>
+            The CDATADefault token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.CDATAEnd">
+            <summary>
+            The CDATAEnd token ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.MaxTokenID">
+            <summary>
+            The MaxTokenID token ID.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlTokenID.GetTokenKey(System.Int32)">
+            <summary>
+            Returns the string-based key for the specified token ID.
+            </summary>
+            <param name="id">The token ID to examine.</param>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID">
+            <summary>
+            Contains the lexical state IDs for the <c>XML</c> language.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.Default">
+            <summary>
+            The Default lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.StartTag">
+            <summary>
+            The StartTag lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.StartTagAttributeValue">
+            <summary>
+            The StartTagAttributeValue lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.StartTagSingleQuoteAttributeValue">
+            <summary>
+            The StartTagSingleQuoteAttributeValue lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.EndTag">
+            <summary>
+            The EndTag lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.Comment">
+            <summary>
+            The Comment lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.ProcessingInstruction">
+            <summary>
+            The ProcessingInstruction lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.DocTypeDeclaration">
+            <summary>
+            The DocTypeDeclaration lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.DocTypeDeclarationInternalSubset">
+            <summary>
+            The DocTypeDeclarationInternalSubset lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.Declaration">
+            <summary>
+            The Declaration lexical state ID.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.CDATA">
+            <summary>
+            The CDATA lexical state ID.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlLexicalStateID.GetLexicalStateKey(System.Int32)">
+            <summary>
+            Returns the string-based key for the specified lexical state ID.
+            </summary>
+            <param name="id">The lexical state ID to examine.</param>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser">
+            <summary>
+            Provides a semantic parser for the <c>XML</c> language.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.#ctor(ActiproSoftware.SyntaxEditor.ParserGenerator.IRecursiveDescentLexicalParser)">
+            <summary>
+            Initializes a new instance of the <c>XmlSemanticParser</c> class.
+            </summary>
+            <param name="lexicalParser">The <see cref="T:ActiproSoftware.SyntaxEditor.ParserGenerator.IRecursiveDescentLexicalParser"/> to use for lexical parsing.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.AdvanceToNextNeutralToken">
+            <summary>
+            Advances to the next neutral token.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.AdvanceToNextDocTypeDeclarationInternalSubsetNeutralToken">
+            <summary>
+            Advances to the next neutral token.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.ElementAddChild(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode)">
+            <summary>
+            Adds a child element to the current element.
+            </summary>
+            <param name="node">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode"/> to add to the current element.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.ElementStart(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element)">
+            <summary>
+            Starts an element and pushes it on the element stack.
+            </summary>
+            <param name="node">The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode"/> that represents the start element.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.ElementEnd(System.String,ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Ends an element and pops it from the element stack.
+            </summary>
+            <param name="elementName">The name of the element to end.</param>
+            <param name="endTagTextRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the end tag.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.ReportSyntaxError(ActiproSoftware.SyntaxEditor.TextRange,System.String)">
+            <summary>
+            Reports a syntax error.
+            </summary>
+            <param name="textRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the error.</param>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.Parse">
+            <summary>
+            Parses the document and generates a document object model.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchCompilationUnit">
+            <summary>
+            Matches a <c>CompilationUnit</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>CompilationUnit</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>Default</c>, <c>Whitespace</c>, <c>Identifier</c>, <c>Entity</c>, <c>StartTagStart</c>, <c>EndTagStart</c>, <c>CommentStart</c>, <c>ProcessingInstructionStart</c>, <c>DocTypeDeclarationStart</c>, <c>DeclarationStart</c>, <c>CDATAStart</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchDefault">
+            <summary>
+            Matches a <c>Default</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>Default</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>Default</c>, <c>Whitespace</c>, <c>Identifier</c>, <c>Entity</c>, <c>StartTagStart</c>, <c>EndTagStart</c>, <c>CommentStart</c>, <c>ProcessingInstructionStart</c>, <c>DocTypeDeclarationStart</c>, <c>DeclarationStart</c>, <c>CDATAStart</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchStartTag">
+            <summary>
+            Matches a <c>StartTag</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>StartTag</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>StartTagStart</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchEndTag">
+            <summary>
+            Matches a <c>EndTag</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>EndTag</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>EndTagStart</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchComment">
+            <summary>
+            Matches a <c>Comment</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>Comment</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>CommentStart</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchProcessingInstruction">
+            <summary>
+            Matches a <c>ProcessingInstruction</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>ProcessingInstruction</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>ProcessingInstructionStart</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchDocTypeDeclaration">
+            <summary>
+            Matches a <c>DocTypeDeclaration</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>DocTypeDeclaration</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>DocTypeDeclarationStart</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchDocTypeDeclarationInternalSubset">
+            <summary>
+            Matches a <c>DocTypeDeclarationInternalSubset</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>DocTypeDeclarationInternalSubset</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>DocTypeDeclarationInternalSubsetStart</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchDeclaration">
+            <summary>
+            Matches a <c>Declaration</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>Declaration</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>DeclarationStart</c>.
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MatchCDATA">
+            <summary>
+            Matches a <c>CDATA</c> non-terminal.
+            </summary>
+            <returns><c>true</c> if the <c>CDATA</c> was matched successfully; otherwise, <c>false</c>.</returns>
+            <remarks>
+            The non-terminal can start with: <c>CDATAStart</c>.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.CompilationUnit">
+            <summary>
+            Gets the <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.CompilationUnit"/> that was parsed.
+            </summary>
+            <value>The <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.CompilationUnit"/> that was parsed.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.IsWellFormed">
+            <summary>
+            Gets whether the XML is well-formed.
+            </summary>
+            <value>
+            <c>true</c> if the XML is well-formed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSemanticParser.MultiMatchSets">
+            <summary>
+            Gets the multi-match sets array.
+            </summary>
+            <value>The multi-match sets array.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaSubstitutionGroup">
+            <summary>
+            Represents an XML schema substitution group.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaSubstitutionGroup.#ctor(System.Xml.XmlQualifiedName)">
+            <summary>
+            Initializes a new instance of the <c>XmlSchemaSubstitutionGroup</c> class.
+            </summary>
+            <param name="qualifiedName">The <see cref="T:System.Xml.XmlQualifiedName"/> to use as a reference.</param>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlSchemaSubstitutionGroup.QualifiedName">
+            <summary>
+            Gets the <see cref="T:System.Xml.XmlQualifiedName"/> to use as a reference.
+            </summary>
+            <value>The <see cref="T:System.Xml.XmlQualifiedName"/> to use as a reference.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType">
+            <summary>
+            Specifies the type of context.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType.None">
+            <summary>
+            No context.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType.Default">
+            <summary>
+            In default area (between elements or in an element block).
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType.StartElementName">
+            <summary>
+            At the name of an element.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType.StartElementDefault">
+            <summary>
+            After the element name, and possibly between attributes.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType.StartElementAttributeName">
+            <summary>
+            At the name of an attribute.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType.StartElementAttributeValue">
+            <summary>
+            At the value of an attribute.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextType.StartElementOther">
+            <summary>
+            At another part of a start element.
+            </summary>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor">
+            <summary>
+            Provides the base class for an AST node visitor.
+            </summary>
+            <remarks>
+            <para>
+            This class supports the visitor pattern.
+            </para>
+            <para>
+            Each visitor implements a <c>OnVisiting</c> and an <c>OnVisited</c> method for each AST node type.
+            By default the <c>OnVisiting</c> method returns <c>true</c>, while the <c>OnVisited</c> method does nothing.
+            </para>
+            <para>
+            The <c>OnVisiting</c> method should return <c>true</c> if its child nodes should be visited.
+            If <c>true</c> is returned, the child nodes are visiting in order.
+            After the child nodes are visited, the <c>OnVisited</c> method is called.
+            If <c>OnVisiting</c> returns <c>false</c>, child node visits are not made and <c>OnVisited</c> is called directly.
+            </para>
+            <para>
+            Additionally, the generic <see cref="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnPreVisiting(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode)"/> method is called before any type-specific <c>OnVisiting</c> method is executed
+            and the generic <see cref="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnPostVisited(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode)"/> method is called after any type-specific <c>OnVisited</c> method is executed.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnPostVisited(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode)">
+            <summary>
+            Visits the <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/> after the type-specific <c>OnVisited</c> method is executed.
+            </summary>
+            <param name="node">The node to visit.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnPreVisiting(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode)">
+            <summary>
+            Visits the <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/> before the type-specific <c>OnVisiting</c> method is executed.
+            </summary>
+            <param name="node">The node to visit.</param>
+            <returns>
+            <c>true</c> if the node and its children should be visited; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisiting(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CData)">
+            <summary>
+            Visits the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+            <returns>
+            <c>true</c> if the node's children should be visited; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisiting(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Comment)">
+            <summary>
+            Visits the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+            <returns>
+            <c>true</c> if the node's children should be visited; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisiting(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit)">
+            <summary>
+            Visits the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+            <returns>
+            <c>true</c> if the node's children should be visited; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisiting(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Declaration)">
+            <summary>
+            Visits the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+            <returns>
+            <c>true</c> if the node's children should be visited; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisiting(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element)">
+            <summary>
+            Visits the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+            <returns>
+            <c>true</c> if the node's children should be visited; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisiting(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.ProcessingInstruction)">
+            <summary>
+            Visits the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+            <returns>
+            <c>true</c> if the node's children should be visited; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisited(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CData)">
+            <summary>
+            Ends the visit of the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisited(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Comment)">
+            <summary>
+            Ends the visit of the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisited(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit)">
+            <summary>
+            Ends the visit of the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisited(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Declaration)">
+            <summary>
+            Ends the visit of the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisited(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element)">
+            <summary>
+            Ends the visit of the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor.OnVisited(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.ProcessingInstruction)">
+            <summary>
+            Ends the visit of the specified type of <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>.
+            </summary>
+            <param name="node">The node to visit.</param>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.ProcessingInstruction">
+            <summary>
+            Represents an <c>XML</c> processing instruction.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.ProcessingInstruction.#ctor(ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Initializes a new instance of the <c>ProcessingInstruction</c> class. 
+            </summary>
+            <param name="textRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the AST node.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.ProcessingInstruction.AcceptCore(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor)">
+            <summary>
+            Accepts the specified visitor for visiting this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <remarks>This method is part of the visitor design pattern implementation.</remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.ProcessingInstruction.DisplayText">
+            <summary>
+            Gets text representing the node that can be used for display, such as in a document outline.
+            </summary>
+            <value>Text representing the node that can be used for display, such as in a document outline.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.ProcessingInstruction.ImageIndex">
+            <summary>
+            Gets the image index that is applicable for displaying this node in a user interface control.
+            </summary>
+            <value>The image index that is applicable for displaying this node in a user interface control.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.ProcessingInstruction.NavigationOffset">
+            <summary>
+            Gets the character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.
+            </summary>
+            <value>The character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.</value>
+            <remarks>
+            This property defaults to the same value as the <see cref="P:ActiproSoftware.SyntaxEditor.IAstNode.StartOffset"/> property.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.ProcessingInstruction.NodeType">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Comment">
+            <summary>
+            Represents an <c>XML</c> comment.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Comment.#ctor(ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Initializes a new instance of the <c>Comment</c> class. 
+            </summary>
+            <param name="textRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the AST node.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Comment.AcceptCore(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor)">
+            <summary>
+            Accepts the specified visitor for visiting this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <remarks>This method is part of the visitor design pattern implementation.</remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Comment.DisplayText">
+            <summary>
+            Gets text representing the node that can be used for display, such as in a document outline.
+            </summary>
+            <value>Text representing the node that can be used for display, such as in a document outline.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Comment.ImageIndex">
+            <summary>
+            Gets the image index that is applicable for displaying this node in a user interface control.
+            </summary>
+            <value>The image index that is applicable for displaying this node in a user interface control.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Comment.NavigationOffset">
+            <summary>
+            Gets the character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.
+            </summary>
+            <value>The character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.</value>
+            <remarks>
+            This property defaults to the same value as the <see cref="P:ActiproSoftware.SyntaxEditor.IAstNode.StartOffset"/> property.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Comment.NodeType">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit">
+            <summary>
+            Represents an <c>XML</c> compilation unit.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.MemberContextID">
+            <summary>
+            Gets the context ID for a member AST node.
+            </summary>
+            <value>The context ID for a member AST node.</value>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.#ctor">
+            <summary>
+            Initializes a new instance of the <c>CompilationUnit</c> class. 
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.ActiproSoftware#SyntaxEditor#ICompilationUnit#ShouldVisitChildNodesForOutlining(ActiproSoftware.SyntaxEditor.IAstNode)">
+            <summary>
+            Returns whether an <see cref="T:ActiproSoftware.SyntaxEditor.CollapsibleNodeOutliningParser"/> should visit the child nodes of the specified <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/>
+            to look for collapsible nodes.
+            </summary>
+            <param name="node">The <see cref="T:ActiproSoftware.SyntaxEditor.IAstNode"/> to examine.</param>
+            <returns>
+            <c>true</c> if the child nodes should be visited; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.ActiproSoftware#SyntaxEditor#ICompilationUnit#UpdateOutliningParser(ActiproSoftware.SyntaxEditor.CollapsibleNodeOutliningParser)">
+            <summary>
+            Adds any extra <see cref="T:ActiproSoftware.SyntaxEditor.CollapsibleNodeOutliningParserData"/> nodes to the <see cref="T:ActiproSoftware.SyntaxEditor.CollapsibleNodeOutliningParser"/>,
+            such as for comments that should be marked as collapsible.
+            </summary>
+            <param name="outliningParser">The <see cref="T:ActiproSoftware.SyntaxEditor.CollapsibleNodeOutliningParser"/> to update.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.AcceptCore(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor)">
+            <summary>
+            Accepts the specified visitor for visiting this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <remarks>This method is part of the visitor design pattern implementation.</remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.HasErrors">
+            <summary>
+            Gets whether the compilation unit contains errors.
+            </summary>
+            <value>
+            <c>true</c> if the compilation unit contains errors.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.HasLanguageTransitions">
+            <summary>
+            Gets or sets whether the compilation unit contains any language transitions.
+            </summary>
+            <value>
+            <c>true</c> if the compilation unit contains any language transitions; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.IsLanguageRoot">
+            <summary>
+            Gets whether the AST node is a language root node.
+            </summary>
+            <value>
+            <c>true</c> if the AST node is a language root node; otherwise, <c>false</c>.
+            </value>
+            <remarks>
+            When in a scenario where AST node trees from multiple languages have been merged together,
+            it is useful to identify where child language AST node trees begin within their parents.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.Members">
+            <summary>
+            Gets the collection of members.
+            </summary>
+            <value>The collection of members.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.NodeType">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.SourceKey">
+            <summary>
+            Gets or sets the string-based key that identifies the source of the code, which typically is a filename.
+            </summary>
+            <value>The string-based key that identifies the source of the code, which typically is a filename.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.CompilationUnit.SyntaxErrors">
+            <summary>
+            Gets the collection of syntax errors that were found in the compilation unit.
+            </summary>
+            <value>The collection of syntax errors that were found in the compilation unit.</value>
+        </member>
+        <member name="T:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo">
+            <summary>
+            Provides a class for retrieving information about the <c>ActiproSoftware.SyntaxEditor.Addons.Web</c> assembly.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <c>AssemblyInfo</c> class.
+            </summary>
+            <remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo.Components">
+            <summary>
+            Gets an array containing the components that must be licensed to be used in production applications.
+            </summary>
+            <value>An array containing the components that must be licensed to be used in production applications.</value>
+        </member>
+        <member name="P:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo.Instance">
+            <summary>
+            Gets the instance of the <see cref="T:ActiproSoftware.Products.AssemblyInfo"/> class for this assembly.
+            </summary>
+            <value>The instance of the <see cref="T:ActiproSoftware.Products.AssemblyInfo"/> class for this assembly.</value>
+        </member>
+        <member name="P:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo.LicenseFormProductLogo">
+            <summary>
+            Gets the product logo <see cref="T:System.Drawing.Image"/> to display on the license form.
+            </summary>
+            <value>The <see cref="T:System.Drawing.Image"/> resource that was retrieved.</value>
+        </member>
+        <member name="P:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo.LicenseType">
+            <summary>
+            Gets the type of license that is available for the assembly.
+            </summary>
+            <value>A <see cref="T:ActiproSoftware.Products.AssemblyLicenseType"/> specifying the type of license that is available for the assembly.</value>
+        </member>
+        <member name="P:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo.Platform">
+            <summary>
+            Gets the target platform for the assembly.
+            </summary>
+            <value>A <see cref="T:ActiproSoftware.Products.AssemblyPlatform"/> specifying the target platform for the assembly.</value>
+        </member>
+        <member name="P:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo.ProductCode">
+            <summary>
+            Gets the product code of the assembly.
+            </summary>
+            <value>A three-letter product code of the assembly.</value>
+        </member>
+        <member name="P:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo.RedistributableFiles">
+            <summary>
+            Gets an array containing the names of files that are permitted to be redistributed 
+            with your projects after you have licensed the product.
+            </summary>
+            <value>
+            An array containing the names of files that are permitted to be redistributed 
+            with your projects after you have licensed the product
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.Products.SyntaxEditor.Addons.Web.AssemblyInfo.Resources">
+            <summary>
+            Gets a <see cref="T:ActiproSoftware.Products.SyntaxEditor.Resources"/> that provides access to the resources of the assembly.
+            </summary>
+            <value>
+            A <see cref="T:ActiproSoftware.Products.SyntaxEditor.Resources"/> that provides access to the resources of the assembly.
+            </value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType">
+            <summary>
+            Specifies the type of an <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstNode"/>.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType.CData">
+            <summary>
+            A CDATA node.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType.Comment">
+            <summary>
+            A comment node.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType.CompilationUnit">
+            <summary>
+            A compilation unit node.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType.Declaration">
+            <summary>
+            A declaration node.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType.Element">
+            <summary>
+            An element node.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType.ProcessingInstruction">
+            <summary>
+            A processing instruction node.
+            </summary>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList">
+            <summary>
+            Provides a list of namespaces, for use with an <see cref="T:System.Xml.Schema.XmlSchemaAny"/>.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <c>XmlNamespaceList</c> class.
+            </summary>
+            <param name="namespaces">The string list of namespaces.</param>
+            <param name="targetNamespace">The target namespace from an ancestor 'schema' element, if known.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.SplitString(System.String)">
+            <summary>
+            Splits a string by whitespace chars.
+            </summary>
+            <param name="value">The string to split.</param>
+            <returns>The split string.</returns>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.Contains(System.String)">
+            <summary>
+            Returns whether the list contains the specified namespace.
+            </summary>
+            <param name="namespace">The namespace to examine.</param>
+            <returns>
+            <c>true</c> if the namespace is included in the list; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.Type">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.ListType"/> that describes the type of list.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.ListType"/> that describes the type of list.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.ListType">
+            <summary>
+            Specifies the list type.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.ListType.Any">
+            <summary>
+            Any namespace.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.ListType.Other">
+            <summary>
+            Any namespace other than the target namespace from an ancestor 'schema' element, if known.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlNamespaceList.ListType.Set">
+            <summary>
+            A set of namespaces that are allowed.
+            </summary>
+        </member>
+        <member name="T:ActiproSoftware.Products.SyntaxEditor.Addons.Web.ImageResource">
+            <summary>
+            Specifies the type of icon resource that may be retrieved.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.Products.SyntaxEditor.Addons.Web.ImageResource.LicenseFormProductLogo">
+            <summary>
+            The product logo to display on the license form.
+            </summary>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement">
+            <summary>
+            Contains context information about an element.
+            </summary>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.#ctor(System.Int32,System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Initializes a new instance of the <c>XmlContextElement</c> class. 
+            </summary>
+            <param name="elementNameOffset">The offset at which the element name appears.</param>
+            <param name="elementName">The element name, including possible namespace prefix.</param>
+            <param name="attributes">The <see cref="T:System.Collections.Hashtable"/> of declared attributes in the element (optional).</param>
+            <param name="namespacePrefixes">The <see cref="T:System.Collections.Hashtable"/> of defined namespace prefixes in this element.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.SetSchemaElement(System.Xml.Schema.XmlSchemaElement)">
+            <summary>
+            Sets the value of the <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.SchemaElement"/> property.
+            </summary>
+            <param name="value">The value to set.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.UpdateNamespace(System.Collections.Hashtable)">
+            <summary>
+            Updates the <see cref="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.Namespace"/> if necessary based on the supplied <see cref="T:System.Collections.Hashtable"/> of defined namespace prefixes.
+            </summary>
+            <param name="namespacePrefixes">The <see cref="T:System.Collections.Hashtable"/> of defined namespace prefixes.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.ToString">
+            <summary>
+            Creates and returns a string representation of the current object.
+            </summary>
+            <returns>A string representation of the current object.</returns>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.FullElementName">
+            <summary>
+            Gets the full element name, with namespace prefix if available.
+            </summary>
+            <value>The full element name, with namespace prefix if available.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.Attributes">
+            <summary>
+            Gets the <see cref="T:System.Collections.Hashtable"/> used to track attributes in the element, where the keys are the attribute namespace prefix and name,
+            and the values are <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextAttribute"/> items.
+            </summary>
+            <value>The <see cref="T:System.Collections.Hashtable"/> used to track attributes in the element.</value>
+            <remarks>
+            To enumerate the attributes that are in the element, use the <c>Values</c> property of this <c>Hashtable</c>.
+            <para>
+            This collection is only populated for the "target" element.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.ElementName">
+            <summary>
+            Gets the name of the element.
+            </summary>
+            <value>The name of the element.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.ElementNameOffset">
+            <summary>
+            Gets the offset at which the element name appears.
+            </summary>
+            <value>The offset at which the element name appears.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.Namespace">
+            <summary>
+            Gets the namespace that defines the element.
+            </summary>
+            <value>The namespace that defines the element.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.NamespacePrefix">
+            <summary>
+            Gets the prefix of the namespace that defines the element.
+            </summary>
+            <value>The prefix of the namespace that defines the element.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.QualifiedName">
+            <summary>
+            Gets the <see cref="T:System.Xml.XmlQualifiedName"/> representing the element.
+            </summary>
+            <value>The <see cref="T:System.Xml.XmlQualifiedName"/> representing the element.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlContextElement.SchemaElement">
+            <summary>
+            Gets the <see cref="T:System.Xml.Schema.XmlSchemaElement"/> to which this element context refers.
+            </summary>
+            <value>The <see cref="T:System.Xml.Schema.XmlSchemaElement"/> to which this element context refers.</value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlFormattingOptions">
+            <summary>
+            Provides a store of formatting options for the the <c>XML</c> language.
+            </summary>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.XmlFormattingOptions.NormalizeTagWhitespace">
+            <summary>
+            Gets or sets whether to normalize tag whitespace.
+            </summary>
+            <value>
+            <c>true</c> if the whitespace in a tag should be normalized; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element">
+            <summary>
+            Represents an <c>XML</c> element.
+            </summary>
+        </member>
+        <member name="F:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.MemberContextID">
+            <summary>
+            Gets the context ID for a member AST node.
+            </summary>
+            <value>The context ID for a member AST node.</value>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.#ctor(System.String,ActiproSoftware.SyntaxEditor.TextRange)">
+            <summary>
+            Initializes a new instance of the <c>Element</c> class. 
+            </summary>
+            <param name="name">The name of the element.</param>
+            <param name="startTagTextRange">The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the start tag.</param>
+        </member>
+        <member name="M:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.AcceptCore(ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.AstVisitor)">
+            <summary>
+            Accepts the specified visitor for visiting this node.
+            </summary>
+            <param name="visitor">The visitor to accept.</param>
+            <remarks>This method is part of the visitor design pattern implementation.</remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.ActiproSoftware#SyntaxEditor#ICollapsibleNode#EndOffset">
+            <summary>
+            Gets the offset at which the outlining node ends.
+            </summary>
+            <value>The offset at which the outlining node ends.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.ActiproSoftware#SyntaxEditor#ICollapsibleNode#IsCollapsible">
+            <summary>
+            Gets whether the node is collapsible.
+            </summary>
+            <value>
+            <c>true</c> if the node is collapsible; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.ActiproSoftware#SyntaxEditor#ICollapsibleNode#StartOffset">
+            <summary>
+            Gets the offset at which the outlining node starts.
+            </summary>
+            <value>The offset at which the outlining node starts.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.ActiproSoftware#SyntaxEditor#IOutliningNodeParseData#IndicatorVisible">
+            <summary>
+            Gets whether the outlining indicator should be visible for the node.
+            </summary>
+            <value>
+            <c>true</c> if the outlining indicator should be visible for the node; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.ActiproSoftware#SyntaxEditor#IOutliningNodeParseData#IsLanguageTransition">
+            <summary>
+            Gets whether the outlining node is for a language transition.
+            </summary>
+            <value>
+            <c>true</c> if the outlining node is for a language transition; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.DisplayText">
+            <summary>
+            Gets text representing the node that can be used for display, such as in a document outline.
+            </summary>
+            <value>Text representing the node that can be used for display, such as in a document outline.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.EndTagTextRange">
+            <summary>
+            Gets or sets the <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the start tag.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the start tag.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.HasChildElements">
+            <summary>
+            Gets whether the element has any child elements.
+            </summary>
+            <value>
+            <c>true</c> if the element has any child elements; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.HasEndTag">
+            <summary>
+            Gets whether the element has an end tag.
+            </summary>
+            <value>
+            <c>true</c> if the element has an end tag; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.HasStartTag">
+            <summary>
+            Gets whether the element has a start tag.
+            </summary>
+            <value>
+            <c>true</c> if the element has a start tag; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.ImageIndex">
+            <summary>
+            Gets the image index that is applicable for displaying this node in a user interface control.
+            </summary>
+            <value>The image index that is applicable for displaying this node in a user interface control.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.Key">
+            <summary>
+            Gets the string-based key that uniquely identifies the AST node.
+            </summary>
+            <value>The string-based key that uniquely identifies the AST node.</value>
+            <remarks>
+            The default implementation of this property returns the full type name of the AST node.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.Members">
+            <summary>
+            Gets the collection of members.
+            </summary>
+            <value>The collection of members.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.Name">
+            <summary>
+            Gets or sets the name of the element.
+            </summary>
+            <value>The name of the element.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.NamespaceDeclarations">
+            <summary>
+            Gets the <see cref="T:System.Collections.Specialized.HybridDictionary"/> of declared namespaces, where the key is the namespace prefix and the value is the namespace.
+            </summary>
+            <value>The <see cref="T:System.Collections.Specialized.HybridDictionary"/> of declared namespaces, where the key is the namespace prefix and the value is the namespace.</value>
+            <remarks>
+            If a default namespace is set (<c>xmlns=</c>), the key will be <c>String.Empty</c>.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.NavigationOffset">
+            <summary>
+            Gets the character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.
+            </summary>
+            <value>The character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.</value>
+            <remarks>
+            This property defaults to the same value as the <see cref="P:ActiproSoftware.SyntaxEditor.IAstNode.StartOffset"/> property.
+            </remarks>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.NodeType">
+            <summary>
+            Gets the <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.XmlNodeType"/> that identifies the type of node.</value>
+        </member>
+        <member name="P:ActiproSoftware.SyntaxEditor.Addons.Xml.Ast.Element.StartTagTextRange">
+            <summary>
+            Gets or sets the <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the start tag.
+            </summary>
+            <value>The <see cref="T:ActiproSoftware.SyntaxEditor.TextRange"/> of the start tag.</value>
+        </member>
+    </members>
+</doc>

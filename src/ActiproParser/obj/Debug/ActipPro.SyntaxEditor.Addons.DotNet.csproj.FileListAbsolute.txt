@@ -1,0 +1,12 @@
+E:\Projects\Slyce\ArchAngel\trunk\ActiproParser\bin\Debug\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll
+E:\Projects\Slyce\ArchAngel\trunk\ActiproParser\bin\Debug\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.pdb
+E:\Projects\Slyce\ArchAngel\trunk\ActiproParser\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\Slyce\ArchAngel\trunk\ActiproParser\obj\Debug\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll
+E:\Projects\Slyce\ArchAngel\trunk\ActiproParser\obj\Debug\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.pdb
+G:\Projects\Slyce\ArchAngel\trunk\ActiproParser\bin\Debug\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll
+G:\Projects\Slyce\ArchAngel\trunk\ActiproParser\bin\Debug\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.pdb
+G:\Projects\Slyce\ArchAngel\trunk\ActiproParser\bin\Debug\ActiproSoftware.SyntaxEditor.Net20.dll
+G:\Projects\Slyce\ArchAngel\trunk\ActiproParser\bin\Debug\ActiproSoftware.SyntaxEditor.Net20.xml
+G:\Projects\Slyce\ArchAngel\trunk\ActiproParser\obj\Debug\ActipPro.SyntaxEditor.Addons.DotNet.csprojResolveAssemblyReference.cache
+G:\Projects\Slyce\ArchAngel\trunk\ActiproParser\obj\Debug\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll
+G:\Projects\Slyce\ArchAngel\trunk\ActiproParser\obj\Debug\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.pdb

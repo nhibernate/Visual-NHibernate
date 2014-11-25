@@ -1,0 +1,12 @@
+using SharpArch.Core.PersistenceSupport;
+using System.Collections.Generic;
+using <#=Project.Settings.Name#>.Core;
+using <#=Project.Settings.Name#>.Core.QueryDtos;
+
+namespace <#=Project.Settings.Name#>.Core.RepositoryInterfaces
+{
+    public interface I<#=entity.Name#>Repository : IRepository<<#=entity.Name#>>
+    {
+        IList<<#=entity.Name#>Dto> Get<#=entity.Name#>Summaries();
+    }
+}

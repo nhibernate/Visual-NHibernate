@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ArchAngel.Providers.Database.Model2.Cardinality" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAEgAAAAAAAAAAAAIAAAAAAACAAAIA=</HashCode>
+      <FileName>Model2\Cardinality.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.View" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model2\View.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.Column" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAhAAAAACCAgEBwgIIAY4ACACMAAAAQAQAwAAEAMDA=</HashCode>
+      <FileName>Model2\Column.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.179" />
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.Database" Collapsed="true">
+    <Position X="11.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMABAAAAAAEAAAAEAAAAQAQAgAQFACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model2\Database.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.EntityObject" Collapsed="true">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="ArchAngel.Providers.Database.Model2.ScriptBase" ManuallyRouted="true">
+      <Path>
+        <Point X="7.25" Y="1.191" />
+        <Point X="7.25" Y="1.625" />
+        <Point X="6" Y="1.625" />
+        <Point X="6" Y="2.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAEACCAQwAAACBAAAAAAAAAABAAAAAAoQAAA=</HashCode>
+      <FileName>Model2\EntityObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.Index" Collapsed="true">
+    <Position X="11.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAABACAAAACCAERAgAAAQIAAAAAAAAAACAAAAAgAABA=</HashCode>
+      <FileName>Model2\Index.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.Key" Collapsed="true">
+    <Position X="1.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAACCAERggAAAYBAAAAAQAAAACAAAAAgAQBA=</HashCode>
+      <FileName>Model2\Key.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.Relationship" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAACAAEEQAAAAAAAAAQAAAIAAAAgAQAAAAA=</HashCode>
+      <FileName>Model2\Relationship.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.ScriptBase" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAgACBAKgMMAFoACAAAQAhAAEAIAIAAIAAAACEAA=</HashCode>
+      <FileName>Model2\ScriptBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.StoredProcedure" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Model2\StoredProcedure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.Parameter" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAgCIAAAAAAAAAAAAAAAAAAAEAEAA=</HashCode>
+      <FileName>Model2\StoredProcedure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArchAngel.Providers.Database.Model2.Table" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQgAAAACIAFQACAAEAAQAAAAAAAAIAAAAAAAAABA=</HashCode>
+      <FileName>Model2\Table.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ArchAngel.Providers.Database.Model2.IColumn" Collapsed="true">
+    <Position X="3.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCAgAAQgAIAYAAAACMAAAAAAAAAAAEAMBA=</HashCode>
+      <FileName>Model2\Column.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ArchAngel.Providers.Database.Model2.IEntityObject" Collapsed="true">
+    <Position X="1.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Model2\EntityObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ArchAngel.Providers.Database.Model2.IIndex" Collapsed="true">
+    <Position X="5.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAACCAAQAgAAAQAAAAAAAAAAAAAAAAAgAABA=</HashCode>
+      <FileName>Model2\Index.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ArchAngel.Providers.Database.Model2.IKey" Collapsed="true">
+    <Position X="7.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACCAAQggAAAQBAAAAAAAAAAAAAAAAgAQBA=</HashCode>
+      <FileName>Model2\Key.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ArchAngel.Providers.Database.Model2.IScriptBase" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAIgIIABgAAAAAQAAAAAAAAIAAAAAAACEAA=</HashCode>
+      <FileName>Model2\ScriptBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ArchAngel.Providers.Database.Model2.ITable" Collapsed="true">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQgAAAACIAFQACAAEAAQAAAAAAAAIAAAAAAAAABA=</HashCode>
+      <FileName>Model2\Table.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ArchAngel.Providers.Database.Model2.ITableMember&lt;T&gt;" Collapsed="true">
+    <Position X="11.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model2\Table.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

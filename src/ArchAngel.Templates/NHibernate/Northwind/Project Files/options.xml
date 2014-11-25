@@ -1,0 +1,15 @@
+<Options>
+  <C_x0023_>
+    <GeneratePartialClasses>True</GeneratePartialClasses>
+  </C_x0023_>
+  <General>
+    <ProjectNamespace>Project</ProjectNamespace>
+    <ProjectName>Project</ProjectName>
+    <ProjectGuid>9af05ee1-ee7e-403a-adcc-cbc73fb0563b</ProjectGuid>
+  </General>
+  <NHibernate>
+    <UsePrivateSettersOnProperties>True</UsePrivateSettersOnProperties>
+    <UseFluentNHibernate>True</UseFluentNHibernate>
+    <BytecodeGenerator>LinFu</BytecodeGenerator>
+  </NHibernate>
+</Options>

@@ -1,0 +1,144 @@
+<#
+string xml;
+
+// If we're working with an existing project (source-code), then get the path of the actual
+// NHibernate config file and read the XML from that file.
+if (System.IO.File.Exists(Project.NHibernateConfig.ExistingFilePath))
+{
+	CurrentFilePath = Project.NHibernateConfig.ExistingFilePath;
+    xml = System.IO.File.ReadAllText(CurrentFilePath);
+}
+else
+	xml = @"<?xml version=""1.0"" encoding=""utf-16"" ?><hibernate-configuration xmlns=""urn:nhibernate-configuration-2.2"" />";
+
+string bytecodeProvider;
+
+if (Project.Settings.BytecodeGenerator == BytecodeGenerator.Spring)
+	bytecodeProvider = "NHibernate.ByteCode.Spring.ProxyFactoryFactory, NHibernate.ByteCode.Spring";
+else if (Project.Settings.BytecodeGenerator == BytecodeGenerator.LinFu)
+	bytecodeProvider = "NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu";
+else
+	bytecodeProvider = "NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle";
+
+System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+doc.LoadXml(xml);
+		
+XmlNode nhConfigNode;
+XmlExtensions.Namespace = "urn:nhibernate-configuration-2.2";
+
+// If the XML uses a namespace, then use it
+if (xml.IndexOf(XmlExtensions.Namespace) > 0)
+{
+    System.Xml.XmlNamespaceManager ns = new System.Xml.XmlNamespaceManager(doc.NameTable);
+    ns.AddNamespace("nh", XmlExtensions.Namespace);
+
+    XmlExtensions.NamespaceManager = ns;
+    XmlExtensions.NamespacePrefix = "nh";
+	nhConfigNode = doc.SelectSingleNode("//nh:hibernate-configuration", ns);
+}
+else
+	nhConfigNode = doc.SelectSingleNode("//hibernate-configuration");
+		
+if (nhConfigNode == null)
+{
+	XmlNode rootNode = doc.SelectSingleNode("/*");
+	nhConfigNode = doc.CreateElement("hibernate-configuration", XmlExtensions.Namespace);
+	rootNode.AppendChild(nhConfigNode);
+}
+XmlNode sessionFactoryNode = nhConfigNode.EnsureChildNodeExists("session-factory");
+XmlNode propertyNode;
+
+// connection.provider
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "connection.provider", true));
+propertyNode.InnerText = "NHibernate.Connection.DriverConnectionProvider";
+// dialect
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "dialect", true));
+propertyNode.InnerText = Project.Settings.UseSpatial ? Project.NHibernateConfig.DialectSpatial : Project.NHibernateConfig.Dialect;
+// connection.driver_class
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "connection.driver_class", true));
+propertyNode.InnerText = Project.NHibernateConfig.Driver;
+// connection.connection_string
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "connection.connection_string", true));
+propertyNode.InnerText = Project.NHibernateConfig.ConnectionString;
+// proxyfactory.factory_class
+propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "proxyfactory.factory_class", true));
+propertyNode.InnerText = bytecodeProvider;
+// show_sql
+if (Project.Settings.ShowSql.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", "true", new RequiredAttribute("name", "show_sql", true));
+	propertyNode.InnerText = Project.Settings.ShowSql.Value.ToString();
+}
+// cache.provider_class
+if (!string.IsNullOrEmpty(Project.Settings.CacheProviderClass))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.provider_class", true));
+	propertyNode.InnerText = Project.Settings.CacheProviderClass;
+}
+// cache.query_cache_factory
+if (!string.IsNullOrEmpty(Project.Settings.CacheQueryCacheFactory))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.query_cache_factory", true));
+	propertyNode.InnerText = Project.Settings.CacheProviderClass;
+}
+// cache.region_prefix
+if (!string.IsNullOrEmpty(Project.Settings.CacheRegionPrefix))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.region_prefix", true));
+	propertyNode.InnerText = Project.Settings.CacheRegionPrefix;
+}
+// cache.use_minimal_puts
+if (Project.Settings.CacheUserMinimalPuts.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.use_minimal_puts", true));
+	propertyNode.InnerText = Project.Settings.CacheUserMinimalPuts.ToString().ToLower();
+}
+// cache.use_query_cache
+if (Project.Settings.CacheUserQueryCache.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "cache.use_query_cache", true));
+	propertyNode.InnerText = Project.Settings.CacheUserQueryCache.ToString();
+}
+// generate_statistics
+if (Project.Settings.GenerateStatistics.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "generate_statistics", true));
+	propertyNode.InnerText = Project.Settings.GenerateStatistics.Value.ToString().ToLower();
+}
+// max_fetch_depth
+if (Project.Settings.MaxFetchDepth.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "max_fetch_depth", true));
+	propertyNode.InnerText = Project.Settings.MaxFetchDepth.ToString();
+}
+// query_substitutions
+if (!string.IsNullOrEmpty(Project.Settings.QuerySubstitutions))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "query_substitutions", true));
+	propertyNode.InnerText = Project.Settings.QuerySubstitutions;
+}
+// show_sql
+if (Project.Settings.ShowSql.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "show_sql", true));
+	propertyNode.InnerText = Project.Settings.ShowSql.Value.ToString().ToLower();
+}
+// transaction_factory_class
+if (!string.IsNullOrEmpty(Project.Settings.TransactionFactoryClass))
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "transaction_factory_class", true));
+	propertyNode.InnerText = Project.Settings.TransactionFactoryClass;
+}
+// use_outer_join
+if (Project.Settings.UseOuterJoin.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "use_outer_join", true));
+	propertyNode.InnerText = Project.Settings.UseOuterJoin.Value.ToString().ToLower();
+}
+// use_proxy_validator
+if (Project.Settings.UseProxyValidator.HasValue)
+{
+	propertyNode = sessionFactoryNode.EnsureChildNodeExists("property", new RequiredAttribute("name", "use_proxy_validator", true));
+	propertyNode.InnerText = Project.Settings.UseProxyValidator.Value.ToString().ToLower();
+}
+return doc.Beautify();#>

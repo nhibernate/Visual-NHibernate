@@ -1,0 +1,114 @@
+<SmartAssemblyProject ProjectID="{dd4e2996-5231-4481-9cae-3d75a908a45a}" Version="2.0">
+    <MainAssemblyFileName>..\..\ArchAngel.Designer\bin\Release\ArchAngel.Designer.exe</MainAssemblyFileName>
+    <FriendlyName>ArchAngel.Designer</FriendlyName>
+    <CompanyName>Slyce Software Limited</CompanyName>
+    <Configuration Name="Release">
+        <ApplicationName>ArchAngel.Designer</ApplicationName>
+        <Destination DestinationFileName=".\Output\ArchAngel.Designer.exe" />
+        <Assemblies>
+            <Assembly AssemblyName="ArchAngel.Interfaces, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Slyce.Common, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Ionic.Zip, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="DevComponents.DotNetBar2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.SyntaxEditor.Net20, Culture=neutral, PublicKeyToken=21a821480e210563">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.Shared.Net20, Culture=neutral, PublicKeyToken=36ff2196ab5654b9">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.WinUICore.Net20, Culture=neutral, PublicKeyToken=1eba893a2bc55de5">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Common, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="log4net, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Slyce.IntelliMerge, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Providers.CodeProvider, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Culture=neutral, PublicKeyToken=5504180c8d344a1e">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.UIStudio.Dock.Net20, Culture=neutral, PublicKeyToken=be939c973e8cb8a6">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Debugger, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Debugger.DebugProcess, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Licensing, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging Merge="1">
+                    <Pruning Prune="0">
+                        <Exclusion />
+                    </Pruning>
+                    <Obfuscation Obfuscate="0">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="0" ObfuscationLevel="3" />
+                    <MemberRefsProxy Proxy="0" />
+                    <ResourcesCompression Compress="0" />
+                    <ResourcesPruning />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="AlpineSoft.EZRSA, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Designer, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging>
+                    <ResourcesCompression Compress="0" />
+                    <MemberRefsProxy Proxy="0" />
+                    <Pruning Prune="0">
+                        <Exclusion />
+                    </Pruning>
+                    <Obfuscation Obfuscate="0">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="0" ObfuscationLevel="3" />
+                    <StringsEncoding />
+                    <ResourcesPruning />
+                </Merging>
+            </Assembly>
+        </Assemblies>
+        <Options>
+            <Obfuscation FieldsNameMangling="3" NameMangling="3" />
+            <ExceptionReporting ReportExceptions="0" />
+            <StrongNameSigning KeyFileName="..\slyce_strong_name_key.snk" Sign="1" />
+            <OtherProtections AddIncorrectMetadata="0" AddMetadataStream="0" SuppressIldasm="0" />
+            <StringsEncoding Compress="1" Encode="0" UseCache="1" UseImprovedEncoding="1" />
+            <OtherOptimizations ManageMemory="0" SealClasses="0" />
+            <Debugging CreatePDB="1" ObfuscateDocumentsURL="1" />
+        </Options>
+    </Configuration>
+</SmartAssemblyProject>

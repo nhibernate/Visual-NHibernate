@@ -1,0 +1,1275 @@
+<?xml version="1.0" ?>
+<EntitySet Version="1">
+	<Entities>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>CategoryID</Property>
+				</Properties>
+			</Key>
+			<Name>Category</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>CategoryID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>CategoryName</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>1073741823</MaximumLength>
+					<Name>Description</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>2147483647</MaximumLength>
+					<Name>Picture</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Byte[]</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>CustomerTypeID</Property>
+				</Properties>
+			</Key>
+			<Name>CustomerDemographic</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>10</MaximumLength>
+					<Name>CustomerTypeID</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>1073741823</MaximumLength>
+					<Name>CustomerDesc</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>CustomerID</Property>
+				</Properties>
+			</Key>
+			<Name>Customer</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>5</MaximumLength>
+					<Name>CustomerID</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>40</MaximumLength>
+					<Name>CompanyName</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>30</MaximumLength>
+					<Name>ContactName</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>30</MaximumLength>
+					<Name>ContactTitle</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>60</MaximumLength>
+					<Name>Address</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>City</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>Region</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>10</MaximumLength>
+					<Name>PostalCode</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>Country</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>24</MaximumLength>
+					<Name>Phone</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>24</MaximumLength>
+					<Name>Fax</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>EmployeeID</Property>
+				</Properties>
+			</Key>
+			<Name>Employee</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>EmployeeID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>20</MaximumLength>
+					<Name>LastName</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>10</MaximumLength>
+					<Name>FirstName</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>30</MaximumLength>
+					<Name>Title</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>25</MaximumLength>
+					<Name>TitleOfCourtesy</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>BirthDate</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.DateTime</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>HireDate</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.DateTime</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>60</MaximumLength>
+					<Name>Address</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>City</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>Region</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>10</MaximumLength>
+					<Name>PostalCode</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>Country</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>24</MaximumLength>
+					<Name>HomePhone</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>4</MaximumLength>
+					<Name>Extension</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>2147483647</MaximumLength>
+					<Name>Photo</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Byte[]</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>1073741823</MaximumLength>
+					<Name>Notes</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>255</MaximumLength>
+					<Name>PhotoPath</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>OrderID</Property>
+					<Property>ProductID</Property>
+				</Properties>
+			</Key>
+			<Name>Order Line</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>OrderID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>ProductID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>UnitPrice</Name>
+					<Nullable>False</Nullable>
+					<Precision>19</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>4</Scale>
+					<Type>System.Decimal</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>Quantity</Name>
+					<Nullable>False</Nullable>
+					<Precision>5</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int16</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>Discount</Name>
+					<Nullable>False</Nullable>
+					<Precision>24</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Single</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>OrderID</Property>
+				</Properties>
+			</Key>
+			<Name>Order</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>OrderID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>5</MaximumLength>
+					<Name>CustomerID</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>EmployeeID</Name>
+					<Nullable>True</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>OrderDate</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.DateTime</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>RequiredDate</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.DateTime</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>ShippedDate</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.DateTime</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ShipperID</Name>
+					<Nullable>True</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>Freight</Name>
+					<Nullable>True</Nullable>
+					<Precision>19</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>4</Scale>
+					<Type>System.Decimal</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>40</MaximumLength>
+					<Name>ShipName</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>60</MaximumLength>
+					<Name>ShipAddress</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>ShipCity</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>ShipRegion</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>10</MaximumLength>
+					<Name>ShipPostalCode</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>ShipCountry</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>ProductID</Property>
+				</Properties>
+			</Key>
+			<Name>Product</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>ProductID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>40</MaximumLength>
+					<Name>ProductName</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>SupplierID</Name>
+					<Nullable>True</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>CategoryID</Name>
+					<Nullable>True</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>20</MaximumLength>
+					<Name>QuantityPerUnit</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>UnitPrice</Name>
+					<Nullable>True</Nullable>
+					<Precision>19</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>4</Scale>
+					<Type>System.Decimal</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>UnitsInStock</Name>
+					<Nullable>True</Nullable>
+					<Precision>5</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int16</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>UnitsOnOrder</Name>
+					<Nullable>True</Nullable>
+					<Precision>5</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int16</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>ReorderLevel</Name>
+					<Nullable>True</Nullable>
+					<Precision>5</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int16</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>Discontinued</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Boolean</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>RegionID</Property>
+				</Properties>
+			</Key>
+			<Name>Region</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>RegionID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>50</MaximumLength>
+					<Name>RegionDescription</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>ShipperID</Property>
+				</Properties>
+			</Key>
+			<Name>Shipper</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>ShipperID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>40</MaximumLength>
+					<Name>CompanyName</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>24</MaximumLength>
+					<Name>Phone</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>SupplierID</Property>
+				</Properties>
+			</Key>
+			<Name>Supplier</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>SupplierID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>40</MaximumLength>
+					<Name>CompanyName</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>30</MaximumLength>
+					<Name>ContactName</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>30</MaximumLength>
+					<Name>ContactTitle</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>60</MaximumLength>
+					<Name>Address</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>City</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>Region</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>10</MaximumLength>
+					<Name>PostalCode</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>15</MaximumLength>
+					<Name>Country</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>24</MaximumLength>
+					<Name>Phone</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>24</MaximumLength>
+					<Name>Fax</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>1073741823</MaximumLength>
+					<Name>HomePage</Name>
+					<Nullable>True</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key>
+				<Properties>
+					<Property>TerritoryID</Property>
+				</Properties>
+			</Key>
+			<Name>Territory</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>20</MaximumLength>
+					<Name>TerritoryID</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>50</MaximumLength>
+					<Name>TerritoryDescription</Name>
+					<Nullable>False</Nullable>
+					<Precision>0</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.String</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength>0</MaximumLength>
+					<Name>RegionID</Name>
+					<Nullable>False</Nullable>
+					<Precision>10</Precision>
+					<ReadOnly>False</ReadOnly>
+					<Scale>0</Scale>
+					<Type>System.Int32</Type>
+				</Property>
+			</Properties>
+			<VirtualProperties />
+		</Entity>
+	</Entities>
+	<References>
+		<Reference identifier="11111111-1111-1111-1111-111111111111">
+			<Cardinality1 min="1" max="1" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>ReportsTo</End1Name>
+			<Entity1>Employee</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>False</End2Enabled>
+			<End2Name>Employees2</End2Name>
+			<Entity2>Employee</Entity2>
+			<VirtualProperties />
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111112">
+			<Cardinality1 min="1" max="1" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>Order</End1Name>
+			<Entity1>Order Line</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>True</End2Enabled>
+			<End2Name>OrderLines</End2Name>
+			<Entity2>Order</Entity2>
+			<VirtualProperties />
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111113">
+			<Cardinality1 min="1" max="1" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>Product</End1Name>
+			<Entity1>Order Line</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>False</End2Enabled>
+			<End2Name>OrderLines</End2Name>
+			<Entity2>Product</Entity2>
+			<VirtualProperties />
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111114">
+			<Cardinality1 min="1" max="1" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>Customer</End1Name>
+			<Entity1>Order</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>True</End2Enabled>
+			<End2Name>Orders</End2Name>
+			<Entity2>Customer</Entity2>
+			<VirtualProperties />
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111115">
+			<Cardinality1 min="1" max="1" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>Employee</End1Name>
+			<Entity1>Order</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>True</End2Enabled>
+			<End2Name>Orders</End2Name>
+			<Entity2>Employee</Entity2>
+			<VirtualProperties />
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111116">
+			<Cardinality1 min="1" max="1" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>ShipVia</End1Name>
+			<Entity1>Order</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>True</End2Enabled>
+			<End2Name>Orders</End2Name>
+			<Entity2>Shipper</Entity2>
+			<VirtualProperties />
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111117">
+			<Cardinality1 min="1" max="1" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>Category</End1Name>
+			<Entity1>Product</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>True</End2Enabled>
+			<End2Name>Products</End2Name>
+			<Entity2>Category</Entity2>
+			<VirtualProperties>
+				<VirtualProperty name="End2CollectionType" type="ArchAngel.NHibernateHelper.AssociationType">
+					<Value>Map</Value>
+				</VirtualProperty>
+				<VirtualProperty name="End2IndexColumn" type="System.String">
+					<Value>CategoryName</Value>
+				</VirtualProperty>
+			</VirtualProperties>
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111118">
+			<Cardinality1 min="1" max="1" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>Supplier</End1Name>
+			<Entity1>Product</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>True</End2Enabled>
+			<End2Name>Products</End2Name>
+			<Entity2>Supplier</Entity2>
+			<VirtualProperties />
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111119">
+			<Cardinality1 min="1" max="1" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>Region</End1Name>
+			<Entity1>Territory</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>True</End2Enabled>
+			<End2Name>Territories</End2Name>
+			<Entity2>Region</Entity2>
+			<VirtualProperties />
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111120">
+			<Cardinality1 min="2147483647" max="2147483647" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>Demographics</End1Name>
+			<Entity1>Customer</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>False</End2Enabled>
+			<End2Name>Customers</End2Name>
+			<Entity2>CustomerDemographic</Entity2>
+			<VirtualProperties />
+		</Reference>
+		<Reference identifier="11111111-1111-1111-1111-111111111121">
+			<Cardinality1 min="2147483647" max="2147483647" />
+			<End1Enabled>True</End1Enabled>
+			<End1Name>Territories</End1Name>
+			<Entity1>Employee</Entity1>
+			<Cardinality2 min="2147483647" max="2147483647" />
+			<End2Enabled>True</End2Enabled>
+			<End2Name>Employees</End2Name>
+			<Entity2>Territory</Entity2>
+			<VirtualProperties />
+		</Reference>
+	</References>
+</EntitySet>

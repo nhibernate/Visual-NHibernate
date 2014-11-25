@@ -1,0 +1,576 @@
+<%
+if (Project.Settings.UseFluentNHibernate == false)
+{
+	SkipThisFile = true;
+	return "Project.Settings.UseFluentNHibernate is false";
+}
+if (!entity.IsMapped)
+{
+	SkipThisFile = true;
+	return "Entity is not mapped to a table.";
+}
+string classMapType = "ClassMap";
+
+if (entity.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerSubClass ||
+	entity.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerHierarchy ||
+	entity.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerConcreteClass)
+{
+	classMapType = "SubclassMap";
+}
+%>using System;
+using FluentNHibernate.Mapping;
+
+namespace <%=Project.Settings.Namespace%>.Model.Mappings
+{
+	public class <%=entity.Name%>Mapping : <%=classMapType%><<%=entity.Name%>>
+	{
+		public <%=entity.Name%>Mapping()
+		{<%
+if (entity.InheritanceTypeWithParent != IEntity.InheritanceTypes.TablePerHierarchy)
+{
+	if (!entity.IsAbstract)
+	{%>
+			Table("`<%=entity.PrimaryMappedTable.Name%>`");
+			Schema("<%=entity.PrimaryMappedTable.Schema%>");<%
+	}
+	/////////////////////////////////////////////////////////////////////////////
+	// ID Spec
+	/////////////////////////////////////////////////////////////////////////////
+	if (entity.Key.KeyType == KeyTypes.Properties)
+	{
+		if (entity.Key.Properties.Count() == 1)
+		{
+			var property = entity.Key.Properties[0];
+			string args = "";
+						
+			if (property.MappedColumn != null &&
+				property.MappedColumn.Name != property.Name)
+			{
+				args = string.Format(", \"{0}\"", property.MappedColumn.Name);
+			}
+			else if (entity.IsAbstract)
+			{
+				// If this is a base-class in a TPCC inheritance structure, get the mappings from a child
+				IEntity tpccChildEntity = entity.Children.FirstOrDefault(e => e.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerConcreteClass);
+				
+				if (tpccChildEntity != null)
+				{
+					IProperty childProp = tpccChildEntity.Properties.SingleOrDefault(p => p.Name == property.Name);
+		
+					if (childProp != null && childProp.MappedColumn != null)
+						args = string.Format(", \"{0}\"", childProp.MappedColumn.Name);
+				}
+			}
+			if ((entity.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerSubClass ||
+				entity.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerConcreteClass))
+			{
+				if (property.MappedColumn != null)
+				{
+%>
+			KeyColumn("<%=property.MappedColumn.Name%>");<%
+				}
+			}
+			else
+			{%>
+			Id(x => x.<%=property.Name%><%=args%>)<%
+				if (entity.Generator.ClassName == "native") {%>
+				.GeneratedBy.Native()<%}
+				else if (entity.Generator.ClassName == "sequence") {%>
+				.GeneratedBy.Sequence(<%=entity.Generator.Parameters[0].Value%>)<%}
+				else if (entity.Generator.ClassName == "increment") {%>
+				.GeneratedBy.Increment()<%}
+				else if (entity.Generator.ClassName == "identity") {%>
+				.GeneratedBy.Identity()<%}
+				else if (entity.Generator.ClassName == "hilo") {%>
+				.GeneratedBy.HiLo(<%=entity.Generator.Parameters[0].Value%>, <%=entity.Generator.Parameters[1].Value%>, <%=entity.Generator.Parameters[2].Value%>)<%}
+				else if (entity.Generator.ClassName == "seqhilo") {%>
+				.GeneratedBy.SeqHiLo(<%=entity.Generator.Parameters[0].Value%>, <%=entity.Generator.Parameters[1].Value%>)<%}
+				else if (entity.Generator.ClassName == "uuid_hex") {%>
+				.GeneratedBy.UuidHex(<%=entity.Generator.Parameters[0].Value%>)<%}
+				else if (entity.Generator.ClassName == "uuid_string") {%>
+				.GeneratedBy.UuidString()<%}
+				else if (entity.Generator.ClassName == "guid") {%>
+				.GeneratedBy.Guid()<%}
+				else if (entity.Generator.ClassName == "guid_comb") {%>
+				.GeneratedBy.GuidComb()<%}
+				else if (entity.Generator.ClassName == "guid_native") {%>
+				.GeneratedBy.GuidNative()<%}
+				else if (entity.Generator.ClassName == "select") {%>
+				.GeneratedBy.Select()<%}
+				else if (entity.Generator.ClassName == "sequence_identity") {%>
+				.GeneratedBy.SequenceIdentity(<%=entity.Generator.Parameters[0].Value%>)<%}
+				else if (entity.Generator.ClassName == "trigger_identity") {%>
+				.GeneratedBy.TriggerIdentity()<%}
+				else if (entity.Generator.ClassName == "assigned") {%>
+				.GeneratedBy.Assigned()<%}
+				else if (entity.Generator.ClassName == "foreign") {%>
+				.GeneratedBy.Foreign(<%=entity.Generator.Parameters[0].Value%>)<%}
+				// Counter?
+				%>;<%
+			}
+		}
+		else
+		{
+			if (entity.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerSubClass)
+				throw new NotImplementedException("We do not support Component Keys in TablePerSubClass hierachies yet");
+				
+			// Composite Key
+%>			
+			CompositeId()<% 
+			foreach(var prop in entity.Key.Properties)
+			{%>
+				.KeyProperty(x => x.<%=prop.Name%>, "<%=prop.MappedColumn.Name%>")<%					
+			}%>;<%
+		}
+	}
+	else if(entity.Key.KeyType == KeyTypes.Component)
+		throw new NotImplementedException("Visual NHIbernate doesn't support Component Keys in Fluent Mappings yet. Please contact: support@slyce.com");
+}
+if (entity.IsDynamicInsert)
+{%>
+			DynamicInsert();<%
+}
+if (entity.IsDynamicUpdate)
+{%>
+			DynamicUpdate();<%
+}
+if (entity.OptimisticLock != OptimisticLocks.None && !entity.IsInherited)
+{%>
+			OptimisticLock.<%=entity.OptimisticLock%>();<%
+}
+if (entity.Cache.Usage != CacheUsageTypes.None )
+{%>
+			Cache<%
+	// Includes
+	if (entity.Cache.Include == CacheIncludeTypes.All)
+	{%>
+				.IncludeAll()<%
+	}
+	else if (entity.Cache.Include == CacheIncludeTypes.Non_Lazy)
+	{%>
+				.IncludeNonLazy()<%
+	}
+	// Usages
+	if (entity.Cache.Usage == CacheUsageTypes.NonStrict_Read_Write)
+	{%>
+				.NonStrictReadWrite()<%
+	}
+	else if (entity.Cache.Usage == CacheUsageTypes.Read_Only)
+	{%>
+				.ReadOnly()<%
+	}
+	else if (entity.Cache.Usage == CacheUsageTypes.Read_Write)
+	{%>
+				.ReadWrite()<%
+	}
+	else if (entity.Cache.Usage == CacheUsageTypes.Transactional)
+	{%>
+				.Transactional()<%
+	}%>
+				.Region("<%=entity.Cache.Region%>");<%
+}
+if (!string.IsNullOrEmpty(entity.Proxy))
+{%>
+			Proxy("<%=entity.Proxy%>");<%
+}
+if (entity.BatchSize != 1)
+{%>
+			BatchSize(<%=entity.BatchSize%>);<%
+}
+if (entity.SelectBeforeUpdate)
+{%>
+			SelectBeforeUpdate();<%
+}
+if (entity.IsReadOnly)
+{%>
+			ReadOnly();<%
+}
+if (!entity.LazyLoad)
+{%>
+			Not.LazyLoad();<%
+}
+/////////////////////////////////////////////////////////////////////////////
+// Column Mappings
+/////////////////////////////////////////////////////////////////////////////
+IEntity tpccChild = entity.Children.FirstOrDefault(e => e.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerConcreteClass);
+
+foreach (Property prop in entity.Properties)
+{
+	if (!entity.IsAbstract && prop.MappedColumn == null)
+		continue;
+	else if (prop.IsKeyProperty) // Skip key properties 
+		continue;
+	else if (prop.IsVersionProperty)
+	{
+		if (prop.Name == prop.MappedColumnName)
+		{%>
+			Version(x => x.<%=prop.Name%>);<%
+		}
+		else
+		{%>
+			Version(x => x.<%=prop.Name%>).Column("<%=prop.MappedColumnName%>");<%
+		}
+	}
+	else if (entity.IsAbstract && tpccChild != null)
+	{
+		IProperty childProp = tpccChild.Properties.SingleOrDefault(p => p.Name == prop.Name);
+		
+		if (childProp != null)
+		{
+		// Check whether this is a base object in a TablePerConcreteClass inheritance structure
+%>
+			Map(x => x.<%=childProp.Name%><%WriteIf(childProp.Name != childProp.MappedColumnName, ", " + "\"" + childProp.MappedColumnName + "\"")%>)<%
+		}
+		else
+		{
+			Write("oops");
+		}
+	}
+	else
+	{
+%>
+			Map(x => x.<%=prop.Name%><%WriteIf(prop.Name != prop.MappedColumnName, ", " + "\"" + prop.MappedColumnName + "\"")%>)<%
+	}
+	if (prop.Access == PropertyAccessTypes.Field)
+	{%>
+				.Access.Field()<%	
+	}
+	if (!string.IsNullOrWhiteSpace(prop.Formula))
+	{%>
+				.Formula(<%=prop.Formula%>)<%	
+	}
+	if (!prop.Insert && !prop.Update)
+	{%>
+				.ReadOnly()<%	
+	}
+	else
+	{
+		if (!prop.Insert)
+		{%>
+				.Not.Insert()<%	
+		}
+		if (!prop.Update)
+		{%>
+				.Not.Update()<%	
+		}
+	}
+	if (prop.Generate != PropertyGeneratedTypes.Never)
+	{%>
+				.Generated.<%=prop.Generate.ToString()%>()<%	
+	}%>;<%
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// Inheritance - children
+/////////////////////////////////////////////////////////////////////////////
+if (entity.InheritanceTypeWithParent != IEntity.InheritanceTypes.TablePerHierarchy)
+{
+	List<IEntity> tablePerHierarchyChildren = entity.Children.Where(e => e.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerHierarchy).ToList();
+	
+	if (tablePerHierarchyChildren.Count > 0)
+	{%>
+			DiscriminateSubClassesOnColumn("<%=entity.Discriminator.Column.Name%>");<%
+	}
+	
+	//List<IEntity> tablePerConcreteClassChildren = entity.Children;//.Where(e => e.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerConcreteClass).ToList();
+	List<IEntity> tablePerConcreteClassChildren = entity.Children.Where(e => e.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerConcreteClass).ToList();
+
+	if (tablePerConcreteClassChildren.Count > 0)
+	{%>
+			UseUnionSubclassForInheritanceMapping();<%
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// Component Mappings
+/////////////////////////////////////////////////////////////////////////////			
+foreach (ComponentProperty component in entity.Components)
+{%>
+			Component(x => x.<%=component.Name%>, m =>
+			{<%
+	foreach (Field property in component.Properties)
+	{%>
+				m.Map(y => y.<%=property.MappedColumn.Name%>);<%
+	}%>
+			}<%
+}
+			
+/////////////////////////////////////////////////////////////////////////////
+// Reference Mappings
+/////////////////////////////////////////////////////////////////////////////
+foreach (Reference directedReference in entity.References)
+{	
+	if (directedReference.ReferenceType == ReferenceTypes.OneToOne) // OneToOne references
+	{
+		// if this side has the foreign key, it gets the References() call
+		if (directedReference.KeyType == ReferenceKeyTypes.Foreign)
+		{
+%>
+			References(x => x.<%=directedReference.Name%>)
+				.Unique()<%
+			if(directedReference.KeyColumns.Count > 1)
+			{
+%>
+				.Columns("<%=directedReference.KeyColumns[0].Name %>"<%
+				foreach (var column in directedReference.KeyColumns.Skip(1))
+				{
+					%>, "<%=column.Name%>"<%
+				}
+				%>)<%
+			}
+			else
+			{
+				if (directedReference.KeyColumns[0].Name != directedReference.Name)
+				{
+%>	
+				.Column("<%=directedReference.KeyColumns[0].Name%>")<%
+				}
+			}
+%>
+				.Fetch.<%=directedReference.FetchType%>()<%
+			if (!directedReference.Insert && !directedReference.Update)
+			{%>
+				.ReadOnly()<%
+			}
+			else
+			{
+				if (!directedReference.Insert)
+				{%>
+				.Not.Insert()<%
+				}
+				if (!directedReference.Update)
+				{%>
+				.Not.Update()<%
+				}
+			}
+			if (directedReference.CascadeType != CascadeTypes.None)
+			{%>
+				.Cascade.<%=directedReference.CascadeType%>()<%
+			}
+			%>;<%
+		}
+		else // It gets the HasOne call
+		{
+%>
+			HasOne(x => x.<%=directedReference.Name%>)
+				.Class(typeof(<%=directedReference.ToEntity.Name%>))
+				.PropertyRef(x => x.<%=directedReference.ToName%>)<%
+			
+			if (directedReference.CascadeType != CascadeTypes.None)
+			{%>
+				.Cascade.<%=directedReference.CascadeType%>()<%
+			}%>;<%
+
+		}		
+	}
+	else if (directedReference.ReferenceType == ReferenceTypes.OneToMany) // OneToMany references
+	{
+%>
+			References(x => x.<%=directedReference.Name%>)
+				.Class(typeof(<%=directedReference.ToEntity.Name%>))<%
+		if (directedReference.KeyColumns.Any(c => c.IsNullable == false))
+		{%>
+				.Not.Nullable()<%
+		}
+		if(directedReference.KeyColumns.Count > 1)
+		{
+%>
+				.Columns("<%=directedReference.KeyColumns[0].Name %>"<%
+			foreach (var column in directedReference.KeyColumns.Skip(1))
+			{
+				%>, "<%=column.Name%>"<%
+			}
+			%>)<%
+		}
+		else
+		{
+			if (directedReference.KeyColumns[0].Name != directedReference.Name)
+			{
+%>	
+				.Column("<%=directedReference.KeyColumns[0].Name%>")<%
+			}
+			%><%
+		}
+%>
+				.Fetch.<%=directedReference.FetchType%>()<%
+				
+		if (!directedReference.Insert && !directedReference.Update)
+		{%>
+				.ReadOnly()<%
+		}
+		else
+		{
+			if (!directedReference.Insert)
+			{%>
+				.Not.Insert()<%
+			}
+			if (!directedReference.Update)
+			{%>
+				.Not.Update()<%
+			}
+		}
+		if (directedReference.CollectionCascadeType != CollectionCascadeTypes.None)
+		{%>
+				.Cascade.<%=directedReference.CollectionCascadeType%>()<%
+		}
+		%>;<%
+	}
+	else if (directedReference.ReferenceType == ReferenceTypes.ManyToOne) // ManyToOne references
+	{
+				
+%>
+			HasMany(x => x.<%=directedReference.Name%>)<%
+		if (directedReference.ToKeyColumns.Count > 1)
+		{
+%>
+				.KeyColumns.Add("<%=directedReference.ToKeyColumns[0].Name %>"<%
+			foreach (var column in directedReference.ToKeyColumns.Skip(1))
+			{
+				%>, "<%=column.Name%>"<%
+			}
+			%>)<%
+		}
+		else
+		{
+%>
+				.KeyColumn("<%=directedReference.ToKeyColumns[0].Name%>")<%
+		}
+		if (directedReference.Inverse)
+		{%>
+				.Inverse()<%
+		}
+		if (directedReference.CollectionCascadeType != CollectionCascadeTypes.None)
+		{%>
+				.Cascade.<%=directedReference.CollectionCascadeType%>()<%
+		}
+%>
+				.Fetch.<%=directedReference.FetchType.ToString()%>()<%
+		switch (directedReference.CollectionType)
+		{
+			case CollectionTypes.Set:
+%>
+				.AsSet()<%
+				if (!string.IsNullOrEmpty(directedReference.OrderByClause))
+				{%>
+				.OrderBy("<%=directedReference.OrderByClause%>")<%
+				}
+				%>;<%
+				break;
+			case CollectionTypes.Map:
+%>
+				.AsMap("<%=directedReference.CollectionIndexColumn.Name%>")<%
+				if (!string.IsNullOrEmpty(directedReference.OrderByClause))
+				{%>
+				.OrderBy("<%=directedReference.OrderByClause%>")<%
+				}
+				%>;<%
+				break;
+			case CollectionTypes.Bag:
+%>
+				.AsBag()<%
+				if (!string.IsNullOrEmpty(directedReference.OrderByClause))
+				{%>
+				.OrderBy("<%=directedReference.OrderByClause%>")<%
+				}
+				%>;<%
+				break;
+			case CollectionTypes.List:
+%>
+				.AsList(l => l.Column("<%=directedReference.CollectionIndexColumn.Name%>"))<%
+				if (!string.IsNullOrEmpty(directedReference.OrderByClause))
+				{%>
+				.OrderBy("<%=directedReference.OrderByClause%>")<%
+				}
+				%>;<%
+				break;
+			default:
+				throw new ArgumentOutOfRangeException();
+		}
+	}
+	else if (directedReference.ReferenceType == ReferenceTypes.ManyToMany) // ManyToMany references
+	{
+%>
+			HasManyToMany(x => x.<%=directedReference.Name%>)<%
+		
+		if (directedReference.ToKeyColumns.Count == 1)
+		{%>
+				.ChildKeyColumn("<%=directedReference.ToKeyColumns[0].Name%>")<%					
+		}
+		else
+		{%>
+				.ChildKeyColumns.Add("<%=directedReference.ToKeyColumns[0].Name%>")<%
+		}
+		if (directedReference.KeyColumns.Count == 1)
+		{
+			// Fluent NHibernate has a bug with self-referencng tables where the association table key has the same name as the primary key column
+			if (directedReference.KeyColumns[0].Name != directedReference.ToKeyColumns[0].Name &&
+				directedReference.KeyColumns[0] != entity.PrimaryMappedTable.PrimaryKey.Columns[0])
+			{
+		%>
+				.ParentKeyColumn("<%=directedReference.KeyColumns[0].Name%>")<%					
+			}
+		}
+		else
+		{%>
+				.ParentKeyColumns.Add("<%=directedReference.KeyColumns[0].Name%>")<%
+		}		
+		if (directedReference.Inverse)
+		{%>
+				.Inverse()<%
+		}
+		if (directedReference.CollectionCascadeType != CollectionCascadeTypes.None)
+		{%>
+				.Cascade.<%=directedReference.CollectionCascadeType%>()<%
+		}		
+%>
+				.Table("<%=directedReference.ManyToManyAssociationTable.Name%>")
+				.Fetch.<%=directedReference.FetchType.ToString()%>()<%
+
+		switch (directedReference.CollectionType)
+		{
+			case CollectionTypes.Set:
+%>
+				.AsSet()<%
+				if (!string.IsNullOrEmpty(directedReference.OrderByClause))
+				{%>
+				.OrderBy("<%=directedReference.OrderByClause%>")<%
+				}
+				%>;<%
+				break;
+			case CollectionTypes.Bag:
+%>
+				.AsBag()<%
+				if (!string.IsNullOrEmpty(directedReference.OrderByClause))
+				{%>
+				.OrderBy("<%=directedReference.OrderByClause%>")<%
+				}
+				%>;<%
+				break;
+			case CollectionTypes.Map:
+%>
+				.AsMap("<%=directedReference.CollectionIndexColumn.Name%>")<%
+				if (!string.IsNullOrEmpty(directedReference.OrderByClause))
+				{%>
+				.OrderBy("<%=directedReference.OrderByClause%>")<%
+				}
+				%>;<%
+				break;
+			case CollectionTypes.List:
+%>
+				.AsList(l => l.Column("<%=directedReference.CollectionIndexColumn.Name%>"))<%
+				if (!string.IsNullOrEmpty(directedReference.OrderByClause))
+				{%>
+				.OrderBy("<%=directedReference.OrderByClause%>")<%
+				}
+				%>;<%
+				break;
+			default:
+				throw new ArgumentOutOfRangeException();
+		}
+	}
+
+}
+%>
+		}
+	}
+}

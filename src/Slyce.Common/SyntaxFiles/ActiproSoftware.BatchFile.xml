@@ -1,0 +1,149 @@
+<SyntaxLanguage Key="BatchFile" LanguageDefinitionVersion="4.0" Secure="True" xmlns="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition">
+
+	<!-- String Properties -->
+	<Properties>
+		<Property Key="Creator" Value="Actipro Software LLC" />
+		<Property Key="Copyright" Value="Copyright (c) 2001-2009 Actipro Software LLC.  All rights reserved." />
+	</Properties>
+
+	<!-- Highlighting Styles -->	
+	<Styles>
+		<Style Key="ReservedWordStyle" ForeColor="Blue" />
+		<Style Key="LabelStyle" ForeColor="Maroon" />
+		<Style Key="VariableStyle" ForeColor="Purple" />
+		<Style Key="DelimiterStyle" ForeColor="Black" />
+		<Style Key="NumberStyle" ForeColor="Black" />
+		<Style Key="StringDelimiterStyle" ForeColor="Black" />
+		<Style Key="StringDefaultStyle" ForeColor="Black" />
+		<Style Key="CommentDelimiterStyle" ForeColor="Green" />
+		<Style Key="CommentDefaultStyle" ForeColor="Green" />
+	</Styles>
+	
+	<!-- States -->
+	<States>
+		<!-- Code -->
+		<State Key="DefaultState">
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<!-- Whitespace -->
+				<RegexPatternGroup TokenKey="WhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- Line Terminators -->
+				<RegexPatternGroup TokenKey="LineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<!-- Batch Commands -->
+				<ExplicitPatternGroup TokenKey="BatchCommandToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="Insensitive">
+					<ExplicitPatterns>
+						do else end errorlevel exist exit for goto if not pause return say select then when
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- DOS Commands -->
+				<ExplicitPatternGroup TokenKey="DOSCommandToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="Insensitive">
+					<ExplicitPatterns>
+						ansi append assign attrib autofail backup basedev boot break buffers cache call cd chcp 
+						chdir chkdsk choice cls cmd codepage command comp copy country date ddinstal debug del 
+						detach device devicehigh devinfo dir diskcoache diskcomp diskcopy doskey dpath dumpprocess
+						eautil endlocal erase exit_vdm extproc fcbs fdisk fdiskpm files find format fsaccess fsfilter
+						graftabl iopl join keyb keys label lastdrive libpath lh loadhigh makeini maxwait md mem 
+						memman mkdir mode move net patch path pauseonerror picview pmrexx print printmonbufsize 
+						priority priority_disk_io prompt protectonly protshell pstat rd recover reipl ren rename 
+						replace restore rmdir rmsize run set setboot setlocal shell shift sort spool start subst 
+						suppresspopups swappath syslevel syslog threads time timeslice trace tracebuf tracefmt 
+						trapdump tree type undelete unpack use ver verify view vmdisk vol xcopy xcopy32 xdfcopy
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Echo -->
+				<ExplicitPatternGroup TokenKey="EchoToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="Insensitive">
+					<ExplicitPatterns>
+						@echo echo off on
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Labels -->
+				<RegexPatternGroup TokenKey="LabelToken" PatternValue=": (_ | {AlphaMacro})({WordMacro})*" Style="LabelStyle" />
+				<!-- Variables -->
+				<RegexPatternGroup TokenKey="VariableToken" PatternValue="% {DigitMacro}+" Style="VariableStyle" />
+				<!-- Identifier -->
+				<RegexPatternGroup TokenKey="IdentifierToken" PatternValue="(_ | {AlphaMacro})({WordMacro})*" />
+				<!-- Delimiters -->
+				<ExplicitPatternGroup TokenKey="DelimiterToken" Style="DelimiterStyle">
+					<ExplicitPatterns>
+						# $ ( ) + , . // / ; &lt; = &gt; \
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Numbers -->
+				<RegexPatternGroup TokenKey="RealNumberToken" Style="NumberStyle" LookAhead="{NonWordMacro}|\z">
+					<RegexPattern Value="{DigitMacro}* \. {DigitMacro}+ ([Ee] [\+\-]? {DigitMacro}+)?" />
+					<RegexPattern Value="{DigitMacro}+ [Ee] [\+\-]? {DigitMacro}+" />
+				</RegexPatternGroup>
+				<RegexPatternGroup TokenKey="IntegerNumberToken" Style="NumberStyle" PatternValue="{DigitMacro}+" LookAhead="{NonWordMacro}|\z" />
+				<RegexPatternGroup TokenKey="HexIntegerNumberToken" Style="NumberStyle" PatternValue="0 [xX] {HexDigitMacro}+" LookAhead="{NonWordMacro}|\z" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="StringState" />
+				<ChildState Key="CommentState" />
+			</ChildStates>
+		</State>
+
+		<!-- Double Quote Strings -->
+		<State Key="StringState" TokenKey="StringDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="StringStartToken" Style="StringDelimiterStyle" PatternValue="&quot;" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="StringEndToken" Style="StringDelimiterStyle" PatternValue="&quot;" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="StringEscapedCharacterToken" PatternValue="\\." />
+				<RegexPatternGroup TokenKey="StringWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="StringWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="StringDefaultToken" PatternValue="[^\&quot;]" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Comments -->
+		<State Key="CommentState" TokenKey="CommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentDelimiterStyle" PatternValue="rem" LookAhead="{NonWordMacro}|\z" CaseSensitivity="Insensitive" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentDelimiterStyle" PatternValue="::" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>			 
+				<RegexPatternGroup TokenKey="CommentWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="CommentWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="CommentDefaultToken" PatternValue="{NonLineTerminatorMacro}" />
+			</PatternGroups>
+		</State>
+		
+	</States>
+					
+	<!-- Example Text -->
+	<ExampleText>@ECHO OFF
+REM - This batch file accepts a choice
+:BEGIN
+CLS
+REM - Present the user with a choice
+CHOICE /N /C:123 PICK A NUMBER (1, 2, or 3)%1
+REM - Redirect to the proper output based on the choice
+IF ERRORLEVEL == 3 GOTO THREE
+IF ERRORLEVEL == 2 GOTO TWO
+IF ERRORLEVEL == 1 GOTO ONE
+GOTO END
+:THREE
+ECHO You pressed three.
+GOTO END
+:TWO
+ECHO You pressed two.
+GOTO END
+:ONE
+ECHO You pressed one.
+:END</ExampleText>
+		
+</SyntaxLanguage>

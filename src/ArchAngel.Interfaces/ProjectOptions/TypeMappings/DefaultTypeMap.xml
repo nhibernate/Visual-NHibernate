@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<type-maps>
+	<dotnet-types>
+		<dotnet name="GeoAPI.Geometries.IGeography" csharp="IGeography" vb="IGeography" sqlserver="geography" oracle="" mysql="" postgresql="" firebird="" />
+		<dotnet name="GeoAPI.Geometries.IGeometry" csharp="IGeometry" vb="IGeometry" sqlserver="geometry" oracle="" mysql="" postgresql="" firebird="" />
+		<dotnet name="System.Boolean" csharp="bool" vb="Boolean" sqlserver="bit" oracle="" mysql="bit" postgresql="bool" firebird="" />
+		<dotnet name="System.Boolean?" csharp="bool?" vb="Boolean?" sqlserver="bit" oracle="" mysql="bit" postgresql="bool" firebird="" />
+		<dotnet name="System.Byte[]" csharp="byte[]" vb="Byte[]" sqlserver="varbinary" oracle="bfile" mysql="blob" postgresql="bytea" firebird="blob" />
+		<dotnet name="System.Char" csharp="char?" vb="char?" sqlserver="nvarchar" oracle="nvarchar" mysql="varchar" postgresql="varchar" firebird="varying" />
+		<dotnet name="System.Char?" csharp="char?" vb="Char?" sqlserver="nvarchar" oracle="nvarchar" mysql="varchar" postgresql="varchar" firebird="varying" />
+		<dotnet name="System.DateTime" csharp="DateTime" vb="DateTime" sqlserver="DateTime" oracle="date" mysql="DateTime" postgresql="date" firebird="date" />
+		<dotnet name="System.DateTime?" csharp="DateTime?" vb="DateTime?" sqlserver="DateTime" oracle="date" mysql="DateTime" postgresql="date" firebird="date" />
+		<dotnet name="System.Decimal" csharp="decimal" vb="decimal" sqlserver="decimal" oracle="number" mysql="decimal" postgresql="decimal" firebird="float" />
+		<dotnet name="System.Decimal?" csharp="decimal?" vb="decimal?" sqlserver="decimal" oracle="number" mysql="decimal" postgresql="decimal" firebird="float" />
+		<dotnet name="System.Double" csharp="double" vb="double" sqlserver="float" oracle="number" mysql="double" postgresql="double" firebird="double" />
+		<dotnet name="System.Double?" csharp="double?" vb="double?" sqlserver="float" oracle="number" mysql="double" postgresql="double" firebird="double" />
+		<dotnet name="System.Guid" csharp="Guid" vb="Guid" sqlserver="hierarchyid" oracle="nvarchar" mysql="varchar" postgresql="varchar" firebird="varying" />
+		<dotnet name="System.Guid?" csharp="Guid?" vb="Guid?" sqlserver="hierarchyid" oracle="nvarchar" mysql="varchar" postgresql="varchar" firebird="varying" />
+		<dotnet name="System.Int16" csharp="short" vb="Short" sqlserver="smallint" oracle="rowid" mysql="smallint" postgresql="int2" firebird="short" />
+		<dotnet name="System.Int16?" csharp="short?" vb="Short?" sqlserver="smallint" oracle="rowid" mysql="smallint" postgresql="int2" firebird="short" />
+		<dotnet name="System.Int32" csharp="int" vb="Integer" sqlserver="int" oracle="rowid" mysql="int" postgresql="int" firebird="blob_id" />
+		<dotnet name="System.Int32?" csharp="int?" vb="Integer?" sqlserver="int" oracle="rowid" mysql="int" postgresql="int" firebird="blob_id" />
+		<dotnet name="System.Int64" csharp="long" vb="Long" sqlserver="bigint" oracle="rowid" mysql="bigint" postgresql="bigint" firebird="long" />
+		<dotnet name="System.Int64?" csharp="long?" vb="Long?" sqlserver="bigint" oracle="rowid" mysql="bigint" postgresql="bigint" firebird="long" />
+		<dotnet name="System.Object" csharp="object" vb="Object" sqlserver="varbinary" oracle="bfile" mysql="blob" postgresql="bytea" firebird="blob" />
+		<dotnet name="System.SByte" csharp="sbyte" vb="sbyte" sqlserver="tinyint" oracle="rowid" mysql="tinyint" postgresql="int2" firebird="short" />
+		<dotnet name="System.SByte?" csharp="sbyte?" vb="SByte?" sqlserver="tinyint" oracle="rowid" mysql="tinyint" postgresql="int2" firebird="short" />
+		<dotnet name="System.Single" csharp="float" vb="Single" sqlserver="float" oracle="float" mysql="float" postgresql="real" firebird="float" />
+		<dotnet name="System.Single?" csharp="float?" vb="Single?" sqlserver="float" oracle="float" mysql="float" postgresql="real" firebird="float" />
+		<dotnet name="System.String" csharp="string" vb="String" sqlserver="nvarchar" oracle="nvarchar" mysql="varchar" postgresql="varchar" firebird="varying" />
+		<dotnet name="System.Timespan" csharp="Timespan" vb="Timespan" sqlserver="datetimeoffset" oracle="interval day to second" mysql="date" postgresql="interval" firebird="date" />
+		<dotnet name="System.Timespan?" csharp="Timespan?" vb="Timespan?" sqlserver="datetimeoffset" oracle="interval day to second" mysql="date" postgresql="interval" firebird="date" />
+		<dotnet name="System.UInt16" csharp="ushort" vb="ushort" sqlserver="int" oracle="rowid" mysql="int" postgresql="int" firebird="blob_id" />
+		<dotnet name="System.UInt16?" csharp="ushort?" vb="UInt16?" sqlserver="int" oracle="rowid" mysql="int" postgresql="int" firebird="blob_id" />
+		<dotnet name="System.UInt64" csharp="ulong" vb="UInt64" sqlserver="bigint" oracle="rowid" mysql="bigint" postgresql="bigint" firebird="int64" />
+		<dotnet name="System.UInt64?" csharp="ulong?" vb="UInt64?" sqlserver="bigint" oracle="rowid" mysql="bigint" postgresql="bigint" firebird="int64" />
+	</dotnet-types>
+	<sql-server-maps>
+		<map type="bigint" dotnet="System.Int64" />
+		<map type="binary" dotnet="System.Byte[]" />
+		<map type="bit" dotnet="System.Boolean" />
+		<map type="char" dotnet="System.String" />
+		<map type="date" dotnet="System.DateTime" />
+		<map type="datetime" dotnet="System.DateTime" />
+		<map type="datetime2" dotnet="System.DateTime" />
+		<map type="datetimeoffset" dotnet="System.DateTime" />
+		<map type="decimal" dotnet="System.Decimal" />
+		<map type="float" dotnet="System.Double" />
+		<map type="geography" dotnet="GeoAPI.Geometries.IGeography" />
+		<map type="geometry" dotnet="GeoAPI.Geometries.IGeometry" />
+		<map type="hierarchyid" dotnet="System.String" />
+		<map type="image" dotnet="System.Byte[]" />
+		<map type="int" dotnet="System.Int32" />
+		<map type="money" dotnet="System.Decimal" />
+		<map type="nchar" dotnet="System.String" />
+		<map type="ntext" dotnet="System.String" />
+		<map type="numeric" dotnet="System.Double" />
+		<map type="nvarchar" dotnet="System.String" />
+		<map type="real" dotnet="System.Double" />
+		<map type="smalldatetime" dotnet="System.DateTime" />
+		<map type="smallint" dotnet="System.Int16" />
+		<map type="smallmoney" dotnet="System.Decimal" />
+		<map type="sql_variant" dotnet="System.Object" />
+		<map type="text" dotnet="System.String" />
+		<map type="time" dotnet="System.DateTime" />
+		<map type="timestamp" dotnet="System.DateTime" />
+		<map type="tinyint" dotnet="System.Int16" />
+		<map type="uniqueidentifier" dotnet="System.Guid" />
+		<map type="varbinary" dotnet="System.Byte[]" />
+		<map type="varchar" dotnet="System.String" />
+		<map type="xml" dotnet="System.Object" />
+	</sql-server-maps>
+	<oracle-maps>
+		<map type="bfile" dotnet="System.Byte[]" />
+		<map type="binary_double" dotnet="System.Double" />
+		<map type="binary_float" dotnet="System.Double" />
+		<map type="blob" dotnet="System.Byte[]" />
+		<map type="char" dotnet="System.String" />
+		<map type="clob" dotnet="System.String" />
+		<map type="date" dotnet="System.DateTime" />
+		<map type="float" dotnet="System.Single" />
+		<map type="interval day to second" dotnet="System.Timespan" />
+		<map type="interval year to month" dotnet="System.Timespan" />
+		<map type="lob" dotnet="System.Byte[]" />
+		<map type="long" dotnet="System.String" />
+		<map type="long raw" dotnet="System.Byte[]" />
+		<map type="nchar" dotnet="System.String" />
+		<map type="nclob" dotnet="System.String" />
+		<map type="number" dotnet="System.Double" />
+		<map type="nvarchar" dotnet="System.String" />
+		<map type="nvarchar2" dotnet="System.String" />
+		<map type="raw" dotnet="System.Byte[]" />
+		<map type="rowid" dotnet="System.Int32" />
+		<map type="timestamp" dotnet="System.DateTime" />
+		<map type="timestamp with local time zone" dotnet="System.DateTime" />
+		<map type="timestamp with time zone" dotnet="System.DateTime" />
+		<map type="urowid" dotnet="System.Int32" />
+		<map type="vararray" dotnet="System.Object" />
+		<map type="varchar" dotnet="System.String" />
+		<map type="varchar2" dotnet="System.String" />
+		<map type="xmltype" dotnet="System.Object" />
+	</oracle-maps>
+	<mysql-maps>
+		<map type="bigint" dotnet="System.Int64" />
+		<map type="bit" dotnet="System.Boolean" />
+		<map type="blob" dotnet="System.Byte[]" />
+		<map type="char" dotnet="System.String" />
+		<map type="date" dotnet="System.DateTime" />
+		<map type="datetime" dotnet="System.DateTime" />
+		<map type="decimal" dotnet="System.Decimal" />
+		<map type="double" dotnet="System.Double" />
+		<map type="enum" dotnet="System.String" />
+		<map type="fixed" dotnet="System.Decimal" />
+		<map type="float" dotnet="System.Single" />
+		<map type="int" dotnet="System.Int32" />
+		<map type="longblob" dotnet="System.Byte[]" />
+		<map type="longtext" dotnet="System.String" />
+		<map type="mediumblob" dotnet="System.Byte[]" />
+		<map type="mediumint" dotnet="System.Int32" />
+		<map type="mediumtext" dotnet="System.String" />
+		<map type="set" dotnet="System.String" />
+		<map type="smallint" dotnet="System.Int16" />
+		<map type="text" dotnet="System.String" />
+		<map type="time" dotnet="System.DateTime" />
+		<map type="timestamp" dotnet="System.DateTime" />
+		<map type="tinyblob" dotnet="System.Byte[]" />
+		<map type="tinyint" dotnet="System.Int16" />
+		<map type="tinytext" dotnet="System.String" />
+		<map type="varbinary" dotnet="System.Byte[]" />
+		<map type="varchar" dotnet="System.String" />
+		<map type="year" dotnet="System.Int16" />
+	</mysql-maps>
+	<postgresql-maps>
+		<map type="\char\" dotnet="System.String" />
+		<map type="abstime" dotnet="System.DateTime" />
+		<map type="anyarray" dotnet="System.Object" />
+		<map type="array" dotnet="System.Object" />
+		<map type="bigint" dotnet="System.Int64" />
+		<map type="bigserial" dotnet="System.Int64" />
+		<map type="bit" dotnet="System.Boolean" />
+		<map type="bit varying" dotnet="System.Boolean" />
+		<map type="bool" dotnet="System.Boolean" />
+		<map type="boolean" dotnet="System.Boolean" />
+		<map type="box" dotnet="System.Object" />
+		<map type="bytea" dotnet="System.Byte[]" />
+		<map type="char" dotnet="System.String" />
+		<map type="character" dotnet="System.String" />
+		<map type="character varying" dotnet="System.String" />
+		<map type="cidr" dotnet="System.Object" />
+		<map type="circle" dotnet="System.Object" />
+		<map type="currency" dotnet="System.Decimal" />
+		<map type="date" dotnet="System.DateTime" />
+		<map type="decimal" dotnet="System.Decimal" />
+		<map type="double" dotnet="System.Double" />
+		<map type="double precision" dotnet="System.Double" />
+		<map type="float4" dotnet="System.Double" />
+		<map type="float8" dotnet="System.Double" />
+		<map type="inet" dotnet="System.Object" />
+		<map type="int" dotnet="System.Int32" />
+		<map type="int2" dotnet="System.Int16" />
+		<map type="int4" dotnet="System.Int32" />
+		<map type="int8" dotnet="System.Int64" />
+		<map type="integer" dotnet="System.Int32" />
+		<map type="interval" dotnet="System.Timespan" />
+		<map type="line" dotnet="System.Object" />
+		<map type="lseg" dotnet="System.Object" />
+		<map type="macaddr" dotnet="System.Object" />
+		<map type="money" dotnet="System.Decimal" />
+		<map type="name" dotnet="System.String" />
+		<map type="numeric" dotnet="System.Decimal" />
+		<map type="oid" dotnet="System.Int32" />
+		<map type="path" dotnet="System.Object" />
+		<map type="point" dotnet="System.Object" />
+		<map type="polygon" dotnet="System.Object" />
+		<map type="real" dotnet="System.Double" />
+		<map type="regproc" dotnet="System.Int32" />
+		<map type="serial" dotnet="System.Int32" />
+		<map type="serial4" dotnet="System.Int32" />
+		<map type="serial8" dotnet="System.Int64" />
+		<map type="smallint" dotnet="System.Int16" />
+		<map type="text" dotnet="System.String" />
+		<map type="time" dotnet="System.DateTime" />
+		<map type="time with time zone" dotnet="System.DateTime" />
+		<map type="time without time zone" dotnet="System.DateTime" />
+		<map type="timestamp" dotnet="System.DateTime" />
+		<map type="timestamp with time zone" dotnet="System.DateTime" />
+		<map type="timestamp without time zone" dotnet="System.DateTime" />
+		<map type="timestamptz" dotnet="System.DateTime" />
+		<map type="timetz" dotnet="System.DateTime" />
+		<map type="varbit" dotnet="System.Boolean" />
+		<map type="varchar" dotnet="System.String" />
+		<map type="xid" dotnet="System.Int32" />
+	</postgresql-maps>
+	<firebird-maps>
+		<map type="blob" dotnet="System.Byte[]" />
+		<map type="blob_id" dotnet="System.Int32" />
+		<map type="cstring" dotnet="System.String" />
+		<map type="date" dotnet="System.DateTime" />
+		<map type="double" dotnet="System.Double" />
+		<map type="float" dotnet="System.Single" />
+		<map type="int64" dotnet="System.Int64" />
+		<map type="long" dotnet="System.Int64" />
+		<map type="quad" dotnet="System.Int64" />
+		<map type="short" dotnet="System.Int16" />
+		<map type="text" dotnet="System.String" />
+		<map type="time" dotnet="System.DateTime" />
+		<map type="timestamp" dotnet="System.DateTime" />
+		<map type="varying" dotnet="System.String" />
+	</firebird-maps>
+	<sqlite-maps>
+		<map type="integer" dotnet="System.Int32" />
+		<map type="real" dotnet="System.Double" />
+		<map type="text" dotnet="System.String" />
+		<map type="blob" dotnet="System.Byte[]" />
+
+		<map type="character" dotnet="System.String" />
+		<map type="varying character" dotnet="System.String" />
+		<map type="native character" dotnet="System.String" />
+		<map type="clob" dotnet="System.String" />
+		<map type="double precision" dotnet="System.Double" />
+
+		<!-- From SQL Server -->
+		<map type="bigint" dotnet="System.Int64" />
+		<map type="binary" dotnet="System.Byte[]" />
+		<map type="bit" dotnet="System.Boolean" />
+		<map type="char" dotnet="System.String" />
+		<map type="date" dotnet="System.DateTime" />
+		<map type="datetime" dotnet="System.DateTime" />
+		<map type="datetime2" dotnet="System.DateTime" />
+		<map type="datetimeoffset" dotnet="System.DateTime" />
+		<map type="decimal" dotnet="System.Decimal" />
+		<map type="float" dotnet="System.Double" />
+		<map type="geography" dotnet="GeoAPI.Geometries.IGeography" />
+		<map type="geometry" dotnet="GeoAPI.Geometries.IGeometry" />
+		<map type="hierarchyid" dotnet="System.String" />
+		<map type="image" dotnet="System.Byte[]" />
+		<map type="int" dotnet="System.Int32" />
+		<map type="money" dotnet="System.Decimal" />
+		<map type="nchar" dotnet="System.String" />
+		<map type="ntext" dotnet="System.String" />
+		<map type="numeric" dotnet="System.Double" />
+		<map type="nvarchar" dotnet="System.String" />
+		<map type="smalldatetime" dotnet="System.DateTime" />
+		<map type="smallint" dotnet="System.Int16" />
+		<map type="smallmoney" dotnet="System.Decimal" />
+		<map type="sql_variant" dotnet="System.Object" />
+		<map type="time" dotnet="System.DateTime" />
+		<map type="timestamp" dotnet="System.DateTime" />
+		<map type="tinyint" dotnet="System.Int16" />
+		<map type="uniqueidentifier" dotnet="System.Guid" />
+		<map type="varbinary" dotnet="System.Byte[]" />
+		<map type="varchar" dotnet="System.String" />
+		<map type="xml" dotnet="System.Object" />
+		
+		<!-- From MySQL -->
+		<map type="double" dotnet="System.Double" />
+		<map type="enum" dotnet="System.String" />
+		<map type="fixed" dotnet="System.Decimal" />
+		<map type="longblob" dotnet="System.Byte[]" />
+		<map type="longtext" dotnet="System.String" />
+		<map type="mediumblob" dotnet="System.Byte[]" />
+		<map type="mediumint" dotnet="System.Int32" />
+		<map type="mediumtext" dotnet="System.String" />
+		<map type="set" dotnet="System.String" />
+		<map type="tinyblob" dotnet="System.Byte[]" />
+		<map type="tinytext" dotnet="System.String" />
+		<map type="year" dotnet="System.Int16" />
+		
+		<!-- From PostgreSql -->
+		<map type="\char\" dotnet="System.String" />
+		<map type="abstime" dotnet="System.DateTime" />
+		<map type="anyarray" dotnet="System.Object" />
+		<map type="array" dotnet="System.Object" />
+		<map type="bigserial" dotnet="System.Int64" />
+		<map type="bit varying" dotnet="System.Boolean" />
+		<map type="bool" dotnet="System.Boolean" />
+		<map type="boolean" dotnet="System.Boolean" />
+		<map type="box" dotnet="System.Object" />
+		<map type="bytea" dotnet="System.Byte[]" />
+		<map type="character" dotnet="System.String" />
+		<map type="character varying" dotnet="System.String" />
+		<map type="cidr" dotnet="System.Object" />
+		<map type="circle" dotnet="System.Object" />
+		<map type="currency" dotnet="System.Decimal" />
+		<map type="double precision" dotnet="System.Double" />
+		<map type="float4" dotnet="System.Double" />
+		<map type="float8" dotnet="System.Double" />
+		<map type="inet" dotnet="System.Object" />
+		<map type="int2" dotnet="System.Int16" />
+		<map type="int4" dotnet="System.Int32" />
+		<map type="int8" dotnet="System.Int64" />
+		<map type="interval" dotnet="System.Timespan" />
+		<map type="line" dotnet="System.Object" />
+		<map type="lseg" dotnet="System.Object" />
+		<map type="macaddr" dotnet="System.Object" />
+		<map type="name" dotnet="System.String" />
+		<map type="oid" dotnet="System.Int32" />
+		<map type="path" dotnet="System.Object" />
+		<map type="point" dotnet="System.Object" />
+		<map type="polygon" dotnet="System.Object" />
+		<map type="regproc" dotnet="System.Int32" />
+		<map type="serial" dotnet="System.Int32" />
+		<map type="serial4" dotnet="System.Int32" />
+		<map type="serial8" dotnet="System.Int64" />
+		<map type="time with time zone" dotnet="System.DateTime" />
+		<map type="time without time zone" dotnet="System.DateTime" />
+		<map type="timestamp with time zone" dotnet="System.DateTime" />
+		<map type="timestamp without time zone" dotnet="System.DateTime" />
+		<map type="timestamptz" dotnet="System.DateTime" />
+		<map type="timetz" dotnet="System.DateTime" />
+		<map type="varbit" dotnet="System.Boolean" />
+		<map type="xid" dotnet="System.Int32" />
+	</sqlite-maps>
+	<scripts>
+		<sqlserver>
+			<![CDATA[if (column.IsNullable && TypeIsNullable(dotnetTypeName))
+	return dotnetTypeName + "?";
+else
+	return dotnetTypeName;
+		]]>
+		</sqlserver>
+		<oracle>
+			<![CDATA[if (column.IsNullable && TypeIsNullable(dotnetTypeName))
+	return dotnetTypeName + "?";
+else
+	return dotnetTypeName;
+		]]>
+		</oracle>
+		<mysql>
+			<![CDATA[if (column.IsNullable && TypeIsNullable(dotnetTypeName))
+	return dotnetTypeName + "?";
+else
+	return dotnetTypeName;
+		]]>
+		</mysql>
+		<postgresql>
+			<![CDATA[if (column.IsNullable && TypeIsNullable(dotnetTypeName))
+	return dotnetTypeName + "?";
+else
+	return dotnetTypeName;
+		]]>
+		</postgresql>
+		<firebird>
+			<![CDATA[if (column.IsNullable && TypeIsNullable(dotnetTypeName))
+	return dotnetTypeName + "?";
+else
+	return dotnetTypeName;
+		]]>
+		</firebird>
+		<sqlite>
+			<![CDATA[if (column.IsNullable && TypeIsNullable(dotnetTypeName))
+	return dotnetTypeName + "?";
+else
+	return dotnetTypeName;
+		]]>
+		</sqlite>
+	</scripts>
+</type-maps>

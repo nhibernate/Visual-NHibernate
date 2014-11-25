@@ -1,0 +1,6 @@
+IF (Complete.Checked = True)  THEN  TextComplete.Visible := True;
+IF (Complete.Checked <> True)  THEN  TextComplete.Visible := False;
+IF (Minimum.Checked = True)  THEN  TextMinimum.Visible := True;
+IF (Minimum.Checked <> True)  THEN  TextMinimum.Visible := False;
+IF (Personalized.Checked = True)  THEN  TextPersonalized.Visible := True;
+IF (Personalized.Checked <> True)  THEN  TextPersonalized.Visible := False;

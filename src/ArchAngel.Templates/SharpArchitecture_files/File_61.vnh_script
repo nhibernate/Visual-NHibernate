@@ -1,0 +1,19 @@
+namespace <#=Project.Settings.Name#>.Web.Controllers
+{
+	public class <#=Project.Settings.Name.Replace(".", "/").Trim('/')#>AreaRegistration : System.Web.Mvc.AreaRegistration
+	{
+	    public override string AreaName {
+	        get {
+	            return "<#=Project.Settings.Name.Replace(".", "/").Trim('/')#>";
+	        }
+	    }
+
+	    public override void RegisterArea(System.Web.Mvc.AreaRegistrationContext context) {
+	        context.MapRoute(
+	                "<#=Project.Settings.Name.Replace(".", "")#>_default",
+	                "<#=Project.Settings.Name.Replace(".", "/").Trim('/')#>/{controller}/{action}/{id}",
+	                new { action = "Index", id = "" }
+	            );
+	    }
+	}
+}

@@ -1,0 +1,258 @@
+<SmartAssemblyProject ProjectId="{df4d8946-6ffe-471d-80e9-318ad8313eb7}" Version="2.0">
+    <MainAssemblyFileName>..\..\ArchAngel.WorkBench\bin\Release\ArchAngel.Workbench.exe</MainAssemblyFileName>
+    <FriendlyName>Visual NHibernate</FriendlyName>
+    <CompanyName>Slyce Software</CompanyName>
+    <Configuration Name="Release">
+        <ApplicationName>Visual NHibernate</ApplicationName>
+        <Destination DestinationFileName=".\Output\ArchAngel.Workbench.exe" />
+        <Assemblies>
+            <Assembly AssemblyName="ArchAngel.Interfaces, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Slyce.Common, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Ionic.Zip, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="DevComponents.DotNetBar2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.SyntaxEditor.Net20, Culture=neutral, PublicKeyToken=21a821480e210563">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.Shared.Net20, Culture=neutral, PublicKeyToken=36ff2196ab5654b9">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.WinUICore.Net20, Culture=neutral, PublicKeyToken=1eba893a2bc55de5">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Common, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="log4net, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Slyce.IntelliMerge, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Providers.CodeProvider, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Culture=neutral, PublicKeyToken=5504180c8d344a1e">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.UIStudio.Dock.Net20, Culture=neutral, PublicKeyToken=be939c973e8cb8a6">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Vista Api, Culture=neutral, PublicKeyToken=c7f393256a71c909">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Licensing, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging Merge="1">
+                    <Pruning Prune="1">
+                        <Exclusion>
+                            <Token Table="CustomAttribute">
+                                <Assembly>ArchAngel.Licensing</Assembly>
+                                <Module>ArchAngel.Licensing.dll</Module>
+                                <AttributeType>DotfuscatorDoNotRename</AttributeType>
+                                <AttributeAssembly>Slyce.Common</AttributeAssembly>
+                                <AttributeNamespace />
+                                <AssociatedToken Table="TypeDef">
+                                    <Assembly>ArchAngel.Licensing</Assembly>
+                                    <Module>ArchAngel.Licensing.dll</Module>
+                                    <Name>LicenseStates</Name>
+                                    <Container>SlyceAuthorizer</Container>
+                                    <ItemType>Enum</ItemType>
+                                    <Namespace>ArchAngel.Licensing</Namespace>
+                                </AssociatedToken>
+                                <AttributeModule>Slyce.Common.dll</AttributeModule>
+                            </Token>
+                        </Exclusion>
+                    </Pruning>
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" ObfuscationLevel="3" />
+                    <MemberRefsProxy Proxy="1" />
+                    <ResourcesCompression Compress="1" />
+                    <StringsEncoding />
+                    <ResourcesPruning />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="AlpineSoft.EZRSA, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging Merge="0">
+                    <Pruning Prune="1">
+                        <Exclusion />
+                    </Pruning>
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" ObfuscationLevel="3" />
+                    <MemberRefsProxy Proxy="1" />
+                    <StringsEncoding />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Workbench, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging>
+                    <ResourcesCompression Compress="1" />
+                    <MemberRefsProxy Proxy="1" />
+                    <Pruning Prune="1">
+                        <Exclusion />
+                    </Pruning>
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" ObfuscationLevel="3" />
+                    <StringsEncoding />
+                    <ResourcesPruning />
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.NHibernateHelper, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Providers.EntityModel, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Devart.Data.Universal, Culture=neutral, PublicKeyToken=09af7300eec23701">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Devart.Data, Culture=neutral, PublicKeyToken=09af7300eec23701">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="FirebirdSql.Data.FirebirdClient, Culture=neutral, PublicKeyToken=3750abcc3150b00c">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="System.Data.SqlServerCe, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Inflector.Net, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="SmartExceptionsWithAdvancedUI, Culture=neutral, PublicKeyToken=null">
+                <Merging>
+                    <Pruning />
+                    <Obfuscation />
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                    <StringsEncoding />
+                    <ResourcesPruning />
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="SmartExceptionsWithUI, Culture=neutral, PublicKeyToken=null">
+                <Merging>
+                    <Pruning />
+                    <Obfuscation />
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="FluentNHibernate, Culture=neutral, PublicKeyToken=8aa435e3cb308880">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="NHibernate, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Iesi.Collections, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Antlr3.Runtime, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="{smartassembly}.MemoryManagement, Culture=neutral, PublicKeyToken=null">
+                <Merging>
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="{smartassembly}.ResourceResolver, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging>
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="DebuggableAssembly, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging>
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="SmartAssembly.AssemblyResolver, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging>
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="SmartAssembly.HouseOfCards, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging>
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="SmartAssembly.StringsEncoding, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging>
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="SmartAssembly.Zip, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging>
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="SmartExceptionsCore, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging>
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                </Merging>
+            </Assembly>
+        </Assemblies>
+        <Options>
+            <Obfuscation FieldsNameMangling="3" NameMangling="1" />
+            <ExceptionReporting AlwaysContinueOnError="1" CustomTemplate="..\..\SmartAssembly Custom Template\bin\Release\SmartExceptionsWithAdvancedUI.dll" EmailToBeNotified="gareth.hayter@slyce.com" ReportExceptions="1" Template="res:{SmartExceptions}.1033.dll" UseCustomTemplate="1" />
+            <StrongNameSigning KeyFileName="..\slyce_strong_name_key.snk" Sign="1" TamperProtect="0" />
+            <OtherProtections AddIncorrectMetadata="1" AddMetadataStream="1" SuppressIldasm="1" />
+            <StringsEncoding Compress="1" Encode="1" UseCache="1" UseImprovedEncoding="1" />
+            <OtherOptimizations ManageMemory="1" SealClasses="1" />
+            <Debugging CreatePDB="1" ObfuscateDocumentsURL="1" />
+            <FeatureUsageReporting />
+        </Options>
+    </Configuration>
+</SmartAssemblyProject>

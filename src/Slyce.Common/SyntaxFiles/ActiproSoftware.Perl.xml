@@ -1,0 +1,182 @@
+<SyntaxLanguage Key="Perl" LanguageDefinitionVersion="4.0" Secure="True" xmlns="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition">
+
+	<!-- String Properties -->
+	<Properties>
+		<Property Key="Creator" Value="Actipro Software LLC" />
+		<Property Key="Copyright" Value="Copyright (c) 2001-2009 Actipro Software LLC.  All rights reserved." />
+	</Properties>
+
+	<!-- Highlighting Styles -->	
+	<Styles>
+		<Style Key="ReservedWordStyle" ForeColor="Blue" />
+		<Style Key="SymbolStyle" ForeColor="Teal" />
+		<Style Key="VariableStyle" ForeColor="Purple" />
+		<Style Key="OperatorStyle" ForeColor="Black" />
+		<Style Key="NumberStyle" ForeColor="Maroon" />
+		<Style Key="StringDelimiterStyle" ForeColor="Black" Bold="True" />
+		<Style Key="StringDefaultStyle" ForeColor="Black" Bold="True" />
+		<Style Key="CommentDelimiterStyle" ForeColor="Green" />
+		<Style Key="CommentDefaultStyle" ForeColor="Green" />
+	</Styles>
+	
+	<!-- States -->
+	<States>
+		<!-- Code -->
+		<State Key="DefaultState">
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<!-- Whitespace -->
+				<RegexPatternGroup TokenKey="WhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- Line Terminators -->
+				<RegexPatternGroup TokenKey="LineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<!-- Brackets -->
+				<ExplicitPatternGroup Key="OpenParenthesisPatternGroup" TokenKey="OpenParenthesisToken" PatternValue="(" EndBracket="CloseParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="CloseParenthesisPatternGroup" TokenKey="CloseParenthesisToken" PatternValue=")" StartBracket="OpenParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="OpenCurlyBracePatternGroup" TokenKey="OpenCurlyBraceToken" PatternValue="{" EndBracket="CloseCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseCurlyBracePatternGroup" TokenKey="CloseCurlyBraceToken" PatternValue="}" StartBracket="OpenCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="OpenSquareBracePatternGroup" TokenKey="OpenSquareBraceToken" PatternValue="[" EndBracket="CloseSquareBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseSquareBracePatternGroup" TokenKey="CloseSquareBraceToken" PatternValue="]" StartBracket="OpenSquareBracePatternGroup" />
+				<!-- Reserved Words -->
+				<ExplicitPatternGroup TokenKey="ReservedWordToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z">
+					<ExplicitPatterns>
+						__DATA__ __END__ __FILE__ __LINE__
+						abs accept alarm atan2
+						bind binmode bless
+						caller chdir chmod chomp chop chown chr chroot close closedir connect continue cos crypt
+						dbmclose dbmopen defined delete die do dump
+						each else elsif endgrent endhostent endnetent endprotoent endpwent endservent eof eval exec exists exit exp
+						fcntl fileno flock for foreach fork format formline
+						getc getgrent getgrgid getgrnam gethostbyaddr gethostbyname gethostent getlogin getnetbyaddr getnetbyname 
+							getnetent getpeername getpgrp getppid getpriority getprotobyname getprotobynumber getprotoent getpwent 
+							getpwnam getpwuid getservbyname getservbyport getservent getsockname getsockopt glob gmtime goto grep
+						hex
+						if import index int ioctl
+						join
+						keys kill
+						last lc lcfirst length link listen local localtime lock log lstat
+						m// map mkdir msgctl msgget msgrcv msgsnd my
+						next no
+						oct open opendir ord our
+						pack package pipe pop pos print printf prototype push
+						q/STRING/ qq/STRING/ qr/STRING/ quotemeta qw/STRING/ qx/STRING/
+						rand read readdir readline readlink readpipe recv redo ref rename require reset return reverse rewinddir rindex rmdir
+						s/// scalar seek seekdir select semctl semget semop send setgrent sethostent setnetent setpgrp setpriority setprotoent 
+							setpwent setservent setsockopt shift shmctl shmget shmread shmwrite shutdown sin sleep socket socketpair sort 
+							splice split sprintf sqrt srand stat study sub substr symlink syscall sysopen sysread sysseek system syswrite
+						tell telldir tie tied time times tr/// truncate
+						uc ucfirst umask undef unless unlink unpack unshift untie until use utime
+						values vec
+						wait waitpid wantarray warn while write
+						-X
+						y/// 
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Variables -->
+				<RegexPatternGroup TokenKey="VariableToken" PatternValue="\$+ (_ | {AlphaMacro})({WordMacro})*" Style="VariableStyle" />
+				<RegexPatternGroup TokenKey="VariableToken" PatternValue="@ (_ | {AlphaMacro})({WordMacro})*" Style="VariableStyle" />
+				<RegexPatternGroup TokenKey="VariableToken" PatternValue="% (_ | {AlphaMacro})({WordMacro})*" Style="VariableStyle" />
+				<!-- Identifier -->
+				<RegexPatternGroup TokenKey="IdentifierToken" PatternValue="(_ | {AlphaMacro})({WordMacro})*" />
+				<!-- Operators -->
+				<ExplicitPatternGroup TokenKey="OperatorToken" Style="OperatorStyle">
+					<ExplicitPatterns>
+						== != &lt;=&gt; 
+						-&gt; =&gt;
+						=~ !~
+						= !
+						++ -- **
+						.. ...
+						+= -= *= /= **= .= %= x= &amp;= |= ^= 
+						&lt;&lt; &gt;&gt;
+						&lt; &gt; &lt;= &gt;= 
+						&amp;&amp; ||
+						&amp; | ^ ~ \
+						* / %
+						+ - .
+						? : ,
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<ExplicitPatternGroup TokenKey="OperatorToken" Style="OperatorStyle" LookAhead="{NonWordMacro}|\z">
+					<ExplicitPatterns>
+						lt gt le ge eq ne cmp not and or xor x
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Numbers -->
+				<RegexPatternGroup TokenKey="RealNumberToken" Style="NumberStyle" LookAhead="{NonWordMacro}|\z">
+					<RegexPattern Value="{DigitMacro}* \. {DigitMacro}+ ([Ee] [\+\-]? {DigitMacro}+)?" />
+					<RegexPattern Value="{DigitMacro}+ [Ee] [\+\-]? {DigitMacro}+" />
+				</RegexPatternGroup>
+				<RegexPatternGroup TokenKey="IntegerNumberToken" Style="NumberStyle" PatternValue="{DigitMacro}+" LookAhead="{NonWordMacro}|\z" />
+				<RegexPatternGroup TokenKey="HexIntegerNumberToken" Style="NumberStyle" PatternValue="0 [xX] {HexDigitMacro}+" LookAhead="{NonWordMacro}|\z" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="SingleQuoteStringState" />
+				<ChildState Key="DoubleQuoteStringState" />
+				<ChildState Key="CommentState" />
+			</ChildStates>
+		</State>
+
+		<!-- Single Quote Strings -->
+		<State Key="SingleQuoteStringState" TokenKey="SingleQuoteStringDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="SingleQuoteStringStartToken" Style="StringDelimiterStyle" PatternValue="'" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="SingleQuoteStringEndToken" Style="StringDelimiterStyle" PatternValue="'" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="SingleQuoteStringEscapedCharacterToken" PatternValue="\\." />
+				<RegexPatternGroup TokenKey="SingleQuoteStringWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="SingleQuoteStringWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="SingleQuoteStringDefaultToken" PatternValue="[^']" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Double Quote Strings -->
+		<State Key="DoubleQuoteStringState" TokenKey="DoubleQuoteStringDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="DoubleQuoteStringStartToken" Style="StringDelimiterStyle" PatternValue="&quot;" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="DoubleQuoteStringEndToken" Style="StringDelimiterStyle" PatternValue="&quot;" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="DoubleQuoteStringEscapedCharacterToken" PatternValue="\\." />
+				<RegexPatternGroup TokenKey="DoubleQuoteStringWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="DoubleQuoteStringWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="DoubleQuoteStringDefaultToken" PatternValue="[^\&quot;]" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Comments -->
+		<State Key="CommentState" TokenKey="CommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentDelimiterStyle" PatternValue="#" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>			 
+				<RegexPatternGroup TokenKey="CommentWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="CommentLineTerminatorToken" PatternValue="{LineTerminatorMacro}" LookAhead="{WhitespaceMacro}* #" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="CommentWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="CommentDefaultToken" PatternValue="{NonLineTerminatorMacro}" />
+			</PatternGroups>
+		</State>
+	</States>
+					
+	<!-- Example Text -->
+	<ExampleText>
+		<![CDATA[# Comment
+@values = split(/&/, $ENV{'QUERY_STRING'});
+$NUMBERVAR = 7]]>
+	</ExampleText>
+		
+</SyntaxLanguage>

@@ -1,0 +1,2 @@
+IF (LicenseCheck.Checked = True)  THEN  Next.Visible := True;
+IF (LicenseCheck.Checked = False)  THEN  Next.Visible := False;

@@ -1,0 +1,5 @@
+if (Project.Settings.NHibernateVersion != ArchAngel.NHibernateHelper.NHibernateVersions.v3)
+	SkipThisFile = true;
+
+if (Project.Settings.BytecodeGenerator != ArchAngel.NHibernateHelper.BytecodeGenerator.LinFu)
+	SkipThisFile = true;	

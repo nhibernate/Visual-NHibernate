@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5ED285F4-257B-4014-B248-3B731C61A2C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchAngel.Debugger</RootNamespace>
+    <AssemblyName>ArchAngel.Debugger</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ArchAngel.Debugger.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\ArchAngel.Debugger.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CorAPI\AppDomain.cs" />
+    <Compile Include="CorAPI\AppDomainEnumerator.cs" />
+    <Compile Include="CorAPI\Assembly.cs" />
+    <Compile Include="CorAPI\AssemblyEnumerator.cs" />
+    <Compile Include="CorAPI\Breakpoint.cs" />
+    <Compile Include="CorAPI\BreakpointEnumerator.cs" />
+    <Compile Include="CorAPI\ChainEnumerator.cs" />
+    <Compile Include="CorAPI\Class.cs" />
+    <Compile Include="CorAPI\Constants.cs" />
+    <Compile Include="CorAPI\Controller.cs" />
+    <Compile Include="CorAPI\CorMetadata.cs" />
+    <Compile Include="CorAPI\CorPublish.cs" />
+    <Compile Include="CorAPI\Debugger.cs" />
+    <Compile Include="CorAPI\ErrorInfoEnumerator.cs" />
+    <Compile Include="CorAPI\Eval.cs" />
+    <Compile Include="CorAPI\FunctionBreakpoint.cs" />
+    <Compile Include="CorAPI\HResults.cs" />
+    <Compile Include="CorAPI\ISymBinder2.cs" />
+    <Compile Include="CorAPI\ISymConstant.cs" />
+    <Compile Include="CorAPI\ISymEncMethod.cs" />
+    <Compile Include="CorAPI\ISymENCUpdate.cs" />
+    <Compile Include="CorAPI\ISymReader2.cs" />
+    <Compile Include="CorAPI\ISymScope2.cs" />
+    <Compile Include="CorAPI\ISymSearchInfo.cs" />
+    <Compile Include="CorAPI\ISymWriter2.cs" />
+    <Compile Include="CorAPI\MetadataFieldInfo.cs" />
+    <Compile Include="CorAPI\MetadataParameterInfo.cs" />
+    <Compile Include="CorAPI\MetadataType.cs" />
+    <Compile Include="CorAPI\Module.cs" />
+    <Compile Include="CorAPI\ModuleBreakpoint.cs" />
+    <Compile Include="CorAPI\ModuleEnumerator.cs" />
+    <Compile Include="CorAPI\ObjectEnumerator.cs" />
+    <Compile Include="CorAPI\Process.cs" />
+    <Compile Include="CorAPI\ProcessEnumerator.cs" />
+    <Compile Include="CorAPI\RegisterSet.cs" />
+    <Compile Include="CorAPI\Stepper.cs" />
+    <Compile Include="CorAPI\StepperEnumerator.cs" />
+    <Compile Include="CorAPI\SymAccess.cs" />
+    <Compile Include="CorAPI\symbinder.cs" />
+    <Compile Include="CorAPI\SymConstant.cs" />
+    <Compile Include="CorAPI\SymDocument.cs" />
+    <Compile Include="CorAPI\SymDocumentWriter.cs" />
+    <Compile Include="CorAPI\symmethod.cs" />
+    <Compile Include="CorAPI\SymNamespace.cs" />
+    <Compile Include="CorAPI\SymReader.cs" />
+    <Compile Include="CorAPI\SymScope.cs" />
+    <Compile Include="CorAPI\SymSearchInfo.cs" />
+    <Compile Include="CorAPI\SymSearchPolicyAttributes.cs" />
+    <Compile Include="CorAPI\symvariable.cs" />
+    <Compile Include="CorAPI\SymWriter.cs" />
+    <Compile Include="CorAPI\Thread.cs" />
+    <Compile Include="CorAPI\ThreadEnumerator.cs" />
+    <Compile Include="CorAPI\Type.cs" />
+    <Compile Include="CorAPI\TypeEnumerator.cs" />
+    <Compile Include="CorAPI\Value.cs" />
+    <Compile Include="CorAPI\ValueBreakpoint.cs" />
+    <Compile Include="CorAPI\WrapperBase.cs" />
+    <Compile Include="Debugger.cs" />
+    <Compile Include="MDbgEngine\Appdomain.cs" />
+    <Compile Include="MDbgEngine\Breakpoint.cs" />
+    <Compile Include="MDbgEngine\DebuggerVar.cs" />
+    <Compile Include="MDbgEngine\Engine.cs" />
+    <Compile Include="MDbgEngine\Exception.cs" />
+    <Compile Include="MDbgEngine\FrameFactory.cs" />
+    <Compile Include="MDbgEngine\Function.cs" />
+    <Compile Include="MDbgEngine\InternalUtil.cs" />
+    <Compile Include="MDbgEngine\Module.cs" />
+    <Compile Include="MDbgEngine\Process.cs" />
+    <Compile Include="MDbgEngine\StopReason.cs" />
+    <Compile Include="MDbgEngine\Thread.cs" />
+    <Compile Include="MDbgEngine\Value.cs" />
+    <Compile Include="MDbgEngine\WrapperWrapperBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raw\ICorDebugWrappers.cs" />
+    <Compile Include="Raw\ICorPublishWrappers.cs" />
+    <Compile Include="Raw\IMetadataImport.cs" />
+    <Compile Include="Raw\WindowsImports.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Debugger.DebugProcess\ArchAngel.Debugger.DebugProcess.csproj">
+      <Project>{B4C1A609-0255-4103-A798-DDB618770DF2}</Project>
+      <Name>ArchAngel.Debugger.DebugProcess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
+      <Project>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</Project>
+      <Name>ArchAngel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="doc\Documentation.chm" />
+    <None Include="slyce_strong_name_key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

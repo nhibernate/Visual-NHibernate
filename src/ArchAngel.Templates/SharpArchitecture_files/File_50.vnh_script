@@ -1,0 +1,10 @@
+<%@ Page Title="Create <#=entity.Name#>" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
+	Inherits="System.Web.Mvc.ViewPage<<#=Project.Settings.Name#>.Web.Controllers.<#=entity.NamePlural#>Controller.<#=entity.Name#>FormViewModel>" %>
+
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+
+	<h1>Create <#=entity.Name#></h1>
+
+	<% Html.RenderPartial("<#=entity.Name#>Form", ViewData); %>
+
+</asp:Content>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE dotfuscator SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscator_v2.3.dtd">
+<dotfuscator version="2.3">
+  <!--This is application generated code. Do not edit manually.-->
+  <global>
+    <option>debug</option>
+  </global>
+  <input>
+    <loadpaths />
+    <asmlist>
+      <inputassembly refid="e33e5277-713a-4663-b78a-bf747ebbc131">
+        <option>honoroas</option>
+        <option>stripoa</option>
+        <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.WorkBench\bin\Release" name="ArchAngel.Workbench.exe" />
+      </inputassembly>
+      <inputassembly refid="761a7ff2-bbae-42f6-8988-e5fa0068f6c1">
+        <option>honoroas</option>
+        <option>stripoa</option>
+        <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.Licensing\bin\Release" name="ArchAngel.Licensing.dll" />
+      </inputassembly>
+      <inputassembly refid="f2d1698b-53f0-4599-9769-cb1821b7e4d3">
+        <option>honoroas</option>
+        <option>stripoa</option>
+        <file dir="C:\Projects\Slyce\ArchAngel\trunk\3rd_Party_Libs" name="AlpineSoft.EZRSA.dll" />
+      </inputassembly>
+      <inputassembly refid="6b3537de-de20-425b-9860-66f76ee3a543">
+        <option>honoroas</option>
+        <option>stripoa</option>
+        <option>library</option>
+        <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.Interfaces\bin\Release" name="ArchAngel.Interfaces.dll" />
+      </inputassembly>
+    </asmlist>
+  </input>
+  <output>
+    <file dir="${configdir}\Dotfuscated" />
+  </output>
+  <renaming>
+    <option>enhancedOI</option>
+    <option>explicitoverrides</option>
+    <excludelist>
+      <type name=".*" regex="true">
+        <customattribute name="DotfuscatorDoNotRename" regex="true" />
+        <customattribute name="ApiExtension" regex="true" />
+        <customattribute name="ActionAttribute" regex="true" />
+      </type>
+      <type name="ArchAngel.Workbench.ContentItems.Merge" excludetype="false">
+        <method name="AddTreeListNode" signature="DevExpress.XtraTreeList.Nodes.TreeListNode,string,string,string,string,object,ArchAngel.Workbench.ContentItems.Merge/NodeImages" />
+        <method name="AddTreeListNode" signature="string,ArchAngel.IntelliMerge.DiffItems.DiffFile,ArchAngel.Workbench.ContentItems.Merge/NodeImages,string,string,string" />
+        <method name="DisplayParseErrorNumbers" signature="" />
+        <method name="get_ParseErrors" signature="" />
+        <method name="set_ParseErrors" signature="System.Collections.Generic.List`1&lt;ArchAngel.Providers.ParseError&gt;" />
+      </type>
+      <type name="ArchAngel.Workbench.ContentItems.Merge/NodeImages" />
+      <type name="ArchAngel.Workbench.Controller/SettingNames" excludetype="false">
+        <field name="DisplayTaskHelp" signature="ArchAngel.Workbench.Controller/SettingNames" />
+        <field name="PerformMergeAnalysis" signature="ArchAngel.Workbench.Controller/SettingNames" />
+        <field name="RecentFiles" signature="ArchAngel.Workbench.Controller/SettingNames" />
+        <field name="WindowSize" signature="ArchAngel.Workbench.Controller/SettingNames" />
+      </type>
+      <type name="ArchAngel.Workbench.Properties.Settings.*" regex="true" />
+      <type name="ArchAngel.Workbench.ProjectSettings">
+        <method name="GetObjectData" signature="void(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)" />
+        <method name="Open" signature="void(string)" />
+        <method name="Save" signature="void(string)" />
+        <method name="get_FileName" signature="string()" />
+        <method name="set_FileName" signature="void(string)" />
+        <method name="get_ProjectGuid" signature="System.Guid()" />
+        <method name="set_ProjectGuid" signature="void(System.Guid)" />
+        <method name="get_ProjectPath" signature="string()" />
+        <method name="set_ProjectPath" signature="void(string)" />
+        <method name="get_TemplateFileName" signature="string()" />
+        <method name="set_TemplateFileName" signature="void(string)" />
+        <field name="_fileName" signature="string" />
+        <field name="_projectGuid" signature="System.Guid" />
+        <field name="_projectPath" signature="string" />
+        <field name="_setupTemplateFileName" signature="string" />
+        <field name="_templateFileName" signature="string" />
+        <field name="REGISTRY_KEY" signature="string" />
+        <field name="Settings" signature="System.Collections.Hashtable" />
+      </type>
+      <type name="ArchAngel.Workbench.IntelliMerge.ITaskProgressHelper`1&lt;T&gt;">
+        <method name="Cancel" signature="void()" />
+        <method name="IsCancellationPending" signature="bool()" />
+        <method name="ReportProgress" signature="void(int32, !0)" />
+        <method name="get_LastProgressObject" signature="!0()" />
+        <propertymember name="LastProgressObject" />
+      </type>
+      <type name="ArchAngel.Workbench.IntelliMerge.QueueingTaskProgressHelper`1&lt;T&gt;">
+        <method name="Cancel" signature="void()" />
+        <method name="ClearQueue" signature="void()" />
+        <method name="DequeueAllItems" signature="System.Collections.Generic.IEnumerable`1&lt;ArchAngel.Workbench.IntelliMerge.ProgressMessage`1&lt;!0&gt;&gt;()" />
+        <method name="IsCancellationPending" signature="bool()" />
+        <method name="ReportProgress" signature="void(int32, !0)" />
+        <method name="get_LastProgressObject" signature="!0()" />
+        <field name="lastMessage" signature="ArchAngel.Workbench.IntelliMerge.ProgressMessage`1&lt;!0&gt;" />
+        <field name="lockObj" signature="object" />
+        <field name="queuedProgressMessages" signature="System.Collections.Generic.Queue`1&lt;ArchAngel.Workbench.IntelliMerge.ProgressMessage`1&lt;!0&gt;&gt;" />
+        <field name="worker" signature="System.ComponentModel.BackgroundWorker" />
+        <propertymember name="LastProgressObject" />
+      </type>
+      <type name="ArchAngel.Workbench.IntelliMerge.QueueingTaskProgressHelper`1/&lt;DequeueAllItems&gt;d__0&lt;T&gt;">
+        <method name="&lt;&gt;m__Finally3" signature="void()" />
+        <method name="&lt;&gt;m__Finally5" signature="void()" />
+        <method name="MoveNext" signature="bool()" />
+        <method name="System.Collections.Generic.IEnumerable&lt;ArchAngel.Workbench.IntelliMerge.ProgressMessage&lt;T&gt;&gt;.GetEnumerator" signature="System.Collections.Generic.IEnumerator`1&lt;ArchAngel.Workbench.IntelliMerge.ProgressMessage`1&lt;!0&gt;&gt;()" />
+        <method name="System.Collections.IEnumerable.GetEnumerator" signature="System.Collections.IEnumerator()" />
+        <method name="System.Collections.IEnumerator.Reset" signature="void()" />
+        <method name="System.IDisposable.Dispose" signature="void()" />
+        <method name="System.Collections.Generic.IEnumerator&lt;ArchAngel.Workbench.IntelliMerge.ProgressMessage&lt;T&gt;&gt;.get_Current" signature="ArchAngel.Workbench.IntelliMerge.ProgressMessage`1&lt;!0&gt;()" />
+        <method name="System.Collections.IEnumerator.get_Current" signature="object()" />
+        <field name="&lt;&gt;1__state" signature="int32" />
+        <field name="&lt;&gt;2__current" signature="ArchAngel.Workbench.IntelliMerge.ProgressMessage`1&lt;!0&gt;" />
+        <field name="&lt;&gt;4__this" signature="ArchAngel.Workbench.IntelliMerge.QueueingTaskProgressHelper`1&lt;!0&gt;" />
+        <field name="&lt;&gt;7__wrap2" signature="object" />
+        <field name="&lt;&gt;7__wrap4" signature="System.Collections.Generic.Queue`1/Enumerator&lt;ArchAngel.Workbench.IntelliMerge.ProgressMessage`1&lt;!0&gt;&gt;" />
+        <field name="&lt;&gt;l__initialThreadId" signature="int32" />
+        <field name="&lt;item&gt;5__1" signature="ArchAngel.Workbench.IntelliMerge.ProgressMessage`1&lt;!0&gt;" />
+        <propertymember name="System.Collections.Generic.IEnumerator&lt;ArchAngel.Workbench.IntelliMerge.ProgressMessage&lt;T&gt;&gt;.Current" />
+        <propertymember name="System.Collections.IEnumerator.Current" />
+      </type>
+      <type name="ArchAngel.Workbench.IntelliMerge.TaskProgressHelper">
+        <method name="Cancel" signature="void()" />
+        <method name="IsCancellationPending" signature="bool()" />
+        <method name="ReportProgress" signature="void(int32, object)" />
+        <method name="get_LastProgressObject" signature="object()" />
+        <field name="e" signature="System.ComponentModel.CancelEventArgs" />
+        <field name="lastProgressObject" signature="object" />
+        <field name="NullHelper" signature="ArchAngel.Workbench.IntelliMerge.TaskProgressHelper" />
+        <field name="worker" signature="System.ComponentModel.BackgroundWorker" />
+        <propertymember name="LastProgressObject" />
+      </type>
+      <type name="ArchAngel.Workbench.IntelliMerge.TaskProgressHelper/NullTaskProgressHelper">
+        <method name="Cancel" signature="void()" />
+        <method name="IsCancellationPending" signature="bool()" />
+        <method name="ReportProgress" signature="void(int32, object)" />
+        <method name="get_LastProgressObject" signature="object()" />
+        <propertymember name="LastProgressObject" />
+      </type>
+      <type name="ArchAngel.Workbench.FormMain" excludetype="false">
+        <method name="LoadWizardPage" signature="void(int32)" />
+        <method name="LoadWizardPage" signature="void(int32, bool)" />
+      </type>
+      <type name="ArchAngel.Workbench.Properties.Resources">
+        <method name="get_cross_32" signature="System.Drawing.Bitmap()" />
+        <method name="get_Culture" signature="System.Globalization.CultureInfo()" />
+        <method name="set_Culture" signature="void(System.Globalization.CultureInfo)" />
+        <method name="get_error_16" signature="System.Drawing.Bitmap()" />
+        <method name="get_insert_32" signature="System.Drawing.Bitmap()" />
+        <method name="get_plus_32" signature="System.Drawing.Bitmap()" />
+        <method name="get_reset_32" signature="System.Drawing.Bitmap()" />
+        <method name="get_ResourceManager" signature="System.Resources.ResourceManager()" />
+        <method name="get_TextCenter" signature="System.Drawing.Bitmap()" />
+        <field name="resourceCulture" signature="System.Globalization.CultureInfo" />
+        <field name="resourceMan" signature="System.Resources.ResourceManager" />
+        <propertymember name="cross_32" />
+        <propertymember name="Culture" />
+        <propertymember name="error_16" />
+        <propertymember name="insert_32" />
+        <propertymember name="plus_32" />
+        <propertymember name="reset_32" />
+        <propertymember name="ResourceManager" />
+        <propertymember name="TextCenter" />
+      </type>
+      <type name="ArchAngel.Workbench.Properties.Settings">
+        <method name="SettingChangingEventHandler" signature="void(object, System.Configuration.SettingChangingEventArgs)" />
+        <method name="SettingsSavingEventHandler" signature="void(object, System.ComponentModel.CancelEventArgs)" />
+        <method name="get_DebugLoggingEnabled" signature="bool()" />
+        <method name="set_DebugLoggingEnabled" signature="void(bool)" />
+        <method name="get_Default" signature="ArchAngel.Workbench.Properties.Settings()" />
+        <method name="get_DisplayTaskHelp" signature="bool()" />
+        <method name="set_DisplayTaskHelp" signature="void(bool)" />
+        <method name="get_PerformMergeAnalysis" signature="bool()" />
+        <method name="set_PerformMergeAnalysis" signature="void(bool)" />
+        <method name="get_RecentFiles" signature="string()" />
+        <method name="set_RecentFiles" signature="void(string)" />
+        <method name="get_WindowSize" signature="string()" />
+        <method name="set_WindowSize" signature="void(string)" />
+        <field name="defaultInstance" signature="ArchAngel.Workbench.Properties.Settings" />
+        <propertymember name="DebugLoggingEnabled" />
+        <propertymember name="Default" />
+        <propertymember name="DisplayTaskHelp" />
+        <propertymember name="PerformMergeAnalysis" />
+        <propertymember name="RecentFiles" />
+        <propertymember name="WindowSize" />
+      </type>
+    </excludelist>
+    <mapping>
+      <mapoutput overwrite="true">
+        <file dir="${configdir}\Dotfuscated" name="Map.xml" />
+        <transform />
+      </mapoutput>
+    </mapping>
+    <referencerulelist />
+  </renaming>
+  <controlflow level="high">
+    <excludelist>
+      <type name=".*" regex="true">
+        <customattribute name="DotfuscatorDoNotAlterControlFlow" regex="true" />
+      </type>
+    </excludelist>
+  </controlflow>
+  <stringencrypt />
+  <codeprotection />
+  <removal>
+    <triggerlist>
+      <type name=".*" regex="true">
+        <customattribute name="DotfuscatorDoNotRemove" regex="true" />
+      </type>
+      <type name="ArchAngel.Workbench.Properties.Settings" />
+    </triggerlist>
+    <referencerulelist />
+  </removal>
+  <linking>
+    <linkedassembly>
+      <option>donotmangle</option>
+      <primaryinput>
+        <assembly>
+          <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.WorkBench\bin\Release" name="ArchAngel.Workbench.exe" />
+        </assembly>
+      </primaryinput>
+      <assemblylist>
+        <assembly>
+          <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.WorkBench\bin\Release" name="ArchAngel.Workbench.exe" />
+        </assembly>
+        <assembly>
+          <file dir="C:\Projects\Slyce\ArchAngel\trunk\3rd_Party_Libs" name="AlpineSoft.EZRSA.dll" />
+        </assembly>
+        <assembly>
+          <file dir="C:\Projects\Slyce\ArchAngel\trunk\ArchAngel.Licensing\bin\Release" name="ArchAngel.Licensing.dll" />
+        </assembly>
+      </assemblylist>
+      <outputassembly name="ArchAngel.Workbench.exe" />
+    </linkedassembly>
+  </linking>
+  <signing>
+    <resign>
+      <option>dontuseattributes</option>
+      <key>
+        <file dir="C:\Projects\Slyce\ArchAngel\trunk\Installer" name="slyce_strong_name_key.snk" />
+      </key>
+    </resign>
+  </signing>
+  <sos mergeruntime="false">
+    <option>disable</option>
+    <option>dontsendtamper</option>
+  </sos>
+  <licensing>
+    <permutation name="" />
+    <product versionmask="revision" />
+    <nolicenseaction name="showactivation" />
+    <unlockingfeature name="" />
+  </licensing>
+  <extattributes />
+  <smartobfuscation>
+    <smartobfuscationreport verbosity="all" overwrite="false" />
+  </smartobfuscation>
+</dotfuscator>

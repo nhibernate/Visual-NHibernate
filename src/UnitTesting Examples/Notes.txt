@@ -1,0 +1,5 @@
+﻿Feel free to add any notes here... 
+assumptions, a list of things to cover, questions, whatever
+
+If you need static files for Input or Expected Outputs, 
+save them as embedded resources in the Resources folder.

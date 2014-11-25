@@ -1,0 +1,32 @@
+<root>
+	<version>0.8.1.6</version>
+	<folder name="Templates">
+		<folder name="PetShop 4.0">
+			<file name="PetShop2005.aal" md5="" />
+			<file name="PetShop2005.stz" md5="" />
+		</folder>
+		<file name="ActiproSoftware.Shared.Net20.dll" md5="" />
+		<file name="ActiproSoftware.SyntaxEditor.Net20.dll" md5="" />
+		<file name="ActiproSoftware.UIStudio.Dock.Net20.dll" md5="" />
+		<file name="ActiproSoftware.UIStudio.NavigationBar.Net20.dll" md5="" />
+		<file name="ActiproSoftware.WinUICore.Net20.dll" md5="" />
+		<file name="ArchAngel Help.chm" md5="" />
+		<file name="ArchAngel.Designer.exe" md5="" />
+		<file name="ArchAngel.Providers.CodeProvider.dll" md5="" />
+		<file name="ArchAngel.Providers.CodeProvider_nat.dll" md5="" />
+		<file name="ArchAngel.Providers.Database.dll" md5="" />
+		<file name="ArchAngel.Providers.Database_nat.dll" md5="" />
+		<file name="ArchAngel.WorkBench.exe" md5="" />
+		<file name="DevExpress.Data.v6.1.dll" md5="" />
+		<file name="DevExpress.Utils.v6.1.dll" md5="" />
+		<file name="DevExpress.XtraEditors.v6.1.dll" md5="" />
+		<file name="DevExpress.XtraTreeList.v6.1.dll" md5="" />
+		<file name="ICSharpCode.SharpZipLib.dll" md5="" />
+		<file name="PgmrX121.dll" md5="" />
+		<file name="Slyce.Common.dll" md5="" />
+		<file name="Slyce.Common_nat.dll" md5="" />
+		<file name="Slyce.Licensing.exe" md5="" />
+		<file name="Slyce.Loader.dll" md5="" />
+		<file name="Slyce.Loader_nat.dll" md5="" />
+	</folder>
+</root>

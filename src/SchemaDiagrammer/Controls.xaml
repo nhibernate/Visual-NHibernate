@@ -1,0 +1,101 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Shapes="clr-namespace:SchemaDiagrammer.View.Shapes" 
+    xmlns:ConnectorEndPoints="clr-namespace:SchemaDiagrammer.View.Shapes.ConnectorEndPoints">
+    
+    <LinearGradientBrush x:Key="TableBackgroundBrush" EndPoint="0,0.5" StartPoint="1,0.5">
+        <GradientStop Color="#FFAAC1DA" Offset="1"/>
+        <GradientStop Color="#FFFFFFFF" Offset="0.3"/>
+    </LinearGradientBrush>
+
+    <ControlTemplate x:Key="SimpleShapeTemplate" TargetType="{x:Type Shapes:DiagramShape}">
+        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="Black"
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="10"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}" x:Name="border" Cursor="SizeAll">
+            <StackPanel>
+                <TextBlock Text="{TemplateBinding EntityName}" FontWeight="Bold" HorizontalAlignment="Left" Margin="10, 10, 30, 10"/>
+            </StackPanel>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type Shapes:DiagramShape}">
+        <Setter Property="Template" Value="{StaticResource SimpleShapeTemplate}" />
+        <Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Background" Value="{StaticResource TableBackgroundBrush}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="Red"/>
+                <Setter Property="Opacity" Value="0.8"/>
+                <Setter Property="BitmapEffect" >
+                    <Setter.Value>
+                        <OuterGlowBitmapEffect GlowColor="LightBlue" GlowSize="20" Opacity="0.4" Noise="0"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BitmapEffect" >
+                    <Setter.Value>
+                        <OuterGlowBitmapEffect GlowColor="Blue" GlowSize="10" Opacity="0.5" Noise="0.2"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type ConnectorEndPoints:ConnectorEndPoint}">
+        <Setter Property="Stroke" Value="Black"/>
+        <Setter Property="StrokeThickness" Value="2"/>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BitmapEffect" >
+                    <Setter.Value>
+                        <OuterGlowBitmapEffect GlowColor="Blue" GlowSize="10" Opacity="0.4" Noise="0"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BitmapEffect" >
+                    <Setter.Value>
+                        <OuterGlowBitmapEffect GlowColor="SteelBlue" GlowSize="8" Opacity="0.4" Noise="0"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type Shapes:Connection}">
+        <!-- These are default values, and can be overridden if needed in code -->
+        <Setter Property="Stroke" Value="Black"/>
+        <Setter Property="StrokeThickness" Value="4"/>
+        <Setter Property="StrokeEndLineCap" Value="Round"/>
+        <Setter Property="StrokeStartLineCap" Value="Round"/>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BitmapEffect" >
+                    <Setter.Value>
+                        <OuterGlowBitmapEffect GlowColor="Blue" GlowSize="10" Opacity="0.4" Noise="0"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="NameVisible" Value="True" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BitmapEffect" >
+                    <Setter.Value>
+                        <OuterGlowBitmapEffect GlowColor="SteelBlue" GlowSize="8" Opacity="0.4" Noise="0"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style TargetType="{x:Type Shapes:ConnectionPoint}">
+        <Setter Property="Stroke" Value="Black"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+        <Setter Property="Opacity" Value="0" />
+    </Style>
+
+</ResourceDictionary>

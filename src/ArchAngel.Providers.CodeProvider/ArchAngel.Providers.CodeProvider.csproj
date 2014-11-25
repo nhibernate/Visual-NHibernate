@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA16CFFA-3659-4F91-9F07-C22360882B39}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ArchAngel.Providers.CodeProvider</AssemblyName>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ArchAngel.Providers.CodeProvider</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\ArchAngel.Providers.CodeProvider.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\ArchAngel.Providers.CodeProvider.XML</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>bin\Debug\ArchAngel.Providers.CodeProvider.XML</DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <NoWarn>1591</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>bin\Release\ArchAngel.Providers.CodeProvider.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>bin\Debug\ArchAngel.Providers.CodeProvider.XML</DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <NoWarn>1591</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\ArchAngel.Providers.CodeProvider.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>bin\Release\ArchAngel.Providers.CodeProvider.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ArchAngel.Providers.CodeProvider.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeFormatter.cs" />
+    <Compile Include="CodeInsertions\AddAttributeToFieldAction.cs" />
+    <Compile Include="CodeInsertions\AddAttributeToMethodAction.cs" />
+    <Compile Include="CodeInsertions\AddFieldToClassAction.cs" />
+    <Compile Include="CodeInsertions\AddModifierToFieldAction.cs" />
+    <Compile Include="CodeInsertions\AddModifierToFunctionAction.cs" />
+    <Compile Include="CodeInsertions\AddUsingStatementToClassAction.cs" />
+    <Compile Include="CodeInsertions\ChangeInitialValueOfFieldAction.cs" />
+    <Compile Include="CodeInsertions\ChangeMethodBodyAction.cs" />
+    <Compile Include="CodeInsertions\ChangeNameOfFieldAction.cs" />
+    <Compile Include="CodeInsertions\ChangeNameOfFunctionAction.cs" />
+    <Compile Include="CodeInsertions\ChangeNameOfPropertyAction.cs" />
+    <Compile Include="CodeInsertions\ChangeReturnTypeOfFunctionAction.cs" />
+    <Compile Include="CodeInsertions\ChangeTypeOfFieldAction.cs" />
+    <Compile Include="CodeInsertions\CodeInsertionAction.cs" />
+    <Compile Include="CodeInsertions\AddAttributeToClassAction.cs" />
+    <Compile Include="CodeInsertions\AddPropertyToClassAction.cs" />
+    <Compile Include="CodeInsertions\AddChildToClassAction.cs" />
+    <Compile Include="CodeInsertions\AddModifierToClassAction.cs" />
+    <Compile Include="CodeInsertions\AddFunctionToClass.cs" />
+    <Compile Include="CodeInsertions\ChangeMethodHeaderAction.cs" />
+    <Compile Include="CodeInsertions\ChangeTypeOfPropertyAction.cs" />
+    <Compile Include="CodeInsertions\AddModifierToPropertyAction.cs" />
+    <Compile Include="CodeInsertions\AddAccessorToPropertyAction.cs" />
+    <Compile Include="CodeInsertions\AddImplementsToClassAction.cs" />
+    <Compile Include="CodeInsertions\ChangePropertyAccessorModifierAction.cs" />
+    <Compile Include="CodeInsertions\AddAttributeToPropertyAction.cs" />
+    <Compile Include="CodeInsertions\RemoveAttributeFromClassAction.cs" />
+    <Compile Include="CodeInsertions\RemoveFieldFromClassAction.cs" />
+    <Compile Include="CodeInsertions\RemoveMethodFromClassAction.cs" />
+    <Compile Include="CodeInsertions\RemoveModifierFromFieldAction.cs" />
+    <Compile Include="CodeInsertions\RemoveModifiersFromFunctionAction.cs" />
+    <Compile Include="CodeInsertions\RemoveModifiersFromPropertyAction.cs" />
+    <Compile Include="CodeInsertions\RemoveImplementsFromClassAction.cs" />
+    <Compile Include="CodeInsertions\RemoveAccessorFromPropertyAction.cs" />
+    <Compile Include="CodeInsertions\RemoveModifierFromPropertyAction.cs" />
+    <Compile Include="CodeInsertions\RemoveModifierFromClassAction.cs" />
+    <Compile Include="CodeInsertions\InsertionHelpers.cs" />
+    <Compile Include="CodeInsertions\RemovePropertyFromClassAction.cs" />
+    <Compile Include="CodeInsertions\RemoveUsingStatementFromClassAction.cs" />
+    <Compile Include="CodeInsertions\RenameBaseConstructAction.cs" />
+    <Compile Include="CodeInsertions\RemoveModifiersFromClassAction.cs" />
+    <Compile Include="CSharp\RegionContainer.cs" />
+    <Compile Include="CSharp\AttributePrinter.cs" />
+    <Compile Include="CSharp\AttributeSectionPrinter.cs" />
+    <Compile Include="CSharp\BaseConstructPrinter.cs" />
+    <Compile Include="CSharp\BasePrinter.cs" />
+    <Compile Include="CSharp\ClassPrinter.cs" />
+    <Compile Include="CSharp\CSharpCodeFormatter.cs" />
+    <Compile Include="CSharp\CSharpController.cs" />
+    <Compile Include="CSharp\CSharpParser.cs" />
+    <Compile Include="DotNet\IPrinter.cs" />
+    <Compile Include="CSharp\RegionPrinter.cs" />
+    <Compile Include="DotNet\Attribute.cs" />
+    <Compile Include="DotNet\AttributeSection.cs" />
+    <Compile Include="DotNet\BaseConstruct.cs" />
+    <Compile Include="DotNet\Class.cs" />
+    <Compile Include="DotNet\CodeRoot.cs" />
+    <Compile Include="DotNet\CommentObject.cs" />
+    <Compile Include="DotNet\Constant.cs" />
+    <Compile Include="DotNet\Constructor.cs" />
+    <Compile Include="DotNet\Controller.cs" />
+    <Compile Include="DotNet\DataType.cs" />
+    <Compile Include="DotNet\Delegate.cs" />
+    <Compile Include="DotNet\Destructor.cs" />
+    <Compile Include="DotNet\EmptyPlaceholder.cs" />
+    <Compile Include="DotNet\Enumeration.cs" />
+    <Compile Include="DotNet\Event.cs" />
+    <Compile Include="DotNet\Field.cs" />
+    <Compile Include="DotNet\Function.cs" />
+    <Compile Include="DotNet\Indexer.cs" />
+    <Compile Include="DotNet\Interface.cs" />
+    <Compile Include="DotNet\InterfaceAccessor.cs" />
+    <Compile Include="DotNet\InterfaceEvent.cs" />
+    <Compile Include="DotNet\InterfaceIndexer.cs" />
+    <Compile Include="DotNet\InterfaceMethod.cs" />
+    <Compile Include="DotNet\InterfaceProperty.cs" />
+    <Compile Include="DotNet\Namespace.cs" />
+    <Compile Include="DotNet\Operator.cs" />
+    <Compile Include="DotNet\Parameter.cs" />
+    <Compile Include="DotNet\ParameterBase.cs" />
+    <Compile Include="DotNet\Property.cs" />
+    <Compile Include="DotNet\PropertyAccessor.cs" />
+    <Compile Include="DotNet\Region.cs" />
+    <Compile Include="DotNet\RegionEnd.cs" />
+    <Compile Include="DotNet\RegionStart.cs" />
+    <Compile Include="DotNet\Struct.cs" />
+    <Compile Include="DotNet\UsingStatement.cs" />
+    <Compile Include="CSharp\CSharpFormatSettings.cs" />
+    <Compile Include="DoubleLookup.cs" />
+    <Compile Include="Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="FormatterUtility.cs" />
+    <Compile Include="CSharp\CodeRootPrinter.cs" />
+    <Compile Include="DotNet\Comparers.cs" />
+    <Compile Include="CSharp\ConstantPrinter.cs" />
+    <Compile Include="CSharp\ConstructorPrinter.cs" />
+    <Compile Include="CSharp\DataTypePrinter.cs" />
+    <Compile Include="CSharp\DelegatePrinter.cs" />
+    <Compile Include="CSharp\DestructorPrinter.cs" />
+    <Compile Include="CSharp\EmptyPlaceholderPrinter.cs" />
+    <Compile Include="CSharp\EnumerationPrinter.cs" />
+    <Compile Include="CSharp\EventPrinter.cs" />
+    <Compile Include="CSharp\FieldPrinter.cs" />
+    <Compile Include="CSharp\FunctionPrinter.cs" />
+    <Compile Include="DotNet\IWrapper.cs" />
+    <Compile Include="CSharp\ParameterBasePrinter.cs" />
+    <Compile Include="IBody.cs" />
+    <Compile Include="CSharp\IndexerPrinter.cs" />
+    <Compile Include="CSharp\InterfacePrinter.cs" />
+    <Compile Include="CSharp\InterfaceAccessorPrinter.cs" />
+    <Compile Include="CSharp\InterfaceEventPrinter.cs" />
+    <Compile Include="CSharp\InterfaceIndexerPrinter.cs" />
+    <Compile Include="CSharp\InterfaceMethodPrinter.cs" />
+    <Compile Include="CSharp\InterfacePropertyPrinter.cs" />
+    <Compile Include="DotNet\IVisibilityModifiers.cs" />
+    <Compile Include="CSharp\NamespacePrinter.cs" />
+    <Compile Include="CSharp\OperatorPrinter.cs" />
+    <Compile Include="CSharp\ParameterPrinter.cs" />
+    <Compile Include="CSharp\PropertyPrinter.cs" />
+    <Compile Include="CSharp\PropertyAccessorPrinter.cs" />
+    <Compile Include="CSharp\RegionEndPrinter.cs" />
+    <Compile Include="CSharp\RegionStartPrinter.cs" />
+    <Compile Include="CSharp\StructPrinter.cs" />
+    <Compile Include="CSharp\UsingStatementPrinter.cs" />
+    <Compile Include="CSharp\Utility.cs" />
+    <Compile Include="IBaseConstruct.cs" />
+    <Compile Include="ICodeRoot.cs" />
+    <Compile Include="IParser.cs" />
+    <Compile Include="LookupList.cs" />
+    <Compile Include="ParseResults.cs" />
+    <Compile Include="ParserSyntaxError.cs" />
+    <Compile Include="PreprocessorSection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextRange.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="VB\VBAttributePrinter.cs" />
+    <Compile Include="VB\VBAttributeSectionPrinter.cs" />
+    <Compile Include="VB\VBBaseConstructPrinter.cs" />
+    <Compile Include="VB\VBClassPrinter.cs" />
+    <Compile Include="VB\VBCodeFormatter.cs" />
+    <Compile Include="VB\VBCodeRootPrinter.cs" />
+    <Compile Include="VB\VBConstantPrinter.cs" />
+    <Compile Include="VB\VBConstructorPrinter.cs" />
+    <Compile Include="VB\VBController.cs" />
+    <Compile Include="VB\VBDataTypePrinter.cs" />
+    <Compile Include="VB\VBDelegatePrinter.cs" />
+    <Compile Include="VB\VBDestructorPrinter.cs" />
+    <Compile Include="VB\VBEmptyPlaceholderPrinter.cs" />
+    <Compile Include="VB\VBEnumerationPrinter.cs" />
+    <Compile Include="VB\VBEventPrinter.cs" />
+    <Compile Include="VB\VBFieldPrinter.cs" />
+    <Compile Include="VB\VBFormatSettings.cs" />
+    <Compile Include="VB\VBFunctionPrinter.cs" />
+    <Compile Include="VB\VBIndexerPrinter.cs" />
+    <Compile Include="VB\VBInterfacePrinter.cs" />
+    <Compile Include="VB\VBInterfaceAccessorPrinter.cs" />
+    <Compile Include="VB\VBInterfaceEventPrinter.cs" />
+    <Compile Include="VB\VBInterfaceIndexerPrinter.cs" />
+    <Compile Include="VB\VBInterfaceMethodPrinter.cs" />
+    <Compile Include="VB\VBInterfacePropertyPrinter.cs" />
+    <Compile Include="VB\VBNamespacePrinter.cs" />
+    <Compile Include="VB\VBOperatorPrinter.cs" />
+    <Compile Include="VB\VBParameterPrinter.cs" />
+    <Compile Include="VB\VBParameterBase.cs" />
+    <Compile Include="VB\VBParser.cs" />
+    <Compile Include="VB\VBPropertyPrinter.cs" />
+    <Compile Include="VB\VBPropertyAccessorPrinter.cs" />
+    <Compile Include="VB\VBRegionPrinter.cs" />
+    <Compile Include="VB\VBRegionEndPrinter.cs" />
+    <Compile Include="VB\VBRegionStartPrinter.cs" />
+    <Compile Include="VB\VBStructPrinter.cs" />
+    <Compile Include="VB\VBUsingStatementPrinter.cs" />
+    <Compile Include="Xml\Attribute.cs" />
+    <Compile Include="Xml\AttributeList.cs" />
+    <Compile Include="Xml\CDataSection.cs" />
+    <Compile Include="Xml\Comment.cs" />
+    <Compile Include="Xml\Document.cs" />
+    <Compile Include="Xml\DocumentTypeDeclaration.cs" />
+    <Compile Include="Xml\Element.cs" />
+    <Compile Include="Xml\ElementType.cs" />
+    <Compile Include="Xml\EntityReferences.cs" />
+    <Compile Include="Xml\NumericCharacterReference.cs" />
+    <Compile Include="Xml\ParameterEntity.cs" />
+    <Compile Include="Xml\ProcessingInstruction.cs" />
+    <Compile Include="Xml\Prolog.cs" />
+    <Compile Include="Xml\XmlDeclaration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="slyce_strong_name_key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ActiproParser\ActipPro.SyntaxEditor.Addons.DotNet.csproj">
+      <Project>{55AF3792-B7C4-411B-9051-6D0E11832779}</Project>
+      <Name>ActipPro.SyntaxEditor.Addons.DotNet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

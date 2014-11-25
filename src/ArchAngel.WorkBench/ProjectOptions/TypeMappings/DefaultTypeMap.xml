@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<type-maps>
+	<unitypes>
+		<unitype name="Array" csharp-type="object" />
+		<unitype name="BigInt" csharp-type="long" />
+		<unitype name="Binary" csharp-type="byte[]" />
+		<unitype name="Bit" csharp-type="bool" />
+		<unitype name="Blob" csharp-type="byte[]" />
+		<unitype name="Boolean" csharp-type="bool" />
+		<unitype name="Byte" csharp-type="byte" />
+		<unitype name="Char" csharp-type="string" />
+		<unitype name="Currency" csharp-type="decimal" />
+		<unitype name="Cursor" csharp-type="" />
+		<unitype name="Date" csharp-type="DateTime" />
+		<unitype name="DateTime" csharp-type="DateTime" />
+		<unitype name="DateTime2" csharp-type="DateTime" />
+		<unitype name="DateTimeOffset" csharp-type="DateTime" />
+		<unitype name="Decimal" csharp-type="decimal" />
+		<unitype name="Double" csharp-type="double" />
+		<unitype name="Enum" csharp-type="string" />
+		<unitype name="Fixed" csharp-type="decimal" />
+		<unitype name="Float" csharp-type="float" />
+		<unitype name="Geography" csharp-type="GeoAPI.Geometries.IGeography" />
+		<unitype name="Geometry" csharp-type="GeoAPI.Geometries.IGeometry" />
+		<unitype name="HierarchyId" csharp-type="string" />
+		<unitype name="Int" csharp-type="int" />
+		<unitype name="IntervalDS" csharp-type="Timespan" />
+		<unitype name="IntervalYM" csharp-type="Timespan" />
+		<unitype name="LongBlob" csharp-type="byte[]" />
+		<unitype name="LongText" csharp-type="string" />
+		<unitype name="MediumBlob" csharp-type="byte[]" />
+		<unitype name="MediumInt" csharp-type="int" />
+		<unitype name="MediumText" csharp-type="string" />
+		<unitype name="Money" csharp-type="decimal" />
+		<unitype name="NChar" csharp-type="string" />
+		<unitype name="NText" csharp-type="string" />
+		<unitype name="Numeric" csharp-type="double" />
+		<unitype name="NVarChar" csharp-type="string" />
+		<unitype name="Object" csharp-type="object" />
+		<unitype name="Set" csharp-type="string" />
+		<unitype name="Single" csharp-type="double" />
+		<unitype name="SmallDateTime" csharp-type="DateTime" />
+		<unitype name="SmallInt" csharp-type="short" />
+		<unitype name="SmallMoney" csharp-type="decimal" />
+		<unitype name="SqlVariant" csharp-type="object" />
+		<unitype name="Text" csharp-type="string" />
+		<unitype name="Time" csharp-type="DateTime" />
+		<unitype name="TimeStamp" csharp-type="DateTime" />
+		<unitype name="TinyBlob" csharp-type="byte[]" />
+		<unitype name="TinyInt" csharp-type="short" />
+		<unitype name="TinyText" csharp-type="string" />
+		<unitype name="UniqueIdentifier" csharp-type="Guid" />
+		<unitype name="VarBinary" csharp-type="byte[]" />
+		<unitype name="VarChar" csharp-type="string" />
+		<unitype name="Xml" csharp-type="object" />
+		<unitype name="Year" csharp-type="short" />
+	</unitypes>
+	<sql-server-maps>
+		<map type="bigint" unitype="BigInt" />
+		<map type="binary" unitype="Bit" />
+		<map type="bit" unitype="Bit" />
+		<map type="char" unitype="Char" />
+		<map type="date" unitype="Date" />
+		<map type="datetime" unitype="DateTime" />
+		<map type="datetime2" unitype="DateTime2" />
+		<map type="datetimeoffset" unitype="DateTimeOffset" />
+		<map type="decimal" unitype="Decimal" />
+		<map type="float" unitype="Single" />
+		<map type="geography" unitype="Geography" />
+		<map type="geometry" unitype="Geometry" />
+		<map type="hierarchyid" unitype="HierarchyId" />
+		<map type="image" unitype="Blob" />
+		<map type="int" unitype="Int" />
+		<map type="money" unitype="Currency" />
+		<map type="nchar" unitype="NChar" />
+		<map type="ntext" unitype="NText" />
+		<map type="numeric" unitype="Numeric" />
+		<map type="nvarchar" unitype="NVarChar" />
+		<map type="real" unitype="Double" />
+		<map type="smalldatetime" unitype="SmallDateTime" />
+		<map type="smallint" unitype="SmallInt" />
+		<map type="smallmoney" unitype="SmallMoney" />
+		<map type="sql_variant" unitype="SqlVariant" />
+		<map type="text" unitype="Text" />
+		<map type="time" unitype="Time" />
+		<map type="timestamp" unitype="TimeStamp" />
+		<map type="tinyint" unitype="TinyInt" />
+		<map type="uniqueidentifier" unitype="UniqueIdentifier" />
+		<map type="varbinary" unitype="VarBinary" />
+		<map type="varchar" unitype="VarChar" />
+		<map type="xml" unitype="Xml" />
+	</sql-server-maps>
+	<oracle-maps>
+		<map type="bfile" unitype="Binary" />
+		<map type="binary_double" unitype="Double" />
+		<map type="binary_float" unitype="Single" />
+		<map type="blob" unitype="Blob" />
+		<map type="char" unitype="Char" />
+		<map type="clob" unitype="Text" />
+		<map type="date" unitype="Date" />
+		<map type="float" unitype="Float" />
+		<map type="interval day to second" unitype="IntervalDS" />
+		<map type="interval year to month" unitype="IntervalYM" />
+		<map type="lob" unitype="Blob" />
+		<map type="long" unitype="LongText" />
+		<map type="long raw" unitype="LongBlob" />
+		<map type="nchar" unitype="NChar" />
+		<map type="nclob" unitype="NText" />
+		<map type="nvarchar" unitype="NVarChar" />
+		<map type="nvarchar2" unitype="NVarChar" />
+		<map type="raw" unitype="Binary" />
+		<map type="ref cursor" unitype="Cursor" />
+		<map type="rowid" unitype="Int" />
+		<map type="timestamp" unitype="TimeStamp" />
+		<map type="timestamp with local time zone" unitype="TimeStamp" />
+		<map type="timestamp with time zone" unitype="TimeStamp" />
+		<map type="urowid" unitype="VarChar" />
+		<map type="vararray" unitype="Array" />
+		<map type="varchar" unitype="VarChar" />
+		<map type="varchar2" unitype="VarChar" />
+		<map type="xmltype" unitype="Xml" />
+	</oracle-maps>
+	<mysql-maps>
+		<map type="bigint" unitype="BigInt" />
+		<map type="bit" unitype="Bit" />
+		<map type="blob" unitype="Blob" />
+		<map type="char" unitype="Char" />
+		<map type="date" unitype="Date" />
+		<map type="datetime" unitype="DateTime" />
+		<map type="decimal" unitype="Decimal" />
+		<map type="double" unitype="Double" />
+		<map type="enum" unitype="Enum" />
+		<map type="fixed" unitype="Fixed" />
+		<map type="float" unitype="Single" />
+		<map type="int" unitype="Int" />
+		<map type="longblob" unitype="LongBlob" />
+		<map type="longtext" unitype="LongText" />
+		<map type="mediumblob" unitype="MediumBlob" />
+		<map type="mediumint" unitype="MediumInt" />
+		<map type="mediumtext" unitype="MediumText" />
+		<map type="set" unitype="Set" />
+		<map type="smallint" unitype="SmallInt" />
+		<map type="text" unitype="Text" />
+		<map type="time" unitype="Time" />
+		<map type="timestamp" unitype="TimeStamp" />
+		<map type="tinyblob" unitype="TinyBlob" />
+		<map type="tinyint" unitype="TinyInt" />
+		<map type="tinytext" unitype="TinyText" />
+		<map type="varbinary" unitype="Binary" />
+		<map type="varchar" unitype="VarChar" />
+		<map type="year" unitype="Year" />
+	</mysql-maps>
+	<postgresql-maps>
+		<map type="\char\" unitype="Char" />
+		<map type="abstime" unitype="Time" />
+		<map type="anyarray" unitype="Array" />
+		<map type="array" unitype="Array" />
+		<map type="bigint" unitype="BigInt" />
+		<map type="bigserial" unitype="BigInt" />
+		<map type="bit" unitype="Bit" />
+		<map type="bit varying" unitype="Bit" />
+		<map type="bool" unitype="Boolean" />
+		<map type="boolean" unitype="Boolean" />
+		<map type="box" unitype="Object" />
+		<map type="bytea" unitype="Binary" />
+		<map type="char" unitype="Char" />
+		<map type="character" unitype="Char" />
+		<map type="character varying" unitype="VarChar" />
+		<map type="cidr" unitype="Object" />
+		<map type="circle" unitype="Object" />
+		<map type="currency" unitype="Currency" />
+		<map type="date" unitype="Date" />
+		<map type="decimal" unitype="Decimal" />
+		<map type="double" unitype="Double" />
+		<map type="double precision" unitype="Double" />
+		<map type="float4" unitype="Single" />
+		<map type="float8" unitype="Double" />
+		<map type="inet" unitype="Object" />
+		<map type="int" unitype="Int" />
+		<map type="int2" unitype="SmallInt" />
+		<map type="int4" unitype="Int" />
+		<map type="int8" unitype="BigInt" />
+		<map type="integer" unitype="Int" />
+		<map type="interval" unitype="IntervalDS" />
+		<map type="line" unitype="Object" />
+		<map type="lseg" unitype="Object" />
+		<map type="macaddr" unitype="Object" />
+		<map type="money" unitype="Currency" />
+		<map type="name" unitype="VarChar" />
+		<map type="numeric" unitype="Decimal" />
+		<map type="oid" unitype="Int" />
+		<map type="path" unitype="Object" />
+		<map type="point" unitype="Object" />
+		<map type="polygon" unitype="Object" />
+		<map type="real" unitype="Single" />
+		<map type="regproc" unitype="Int" />
+		<map type="serial" unitype="Int" />
+		<map type="serial4" unitype="Int" />
+		<map type="serial8" unitype="BigInt" />
+		<map type="smallint" unitype="SmallInt" />
+		<map type="text" unitype="Text" />
+		<map type="time" unitype="Time" />
+		<map type="time with time zone" unitype="Time" />
+		<map type="time without time zone" unitype="Time" />
+		<map type="timestamp" unitype="TimeStamp" />
+		<map type="timestamp with time zone" unitype="TimeStamp" />
+		<map type="timestamp without time zone" unitype="TimeStamp" />
+		<map type="timestamptz" unitype="TimeStamp" />
+		<map type="timetz" unitype="Time" />
+		<map type="varbit" unitype="Bit" />
+		<map type="varchar" unitype="VarChar" />
+		<map type="xid" unitype="Int" />
+	</postgresql-maps>
+	<firebird-maps>
+		<map type="blob" unitype="Blob" />
+		<map type="blob_id" unitype="Int" />
+		<map type="cstring" unitype="VarChar" />
+		<map type="date" unitype="Date" />
+		<map type="double" unitype="Double" />
+		<map type="float" unitype="Single" />
+		<map type="int64" unitype="BigInt" />
+		<map type="long" unitype="BigInt" />
+		<map type="quad" unitype="BigInt" />
+		<map type="short" unitype="SmallInt" />
+		<map type="text" unitype="VarChar" />
+		<map type="time" unitype="Time" />
+		<map type="timestamp" unitype="TimeStamp" />
+		<map type="varying" unitype="VarChar" />
+	</firebird-maps>
+</type-maps>

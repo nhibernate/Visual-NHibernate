@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Combined ArchAngel">
+</Property><Property Name="Solution File" Value="D:\Projects\Slyce\ArchAngel\trunk\Combined ArchAngel.sln">
+</Property><Property Name="Date" Value="Monday, 31 May 2010">
+</Property><Property Name="Time" Value="13:29 p.m.">
+</Property></Properties><Event ErrorLevel="0" Project="ArchAngel.Workbench" Source="ArchAngel.WorkBench\ArchAngel.Workbench.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.Workbench" Source="ArchAngel.WorkBench\ArchAngel.Workbench.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Slyce.Common" Source="Slyce.Common\Slyce.Common.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Slyce.Common" Source="Slyce.Common\Slyce.Common.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Providers.CodeProvider" Source="ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.Providers.CodeProvider" Source="ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Interfaces" Source="ArchAngel.Interfaces\ArchAngel.Interfaces.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.Interfaces" Source="ArchAngel.Interfaces\ArchAngel.Interfaces.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Demo.Providers.Test" Source="Sample Projects\Custom Provider\Demo.Providers.Test.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Demo.Providers.Test" Source="Sample Projects\Custom Provider\Demo.Providers.Test.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Slyce.IntelliMerge" Source="Slyce.IntelliMerge\Slyce.IntelliMerge.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Slyce.IntelliMerge" Source="Slyce.IntelliMerge\Slyce.IntelliMerge.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Licensing" Source="ArchAngel.Licensing\ArchAngel.Licensing.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.Licensing" Source="ArchAngel.Licensing\ArchAngel.Licensing.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Debugger" Source="ArchAngel.Debugger\ArchAngel.Debugger.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.Debugger" Source="ArchAngel.Debugger\ArchAngel.Debugger.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Debugger.DebugProcess" Source="ArchAngel.Debugger.DebugProcess\ArchAngel.Debugger.DebugProcess.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.Debugger.DebugProcess" Source="ArchAngel.Debugger.DebugProcess\ArchAngel.Debugger.DebugProcess.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Designer" Source="ArchAngel.Designer\ArchAngel.Designer.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.Designer" Source="ArchAngel.Designer\ArchAngel.Designer.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ApiExtender" Source="ApiExtender\ApiExtender.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ApiExtender" Source="ApiExtender\ApiExtender.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Providers.EntityModel" Source="ArchAngel.Providers.EntityModel\ArchAngel.Providers.EntityModel.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.Providers.EntityModel" Source="ArchAngel.Providers.EntityModel\ArchAngel.Providers.EntityModel.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.NHibernateHelper" Source="ArchAngel.NHibernateHelper\ArchAngel.NHibernateHelper.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.NHibernateHelper" Source="ArchAngel.NHibernateHelper\ArchAngel.NHibernateHelper.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Common" Source="ArchAngel.Common\ArchAngel.Common.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel.Common" Source="ArchAngel.Common\ArchAngel.Common.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Provider.Test" Source="Provider.Test\Provider.Test.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Provider.Test" Source="Provider.Test\Provider.Test.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel" Source="ArchAngel\ArchAngel.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArchAngel" Source="ArchAngel\ArchAngel.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Combined ArchAngel.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Combined ArchAngel.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Workbench" Source="ArchAngel.WorkBench\ArchAngel.Workbench.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Slyce.Common" Source="Slyce.Common\Slyce.Common.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Providers.CodeProvider" Source="ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Interfaces" Source="ArchAngel.Interfaces\ArchAngel.Interfaces.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Demo.Providers.Test" Source="Sample Projects\Custom Provider\Demo.Providers.Test.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Slyce.IntelliMerge" Source="Slyce.IntelliMerge\Slyce.IntelliMerge.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Licensing" Source="ArchAngel.Licensing\ArchAngel.Licensing.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Debugger" Source="ArchAngel.Debugger\ArchAngel.Debugger.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Debugger.DebugProcess" Source="ArchAngel.Debugger.DebugProcess\ArchAngel.Debugger.DebugProcess.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Designer" Source="ArchAngel.Designer\ArchAngel.Designer.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ApiExtender" Source="ApiExtender\ApiExtender.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Providers.EntityModel" Source="ArchAngel.Providers.EntityModel\ArchAngel.Providers.EntityModel.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel.NHibernateHelper" Source="ArchAngel.NHibernateHelper\ArchAngel.NHibernateHelper.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel.Common" Source="ArchAngel.Common\ArchAngel.Common.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Provider.Test" Source="Provider.Test\Provider.Test.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ArchAngel" Source="ArchAngel\ArchAngel.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

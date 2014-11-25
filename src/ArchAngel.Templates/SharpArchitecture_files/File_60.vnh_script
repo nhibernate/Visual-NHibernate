@@ -1,0 +1,20 @@
+using System.Collections.Generic;
+using <#=Project.Settings.Name#>.Core;
+using <#=Project.Settings.Name#>.ApplicationServices.ViewModels;
+using <#=Project.Settings.Name#>.Core.QueryDtos;
+
+namespace <#=Project.Settings.Name#>.ApplicationServices
+{
+    public interface I<#=entity.Name#>ManagementService
+    {
+        <#=entity.Name#>FormViewModel CreateFormViewModel();
+        <#=entity.Name#>FormViewModel CreateFormViewModelFor(int <#=entity.NameCamelCase#>Id);
+        <#=entity.Name#>FormViewModel CreateFormViewModelFor(<#=entity.Name#> <#=entity.NameCamelCase#>);
+        <#=entity.Name#> Get(int id);
+        IList<<#=entity.Name#>> GetAll();
+        IList<<#=entity.Name#>Dto> Get<#=entity.Name#>Summaries();
+        ActionConfirmation SaveOrUpdate(<#=entity.Name#> <#=entity.NameCamelCase#>);
+        ActionConfirmation UpdateWith(<#=entity.Name#> <#=entity.NameCamelCase#>FromForm, int idOf<#=entity.Name#>ToUpdate);
+        ActionConfirmation Delete(int id);
+    }
+}

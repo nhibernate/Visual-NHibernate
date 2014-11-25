@@ -1,0 +1,859 @@
+<release_notes>
+<release version="2.7.13.1450" date="30 December 2012">
+	<fix>Selecting entity in treeview marks project as dirty.</fix>
+	<improved>Updated NHibernate and Fluent NHibernate assemblies to latest versions.</improved>
+  </release>
+  <release version="2.7.12.1449" date="3 July 2012">
+	<fix>Oracle nullable columns not identified correctly.</fix>
+	<fix>Error when editing table's columns in the grid.</fix>
+	<fix>Error when connecting to Oracle database.</fix>
+	<fix>Application and company name placeholders not populated correctly in error-reporting form.</fix>
+  </release>
+  <release version="2.7.11.1448" date="19 June 2012">
+	<fix>Oracle TNS entries not found when running a 64bit Oracle client.</fix>
+	<fix>Error when updating model with changes to the database, where tables have been removed from the database.</fix>
+	<fix>Occasional error when selecting an entity to create a new relationship.</fix>
+	<fix>Errors when creating database script and no database exists yet. Note that this is still beta functionality.</fix>
+	<fix>Changes to an entity's batch-size being ignored.</fix>
+  </release>
+  <release version="2.7.10.1446" date="23 May 2012">
+	<improved>Better reporting of the validation check when a Reference of an entity has the same name as a property of the same entity.</improved>
+	<fix>The order-by clause for some collections aren't written to the HBM XML files or Fluent mapping code.</fix>
+  </release>
+  <release version="2.7.9.1442" date="15 May 2012">
+	<improved>Added SizeIsMax property to Column objects in the template scripting model to indicate VARCHAR(MAX) fields in the database.</improved>
+	<fix>Indexes not available in template scripting.</fix>
+	<fix>Field printer not checking for null InitialValue when merging fields (ensuring that a field exists).</fix>
+	<fix>The lower portion of the scrollbar for the treeview on the Resources tab on the the templates page is hidden.</fix>
+	<fix>Entity/Table details grid displays incorrectly when it is scrolled and the entity is changed.</fix>
+	<fix>The headings on the Entity/Table properties grid hide the top of the scrollbar.</fix>
+  </release>
+  <release version="2.7.7.1438" date="24 April 2012">
+	<fix>Can't add a relationship between tables where the link is on a Unique key instead of a Foreign key.</fix>
+	<fix>Under certain circumstances a project file doesn't open correctly when one of a relationship's entities has been deleted.</fix>
+	<fix>Previous values of properties of references between entities reappear if the reference is deleted and re-added at a later stage.</fix>
+  </release>
+  <release version="2.7.6.1435" date="16 April 2012">
+	<fix>Error when orphaned relationships are saved.</fix>
+	<improved>More informative message when error adding a relationship.</improved>
+  </release>
+  <release version="2.7.5.1434" date="12 April 2012">
+	<fix>Error when generating files.</fix>
+	<fix>Added validation rule to check that a relationship's primary key and foreign key have the same number of columns.</fix>
+  </release>
+  <release version="2.7.4.1433" date="6 April 2012">
+	<fix>New References created due to database sync are not saved as part of the model.</fix>
+	<fix>Error when generating files.</fix>
+	<fix>Other occasional errors</fix>
+  </release>
+  <release version="2.7.3.1429" date="25 March 2012">
+	<fix>Error's when generating a deep folder structure.</fix>
+	<fix>Error when trying to report an error - due to third-party library.</fix>
+	<fix>Errors when a location with many files (eg: My Documents) is selected as the output folder.</fix>
+  </release>
+  <release version="2.7.2.1428" date="24 February 2012">
+	<fix>Virtual relationships between tabels and views are not saved.</fix>
+  </release>
+  <release version="2.7.1.1427" date="22 February 2012">
+	<fix>SQLite databases with a single table not imported correctly.</fix>
+  </release>
+  <release version="2.7.1.1426" date="21 February 2012">
+	<fix>Templates: Modified encodings are not applied when changed, then generated immediately.</fix>
+	<fix>SQLite columns not added to the model under certain conditions.</fix>
+  </release>
+  <release version="2.7.1.1425" date="8 February 2012">
+	<fix>Occasional error during file generation.</fix>
+	<fix>Occasional null-reference exceptions on the 'Select Entity' screen.</fix>
+  </release>
+  <release version="2.7.0.1424" date="30 January 2012">
+	<fix>Self-referencing entities not available for selection in 'Add Entity' dialog.</fix>
+	<fix>Error when creating a project from an existing VS NHibernate project due to some required tables not being fetched from the database.</fix>
+	<fix>Error when user creates a new entity from an association table that is used in many-to-many relationships.</fix>
+	<fix>Error when saving the project, due to serializing tables that contain unprintable characters in their default values.</fix>
+	<fix>Cannot save SQLite projects.</fix>
+	<fix>Error when synching database changes.</fix>
+  </release>
+  <release version="2.6.5.1415" date="6 September 2011">
+	<improved>Added a new setting: Default Cascade for collection properties of an entity.</improved>
+	<fix>Some projects appear empty when re-opened.</fix>
+	<fix>: 'Bad handshake' error when connecting to some instances of MySQL.</fix>
+  </release>
+  <release version="2.6.4.1413" date="2 September 2011">
+	<improved>Added new validation rule to check that references using association tables are correct.</improved>
+	<improved>When removing a child from a parent (inheritance), re-add references between removed child and its parent, which was removed when creating the inheritance structure.</improved>
+	<fix>Removed inheritance structures reappeared when re-opening a saved project.</fix>
+  </release>
+  <release version="2.6.2.1411" date="2 August 2011">
+	<fix>User-configurable property naming scripts not working.</fix>
+	<fix>Sequential property naming not getting reset for each entity.</fix>
+	<fix>Error when accessing PostgreSql databases.</fix>
+	<fix>Occasional errors when importing changes from the database that include association tables.</fix>
+  </release>
+  <release version="2.6.1.1409" date="8 July 2011">
+	<fix>Runtime errors in templates were not getting reported correctly, especially with regards to line number in the template.</fix>
+  </release>
+  <release version="2.6.0.1408" date="29 June 2011">
+	<fix>Reverted 3rd party library back to a previous version: Errors when connecting to Oracle databases, caused by a big in a 3rd party library.</fix>
+  </release>
+  <release version="2.6.0.1407" date="27 June 2011">
+	<new>Added ability to specify a default value for the 'inverse' property of collections (references).</new>
+	<fix>IntelliMerge doesn't work for Fluent NHibernate projects - custom edits are lost in existing files.</fix>
+	<fix>Files not written to disk when the 'Merge into existing files' is unchecked.</fix>
+	<fix>Errors when connecting to Oracle databases, caused by a big in a 3rd party library.</fix>
+  </release>
+  <release version="2.6.0.1404" date="13 June 2011">
+	<fix>Report error messages that can occur when saving a project, eg: when trying to copy over a read-only file.</fix>
+	<fix>Access to path is denied exception when starting the program.</fix>
+  </release>
+  <release version="2.6.0.1402" date="13 June 2011">
+	<fix>Strange 'DEBUG' characters sometimes appear in the generated output when templates are customised.</fix>
+  </release>
+  <release version="2.6.0.1401" date="12 June 2011">
+	<fix>Opening a saved project that includes Table Per SubClass inheritance results in an seemingly empty project.</fix>
+  </release>
+  <release version="2.6.0.1400" date="9 June 2011">
+	<new>Added SessionManager to the generated code project.</new>
+	<new>Added a new validation rule to check that classes in an inheritance relationship do not have normal references (relationships) to each other.</new>
+	<improved>Creating a new mapped entity for an existing table in the database model now automatically finds and adds many-to-many relationships as well. Previously these were only added when fetching from the database, not the model.</improved>
+	<improved>Newly-added entities are added to the treeview in the correct alphabetic position, instead of at the bottom.</improved>
+	<fix>Fluent mapping code for key columns not getting generated for child objects in Table Per SubClass inheritance structures.</fix>
+	<fix>Bug with Fluent NHibernate mappings with self-referencing tables where the association table key has the same name as the primary key column.</fix>
+  </release>
+  <release version="2.5.5.1396" date="2 June 2011">
+	<fix>'Could not load file or assembly' error when loading a project via 'Recent Files'.</fix>
+  </release>
+  <release version="2.5.5.1394" date="30 May 2011">
+	<improved>Set the default value of 'Inverse' = true on one-to-many references, since this corresponds to the most common usage scenario.</improved>
+	<fix>LazyLoad property not being set in the script model object, resulting in Fluent mappings always having Not.LazyLoad().</fix>
+	<fix>OptimisticLock should not get generated for sub-classes.</fix>
+  </release>
+  <release version="2.5.5.1392" date="26 May 2011">
+	<improved>Tables named 'HIBERNATE_UNIQUE_KEY' not selected by default, as this is the table used for the HiLo algorithm, not an entity table.</improved>
+	<improved>Removed Iesi using statements, made references fully-qualified.</improved>
+	<fix>Error when changing Property data-types values in the entity properties grid.</fix>
+	<fix>Incorrect version of FluentNHibernate.dll was being used.</fix>
+  </release>
+  <release version="2.5.4.1389" date="19 May 2011">
+	<fix>Relationship columns are sometimes mismatched when the primary key has multiple columns.</fix>
+  </release>
+  <release version="2.5.4.1388" date="19 May 2011">
+	<fix>Database server name gets reset to 'localhost' when opening a saved project.</fix>
+	<fix>Some relationships are not imported correctly when importing database changes.</fix>
+  </release>
+  <release version="2.5.4.1386" date="15 May 2011">
+	<improved>Updated Sharp Architecture template to 1.9.6</improved>
+	<fix>NH Validator was using namespace instead of assembly name.</fix>
+  </release>
+  <release version="2.5.3.1384" date="10 May 2011">
+	<fix>A saved project opens and appears empty when it contains views with keys.</fix>
+  </release>
+  <release version="2.5.2.1383" date="6 May 2011">
+	<improved>Added new validation rule to check that lazy properties belong to a lazy entity.</improved>
+	<fix>Diagram not updated immediately when entity properties or table columns are added, deleted or have their names changed.</fix>
+  </release>
+  <release version="2.5.1.1381" date="5 May 2011">
+	<improved>Improved performance of database sync for Oracle and PostgreSql databases.</improved>
+	<fix>Collection order-by not being generated correctly.</fix>
+  </release>
+  <release version="2.5.0.1379" date="2 May 2011">
+	<fix>Database update script templates not included in base install.</fix>
+  </release>
+  <release version="2.5.0.1377" date="2 May 2011">
+	<new>Added support for creating database update scripts from the model. Only SQL Server is supported at this time. Support for other databases will be added soon. Please note: this functionality is still regarded as beta - let us know what needs to be improved!</new>
+  </release>
+  <release version="2.4.19.1376" date="1 May 2011">
+	<new>Added support for 'order-by' to collections.</new>
+  </release>
+  <release version="2.4.18.1374" date="30 April 2011">
+	<improved>Added IsDynamicInsert and IsDynamicUpdate to Entity objects in the scripting API.</improved>
+	<improved>Added IsVersionProperty to Property objects in the scripting API.</improved>
+	<fix>Error when serializing the database model with a null data-type.</fix>
+	<fix>Optimistic-lock, dynamic-insert, dynamic-update, default-cascade, version, id-generator not written to Fluent mappings.</fix>
+	<fix>Incorrect key-columns for some references.</fix>
+  </release>
+  <release version="2.4.17.1371" date="14 April 2011">
+	<fix>Importing a SQLite database gives an error if default string column values in the schema have multiple surrounding quotes.</fix>
+  </release>
+  <release version="2.4.16.1370" date="12 April 2011">
+	<new>Added support for SQLite.</new>
+  </release>
+  <release version="2.4.16.1368" date="11 April 2011">
+	<improved>Added OverwriteFiles to the Project script object to indicate whether the user has requested that files should be overwritten instead of merged. Updated the templates to use this.</improved>
+	<fix>Property types are sometimes not set correctly when starting from an existing VS project that uses partial classes.</fix>
+	<fix>Sometimes this error occurs when starting from an existing VS project:'Could not find relationship to map to for reference between Entities'.</fix>
+	<fix>In projects that use partial classes, the generation occurs in the wrong partial file.</fix>
+	<fix>Batchsize not getting set correctly in Fluent mappings.</fix>
+  </release>
+  <release version="2.4.15.1363" date="2 April 2011">
+	<fix>Error when saving generated file selections if project directory doesn't exist.</fix>
+	<fix>Error if a Map, IDBag or List collection doesn't have an index column specified. Added a more informative error message describing which reference has the problem.</fix>
+  </release>
+  <release version="2.4.15.1362" date="1 April 2011">
+	<improved>Added backticks to Table names in Fluent mapping code, to handle table names which are reserved words.</improved>
+	<improved>On the database sync screen, changes are sorted by schema then table-name.</improved>
+	<improved>On the licensing screen, made the option panels clickable instead of using mouse-overs to change selection.</improved>
+	<fix>On the database sync screen, database connection errors are unhandled.</fix>
+  </release>
+  <release version="2.4.14.1360" date="1 April 2011">
+	<fix>Saving and loading selected files in generation screen causing errors.</fix>
+  </release>
+  <release version="2.4.14.1359" date="31 March 2011">
+	<improved>Added feature to remember selected (checked) files on the generation screen between runs.</improved>
+	<improved>Added new validation rule to check that all references have at least one column in the primary and foreign keys.</improved>
+	<fix>The 'Create new reference' context-menu item wasn't working - causing problems.</fix>
+  </release>
+  <release version="2.4.13.1356" date="25 March 2011">
+	<fix>A few fixes for Oracle.</fix>
+  </release>
+  <release version="2.4.13.1355" date="24 March 2011">
+	<improved>Open button on top menu now displays recent files in a drop-down list.</improved>
+	<improved>Database passwords now saved (encrypted).</improved>
+	<improved>Update checks etc. now support a proxy (uses the proxy defined for Internet Explorer and Google Chrome).</improved>
+	<improved>Folder browser dialog on File Generation screen now supports creating new folders.</improved>
+  </release>
+  <release version="2.4.13.1350" date="24 March 2011">
+	<new>Added support for SQL Azure.</new>
+	<improved>Updated template to NHibernate 3.1</improved>
+	<improved>Added IsNullable to Property class in scripting model API.</improved>
+	<improved>Removed null check in the GetHashCode() function for non-nullable types.</improved>
+	<improved>Performance improvements to IntelliMerge.</improved>
+	<fix>Database views not getting serialized and deserialized when saving a project. Data goes missing.</fix>
+	<fix>Column data-types not displayed correctly in the columns editor.</fix>
+	<fix>List's not getting generated correctly and not getting read from existing VS projects correctly.</fix>
+	<fix>Importing database changes in which multiple tables have new fields with the same name, these fields are numbered sequentially even though they belong to different tables.</fix>
+  </release>
+  <release version="2.4.11.1341" date="8 March 2011">
+	<new>Added ability to IntelliMerge functions.</new>
+	<improved>NHibernate template: The Equals and GetHashCode function bodies are now regenerated every time, even when the file already exists. By default, IntelliMerge doesn't overwrite function bodies, but these two functions need to get overwritten.</improved>
+	<fix>IntelliMerge throws an 'Index out of range' error under some circumstances when merging code.</fix>
+	<fix>'Yes' and 'No' boolean values in NHibernate connection strings are not handled.</fix>
+  </release>
+  <release version="2.4.10.1338" date="18 February 2011">
+	<new>Added support for removing suffixes from table and column names when naming entities and their properties.</new>
+	<improved>Handle discriminator data when importing existing Visual Studio projects.</improved>
+	<improved>Auto-add primary keys (with no columns) to tables with no primary keys. This makes it easier to specify virtual primary keys: just select which columns form the primary key.</improved>
+	<improved>Better tracking of selected entities in the treeview.</improved>
+	<improved>Better determining of unique columns in the relationship editor.</improved>
+	<fix>Second level cache settings not being written to mapping files.</fix>
+	<fix>Error when reading an Oracle database schema: 'The given key was not present in the dictionary.'</fix>
+  </release>
+  <release version="2.4.9.1334" date="11 February 2011">
+	<fix>Problems during generation - some files not getting created. A test exception was being thrown.</fix>
+  </release>
+  <release version="2.4.9.1333" date="10 February 2011">
+	<fix>ChildKeyColumn and ParentKeyColumns swapped in Fluent mapping code.</fix>
+	<fix>Error when importing existing projects.</fix>
+	<fix>Problem with trial licenses in non-English locales.</fix>
+  </release>
+  <release version="2.4.9.1331" date="9 February 2011">
+	<fix>License wizard displayed for full licenses.</fix>
+  </release>
+  <release version="2.4.9.1327" date="8 February 2011">
+	<improved>Improved the displaying of the error grid on the Templates tab.</improved>
+  </release>
+  <release version="2.4.8.1325" date="2 February 2011">
+	<new>Added Sharp Architecture template (beta). Select the Sharp Architecture template on the Templates tab.</new>
+	<new>Added ability to edit table and column prefixes to the database screen. Added prefix-stripping during database synchronization.</new>
+  </release>
+  <release version="2.4.7.1322" date="1 February 2011">
+	<new>Added Tables, Column, PrimaryKeys to the template scripting model.</new>
+	<new>Added TypeVb to Property objects in the template scripting model. This returns the equivalent VB.Net data-type for the property, for templates authors targeting VB.Net code.</new>
+	<fix>Oracle bug: PrimaryKey column not found in the columns collection.</fix>
+	<fix>Occasional error when re-opening a saved project where mapped tables were removed.</fix>
+  </release>
+  <release version="2.4.7.1319" date="27 January 2011">
+	<improved>Better handling of m:m relationships where one side is also part of a m:m relationship.</improved>
+  </release>
+  <release version="2.4.7.1317" date="26 January 2011">
+	<improved>Validation rule to ensure that all m:m entity references have a backing association table has been improved to check certain variations.</improved>
+	<fix>Error when using IntelliMerge field insertions.</fix>
+  </release>
+  <release version="2.4.7.1316" date="24 January 2011">
+	<improved>Added label and tooltip for template delimiter selection.</improved>
+	<fix>Error when opening a file with partial references.</fix>
+  </release>
+  <release version="2.4.7.1312" date="20 January 2011">
+	<new>Added support for IntelliMerge of fields.</new>
+	<new>Added ability to select the style of delimiter that a template uses: ASP '&lt;%%&gt;' and T4 '&lt;##&gt;'.</new>
+	<new>Added Find and Replace to the template editor: Ctrl-F and Ctrl-H.</new>
+	<fix>'Byte[]' data-types are written as 'Binary' in the HBM mapping files instead of 'BinaryBlob'.</fix>
+	<fix>Incorrect TextRange startOffset for properties leading to error when the existing file has zero properties.</fix>
+  </release>
+  <release version="2.4.6.1307" date="17 January 2011">
+	<improved>Force inclusion of the 'not-null' attribute for many-to-one elements in the HBM XML mapping files.</improved>
+	<fix>Occasional error when synching the latest database schema.</fix>
+	<fix>Collection cascade attribute values contain an underscore instead of a hyphen.</fix>
+  </release>
+  <release version="2.4.6.1304" date="17 January 2011">
+	<new>Added ability to specify uni-directional references.</new>
+	<improved>Reference-lines update in real-time when cardinalities are edited.</improved>
+  </release>
+  <release version="2.4.6.1303" date="14 January 2011">
+	<fix>Collection cascade values and property access value written to HBM files incorrectly.</fix>
+  </release>
+  <release version="2.4.6.1301" date="14 January 2011">
+	<fix>UnauthorizedAccessException when the output folder has read-only files.</fix>
+  </release>
+  <release version="2.4.6.1299" date="13 January 2011">
+	<new>Default values for the 'Access', 'Cascade', 'Lazy' attributes for properties can now be set at project-level and at entity-level. They can be overridden at entity-level and property-level.</new>
+	<new>The default value for the 'Lazy' attribute of entities can now be set at project-level and overridden at entity-level.</new>
+  </release>
+  <release version="2.4.5.1298" date="12 January 2011">
+	<fix>Problems connecting to Oracle, PostgreSql, and MySQL databases.</fix>
+  </release>
+  <release version="2.4.5.1297" date="11 January 2011">
+	<new>Added support for 'proxy', 'select-before-update' and 'batch-size' to entities.</new>
+	<new>Added support for 'access', 'formula', 'insert', 'update', 'optimistic-lock' and 'generate' to properties.</new>
+	<new>Added support for proper NHibernate types to entity properties, in addition to C# types.</new>
+	<new>Added initial support for pseudo boolean columns in databases such as Oracle and PostgreSql.</new>
+	<improved>Improved specifying index columns for Map collections types. Can now specify case-insensitive as well as specifying the entity property instead of the backing table column - it does a lookup.</improved>
+	<fix>The Nullable data in mappings is sometimes incorrect.</fix>
+  </release>
+  <release version="2.4.4.1288" date="31 December 2010">
+	<fix>HBM and Fluent mappings incorrect for self-referencing entities.</fix>
+  </release>
+  <release version="2.4.4.1286" date="29 December 2010">
+	<fix>Csproj and sln files not being merged correctly due to existing files not being found when 'not' starting from an existing VS project.</fix>
+	<fix>Incorrect column mappings for m:n relationships in the HBM XML and Fluent code.</fix>
+	<fix>Incorrect nullable support for 1:m relationships in Fluent code.</fix>
+  </release>
+  <release version="2.4.4.1284" date="28 December 2010">
+	<new>Added support for NHibernate 3.0. Select version on Options screen. BREAK: NHibernate Spatial is not supported in NHibernate 3.0 yet.</new>
+  </release>
+  <release version="2.4.3.1283" date="28 December 2010">
+	<new>Added support for PostgreSQL sequences - to ensure that the correct NHibernate Generator is specified for an entity.</new>
+	<fix>Dynamic template folder names throw an error when no iterator specified.</fix>
+	<fix>Fluent mapping code doesn't take the entity generator into account.</fix>
+  </release>
+  <release version="2.4.2.1277" date="16 December 2010">
+	<fix>Reference Fetch Mode gets reset every time a project is opened.</fix>
+	<fix>New relationships imported via synchronising with the database do not have their mapped relationship set.</fix>
+  </release>
+  <release version="2.4.2.1275" date="14 December 2010">
+	<fix>HBM XML 'assembly' attribute used the project's namespace (from the settings screen) instead of the project's name.</fix>
+	<fix>Indexes with missing columns (deleted from parent table) throw an error when deserialised from a saved file.</fix>
+	<fix>Incorrect code-weaving when regions appear around properties.</fix>
+  </release>
+  <release version="2.4.2.1269" date="9 December 2010">
+	<fix>Nothing get imported when only views selected and no tables are selected.</fix>
+	<fix>Error when importing database changes.</fix>
+  </release>
+  <release version="2.4.2.1268" date="3 December 2010">
+	<fix>Error on start-up when some database script settings have been modified.</fix>
+  </release>
+  <release version="2.4.2.1267" date="3 December 2010">
+	<improved>Improved performance of fetching Oracle schema information.</improved>
+	<fix>Error when fetching the schema information from some Oracle databases.</fix>
+  </release>
+  <release version="2.4.2.1265" date="29 November 2010">
+	<new>Added support for database views.</new>
+  </release>
+  <release version="2.4.1.1260" date="25 November 2010">
+	<fix>When selecting an entity to add as a reference, entities that were already referenced using a different mapped relationship were not displayed to be selected.</fix>
+	<fix>Error when viewing certain diffs.</fix>
+  </release>
+  <release version="2.4.1.1259" date="15 November 2010">
+	<improved>References and mapped tables are now listed alphabetically in the diagrammer.</improved>
+	<improved>Added checkboxes to the reference editor to specify 'insert' and 'update' settings for collections.</improved>
+	<improved>Improved speed of analysing files for differences.</improved>
+	<fix>Column data-types not getting updated when importing changes from the database.</fix>
+	<fix>Self-referencing many-to-many relationships not created (between the same entity and itself).</fix>
+	<fix>When importing database changes, selecting relationships but not their associated (new) tables as well causes an error.</fix>
+	<fix>Setting the 'inverse' property on a reference doesn't generate the correct XML.</fix>
+  </release>
+  <release version="2.4.0.1253" date="3 November 2010">
+	<fix>When importing changes from the database, changes to the database field type are not applied to existing mapped properties.</fix>
+  </release>
+  <release version="2.4.0.1252" date="1 November 2010">
+	<improved>Added option to select version of Visual Studio.</improved>
+	<improved>Added ability to handle association tables with multiple columns per Key.</improved>
+	<improved>Added support for fetch-type to Fluent NHibernate mapping code.</improved>
+	<fix>Some property settings not getting saved.</fix>
+  </release>
+  <release version="2.4.0.1250" date="28 October 2010">
+	<improved>Added a validation rule to check that all references have a MappedTable or MappedRelationship.</improved>
+	<improved>Prevent m:n references being created between the same entity.</improved>
+  </release>
+  <release version="2.4.0.1249" date="27 October 2010">
+	<fix>Occasional error when clicking on the validation results grid.</fix>
+	<fix>Small problem with foreign keys in MySQL.</fix>
+  </release>
+  <release version="2.4.0.1247" date="26 October 2010">
+	<fix>References deleted via the diagrammer do not get deleted correctly.</fix>
+  </release>
+  <release version="2.4.0.1246" date="26 October 2010">
+	<fix>DateTime parse error on non-English machines.</fix>
+	<fix>Trial license behaves weirdly when running in elevated mode vs non-elevated mode.</fix>
+  </release>
+  <release version="2.4.0.1244" date="26 October 2010">
+	<new>Visual NHibernate finally released! The beta period is now finished.</new>
+	<new>Added support for Fluent NHibernate m:n relationships that have composite keys.</new>
+	<new>When adding a new referenced entity, now include entities that can be in a m:n relationship in the selection list.</new>
+	<new>Added ability to overwrite files instead of performing diff and merge.</new>
+	<improved>Report all database problems to the user when starting from an existing database, instead of throwing an exception for the first error only.</improved>
+	<improved>Added validation rule to check that entities have no duplicate property names.</improved>
+	<improved>Installer: Improved check for .Net Framework. Now require 4.0 'release' version not 'beta' and also require 'Full' not 'Client'.</improved>
+	<improved>Validation grid now displays selected entity when a row is clicked.</improved>
+	<fix>HBM XML files for multi-level inheritance (TPSC) were not being generated correctly.</fix>
+	<fix>Mapping.ToReference is null.</fix>
+	<fix>Certain types of collections not imported correctly from existing Fluent NHibernate VS projects.</fix>
+  </release>
+  <release version="2.3.10.1234" date="12 October 2010">
+	<fix>Error when manually adding a relationship between two tables in the table diagram.</fix>
+  </release>
+  <release version="2.3.10.1232" date="5 October 2010">
+	<fix>Joins in the HBM were using incorrect key.</fix>
+  </release>
+  <release version="2.3.10.1231" date="5 October 2010">
+	<fix>Error when importing an existing VS project and a config file is found, but it doesn't contain NHibernate settings.</fix>
+  </release>
+  <release version="2.3.10.1230" date="5 October 2010">
+	<fix>Joins in the HBM were having the 'from' table set instead of the 'to' table.</fix>
+	<fix>Files with changes were being overwritten during re-generation analysis.</fix>
+	<fix>Error when code-changes in an existing file include changing a data-type to a nullable type.</fix>
+  </release>
+  <release version="2.3.10.1228" date="4 October 2010">
+	<improved>Inheritance diagram: Moved the 'Add child' shape to the far left instead of the far-right.</improved>
+	<fix>References with nullable keys were not being generated correctly for Fluent NHibernate mappings.</fix>
+	<fix>Incorrect layout of the inheritance diagram when transitioning between different entities.</fix>
+  </release>
+  <release version="2.3.10.1226" date="1 October 2010">
+	<fix>Error when importing database changes that include a new relationship on an association table.</fix>
+  </release>
+  <release version="2.3.10.1225" date="1 October 2010">
+	<improved>BREAK: The user's naming of entities, properties etc. are now honoured during file-generation, even when they're invalid. The old behaviour was to rename them to a vaild name. This will cause some issues with existing files (diffs), but moving forward there will be no problems.</improved>
+	<fix>The entity and table designers displayed weird scrolling behaviour under various circumstances.</fix>
+  </release>
+  <release version="2.3.10.1223" date="30 September 2010">
+	<improved>Limited diff algorithm time-limit to 5 seconds to limit high CPU and memory usage on big files with complex diffs.</improved>
+	<improved>Adding a new reference (Entity) to an existing entity only displayed entities mapped to the current table, not entities mapped to tables related to the current table.</improved>
+  </release>
+  <release version="2.3.10.1221" date="29 September 2010">
+	<fix>Error when analysing files during re-generation, when a code file contains nullable types.</fix>
+  </release>
+  <release version="2.3.10.1220" date="29 September 2010">
+	<improved>When unmapping a table from an entity, prompt user whether to remove properties that are mapped to the tables columns.</improved>
+	<fix>When importing new relationships from the database, new matching references are not created.</fix>
+	<fix>Deleting properties sometimes results in zombie properties.</fix>
+  </release>
+  <release version="2.3.10.1217" date="28 September 2010">
+	<new>Added ability to delete existing entities mapped to a table when that table is mapped to another entity.</new>
+	<new>Added context-menu to merge 1:1 and m:1 references into the main entity on the entity mapping screen with a single-click.</new>
+  </release>
+  <release version="2.3.10.1216" date="28 September 2010">
+	<new>Added ability to delete components.</new>
+	<improved>Moved 'Components' node to top level of tree.</improved>
+	<fix>Occasional error when navigating away from table keys editor.</fix>
+	<fix>When synching with database, new mapped entities are not auto-created for imported tables.</fix>
+  </release>
+  <release version="2.3.10.1214" date="28 September 2010">
+	<improved>Virtual primary keys can be add to a table or an entity. The changes will get propagated both ways.</improved>
+	<fix>When importing an existing VS NH project, tables not wired up correctly if no schema has been specified in the NH config file.</fix>
+  </release>
+  <release version="2.3.10.1213" date="26 September 2010">
+	<fix>Orphaned mappings were being serialized and throwing exceptions.</fix>
+  </release>
+  <release version="2.3.10.1212" date="26 September 2010">
+	<fix>Certain conditions cause an error when loading a Visual NHibernate project, and shows a blank screen.</fix>
+	<fix>When importing existing VS NH projects, the many-to-one mapping nodes with no specified table name (ie: table-name matches the node name, and can be omitted) was causing an error.</fix>
+  </release>
+  <release version="2.3.10.1210" date="22 September 2010">
+	<fix>Error when a m:n association table has a primary key not used in any relationships.</fix>
+  </release>
+  <release version="2.3.10.1209" date="21 September 2010">
+	<fix>Various fixes.</fix>
+  </release>
+  <release version="2.3.10.1207" date="25 August 2010">
+	<new>Added templates for changing auto-naming of entities and properties when starting from an existing database. See File - Options.</new>
+	<fix>Database not loading correctly when config file missing and settings specified manually.</fix>
+  </release>
+  <release version="2.3.9.1205" date="18 August 2010">
+	<fix>Existing projects not loading correctly.</fix>
+  </release>
+  <release version="2.3.9.1204" date="18 August 2010">
+	<improved>Improved reporting of template errors during generation. Now switch to Templates tab and display errors.</improved>
+	<improved>Removed splash screen.</improved>
+	<improved>Improved display under Windows Classic theme and large size fonts.</improved>
+	<improved>Added 'Check for updates' button to start screen.</improved>
+	<improved>Improved custom type mapping. Added customizable post lookup scripts.</improved>
+	<fix>Project gets reset when exiting the project project wizard without selecting an option.</fix>
+	<fix>Error when editing integer values in the columns grid.</fix>
+  </release>
+  <release version="2.3.9.1203" date="12 August 2010">
+	<improved>Entity property types are now displayed in a combo-box in the properties grid.</improved>
+	<fix>Nullable database columns not mapped to nullable .Net types correctly.</fix>
+  </release>
+  <release version="2.3.9.1201" date="11 August 2010">
+	<new>Many new inheritance features.</new>
+	<fix>Oracle tables with no columns cause issues.</fix>
+	<fix>When importing new columns on existing tables from the database, the mappings aren't being added automatically.</fix>
+	<fix>Many other small fixes.</fix>
+  </release>
+  <release version="2.3.8.1198" date="4 August 2010">
+	<fix>Occasional error when IntelliMerge is merging into existing source code files.</fix>
+  </release>
+  <release version="2.3.8.1197" date="4 August 2010">
+	<new>Custom type-mapper to map for complete control over how database types map to .Net types, including ability to handle user-defined types.</new>
+	<new>Added support for all three types of inheritance: Table Per Hierarchy, Table Per Concrete Class, Table Per Sub-Class.</new>
+	<improved>Converted 'File' tab to Office 2010 BackStage style.</improved>
+	<improved>Many small improvements.</improved>
+	<fix>Many fixes.</fix>
+  </release>
+  <release version="2.3.7.1192" date="26 July 2010">
+	<fix>Fix for SQL server and SQL Server Express collation-related issue.</fix>
+  </release>
+  <release version="2.3.7.1190" date="25 July 2010">
+	<improved>Various improvements to the database synchronization feature.</improved>
+	<fix>SQL CE: Error when clicking the database node in the treeview.</fix>
+	<fix>Can't load saved projects that use SQL CE.</fix>
+  </release>
+  <release version="2.3.7.1189" date="23 July 2010">
+	<improved>Added a 're-check' button to the validation errors grid.</improved>
+	<improved>Changed Mapping and Inheritance icons to buttons to make them more discoverable.</improved>
+	<improved>Improved styling of the Model Validation Errors grid.</improved>
+	<improved>Switch to the Model screen when validation errors are identified during generation on the Output screen.</improved>
+	<improved>Improved downloading of new install. Integrated instead of launching web-browser. Added progress-bar.</improved>
+	<fix>Fix for many-to-many relationships that map back to the same table.</fix>
+	<fix>Setting the value of 'Max Fetch Depth' on the Options screen caused an error.</fix>
+  </release>
+  <release version="2.3.7.1187" date="22 July 2010">
+	<improved>Improved support for Map and IDBag collections.</improved>
+	<improved>Added validation check to ensure a valid index column has been specified for Map and IDBag collections.</improved>
+	<improved>Added checkboxes to parent nodes in DB sync tree to select/deselect child nodes.</improved>
+	<fix>Some files weren't being removed during uninstallation.</fix>
+	<fix>The Partial class setting wasn't being used.</fix>
+	<fix>Changed default project namespace setting from Project.Model to Project. The 'Model' is added in the templates.</fix>
+  </release>
+  <release version="2.3.7.1184" date="21 July 2010">
+	<improved>Improved error reporting to enable saving error report as a file which can be emailed to Slyce.</improved>
+  </release>
+  <release version="2.3.7.1182" date="21 July 2010">
+	<new>Added support for SQL Server 2000.</new>
+	<improved>Changed the name of project files folder from 'Project Files' to '&lt;ProjectFileName&gt;_files' to enable multiple projects to be saved to the same folder and not overwrite each others files.</improved>
+	<improved>Default save location set to: '&lt;MyDocuments&gt;\Visual NHibernate\Projects'.</improved>
+	<fix>Error on non-English systems when displaying stack-trace of template errors that occur during generation.</fix>
+	<fix>Error when setting the output folder to 'MyDocuments' due to some sub-folders such as 'My Music' being restricted system folders. This generates an access violation.</fix>
+  </release>
+  <release version="2.3.7.1180" date="20 July 2010">
+	<new>Database synchronization feature to import changes from the database and apply them to the model.</new>
+  </release>
+  <release version="2.3.7.1176" date="20 July 2010">
+	<fix>Error when working with Oracle, MySQL and PostgreSQL datbases: 'License not valid due to the problems with dotConnect Universal installation.'</fix>
+  </release>
+  <release version="2.3.7.1175" date="16 July 2010">
+	<new>Added encoding selector to each template file.</new>
+	<improved>Added tooltips to controls on template editor.</improved>
+	<fix>Fixed encodings of generated XML UTF8 files.</fix>
+	<fix>Occasional error when clicking 'Re-generate' when an output path hasn't been selected, due to access permissions violation.</fix>
+	<fix>Project settings not saving correctly.</fix>
+	<fix>SQL bit was mapping to C# short instead of bool.</fix>
+  </release>
+  <release version="2.3.6.1172" date="15 July 2010">
+	<new>Added the ability to import Fluent NHibernate projects. Now you can visualize and edit your Fluent NHibernate projects.</new>
+	<improved>Added descriptions for the buttons to the 'Create new project' screen.</improved>
+	<fix>Error when trying to add a new relationship to a table with no primary key.</fix>
+  </release>
+  <release version="2.3.5.1168" date="11 July 2010">
+	<fix>Error on the Options screen when changing the Default Cascade type.</fix>
+  </release>
+  <release version="2.3.4.1167" date="11 July 2010">
+	<new>Converted to .Net 4.0</new>
+	<improved>Many improvements to the installer: Check whether the .Net Framework 4.0 is installed - open the download page if it isn't; Check that Visual NHibernate is not running; Check that only one instance of the setup is running.</improved>
+	<improved>Many improvements to the error reporter, including requiring that the first instance of an error must be reported - subsequent reports of the same error can be skipped if desired. User is asked to please help us by reconsidering when they choose to  send anonymously.</improved>
+	<fix>Invalid Object name 'Information_Schema.Key_Column_Usage'. Caused by case-sensitive SQL Server collations.</fix>
+	<fix>Occasional bug when viewing a diagram: 'The given key was not present in the Dictionary'.</fix>
+	<fix>'Argument out of range' exception when editing parameters of generator on the Entity Details editor.</fix>
+	<fix>Password characters not hidden on the database details screen.</fix>
+  </release>
+  <release version="2.3.3.1160" date="8 July 2010">
+	<improved>Performance improvement when analysing the files for changes after generation.</improved>
+	<improved>Exception reporting requires the first instance of a particular error to be reported, while subsequent instances of the same error don't need to be sent.</improved>
+	<fix>Error: When clicking on the 'Templates' tab, this error can occur: 'Object reference not set to an instance of an object'.</fix>
+	<fix>Error: Viewing the database info screen for a blank project.</fix>
+  </release>
+  <release version="2.3.2.1155" date="7 July 2010">
+	<fix>Merged classes have an 'XXX' attribute added to them. Test data in the template has now been removed.</fix>
+	<fix>Error when changing the bytecode generator on the Options screen.</fix>
+	<fix>UserOption not found: Property_UsePrivateSetter, when generating in a project with components.</fix>
+  </release>
+  <release version="2.3.1.1151" date="6 July 2010">
+	<fix>DirectoryNotFound error: user's templates folder not being created: MyDocuments\Visual NHibernate\Templates.</fix>
+  </release>
+  <release version="2.3.0.1153" date="6 July 2010">
+	<new>Visual NHibernate now has an advanced template engine and templates for NHibernate. These include IntelliMerge features, enabling precise insertions into existing source-code files without overwriting existing code.</new>
+	<new>Added the ability to create a new NHibernate component directly from the entity shape on the entity diagrammer.</new>
+	<new>Added support for 'default-lazy, 'default-access', 'auto-import' and 'default-cascade'.</new>
+	<new>Adding support for components to the generated Fluent NHibernate code.</new>
+	<improved>Auto-select all tables when creating a project from a database with only one schema.</improved>
+	<improved>Added ability to delete a discriminator.</improved>
+	<improved>Much improved exception reporting.</improved>
+	<improved>Auto-expand 'select tables' when there is only a single schema, collapse when multiple schemas.</improved>
+	<improved>Better and faster editing of table and column prefixes.</improved>
+	<fix>Oracle VARCHAR2 should map to string, not Guid.</fix>
+	<fix>When doing a "refactor to component", reusing an already existing component doesn't work.</fix>
+	<fix>Many-to-many relationships being created with incorrect columns in HBM XML and Fluent NHibernate code.</fix>
+	<fix>Many fixes for SQL Serve Compact (SQL CE).</fix>
+	<fix>Clicking up/down in the diff viewer didn't work for single-doc view. Also, didn't align to middle of the page.</fix>
+  </release>
+  <release version="2.2.19.1129" date="7 June 2010">
+	<new>Added support for specifying table and columns prefixes to be removed.</new>
+	<fix>Error when starting from an existing NHibernate Visual Studio project.</fix>
+  </release>
+  <release version="2.2.18.1126" date="4 June 2010">
+	<new>Added ability to select schemas and tables when importing a database.</new>
+	<new>Added support for specifying 2nd level cache settings for entities.</new>
+	<new>Added support for using tnsnames for Oracle databases.</new>
+	<improved>Improved the color-scheme - made buttons easier to read.</improved>
+	<improved>Improved layout of the Entity details screen.</improved>
+	<improved>Made server default to machine name instead of '.' for SQL Server.</improved>
+	<improved>Many more config seetings have been added to the Settings screen.</improved>
+	<improved>Removed concept of schema filtering from Oracle and PostgreSQL.</improved>
+	<improved>Made native connections the default for Oracle.</improved>
+	<improved>Optimizations to Oracle schema loading, especially when there are many schemas.</improved>
+	<fix>Error when a MySQL databases has a column with Size exceeding the maximum value of an int32.</fix>
+	<fix>Error when clicking the 'Reset Default Values' button on the settings screen for an empty project.</fix>
+  </release>
+  <release version="2.2.17.1120" date="21 May 2010">
+	<improved>Improvements added to the model validation check to remove false positives.</improved>
+	<improved>Added schema to tables in the diagrammer when the database has multiple schemas.</improved>
+	<improved>Updated look and feel to display correctly under the Windows Classic theme on Windows 7.</improved>
+	<improved>Updated look and feel to Office 2010 Black theme.</improved>
+	<improved>Improved layout of the entity inheritance screen. Restrict the minimum size and display scrollbars if necessary.</improved>
+	<improved>Allow multi-selections when selecting child entities for inheritance. Use the Ctrl and Shift keys when selecting.</improved>
+	<improved>Moved the reference/relationship-line edit icons to the outside of the text to better handle long reference/relationship names.</improved>
+	<fix>References not being created correctly for databases with multiple schemas.</fix>
+  </release>
+  <release version="2.2.16.1116" date="19 May 2010">
+	<fix>Problem generating the hbm.xml file for a SQL Server Express project that has been saved and re-opened.</fix>
+  </release>
+  <release version="2.2.15.1115" date="17 May 2010">
+	<fix>Error connecting to SQL Server databases with multiple schemas having duplicate table-names.</fix>
+	<fix>Error when clicking an empty cell in the custom code grid.</fix>
+  </release>
+  <release version="2.2.14.1113" date="12 May 2010">
+	<new>Add custom code to entity classes: using statements, attributes, base-names (implements and base-class names), properties, methods.</new>
+	<improved>Write properties as single line when inserting properties with no accessor bodies.</improved>
+	<fix>Constructs (properties, methods etc) were being inserted in the middle of existing source-code.</fix>
+	<fix>Insertions into existing code were inserting incorrectly.</fix>
+	<fix>Errors when dealing with a SQL Server database using the same table names across multiple schemas.</fix>
+  </release>
+  <release version="2.2.13.1108" date="3 May 2010">
+	<new>Added patch updates (binary deltas) to minimise filesize when downloading newer version.</new>
+	<improved>Most recently used database type is preselected when creating a new project.</improved>
+	<improved>More model validation checks.</improved>
+	<improved>Added iesi and System.Collections.Generic assemblies to using statements in generated code, removed full qualifications from type names in classes.</improved>
+	<fix>Many fixes for Fluent NHibernate output.</fix>
+	<fix>Many-to-one mappings were not always generating the correct hbm xml.</fix>
+	<fix>Many fixes and improvements for starting from an existing Visual Studio NHibernate project.</fix>
+	<fix>Root node of output treeview changes to 'Click here to set...' with every mouseover.</fix>
+  </release>
+  <release version="2.2.12.1102" date="28 April 2010">
+	<improved>When clicking 'Refresh Schema' for a new database in a blank project, tables and entities are now created.</improved>
+	<fix>MySQL support not working correctly.</fix>
+  </release>
+  <release version="2.2.11.1100" date="27 April 2010">
+	<new>BREAK: Added support for the various ID generator schemes, including for custom generators.</new>
+	<improved>Added more model validation rules.</improved>
+	<improved>Improved creation of new entities and mapping of existing entities to a table via the UI.</improved>
+	<improved>Improved UI layout for mapping editor.</improved>
+	<improved>Switch to new table/entity when one created via the UI.</improved>
+	<fix>Columns in foreign keys still being written to hbm xml mapping file even when excluded via the UI.</fix>
+	<fix>Many other small fixes.</fix>
+  </release>
+  <release version="2.2.10.1099" date="23 April 2010">
+	<new>Added support for Firebird databases.</new>
+	<improved>More improvements to auto-naming of collections.</improved>
+  </release>
+  <release version="2.2.9.1098" date="21 April 2010">
+	<fix>SQL Server Express support was broken.</fix>
+  </release>
+  <release version="2.2.8.1096" date="20 April 2010">
+	<improved>Improved handling of Association Tables. Auto-create association table when a column not in the relationship is and Identity column.</improved>
+	<improved>Allow user to add Association tables via editor, including when there are extra columns on the Association Table.</improved>
+	<improved>Improved auto-naming of references to prevent duplicates.</improved>
+	<fix>Identity columns were not being marked as unique when they were one of multiple columns in the primary key.</fix>
+  </release>
+  <release version="2.2.7.1094" date="19 April 2010">
+	<new>Added support for PostgreSQL.</new>
+	<new>Properties that relate to foreign keys are omitted by default. They can be included via the checkbox on the reference editor dialog. These properties will also be removed from existing code if required.</new>
+	<improved>Database comparison now reports changes in relationships as well.</improved>
+	<improved>Added more options to database connection screen. You can now specify port and service name (sid for Oracle).</improved>
+	<improved>The single view diff editor has been improved to show finer-grained changes within a single line.</improved>
+	<improved>The database password is now saved during a session, so you don't need to keep re-typing it. It is still not saved to the project files on disk, for security purposes.</improved>
+	<fix>The data on the Options screen was not being saved.</fix>
+	<fix>Some database communication failures resulted in an error. These are now displayed via a MessageBox.</fix>
+	<fix>Some changes made to the database connection settings were not being saved correctly.</fix>
+	<fix>Other small fixes.</fix>
+  </release>
+  <release version="2.2.6.1091" date="13 April 2010">
+	<new>Added ability to create new (virtual) relationships between tables. This makes it easier to work with legacy databases.</new>
+	<new>Added context-menus to the table diagram.</new>
+	<improved>Improved the validation functionality.</improved>
+	<fix>Database connection info not being saved for MySQL and Oracle.</fix>
+  </release>
+  <release version="2.2.5.1087" date="7 April 2010">
+	<fix>An occasional error can occur when displaying validation results in the grid.</fix>
+  </release>
+  <release version="2.2.4.1086" date="6 March 2010">
+	<improved>Improved the auto-naming algorithm for entity names and column names.</improved>
+	<fix>Some column names cause exception when getting processed.</fix>
+	<fix>In particular scenarios, some keys get flagged as changed when refreshing the database schema.</fix>
+	<fix>Validation error grid not being hidden when errors fixed.</fix>
+	<fix>Removing a referenced entity in the diagram only removes it from one of the two entities.</fix>
+	<fix>Adding a new column in the table column editor causes an error.</fix>
+	<fix>Database settings editor not loading correctly for MySQL and Oracle.</fix>
+	<fix>Some input boxes in the database settings editor disabled for Oracle and MySQL.</fix>
+  </release>
+  <release version="2.2.3.1083" date="4 April 2010">
+	<fix>Added support for Oracle.</fix>
+  </release>
+  <release version="2.2.2.1081" date="3 April 2010">
+	<fix>Some SQL Server data-types not handled correctly.</fix>
+  </release>
+  <release version="2.2.1.1080" date="2 April 2010">
+	<new>Added support for MySQL.</new>
+	<improved>Improved naming of entities and properties.</improved>
+  </release>
+  <release version="2.2.0.1078" date="31 March 2010">
+	<new>New diagrammer.</new>
+	<new>New look and feel.</new>
+	<new>Streamlined workflow.</new>
+	<improved>Better user-experience.</improved>
+	<improved>Many, many improvements.</improved>
+	<fix>Many, many fixes.</fix>
+  </release>
+  <release version="2.1.2.1072" date="1 February 2010">
+	<new>Added ability to select an NHibernate config file that is not in the current project when starting from an existing Visual Studio project.</new>
+	<improved>Optimizations in displaying file contents editors.</improved>
+	<improved>Added ability to specify the output folder via a hyperlink in the root node of the treeview. Removed the output folder textbox and button.</improved>
+	<improved>New visual styles added, including custom colour scheme. (see 'Styles' in the top right corner)</improved>
+	<improved>Many small UI improvements.</improved>
+	<fix>The new files counter on the File Generation screen reports incorrect numbers.</fix>
+	<fix>Binary file new/changed status not getting set correctly.</fix>
+	<fix>Error when deleting an entity.</fix>
+  </release>
+  <release version="2.1.1.1065" date="29 January 2010">
+	<fix>An error occurs when generating new files.</fix>
+  </release>
+  <release version="2.1.0.1063" date="26 January 2010">
+	<new>Integrated diff engine: All files that are different to files on your disk are displayed so you can see the changes before writing them to disk. Syntax-highlighting for text files, file-information for binary files.</new>
+	<new>Filtering of files based on whether they've got changes or not etc.</new>
+	<new>Added support for Nhibernate Spatial. Check the Project Settings screen.</new>
+	<new>Added support for Geometry and Geography SQL Server 2008 data-types.</new>
+	<improved>Removed annoying progressbar from Output screen.</improved>
+	<improved>Renamed 'Options' tab to 'Project Settings' tab.</improved>
+	<improved>Renamed 'Files' tab to 'File Generation' tab.</improved>
+	<improved>Added entity name to all validation reports to enable quicker identification.</improved>
+	<improved>Double-click a validation report or click the entity hyperlink to navigate directly to the entity in question.</improved>
+	<improved>Moved the 'Write files to disk' button from the RibbonBar at the top to underneath the files treeview.</improved>
+	<improved>Many small UI improvements.</improved>
+	<fix>Column names with single quotes cause errors.</fix>
+	<fix>Output screen freezes when validation errors are displayed during the generation process.</fix>
+	<fix>New xml fragments not being inserted correctly into existing csproj files.</fix>
+  </release>
+  <release version="2.0.15.1054" date="21 January 2010">
+	<improved>Better reporting of searched locations when NH config data can't be found in an existing project.</improved>
+	<fix>NH config sections in app.config and web.config files in existing projects sometimes aren't identified correctly.</fix>
+  </release>
+  <release version="2.0.14.1053" date="20 January 2010">
+	<improved>When creating a new project from an existing VS NHibernate project, automatically set the output path to the project's root folder.</improved>
+	<improved>Added correct singularization rule for words like 'Status'.</improved>
+	<fix>Deleting relationships and references is slow.</fix>
+	<fix>Class properties based on References are generated with incorrect type.</fix>
+	<fix>Csproj files of existing projects are being overwritten. Must merge correctly.</fix>
+	<fix>Adding a new table when refreshing the database gives an error.</fix>
+  </release>
+  <release version="2.0.13.1047" date="14 January 2010">
+	<new>Added support for Fluent NHibernate. The NHibernate tab on the Options screen now has an option called UseFluentNHibernate which changes the mapping format from HBM XML to Fluent NHibernate mappings. The Mappings are written to {EntityName}Mapping.cs in the Model/Mapping folder. Note that reverse-engineering of existing projects only works for projects with hbm xml mappings. Support for reverse-engineering Fluent NHibernate mappings is coming soon.</new>
+	<new>Added support for reading NHibernate config settings from all possible locations, eg: web.config, app.config etc.</new>
+	<improved>Added support for new SQL Server 2008 date data-types: date, datetime2, datetimeoffset</improved>
+	<improved>Added XML syntax highlighting in file preview for .config and .xsd file extensions.</improved>
+	<improved>NH Validator options are now displayed more intuitively.</improved>
+	<improved>BREAK: Changed how validation constraints are saved to disk. Existing projects will need to set up their validation constraints again.</improved>
+	<fix>Deleted references not being cleared correctly, resulting in errors when reloading a project.</fix>
+	<fix>Deleting tables and entities is very slow.</fix>
+	<fix>References and components not getting updated in existing source-code files.</fix>
+	<fix>Many-to-many reference names not getting pluralized.</fix>
+  </release>
+  <release version="2.0.12.1032" date="19 December 2009">
+	<fix>Error when setting output folder.</fix>
+  </release>
+  <release version="2.0.11.1031" date="18 December 2009">
+	<new>Added support for lazy-loading.</new>
+	<new>Added support for 'dynamic-insert' and 'dynamic-update' which are used to specify whether the SQL for updates and inserts is generated at run time to avoid referencing null properties.</new>
+	<new>Added support for 'where' on classes which is used to specify some custom SQL to filter the entities.</new>
+	<new>Added support for 'where' on collection properties of a class.</new>
+	<new>Added a Version Property option for specifying that a property should be treated as a version property. This tells NHibernate that the class is versioned, and to use this property to determine the version of an Entity.</new>
+	<improved>Focused entity displays its mapped table(s) on the diagram by default.</improved>
+	<fix>A few minor UI fixes.</fix>
+  </release>
+  <release version="2.0.10.1026" date="16 December 2009">
+	<new>Added ability to turn a composite primary key into a component.</new>
+	<new>Added entity keys to the model treeview.</new>
+	<improved>Added option to make classes partial or not.</improved>
+	<improved>Added tooltips for all toolbar buttons.</improved>
+	<fix>Association tables with foreign keys to composite primary keys were not being handled correctly.</fix>
+  </release>
+  <release version="2.0.9.1018" date="09 December 2009">
+	<new>Pure many-to-many association tables (with no extra fields) used in many-to-many relationships are now omitted from the entity model.</new>
+	<new>Added option to make property setters private in entity classes.</new>
+	<new>Added option add the [Serializable] attribute to entity classes.</new>
+	<improved>Database selection options are now more descriptive.</improved>
+	<improved>Mapped tables are now displayed for selected entities by default. See what table(s) the focused entity is mapped to.</improved>
+	<improved>Tables and entities now have different shapes in the diagrammer, as well as different colours, making it easier to differentiate between them.</improved>
+	<improved>Streamlined some UI interactions.</improved>
+	<fix>Fixed issue with Foreign Keys when they referenced Unique Keys instead of Primary Keys in SQL Server.</fix>
+  </release>
+  <release version="2.0.8.1007" date="02 December 2009">
+	<new>The relationship panel now displays the columns for the keys.</new>
+	<improved>Made the message displayed when NHibernate configuration files can't be located more descriptive and useful.</improved>
+	<fix>When starting from an existing VS project the NHibernate configuration files can't be not found in some circumstances.</fix>
+  </release>
+  <release version="2.0.7.1005" date="01 December 2009">
+	<improved>References between entities now pluralised correctly.</improved>
+	<fix>Many internal fixes and improvements.</fix>
+  </release>
+  <release version="2.0.6.1001" date="27 November 2009">
+	<new>Inheritance hierarchies diplayed in diagrammer.</new>
+	<new>Added model validation checks.</new>
+	<new>Add singularisation and pluralization of names.</new>
+	<new>Added code-insertion to add required properties etc. to POCO classes without touching the rest of the existing code.</new>
+	<new>Validate project's database schema against the actual database and report inconsistencies.</new>
+	<new>Added support for NHibernate Validator</new>
+	<improved>Updated NHibernate version to 2.1.2.GA</improved>
+	<fix>Many small fixes.</fix>
+  </release>
+  <release version="2.0.5.983" date="22 October 2009">
+	<new>Start new project from existing Visual Studio project: reverse engineers hbm xml files to allow NHibernate projects to be worked with graphically.</new>
+	<new>Added beginnings of database migration support.</new>
+	<new>Added ability to view mapped tables for selected entity in the diagrammer.</new>
+  </release>
+  <release version="2.0.4.977" date="11 October 2009">
+	<fix>Update check not working correctly.</fix>
+	<fix>A number of UI fixes.</fix>
+  </release>
+  <release version="2.0.3.974" date="07 October 2009">
+	<new>Entity-first modeling: design your entities then auto-create your database schema from them, mapping the entities to the tables.</new>
+	<new>Model validation reports when 'things aren't quite right'. Click the 'Validate Model' button on the toolbar.</new>
+	<new>Report detailing what changes have been made to database schema during the current session.</new>
+	<fix>Many minor fixes.</fix>
+	<improved>Minor UI improvements.</improved>
+	<improved>The diagrammer now displays an entity's inherited properties separately.</improved>
+  </release>
+  <release version="2.0.2.967" date="25 September 2009">
+    <fix>Clicking on a table relationship in the database diagram causes error.</fix>
+	<improved>Added more model manipulation operations to the property grids.</improved>
+	<improved>Added columns to the Key property grid.</improved>
+	<improved>Added Keys collection to the Table property grid.</improved>
+  </release>
+  <release version="2.0.1.963" date="17 September 2009">
+    <fix>Many small UI fixes.</fix>
+	<new>Each entity has the option of turning off the automatic implementation of equality members.</new>
+	<new>Added auto-complete to Property property grid Type textbox</new>
+	<new>Added option to select bytecode generator.</new>
+	<improved>Added a MessageBox to the Clear Model operation, asking the user if they are sure they wish to proceed and warning them that it will wipe everything.</improved>
+  </release>
+  <release version="2.0.0.0" date="08 September 2009">
+    <notclassified>Beta Release</notclassified>
+  </release>
+</release_notes>
