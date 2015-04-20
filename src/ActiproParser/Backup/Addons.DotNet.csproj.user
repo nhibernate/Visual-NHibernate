@@ -1,6 +1,0 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectView>ProjectFiles</ProjectView>
-    <ReferencePath>S:\Code\ActiproSoftware\Common\Source\Shared10\bin\Debug\;S:\Code\ActiproSoftware\Common\Source\WinUICore10\bin\Debug\;S:\Code\ActiproSoftware\Common\Deploy\Dotfuscator10\;S:\Code\ActiproSoftware\SyntaxEditor4\Source\bin\Debug\;S:\Code\ActiproSoftware\SyntaxEditor4\Deploy\Dotfuscator\</ReferencePath>
-  </PropertyGroup>
-</Project>
