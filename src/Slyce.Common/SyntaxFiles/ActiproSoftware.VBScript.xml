@@ -1,0 +1,195 @@
+<SyntaxLanguage Key="VBScript" LanguageDefinitionVersion="4.0" Secure="True" xmlns="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition">
+
+	<!-- String Properties -->
+	<Properties>
+		<Property Key="Creator" Value="Actipro Software LLC" />
+		<Property Key="Copyright" Value="Copyright (c) 2001-2009 Actipro Software LLC.  All rights reserved." />
+	</Properties>
+
+	<!-- Triggers -->
+	<Triggers>
+		<KeyPressTrigger Key="MemberListTrigger" Character=".">
+			<KeyPressTriggerValidStates>
+				<KeyPressTriggerValidState State="DefaultState" />
+			</KeyPressTriggerValidStates>
+		</KeyPressTrigger>
+	</Triggers>
+
+	<!-- Highlighting Styles -->	
+	<Styles>
+		<Style Key="ReservedWordStyle" ForeColor="Blue" />
+		<Style Key="NativeTypeStyle" ForeColor="Blue" />
+		<Style Key="OperatorStyle" ForeColor="Black" />
+		<Style Key="ReservedWordOperatorStyle" ForeColor="Blue" />
+		<Style Key="NumberStyle" ForeColor="Purple" />
+		<Style Key="StringDelimiterStyle" ForeColor="Maroon" />
+		<Style Key="StringDefaultStyle" ForeColor="Maroon" />
+		<Style Key="CommentDelimiterStyle" ForeColor="Green" />
+		<Style Key="CommentDefaultStyle" ForeColor="Green" />
+		<Style Key="PreProcessorDirectiveKeywordStyle" Name="Pre-Processor Directive Keyword" ForeColor="Blue" />
+		<Style Key="PreProcessorDirectiveDefaultStyle" Name="Pre-Processor Directive Default" ForeColor="Black" />
+	</Styles>
+	
+	<!-- States -->
+	<States>
+		<!-- Code -->
+		<State Key="DefaultState">
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<!-- Whitespace -->
+				<RegexPatternGroup TokenKey="WhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- Line Terminators -->
+				<RegexPatternGroup TokenKey="LineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<!-- Brackets -->
+				<ExplicitPatternGroup Key="OpenParenthesisPatternGroup" TokenKey="OpenParenthesisToken" PatternValue="(" EndBracket="CloseParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="CloseParenthesisPatternGroup" TokenKey="CloseParenthesisToken" PatternValue=")" StartBracket="OpenParenthesisPatternGroup" />
+				<!-- Content Divider Reserved Words -->
+				<ExplicitPatternGroup TokenKey="EndSubReservedWordToken" Style="ReservedWordStyle" LookBehind="^|[^\.]" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect" IsContentDivider="True">
+					<ExplicitPattern Value="End Sub" />
+				</ExplicitPatternGroup>
+				<ExplicitPatternGroup TokenKey="EndFunctionReservedWordToken" Style="ReservedWordStyle" LookBehind="^|[^\.]" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect" IsContentDivider="True">
+					<ExplicitPattern Value="End Function" />
+				</ExplicitPatternGroup>
+				<ExplicitPatternGroup TokenKey="EndPropertyReservedWordToken" Style="ReservedWordStyle" LookBehind="^|[^\.]" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect" IsContentDivider="True">
+					<ExplicitPattern Value="End Property" />
+				</ExplicitPatternGroup>
+				<!-- Punctuation -->
+				<ExplicitPatternGroup TokenKey="PunctuationToken">
+					<ExplicitPatterns>
+						. ,
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Native Types -->
+				<ExplicitPatternGroup TokenKey="NativeTypeToken" Style="NativeTypeStyle" LookBehind="^|[^\.]" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect">
+					<ExplicitPatterns>
+						Boolean Byte Integer Currency Long Single Double Date Time String Object
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Booleans -->
+				<ExplicitPatternGroup TokenKey="BooleanToken" Style="ReservedWordStyle" LookBehind="^|[^\.]" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect">
+					<ExplicitPatterns>
+						False True
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Reserved Word Operators -->
+				<ExplicitPatternGroup TokenKey="ReservedWordOperatorToken" Style="ReservedWordOperatorStyle" LookBehind="^|[^\.]" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect">
+					<ExplicitPatterns>
+						And Eqv Imp Is Mod Not Or Xor
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Reserved Words -->
+				<ExplicitPatternGroup TokenKey="ReservedWordToken" Style="ReservedWordStyle" LookBehind="^|[^\.]" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect">
+					<ExplicitPatterns>
+						As Empty
+						Call Case Const Dim Do Each Else ElseIf End Erase Error Execute ExecuteGlobal Exit Explicit For Function
+						Abs Array Asc Atn CBool CByte CCur CDate CDbl Chr CInt CLng Cos CreateObject CSng CStr Date
+						DateAdd DateDiff DatePart DateSerial DateValue Day Eval Exp Filter Fix FormatCurrency FormatDateTime
+						FormatNumber FormatPercent
+						New Nothing Null
+						Get Goto If Let Local Loop Next On Option
+						GetLocale GetObject GetRef Hex Hour InputBox InStr InStrRev Int
+						IsArray IsDate IsEmpty IsNull IsNumeric IsObject Join LBound LCase Left Len LoadPicture
+						Log LTrim Mid Minute Month MonthName MsgBox Now Oct
+						Private Property Public Randomize ReDim
+						Resume Select Set Sub Then To Wend While With
+						Replace RGB Right Rnd Round RTrim ScriptEngine
+						ScriptEngineBuildVersion ScriptEngineMajorVersion ScriptEngineMinorVersion Second SetLocale
+						Sgn Sin Space Split Sqr StrComp String StrReverse Tan Time Timer TimeSerial TimeValue Trim
+						TypeName UBound UCase VarType WeekDay WeekDayName Year
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Identifier -->
+				<RegexPatternGroup TokenKey="IdentifierToken" PatternValue="(_ | {AlphaMacro})({WordMacro})*" />
+				<!-- Operators -->
+				<ExplicitPatternGroup TokenKey="OperatorToken" Style="OperatorStyle">
+					<ExplicitPatterns>
+						= &lt;&gt;
+						+ - * / \ ^ &amp;
+						&lt;= &lt; &gt;= &gt;
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Numbers -->
+				<RegexPatternGroup TokenKey="RealNumberToken" Style="NumberStyle" LookAhead="{NonWordMacro}|\z">
+					<RegexPattern Value="{DigitMacro}* \. {DigitMacro}+ ([Ee] [\+\-]? {DigitMacro}+)?" />
+					<RegexPattern Value="{DigitMacro}+ [Ee] [\+\-]? {DigitMacro}+" />
+				</RegexPatternGroup>
+				<RegexPatternGroup TokenKey="IntegerNumberToken" Style="NumberStyle" PatternValue="{DigitMacro}+" LookAhead="{NonWordMacro}|\z" />
+				<RegexPatternGroup TokenKey="HexIntegerNumberToken" Style="NumberStyle" PatternValue="&amp; [hH] {HexDigitMacro}+" LookAhead="{NonWordMacro}|\z" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="StringState" />
+				<ChildState Key="CommentState" />
+				<ChildState Key="PreProcessorDirectiveState" />
+			</ChildStates>
+		</State>
+
+		<!-- Strings -->
+		<State Key="StringState" TokenKey="StringDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="StringStartToken" Style="StringDelimiterStyle" PatternValue="&quot;" />
+					<RegexPatternGroup Type="EndScope" TokenKey="StringEndToken" Style="StringDelimiterStyle" PatternValue="[\&quot;\n]" />
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<ExplicitPatternGroup TokenKey="StringEscapedCharacterToken" PatternValue="&quot;&quot;" />
+				<RegexPatternGroup TokenKey="StringDefaultToken2" PatternValue="[^\&quot;\n]+" />
+			</PatternGroups>
+		</State>
+
+		<!-- Comments -->
+		<State Key="CommentState" TokenKey="CommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentDelimiterStyle" PatternValue="'" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				</Scope>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentDelimiterStyle" PatternValue="REM" LookBehind="^|[^\.]" LookAhead="{NonWordMacro}|\z" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="CommentDefaultToken" PatternValue="{NonLineTerminatorMacro}+" />
+			</PatternGroups>
+		</State>
+
+		<!-- Pre-Processor Directives -->
+		<State Key="PreProcessorDirectiveState" TokenKey="PreProcessorDirectiveDefaultToken" Style="PreProcessorDirectiveDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="RegionPreProcessorDirectiveStartToken" Style="PreProcessorDirectiveKeywordStyle" PatternValue="#Region" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect" />
+					<RegexPatternGroup Type="EndScope" TokenKey="PreProcessorDirectiveEndToken" Style="DefaultStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="EndRegionPreProcessorDirectiveStartToken" Style="PreProcessorDirectiveKeywordStyle" PatternValue="#End Region" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect" />
+					<RegexPatternGroup Type="EndScope" TokenKey="PreProcessorDirectiveEndToken" Style="DefaultStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="PreProcessorDirectiveDefaultToken" PatternValue="{NonLineTerminatorMacro}+" />
+			</PatternGroups>
+		</State>		
+	</States>
+
+	<!-- Example Text -->
+	<ExampleText>
+		<![CDATA[
+Function GetRandom(lowerBound, upperBound) 
+	'Create a random number within the range
+	Randomize
+	GetRandom = CInt((upperBound - lowerBound) * Rnd + 1) 
+End Function 
+ 
+document.writeln(CStr(GetRandom(1, 100)))
+		]]>
+	</ExampleText>
+		
+</SyntaxLanguage>

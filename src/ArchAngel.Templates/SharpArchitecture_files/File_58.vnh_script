@@ -1,0 +1,9 @@
+using <#=Project.Settings.Name#>.Core;
+
+namespace <#=Project.Settings.Name#>.ApplicationServices.ViewModels
+{
+    public class <#=entity.Name#>FormViewModel
+    {
+        public <#=entity.Name#> <#=entity.Name#> { get; set; }
+    }
+}

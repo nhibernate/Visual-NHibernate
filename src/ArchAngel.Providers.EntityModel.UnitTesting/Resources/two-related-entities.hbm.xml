@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="Test" assembly="Test" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="BasicClass1" table="`Table1`">
+    <id name="ID" access="property" column="`ID`" />
+    <set name="Class2s">
+      <key column="BASIC_CLASS_1_ID"/>
+      <one-to-many class="BasicClass2"/>
+    </set>
+  </class>
+  <class name="BasicClass2" table="`Table2`">
+    <id name="ID" access="property" column="`ID`" />
+    <many-to-one name="Property1" class="BasicClass1" column="BASIC_CLASS_1_ID" cascade="all" unique="true" />
+  </class>
+</hibernate-mapping>

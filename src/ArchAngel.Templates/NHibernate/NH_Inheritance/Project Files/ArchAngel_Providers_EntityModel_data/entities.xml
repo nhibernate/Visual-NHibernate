@@ -1,0 +1,421 @@
+<?xml version="1.0" ?>
+<EntitySet Version="1">
+	<Entities>
+		<Entity>
+			<Discriminator />
+			<Key />
+			<Name>OneToOne</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ID</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Data</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key />
+			<Name>OneToMany</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ID1</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Data1</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Data2</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key />
+			<Name>TablePerClassHierarchy_Transport</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ID</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Speed</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>System.Int32</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Name</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>System.String</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator>
+				<AndGrouping>
+					<Condition>
+						<Column table="TablePerClassHierarchy_Transport" name="Discriminator" />
+						<Operator>Equal</Operator>
+						<ExpressionValue>C</ExpressionValue>
+					</Condition>
+				</AndGrouping>
+			</Discriminator>
+			<Key />
+			<Name>TablePerClassHierarchy_Car</Name>
+			<Parent>TablePerClassHierarchy_Transport</Parent>
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Model</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator>
+				<AndGrouping>
+					<Condition>
+						<Column table="TablePerClassHierarchy_Transport" name="Discriminator" />
+						<Operator>Equal</Operator>
+						<ExpressionValue>B</ExpressionValue>
+					</Condition>
+				</AndGrouping>
+			</Discriminator>
+			<Key />
+			<Name>TablePerClassHierarchy_Bike</Name>
+			<Parent>TablePerClassHierarchy_Transport</Parent>
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ManufacturerCode</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key />
+			<Name>TablePerSubClass_Transport</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ID</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Speed</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Name</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key />
+			<Name>TablePerSubClass_Car</Name>
+			<Parent>TablePerSubClass_Transport</Parent>
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Model</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key />
+			<Name>TablePerSubClass_Bike</Name>
+			<Parent>TablePerSubClass_Transport</Parent>
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ManufacturerCode</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key />
+			<Name>TablePerConcreteClass_Transport</Name>
+			<Parent />
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ID</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Speed</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Name</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key />
+			<Name>TablePerConcreteClass_Car</Name>
+			<Parent>TablePerConcreteClass_Transport</Parent>
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Model</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ID</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Speed</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Name</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+		<Entity>
+			<Discriminator />
+			<Key />
+			<Name>TablePerConcreteClass_Bike</Name>
+			<Parent>TablePerConcreteClass_Transport</Parent>
+			<Properties>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ManufacturerCode</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>ID</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Speed</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>int</Type>
+				</Property>
+				<Property>
+					<Computed>False</Computed>
+					<FixedLength />
+					<IsVirtual>False</IsVirtual>
+					<MaximumLength />
+					<Name>Name</Name>
+					<Nullable>False</Nullable>
+					<Precision />
+					<ReadOnly>False</ReadOnly>
+					<Scale />
+					<Type>string</Type>
+				</Property>
+			</Properties>
+		</Entity>
+	</Entities>
+</EntitySet>

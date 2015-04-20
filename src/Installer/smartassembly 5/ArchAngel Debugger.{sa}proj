@@ -1,0 +1,93 @@
+<SmartAssemblyProject ProjectId="{ed83b7c2-e500-41eb-ba69-f804015816d2}" Version="2.0">
+    <MainAssemblyFileName>..\..\ArchAngel.Debugger\bin\Release\ArchAngel.Debugger.dll</MainAssemblyFileName>
+    <Configuration Name="Release">
+        <ApplicationName />
+        <Destination DestinationFileName=".\Output\ArchAngel.Debugger.dll" />
+        <Assemblies>
+            <Assembly AssemblyName="ArchAngel.Debugger.DebugProcess, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="log4net, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Interfaces, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Slyce.Common, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Ionic.Zip, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="DevComponents.DotNetBar2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.SyntaxEditor.Net20, Culture=neutral, PublicKeyToken=21a821480e210563">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.Shared.Net20, Culture=neutral, PublicKeyToken=36ff2196ab5654b9">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.WinUICore.Net20, Culture=neutral, PublicKeyToken=1eba893a2bc55de5">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Common, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Slyce.IntelliMerge, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Providers.CodeProvider, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Culture=neutral, PublicKeyToken=5504180c8d344a1e">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ActiproSoftware.UIStudio.Dock.Net20, Culture=neutral, PublicKeyToken=be939c973e8cb8a6">
+                <Merging />
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="ArchAngel.Debugger, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging>
+                    <MemberRefsProxy Proxy="0" />
+                    <Pruning Prune="0">
+                        <Exclusion />
+                    </Pruning>
+                    <Obfuscation Obfuscate="0">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="0" ObfuscationLevel="3" />
+                    <StringsEncoding />
+                    <ResourcesCompression />
+                </Merging>
+            </Assembly>
+            <Assembly AssemblyName="Inflector.Net, Culture=neutral, PublicKeyToken=4f6413d537c58cfc">
+                <Merging />
+                <Embedding />
+            </Assembly>
+        </Assemblies>
+        <Options>
+            <Obfuscation FieldsNameMangling="3" NameMangling="3" />
+            <ExceptionReporting />
+            <StrongNameSigning KeyFileName="..\slyce_strong_name_key.snk" Sign="1" />
+            <OtherProtections AddIncorrectMetadata="0" AddMetadataStream="0" SuppressIldasm="0" />
+            <StringsEncoding Compress="1" Encode="1" UseCache="1" UseImprovedEncoding="1" />
+            <OtherOptimizations SealClasses="0" />
+            <Debugging CreatePDB="1" ObfuscateDocumentsURL="1" />
+            <FeatureUsageReporting />
+        </Options>
+    </Configuration>
+</SmartAssemblyProject>

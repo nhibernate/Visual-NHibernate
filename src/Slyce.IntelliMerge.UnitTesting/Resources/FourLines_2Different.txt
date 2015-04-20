@@ -1,0 +1,4 @@
+﻿This is line 1.
+This is a changed line 2.
+This is a different line 3.
+This is line 4.

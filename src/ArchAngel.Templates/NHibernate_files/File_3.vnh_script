@@ -1,0 +1,5 @@
+<% 
+var nhvMapping = new ArchAngel.NHibernateHelper.NHValidatorMapping();
+string xml = Helper.GetNhValidatorXml(entity, Project.Settings.Name, Project.Settings.Namespace + ".Model");
+Write(xml);
+%>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGenUI", "TestGenUI.csproj", "{B59A180B-2677-492C-8E64-F38C210FEC06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project", "..\TestGen\Project.csproj", "{BE539A72-CA77-4D43-AB30-366C6B1517B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B59A180B-2677-492C-8E64-F38C210FEC06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59A180B-2677-492C-8E64-F38C210FEC06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59A180B-2677-492C-8E64-F38C210FEC06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59A180B-2677-492C-8E64-F38C210FEC06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE539A72-CA77-4D43-AB30-366C6B1517B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE539A72-CA77-4D43-AB30-366C6B1517B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE539A72-CA77-4D43-AB30-366C6B1517B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE539A72-CA77-4D43-AB30-366C6B1517B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

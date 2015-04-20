@@ -1,0 +1,51 @@
+using NUnit.Framework;
+using <#=Project.Settings.Name#>.Core;
+using SharpArch.Testing;
+using SharpArch.Testing.NUnit;
+
+namespace Tests.<#=Project.Settings.Name#>.Core
+{
+	[TestFixture]
+    public class <#=entity.Name#>Tests
+    {
+        [Test]
+        public void CanCompare<#=entity.NamePlural#>() {
+            <#=entity.Name#> instance = new <#=entity.Name#>();<#
+
+foreach (var property in entity.Properties)
+{#>
+			instance.<#=property.Name#> = TODO;<#
+}
+			/*if (EntityScaffoldingDetails.HasAnyDomainSignatureProperties) {
+				foreach (EntityProperty property in EntityScaffoldingDetails.EntityProperties) {
+					if (property.IsPartOfDomainSignature) {
+						WriteLine("instance." + property.PropertyName + " = " + property.GetDefaultValueForTests() + ";");
+					}
+				}
+			}
+			else {
+				WriteLine("EntityIdSetter.SetIdOf<int>(instance, 1);");
+			}*/
+#>
+
+            <#=entity.Name#> instanceToCompareTo = new <#=entity.Name#>();<#
+			
+foreach (var property in entity.Properties)
+{#>
+			instanceToCompareTo.<#=property.Name#> = TODO;<#
+}
+			/*if (EntityScaffoldingDetails.HasAnyDomainSignatureProperties) {
+				foreach (EntityProperty property in EntityScaffoldingDetails.EntityProperties) {
+					if (property.IsPartOfDomainSignature) {
+						WriteLine("instanceToCompareTo." + property.PropertyName + " = " + property.GetDefaultValueForTests() + ";");
+					}
+				}
+			}
+			else {
+				WriteLine("EntityIdSetter.SetIdOf<int>(instanceToCompareTo, 1);");
+			}*/
+#>
+			instance.ShouldEqual(instanceToCompareTo);
+        }
+    }
+}

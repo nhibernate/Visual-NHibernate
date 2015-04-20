@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<model-scripts>
+	<entity-name>
+		string newName = table.Name.RemovePrefixes(TablePrefixes).RemoveSuffixes(TableSuffixes).Singularize().GetCSharpFriendlyIdentifier().GetNextName(ExistingEntityNames);
+		ExistingEntityNames.Add(newName);
+		return newName;
+	</entity-name>
+	<property-name>
+		string newName = column.Name.RemovePrefixes(ColumnPrefixes).RemoveSuffixes(ColumnSuffixes).ToTitleCase().GetNextName(ExistingPropertyNames);
+		ExistingPropertyNames.Add(newName);
+		return newName;
+	</property-name>
+</model-scripts>

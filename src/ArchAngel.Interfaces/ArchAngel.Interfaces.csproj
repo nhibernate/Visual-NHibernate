@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchAngel.Interfaces</RootNamespace>
+    <AssemblyName>ArchAngel.Interfaces</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ArchAngel.Interfaces.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ArchAngel.Interfaces.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>bin\Debug\ArchAngel.Interfaces.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\ArchAngel.Interfaces.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=9.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <HintPath>..\3rd_Party_Libs\DevComponents.DotNetBar2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionAttribute.cs" />
+    <Compile Include="ApiExtensionHelper.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="BaseAction.cs" />
+    <Compile Include="Exceptions\TemplateFunctionException.cs" />
+    <Compile Include="ExtensionAttributeHelper.cs" />
+    <Compile Include="IOptionForm.cs" />
+    <Compile Include="IProgressUpdater.cs" />
+    <Compile Include="NHibernateEnums.cs" />
+    <Compile Include="PreGenerationData.cs" />
+    <Compile Include="ProjectOptions\DatabaseScripts\MaintenanceScript.cs" />
+    <Compile Include="ProjectOptions\DatabaseScripts\Scripts.cs" />
+    <Compile Include="ProjectOptions\DatabaseScripts\Utility.cs" />
+    <Compile Include="ProjectOptions\ModelScripts\Scripts.cs" />
+    <Compile Include="ProjectOptions\ModelScripts\Utility.cs" />
+    <Compile Include="ProjectOptions\TypeMappings\DatabaseTypeMap.cs" />
+    <Compile Include="ProjectOptions\TypeMappings\DotNetType.cs" />
+    <Compile Include="ProjectOptions\TypeMappings\ExtensionMethods.cs" />
+    <Compile Include="ProjectOptions\TypeMappings\FormCustomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectOptions\TypeMappings\FormCustomType.Designer.cs">
+      <DependentUpon>FormCustomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectOptions\TypeMappings\Scripts.cs" />
+    <Compile Include="ProjectOptions\TypeMappings\Utility.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderHelper.cs" />
+    <Compile Include="RibbonBarContentItem.cs" />
+    <Compile Include="Cardinality.cs" />
+    <Compile Include="Controls\ContentItems\ContentItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ContentItems\ContentItem.Designer.cs">
+      <DependentUpon>ContentItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormObjectOptionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormObjectOptionEdit.Designer.cs">
+      <DependentUpon>FormObjectOptionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultValueFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Events.cs" />
+    <Compile Include="SchemaDiagrammer\IEntity.cs" />
+    <Compile Include="IProjectHelper.cs" />
+    <Compile Include="SchemaDiagrammer\IRelationship.cs" />
+    <Compile Include="GeneratedFile.cs" />
+    <Compile Include="ITemplate.cs" />
+    <Compile Include="IVerificationIssueSolver.cs" />
+    <Compile Include="IWorkbenchProject.cs" />
+    <Compile Include="IWorkbenchProjectSettings.cs" />
+    <Compile Include="Scripting\DatabaseChanges\IChangedColumn.cs" />
+    <Compile Include="Scripting\DatabaseChanges\IDatabase.cs" />
+    <Compile Include="Scripting\DatabaseChanges\IChangedTable.cs" />
+    <Compile Include="Scripting\NHibernate\Model\ICache.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IEntityGenerator.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IDiscriminator.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IIndex.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IKey.cs" />
+    <Compile Include="Scripting\NHibernate\Model\ISourceAttribute.cs" />
+    <Compile Include="Scripting\NHibernate\Model\ISourceClass.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IColumn.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IComponent.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IComponentProperty.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IEntity.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IEntityKey.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IField.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IFieldDef.cs" />
+    <Compile Include="Scripting\NHibernate\Model\INhConfig.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IProject.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IProperty.cs" />
+    <Compile Include="Scripting\NHibernate\Model\IReference.cs" />
+    <Compile Include="Scripting\NHibernate\Model\ISourceField.cs" />
+    <Compile Include="Scripting\NHibernate\Model\ISourceFunction.cs" />
+    <Compile Include="Scripting\NHibernate\Model\ISourceParameter.cs" />
+    <Compile Include="Scripting\NHibernate\Model\ITable.cs" />
+    <Compile Include="Scripting\NHibernate\Model\ISourceProperty.cs" />
+    <Compile Include="Scripting\RelativePathHelper.cs" />
+    <Compile Include="SourceCodeMultiLineType.cs" />
+    <Compile Include="SourceCodeType.cs" />
+    <Compile Include="TemplateData.cs" />
+    <Compile Include="TemplateHelper.cs" />
+    <Compile Include="TemplateLoader.cs" />
+    <Compile Include="ProviderInfo.cs" />
+    <Compile Include="ScriptBaseObject.cs" />
+    <Compile Include="ScriptFunctionWrapper.cs" />
+    <Compile Include="Setting.cs" />
+    <Compile Include="SharedData.cs" />
+    <Compile Include="TemplateInfo\File.cs" />
+    <Compile Include="TemplateInfo\Folder.cs" />
+    <Compile Include="TemplateInfo\Function.cs" />
+    <Compile Include="TemplateInfo\Option.cs" />
+    <Compile Include="TemplateInfo\Output.cs" />
+    <Compile Include="TemplateInfo\Script.cs" />
+    <Compile Include="Properties\IController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IScriptBaseObject.cs" />
+    <Compile Include="Template\Enums.cs" />
+    <Compile Include="Template\File.cs" />
+    <Compile Include="Template\Folder.cs" />
+    <Compile Include="Template\Script.cs" />
+    <Compile Include="Template\StaticFile.cs" />
+    <Compile Include="Template\TemplateDeserializer.cs" />
+    <Compile Include="Template\TemplateProject.cs" />
+    <Compile Include="Template\TemplateSerializer.cs" />
+    <Compile Include="UserOption.cs" />
+    <Compile Include="VirtualPropertyHelper.cs" />
+    <Compile Include="Wizards\NewProject\IFormNewProject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ContentItems\ContentItem.resx">
+      <DependentUpon>ContentItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormObjectOptionEdit.resx">
+      <DependentUpon>FormObjectOptionEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectOptions\TypeMappings\FormCustomType.resx">
+      <DependentUpon>FormCustomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj">
+      <Project>{AA16CFFA-3659-4F91-9F07-C22360882B39}</Project>
+      <Name>ArchAngel.Providers.CodeProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="slyce_strong_name_key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectOptions\TypeMappings\DefaultTypeMap.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectOptions\ModelScripts\Scripts.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectOptions\DatabaseScripts\Scripts.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

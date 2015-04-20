@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47711AEC-E127-4141-9EAA-BE2BAD8F0597}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchAngel.Designer</RootNamespace>
+    <AssemblyName>ArchAngel.Designer</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <ApplicationIcon>Designer.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/ArchAngel.Designer/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEV</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;DEV</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEV</DefineConstants>
+    <NoWarn>1591</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;DEV</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.UIStudio.Dock.Net20, Version=2.0.97.0, Culture=neutral, PublicKeyToken=be939c973e8cb8a6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.UIStudio.Dock.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.6.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseApp.cs" />
+    <Compile Include="Branding.cs" />
+    <Compile Include="CompileHelper.cs" />
+    <Compile Include="CompileHelperRelated.cs" />
+    <Compile Include="CompilerError.cs" />
+    <Compile Include="ConsoleApp.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Exceptions\TypeNotFoundException.cs" />
+    <Compile Include="ExternalFunctions.cs" />
+    <Compile Include="frmCleanUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCleanUp.Designer.cs">
+      <DependentUpon>frmCleanUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExtractTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExtractTemplate.Designer.cs">
+      <DependentUpon>frmExtractTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectModelObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectModelObject.Designer.cs">
+      <DependentUpon>frmSelectModelObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActionEdit.Designer.cs">
+      <DependentUpon>frmActionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFind.Designer.cs">
+      <DependentUpon>frmFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewProvider.Designer.cs">
+      <DependentUpon>frmNewProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOptions.Designer.cs">
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParameterEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParameterEdit.Designer.cs">
+      <DependentUpon>frmParameterEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWait.Designer.cs">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionRunner.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectLoadAndSaveHelper.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="ucApiExtensions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucApiExtensions.Designer.cs">
+      <DependentUpon>ucApiExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucFunctions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucFunctions.Designer.cs">
+      <DependentUpon>ucFunctions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucOptions.Designer.cs">
+      <DependentUpon>ucOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucProjectDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProjectDetails.Designer.cs">
+      <DependentUpon>ucProjectDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="IntelliSense.cs" />
+    <Compile Include="IScriptManager.cs" />
+    <Compile Include="IScriptManagerCallback.cs" />
+    <Compile Include="ScriptManager.cs" />
+    <Compile Include="SearchHelper.cs" />
+    <Compile Include="SyntaxReader.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucFunction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGenerationChoices.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucGenerationChoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="slyce_strong_name_key.snk" />
+    <EmbeddedResource Include="Resources\BlankProvider.zip" />
+    <EmbeddedResource Include="Resources\cs.syntax" />
+    <EmbeddedResource Include="Resources\vb.syntax" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ucFindResults.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucFindResults.Designer.cs">
+      <DependentUpon>ucFindResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucFunction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucFunction.Designer.cs">
+      <DependentUpon>ucFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGenerationChoices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGenerationChoices.Designer.cs">
+      <DependentUpon>ucGenerationChoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormUserOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormUserOption.Designer.cs">
+      <DependentUpon>FormUserOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnsupportedLanguageException.cs" />
+    <Compile Include="Wizards\frmFunctionWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizards\frmFunctionWizard.Designer.cs">
+      <DependentUpon>frmFunctionWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\frmOutputFileWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizards\frmOutputFileWizard.Designer.cs">
+      <DependentUpon>frmOutputFileWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\FunctionWizardScreens\Screen1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\FunctionWizardScreens\Screen1.Designer.cs">
+      <DependentUpon>Screen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\FunctionWizardScreens\Screen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\FunctionWizardScreens\Screen2.Designer.cs">
+      <DependentUpon>Screen2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\FunctionWizardScreens\Screen3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\FunctionWizardScreens\Screen3.Designer.cs">
+      <DependentUpon>Screen3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\OutputFileWizardScreens\Screen1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\OutputFileWizardScreens\Screen1.Designer.cs">
+      <DependentUpon>Screen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\OutputFileWizardScreens\Screen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\OutputFileWizardScreens\Screen2.Designer.cs">
+      <DependentUpon>Screen2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\OutputFileWizardScreens\Screen3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\OutputFileWizardScreens\Screen3.Designer.cs">
+      <DependentUpon>Screen3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\OutputFileWizardScreens\Screen4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizards\OutputFileWizardScreens\Screen4.Designer.cs">
+      <DependentUpon>Screen4.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFind.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOptions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucFindResults.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucFindResults.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmCleanUp.resx">
+      <DependentUpon>frmCleanUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExtractTemplate.resx">
+      <DependentUpon>frmExtractTemplate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectModelObject.resx">
+      <DependentUpon>frmSelectModelObject.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActionEdit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmActionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewProvider.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmNewProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParameterEdit.resx">
+      <DependentUpon>frmParameterEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWait.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucProjectDetails.resx">
+      <DependentUpon>ucProjectDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmFunctionWizard.resx">
+      <DependentUpon>frmFunctionWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmOutputFileWizard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOutputFileWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\FunctionWizardScreens\Screen1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Screen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\FunctionWizardScreens\Screen2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Screen2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\FunctionWizardScreens\Screen3.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Screen3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\OutputFileWizardScreens\Screen1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Screen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\OutputFileWizardScreens\Screen2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Screen2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\OutputFileWizardScreens\Screen3.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Screen3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\OutputFileWizardScreens\Screen4.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Screen4.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Common\ArchAngel.Common.csproj">
+      <Project>{48E0EF31-1EE1-484A-9387-55483922F310}</Project>
+      <Name>ArchAngel.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
+      <Project>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</Project>
+      <Name>ArchAngel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Licensing\ArchAngel.Licensing.csproj">
+      <Project>{04E45D06-957C-494E-A6CC-7C498E9B73EE}</Project>
+      <Name>ArchAngel.Licensing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj">
+      <Project>{AA16CFFA-3659-4F91-9F07-C22360882B39}</Project>
+      <Name>ArchAngel.Providers.CodeProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.IntelliMerge\Slyce.IntelliMerge.csproj">
+      <Project>{694BB413-2742-4476-9984-474E033770C1}</Project>
+      <Name>Slyce.IntelliMerge</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Designer.ico" />
+    <None Include="Resources\treenode_add_32.png" />
+    <None Include="Resources\edit_16_h.png" />
+    <EmbeddedResource Include="Resources\blue_arrow.png" />
+    <EmbeddedResource Include="Resources\error_16.png" />
+    <EmbeddedResource Include="Resources\green_arrow.png" />
+    <EmbeddedResource Include="ucApiExtensions.resx">
+      <DependentUpon>ucApiExtensions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucFunctions.resx">
+      <DependentUpon>ucFunctions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucOptions.resx">
+      <DependentUpon>ucOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormUserOption.resx">
+      <DependentUpon>FormUserOption.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

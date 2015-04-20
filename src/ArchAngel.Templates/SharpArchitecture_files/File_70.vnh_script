@@ -1,0 +1,56 @@
+using System.Collections.Generic;
+using <#=Project.Settings.Name#>.Core;
+using <#=Project.Settings.Name#>.Wcf.Dtos;
+using SharpArch.Core;
+using SharpArch.Core.PersistenceSupport;
+
+namespace <#=Project.Settings.Name#>.Wcf
+{
+	/// <summary>
+	/// Concrete implementation of the service.
+	/// </summary>
+	public class <#=entity.NamePlural#>WcfService : I<#=entity.NamePlural#>WcfService
+	{
+		public <#=entity.NamePlural#>WcfService(IRepository<<#=entity.Name#>> <#=entity.NameCamelCase#>Repository)
+		{
+			Check.Require(<#=entity.NameCamelCase#>Repository != null, "<#=entity.NameCamelCase#>Repository may not be null");
+
+			this.<#=entity.NameCamelCase#>Repository = <#=entity.NameCamelCase#>Repository;
+		}
+
+		public IList<<#=entity.Name#>Dto> Get<#=entity.NamePlural#>()
+		{
+			// I'd rather have the transaction begun via an attribute, like with a controller action, 
+			// or within a service object, but this works for the current example.
+			<#=entity.NameCamelCase#>Repository.DbContext.BeginTransaction();
+
+			IList<<#=entity.Name#>> <#=entity.NameCamelCasePlural#> = <#=entity.NameCamelCase#>Repository.GetAll();
+			List<<#=entity.Name#>Dto> <#=entity.NameCamelCase#>Dtos = new List<<#=entity.Name#>Dto>();
+
+			foreach (<#=entity.Name#> <#=entity.NameCamelCase#> in <#=entity.NameCamelCasePlural#>)
+			{
+				<#=entity.NameCamelCase#>Dtos.Add(<#=entity.Name#>Dto.Create(<#=entity.NameCamelCase#>));
+			}
+
+			// Since we're certainly not going to require lazy loading, commit the transcation
+			// before returning the data.
+			<#=entity.NameCamelCase#>Repository.DbContext.CommitTransaction();
+
+			return <#=entity.NameCamelCase#>Dtos;
+		}
+
+		private readonly IRepository<<#=entity.Name#>> <#=entity.NameCamelCase#>Repository;
+
+		/// <summary>
+		/// Doesn't do anything because it only exists to be interchangeable with WCF client 
+		/// proxies, such as <see cref="TerritoriesWcfServiceClient" />
+		/// </summary>
+		public void Abort() { }
+
+		/// <summary>
+		/// Doesn't do anything because it only exists to be interchangeable with WCF client 
+		/// proxies, such as <see cref="TerritoriesWcfServiceClient" />
+		/// </summary>
+		public void Close() { }
+	}
+}

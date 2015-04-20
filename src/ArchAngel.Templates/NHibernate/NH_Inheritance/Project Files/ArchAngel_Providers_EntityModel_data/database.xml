@@ -1,0 +1,1138 @@
+<?xml version="1.0" ?>
+<LogicalSchema Version="1">
+	<DatabaseName>AllDifferentTypes</DatabaseName>
+	<Table>
+		<NamePlural />
+		<Description />
+		<Enabled>True</Enabled>
+		<IsUserDefined>False</IsUserDefined>
+		<Name>OneEntityToManyTablesTable1</Name>
+		<UID>00000000-0000-0000-0000-000000000000</UID>
+		<Keys>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_OneEntityToManyTablesTable1</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Primary</Keytype>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Key>
+		</Keys>
+		<Indexes>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_OneEntityToManyTablesTable1</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>PrimaryKey</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_OneEntityToManyTablesTable1</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>Unique</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+		</Indexes>
+		<Columns>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>ID</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>True</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>True</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>True</IsUnique>
+				<OrdinalPosition>1</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Data</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>text</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>2</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>2147483647</Size>
+			</Column>
+		</Columns>
+	</Table>
+	<Table>
+		<NamePlural />
+		<Description />
+		<Enabled>True</Enabled>
+		<IsUserDefined>False</IsUserDefined>
+		<Name>OneEntityToManyTablesTable2</Name>
+		<UID>00000000-0000-0000-0000-000000000000</UID>
+		<Keys>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_OneEntityToManyTablesTable2</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Primary</Keytype>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Key>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>FK_OneEntityToManyTablesTable2_OneEntityToManyTablesTable1</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Foreign</Keytype>
+				<ReferencedKey>
+					<KeyName>PK_OneEntityToManyTablesTable1</KeyName>
+					<TableName>OneEntityToManyTablesTable1</TableName>
+				</ReferencedKey>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Key>
+		</Keys>
+		<Indexes>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_OneEntityToManyTablesTable2</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>PrimaryKey</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_OneEntityToManyTablesTable2</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>Unique</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>FK_OneEntityToManyTablesTable2_OneEntityToManyTablesTable1</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>ForeignKey</Datatype>
+				<IsUnique>False</IsUnique>
+				<IsClustered>False</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+		</Indexes>
+		<Columns>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>ID</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>True</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>True</IsUnique>
+				<OrdinalPosition>1</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Data</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>2</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+		</Columns>
+	</Table>
+	<Table>
+		<NamePlural />
+		<Description />
+		<Enabled>True</Enabled>
+		<IsUserDefined>False</IsUserDefined>
+		<Name>OneToOneTable1</Name>
+		<UID>00000000-0000-0000-0000-000000000000</UID>
+		<Keys>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_OneToOneTable1_1</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Primary</Keytype>
+				<Columns>
+					<ColumnName>ForeignKey</ColumnName>
+				</Columns>
+			</Key>
+		</Keys>
+		<Indexes>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_OneToOneTable1_1</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>PrimaryKey</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ForeignKey</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_OneToOneTable1_1</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>Unique</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ForeignKey</ColumnName>
+				</Columns>
+			</Index>
+		</Indexes>
+		<Columns>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>ForeignKey</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>True</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>True</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>True</IsUnique>
+				<OrdinalPosition>1</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Data</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>text</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>2</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>2147483647</Size>
+			</Column>
+		</Columns>
+	</Table>
+	<Table>
+		<NamePlural />
+		<Description />
+		<Enabled>True</Enabled>
+		<IsUserDefined>False</IsUserDefined>
+		<Name>TablePerClassHierarchy_Transport</Name>
+		<UID>00000000-0000-0000-0000-000000000000</UID>
+		<Keys>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerClassHierarchy_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Primary</Keytype>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Key>
+		</Keys>
+		<Indexes>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerClassHierarchy_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>PrimaryKey</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerClassHierarchy_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>Unique</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+		</Indexes>
+		<Columns>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>ID</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>True</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>True</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>True</IsUnique>
+				<OrdinalPosition>1</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Speed</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>2</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Name</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nvarchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>3</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>50</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Car_Model</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>True</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>4</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>10</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Bicycle_ManufacturerCode</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>True</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>5</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>5</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Discriminator</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>6</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>1</Size>
+			</Column>
+		</Columns>
+	</Table>
+	<Table>
+		<NamePlural />
+		<Description />
+		<Enabled>True</Enabled>
+		<IsUserDefined>False</IsUserDefined>
+		<Name>TablePerConcreteClass_Bicycle</Name>
+		<UID>00000000-0000-0000-0000-000000000000</UID>
+		<Keys>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerConcreteClass_Bicycle</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Primary</Keytype>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Key>
+		</Keys>
+		<Indexes>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerConcreteClass_Bicycle</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>PrimaryKey</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerConcreteClass_Bicycle</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>Unique</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+		</Indexes>
+		<Columns>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>ID</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>True</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>True</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>True</IsUnique>
+				<OrdinalPosition>1</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Speed</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>2</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Name</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nvarchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>3</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>50</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>ManufacturerCode</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nvarchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>4</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>5</Size>
+			</Column>
+		</Columns>
+	</Table>
+	<Table>
+		<NamePlural />
+		<Description />
+		<Enabled>True</Enabled>
+		<IsUserDefined>False</IsUserDefined>
+		<Name>TablePerConcreteClass_Car</Name>
+		<UID>00000000-0000-0000-0000-000000000000</UID>
+		<Keys>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerConcreteClass_Car</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Primary</Keytype>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Key>
+		</Keys>
+		<Indexes>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerConcreteClass_Car</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>PrimaryKey</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerConcreteClass_Car</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>Unique</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>ID</ColumnName>
+				</Columns>
+			</Index>
+		</Indexes>
+		<Columns>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>ID</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>True</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>True</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>True</IsUnique>
+				<OrdinalPosition>1</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Speed</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>2</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Name</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nvarchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>3</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>50</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Model</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nvarchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>4</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>50</Size>
+			</Column>
+		</Columns>
+	</Table>
+	<Table>
+		<NamePlural />
+		<Description />
+		<Enabled>True</Enabled>
+		<IsUserDefined>False</IsUserDefined>
+		<Name>TablePerSubClass_Bicycle</Name>
+		<UID>00000000-0000-0000-0000-000000000000</UID>
+		<Keys>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerSubClass_Bicycle</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Primary</Keytype>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Key>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>FK_TablePerSubClass_Bicycle_TablePerSubClass_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Foreign</Keytype>
+				<ReferencedKey>
+					<KeyName>PK_TablePerSubClass_Transport</KeyName>
+					<TableName>TablePerSubClass_Transport</TableName>
+				</ReferencedKey>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Key>
+		</Keys>
+		<Indexes>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>FK_TablePerSubClass_Bicycle_TablePerSubClass_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>ForeignKey</Datatype>
+				<IsUnique>False</IsUnique>
+				<IsClustered>False</IsClustered>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerSubClass_Bicycle</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>PrimaryKey</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerSubClass_Bicycle</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>Unique</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+			</Index>
+		</Indexes>
+		<Columns>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>TransportID</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>True</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>True</IsUnique>
+				<OrdinalPosition>1</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>ManufacturerCode</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nvarchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>2</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>5</Size>
+			</Column>
+		</Columns>
+	</Table>
+	<Table>
+		<NamePlural />
+		<Description />
+		<Enabled>True</Enabled>
+		<IsUserDefined>False</IsUserDefined>
+		<Name>TablePerSubClass_Car</Name>
+		<UID>00000000-0000-0000-0000-000000000000</UID>
+		<Keys>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerSubClass_Car</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Primary</Keytype>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Key>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>FK_TablePerSubClass_Car_TablePerSubClass_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Foreign</Keytype>
+				<ReferencedKey>
+					<KeyName>PK_TablePerSubClass_Transport</KeyName>
+					<TableName>TablePerSubClass_Transport</TableName>
+				</ReferencedKey>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Key>
+		</Keys>
+		<Indexes>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>FK_TablePerSubClass_Car_TablePerSubClass_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>ForeignKey</Datatype>
+				<IsUnique>False</IsUnique>
+				<IsClustered>False</IsClustered>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerSubClass_Car</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>PrimaryKey</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerSubClass_Car</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>Unique</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+			</Index>
+		</Indexes>
+		<Columns>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>TransportID</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>True</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>True</IsUnique>
+				<OrdinalPosition>1</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Model</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nvarchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>2</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>50</Size>
+			</Column>
+		</Columns>
+	</Table>
+	<Table>
+		<NamePlural />
+		<Description />
+		<Enabled>True</Enabled>
+		<IsUserDefined>False</IsUserDefined>
+		<Name>TablePerSubClass_Transport</Name>
+		<UID>00000000-0000-0000-0000-000000000000</UID>
+		<Keys>
+			<Key>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerSubClass_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Keytype>Primary</Keytype>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Key>
+		</Keys>
+		<Indexes>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerSubClass_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>PrimaryKey</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+				<Columns>
+					<ColumnName>TransportID</ColumnName>
+				</Columns>
+			</Index>
+			<Index>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>PK_TablePerSubClass_Transport</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>Unique</Datatype>
+				<IsUnique>True</IsUnique>
+				<IsClustered>True</IsClustered>
+			</Index>
+		</Indexes>
+		<Columns>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>TransportID</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>True</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>True</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>True</IsUnique>
+				<OrdinalPosition>1</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Speed</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>int</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>2</OrdinalPosition>
+				<Precision>10</Precision>
+				<Scale>0</Scale>
+				<Size>0</Size>
+			</Column>
+			<Column>
+				<NamePlural />
+				<Description />
+				<Enabled>True</Enabled>
+				<IsUserDefined>False</IsUserDefined>
+				<Name>Name</Name>
+				<UID>00000000-0000-0000-0000-000000000000</UID>
+				<Datatype>nvarchar</Datatype>
+				<Default />
+				<InPrimaryKey>False</InPrimaryKey>
+				<IsCalculated>False</IsCalculated>
+				<IsComputed>False</IsComputed>
+				<IsIdentity>False</IsIdentity>
+				<IsNullable>False</IsNullable>
+				<IsReadOnly>False</IsReadOnly>
+				<IsUnique>False</IsUnique>
+				<OrdinalPosition>3</OrdinalPosition>
+				<Precision>0</Precision>
+				<Scale>0</Scale>
+				<Size>50</Size>
+			</Column>
+		</Columns>
+	</Table>
+</LogicalSchema>

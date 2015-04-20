@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{694BB413-2742-4476-9984-474E033770C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slyce.IntelliMerge</RootNamespace>
+    <AssemblyName>Slyce.IntelliMerge</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Slyce.IntelliMerge.XML</DocumentationFile>
+    <NoWarn>1591 0618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Slyce.IntelliMerge.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>bin\Debug\Slyce.IntelliMerge.XML</DocumentationFile>
+    <NoWarn>1591 0618</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\Slyce.IntelliMerge.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.UIStudio.Dock.Net20, Version=2.0.99.0, Culture=neutral, PublicKeyToken=be939c973e8cb8a6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.UIStudio.Dock.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.9.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\BinaryFileInformation.cs" />
+    <Compile Include="Controller\CodeRootMap.cs" />
+    <Compile Include="Controller\FileInformation.cs" />
+    <Compile Include="Controller\FileInformationUtility.cs" />
+    <Compile Include="Controller\IFileInformation.cs" />
+    <Compile Include="Controller\ManifestWorkers\BackupUtility.cs" />
+    <Compile Include="Controller\ManifestWorkers\CodeRootMapMatchProcessor.cs" />
+    <Compile Include="Controller\ManifestWorkers\ManifestConstants.cs" />
+    <Compile Include="Controller\ManifestWorkers\PrevGenUtility.cs" />
+    <Compile Include="Controller\MissingObject.cs" />
+    <Compile Include="Controller\TextFileInformation.cs" />
+    <Compile Include="DiffMatchPatch.cs" />
+    <Compile Include="Diff\Diff.cs" />
+    <Compile Include="Diff\Merge.cs" />
+    <Compile Include="Diff\Patch.cs" />
+    <Compile Include="Diff\StructuredDiff.cs" />
+    <Compile Include="Diff\TextDiff.cs" />
+    <Compile Include="Diff\UnifiedDiff.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SlyceMerge.cs" />
+    <Compile Include="StringUtility.cs" />
+    <Compile Include="UI\CodeTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CodeTestForm.Designer.cs">
+      <DependentUpon>CodeTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CSharpStatusImageLoader.cs" />
+    <Compile Include="UI\Editors\TextMergeDisplayAlgorithms.cs" />
+    <Compile Include="UI\Editors\ucAnalysisErrorEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ucAnalysisErrorEditor.Designer.cs">
+      <DependentUpon>ucAnalysisErrorEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\ucBinaryMergeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ucBinaryMergeEditor.Designer.cs">
+      <DependentUpon>ucBinaryMergeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\ucCodeMergeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ucCodeMergeEditor.Designer.cs">
+      <DependentUpon>ucCodeMergeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\ucGenerateErrorEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ucGenerateErrorEditor.Designer.cs">
+      <DependentUpon>ucGenerateErrorEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\ucMergeErrorEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ucMergeErrorEditor.Designer.cs">
+      <DependentUpon>ucMergeErrorEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\ucNoChangeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ucNoChangeEditor.Designer.cs">
+      <DependentUpon>ucNoChangeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\ucSimpleDiffEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ucSimpleDiffEditor.Designer.cs">
+      <DependentUpon>ucSimpleDiffEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\ucTextMergeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ucTextMergeEditor.Designer.cs">
+      <DependentUpon>ucTextMergeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormSelectMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSelectMatch.Designer.cs">
+      <DependentUpon>FormSelectMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IMergeEditor.cs" />
+    <Compile Include="UI\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ThreeScreenTextDiff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ThreeScreenTextDiff.Designer.cs">
+      <DependentUpon>ThreeScreenTextDiff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Utility.cs" />
+    <Compile Include="UI\VisualDiff\DiffResult.cs" />
+    <Compile Include="UI\VisualDiff\IVisualDiff.cs" />
+    <Compile Include="UI\VisualDiff\ThreeWayVisualDiff.cs" />
+    <Compile Include="UI\VisualDiff\TwoWayVisualDiff.cs" />
+    <Compile Include="UI\VisualDiff\VisualDiffOutput.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\CodeTestForm.resx">
+      <DependentUpon>CodeTestForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ucAnalysisErrorEditor.resx">
+      <DependentUpon>ucAnalysisErrorEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ucBinaryMergeEditor.resx">
+      <DependentUpon>ucBinaryMergeEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ucCodeMergeEditor.resx">
+      <DependentUpon>ucCodeMergeEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ucGenerateErrorEditor.resx">
+      <DependentUpon>ucGenerateErrorEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ucMergeErrorEditor.resx">
+      <DependentUpon>ucMergeErrorEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ucNoChangeEditor.resx">
+      <DependentUpon>ucNoChangeEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ucTextMergeEditor.resx">
+      <DependentUpon>ucTextMergeEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormSelectMatch.resx">
+      <DependentUpon>FormSelectMatch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ThreeScreenTextDiff.resx">
+      <DependentUpon>ThreeScreenTextDiff.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
+      <Project>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</Project>
+      <Name>ArchAngel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj">
+      <Project>{AA16CFFA-3659-4F91-9F07-C22360882B39}</Project>
+      <Name>ArchAngel.Providers.CodeProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="slyce_strong_name_key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Class.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Constant.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Delegate.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Enum.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Event.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Field.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Interface.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Method.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Namespace.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Operator.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Properties.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSObject_Structure.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CSharp\VSProject_CSCodefile.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TextboxHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatusImages\blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatusImages\conflict.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatusImages\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatusImages\resolved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatusImages\unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StatusImages\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\blue_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Control_ErrorProvider.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Critical.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\error_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\error_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\green_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\VSProject_genericfile.bmp" />
+    <EmbeddedResource Include="UI\Editors\ucSimpleDiffEditor.resx">
+      <DependentUpon>ucSimpleDiffEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\font_char33_red_16_h.png" />
+    <EmbeddedResource Include="Resources\font_char61_green_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

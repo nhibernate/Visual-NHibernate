@@ -1,0 +1,53 @@
+using System;
+using NHibernate;
+using NHibernate.Cfg;<%
+if (Project.Settings.UseFluentNHibernate)
+{%>
+using FluentNHibernate;
+using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;<%
+}%>
+
+namespace <%=Project.Settings.Namespace%>
+{
+	public static partial class SessionManager
+	{
+		private static readonly ISessionFactory _sessionFactory;
+
+		static SessionManager()
+		{
+			Configuration cfg = new Configuration().Configure();<%
+if (Project.Settings.UseFluentNHibernate)
+{
+	string proxyFactoryString = "";
+	
+	if (Project.Settings.BytecodeGenerator == BytecodeGenerator.DynamicProxy)
+		proxyFactoryString = "NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle";
+	else if (Project.Settings.BytecodeGenerator == BytecodeGenerator.LinFu)
+		proxyFactoryString = "NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu";
+	else if (Project.Settings.BytecodeGenerator == BytecodeGenerator.Spring)
+		proxyFactoryString = "NHibernate.ByteCode.Spring.ProxyFactoryFactory, NHibernate.ByteCode.Spring";
+	
+%>
+			_sessionFactory = Fluently.Configure(cfg)
+				.Mappings(m => m.FluentMappings.AddFromAssembly(typeof(SessionManager).Assembly))
+				.BuildSessionFactory();<%
+}
+else
+{%>
+            cfg.AddAssembly(typeof(SessionManager).Assembly);
+            _sessionFactory = cfg.BuildSessionFactory();<%
+}%>
+		}
+
+		public static ISession OpenSession()
+		{
+			return _sessionFactory.OpenSession();
+		}
+
+		public static ISessionFactory SessionFactory
+		{
+			get { return _sessionFactory; }
+		}
+	}
+}

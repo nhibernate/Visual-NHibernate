@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{840FF9A0-7F8B-4823-A22A-67D9985E7A7A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchAngel.Providers.EntityModel.UnitTesting</RootNamespace>
+    <AssemblyName>ArchAngel.Providers.EntityModel.UnitTesting</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Universal, Version=3.0.5.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Devart.Data.Universal.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Unit Testing\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.4.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Unit Testing\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EditModel\View\Specs_For_EntityKeyPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_ComponentSpecPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_ComponentPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_ComponentPropertyPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_MappingPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_ColumnPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_EntityPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_ReferencePresenter.cs" />
+    <Compile Include="Integration Tests\Specs_For_Indexes.cs" />
+    <Compile Include="Integration Tests\Specs_For_References.cs" />
+    <Compile Include="Integration Tests\Specs_For_Relationships.cs" />
+    <Compile Include="Integration Tests\ModelSetup.cs" />
+    <Compile Include="Integration Tests\Specs_For_Entities.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Deserialisation_Of_Database_Connection_Information.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Serialisation_Of_Database_Connection_Information.cs" />
+    <Compile Include="Integration Tests\Specs_For_Keys.cs" />
+    <Compile Include="Model\MappingLayer\Specs_For_Creating_Entities_From_Tables.cs" />
+    <Compile Include="Model\MappingLayer\Specs_For_Creating_Tables_From_Entities.cs" />
+    <Compile Include="Model\Database\Specs_For_Table_Processor.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Deserialisation_Of_ComponentSpecification.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Deserialisation_Of_ComponentProperty.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Serialisation_Of_ComponentProperty.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Serialisation_Of_ComponentSpecifications.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Serialisation_Of_Components.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Deserialisation_Of_Components.cs" />
+    <Compile Include="Model\EntityLayer\Specs_For_Components.cs" />
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Deserialisation_Of_ComponentMappings.cs" />
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Serialisation_Of_ComponentMappings.cs" />
+    <Compile Include="Model\MappingLayer\Specs_For_ComponentMapping.cs" />
+    <Compile Include="Model\MappingLayer\Specs_For_RelationshipMapping.cs" />
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Deserialisation_Of_RelationshipMappings.cs" />
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Serialisation_Of_RelationshipMappings.cs" />
+    <Compile Include="Model\Specs_For_Deserialisation_Of_VirtualProperties.cs" />
+    <Compile Include="Model\Database\Discrimination\Specs_For_DiscriminatorBuilder.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Deserialisation_Of_A_Relationship.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Serialisation_Of_A_Relationship.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Deserialisation_Of_A_Database.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Deserialisation_Of_A_ScriptObject.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Deserialisation_Of_A_Column.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Deserialisation_Of_An_Index.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Deserialisation_Of_A_Key.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Deserialisation_Of_A_Table.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Serialisation_Of_A_Column.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Serialisation_Of_An_Index.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Serialisation_Of_A_Key.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Serialisation_Of_A_ScriptBase.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Serialisation_Of_A_Table.cs" />
+    <Compile Include="Model\Database\Specs_For_Database_Connections.cs" />
+    <Compile Include="Model\Database\Serialisation\Specs_For_Serialisation_Of_A_Database.cs" />
+    <Compile Include="Model\Database\Specs_For_Helpers.cs" />
+    <Compile Include="Integration Tests\Specs_For_Tables.cs" />
+    <Compile Include="Model\Database\Specs_For_Merge Operation_Text.cs" />
+    <Compile Include="Model\Database\Specs_For_Merge_Operations.cs" />
+    <Compile Include="Model\Database\Specs_For_Merging_Databases.cs" />
+    <Compile Include="Model\Database\Specs_For_Merging_Databases_Relationships.cs" />
+    <Compile Include="Model\Database\SqlServerHelper.cs" />
+    <Compile Include="Model\Database\TestDatabaseLoader.cs" />
+    <Compile Include="Model\Database\Specs_For_Database_Relationships.cs" />
+    <Compile Include="Model\Database\Validation\Specs_For_Index_Validation.cs" />
+    <Compile Include="Model\Database\Validation\Specs_For_Table_Validation.cs" />
+    <Compile Include="EditModel\View\Specs_For_RelationshipPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_ColumnCollectionPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_PropertyPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_DatabasePresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_DetailedDatabaseMergeResultPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_DatabaseEntityPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_IndexPresenter.cs" />
+    <Compile Include="EditModel\View\Specs_For_KeyPresenter.cs" />
+    <Compile Include="Model\Database\Opening_Database.cs" />
+    <Compile Include="EditModel\View\Specs_For_SimpleDBMergeResultPresenter.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Deserialisation_Of_Discriminators.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Serialisation_Of_Discriminators.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Deserialisation_Of_EntitySets.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Deserialisation_Of_References.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Deserialisation_Of_Properties.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Deserialisation_Of_Keys.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Deserialisation_Of_Entities.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Serialisation_Of_References.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Serialisation_Of_EntitySets.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Serialisation_Of_Keys.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Serialisation_Of_Entities.cs" />
+    <Compile Include="Model\EntityLayer\Serialisation\Specs_For_Serialisation_Of_Properties.cs" />
+    <Compile Include="Model\EntityLayer\Specs_For_Entities.cs" />
+    <Compile Include="Model\EntityLayer\Specs_For_Managing_The_Model.cs" />
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Serialisation_Of_ReferenceMappings.cs" />
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Deserialisation_Of_ReferenceMappings.cs" />
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Deserialisation_Of_Mappings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Deserialisation_Of_MappingSets.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Serialisation_Of_Mappings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MappingLayer\Serialisation\Specs_For_Serialisation_Of_MappingSets.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Integration Tests\Specs_For_Managing_The_Model.cs" />
+    <Compile Include="Model\MappingLayer\Specs_For_Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MappingLayer\Specs_For_ReferenceMapping.cs" />
+    <Compile Include="Model\Specs_For_API_Usage.cs" />
+    <Compile Include="Model\Specs_For_Serialisation_Of_VirtualProperties.cs" />
+    <Compile Include="Model\Specs_For_SQL_To_CLR_Type_Conversion.cs" />
+    <Compile Include="Model\Validation\Specs_For_Database_Naming.cs" />
+    <Compile Include="Model\Validation\Specs_For_All_Properties_Mapped.cs" />
+    <Compile Include="Model\Validation\Specs_For_Entity_Naming.cs" />
+    <Compile Include="Model\Validation\Specs_For_InheritanceRules.cs" />
+    <Compile Include="Model\Validation\Specs_For_Validation_Rules_Engine.cs" />
+    <Compile Include="NHibernate\Specs_For_Basic_CodeInsertions.cs" />
+    <Compile Include="NHibernate\Specs_For_Loading_From_An_NHibernate_CSProj_File.cs" />
+    <Compile Include="NHibernate\Specs_For_Loading_From_HBMs__Entities.cs" />
+    <Compile Include="NHibernate\Specs_For_Loading_From_HBMs__Inheritance.cs" />
+    <Compile Include="NHibernate\Specs_For_Creating_A_Database_Schema_From_NH_Config.cs" />
+    <Compile Include="NHibernate\Specs_For_Loading_From_HBM_Files__References.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\Specs_For_ProviderInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1Table3Columns.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2Tables1Relationship.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ForeignKeyToUniqueKey.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MultiColumnKeys.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NoneIndexType.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MultiColumnIndexes.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\two-related-entities-map.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\BasicClass.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Resources\NHProject.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\TablePerSubclass.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TablePerClassHierarchy.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\two-related-entities-MToM.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\two-related-entities-1To1.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\two-related-entities.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\basicSQL2005.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\basicSQLCE.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\basic.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
+      <Project>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</Project>
+      <Name>ArchAngel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.NHibernateHelper\ArchAngel.NHibernateHelper.csproj">
+      <Project>{DA1B3DC6-85E3-4501-8239-E10A4C64DCEC}</Project>
+      <Name>ArchAngel.NHibernateHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj">
+      <Project>{AA16CFFA-3659-4F91-9F07-C22360882B39}</Project>
+      <Name>ArchAngel.Providers.CodeProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.EntityModel\ArchAngel.Providers.EntityModel.csproj">
+      <Project>{8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258}</Project>
+      <Name>ArchAngel.Providers.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SchemaDiagrammer\SchemaDiagrammer.csproj">
+      <Project>{D46631A9-D35B-4C72-9946-FF03EFC8001C}</Project>
+      <Name>SchemaDiagrammer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="1Table3Columns - SQL Server.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2Tables1Relationship - SQL Server.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="3Tables1Relationship - SQL Server.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="App.config" />
+    <None Include="CreateDatabase - SQL Server.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DropAllObjects - SQL Server.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="ForeignKeyToUniqueKey - SQL Server.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="MultiColumnIndexes - SQL Server.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MultiColumnKeys - SQL Server.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="NoneIndexType - SQL Server.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="slyce_strong_name_key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx">
+      <SubType>Form</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

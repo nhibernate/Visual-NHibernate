@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-16"?>
+<visual-nhibernate-template version="1" delimiter-style="ASP">
+	<folder name="Properties" iterator="None">
+		<file id="1" name="AssemblyInfo.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+	</folder>
+	<folder name="Model" iterator="None">
+		<folder name="Mappings" iterator="None">
+			<file id="2" name="&lt;%=entity.Name%&gt;.hbm.xml" iterator="Entity" syntax="Xml" encoding="Unicode (UTF-8)" />
+			<file id="3" name="&lt;%=entity.Name%&gt;.nhv.xml" iterator="Entity" syntax="Xml" encoding="Unicode (UTF-8)" />
+			<file id="4" name="&lt;%=entity.Name%&gt;Mapping.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+		</folder>
+		<file id="5" name="&lt;%=entity.Name%&gt;.cs" iterator="Entity" syntax="CSharp" encoding="Unicode" />
+		<file id="6" name="&lt;%=component.Name%&gt;.cs" iterator="Component" syntax="CSharp" encoding="Unicode" />
+		<file id="7" name="Validation.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+	</folder>
+	<folder name="Libraries" iterator="None">
+		<static-file id="1" name="antlr.runtime.dll" iterator="None" resource-name="NH2 antlr.runtime.dll" />
+		<static-file id="2" name="Antlr3.Runtime.dll" iterator="None" resource-name="NH2 Antlr3.Runtime.dll" />
+		<static-file id="3" name="Castle.Core.dll" iterator="None" resource-name="NH2 Castle.Core.dll" />
+		<static-file id="4" name="Castle.Core.xml" iterator="None" resource-name="NH2 Castle.Core.xml" />
+		<static-file id="5" name="Castle.DynamicProxy.license.txt" iterator="None" resource-name="NH2 Castle.DynamicProxy.license.txt" />
+		<static-file id="6" name="Castle.DynamicProxy2.dll" iterator="None" resource-name="NH2 Castle.DynamicProxy2.dll" />
+		<static-file id="7" name="Castle.DynamicProxy2.xml" iterator="None" resource-name="NH2 Castle.DynamicProxy2.xml" />
+		<static-file id="8" name="Common.Logging.dll" iterator="None" resource-name="NH2 Common.Logging.dll" />
+		<static-file id="9" name="FluentNHibernate.dll" iterator="None" resource-name="NH2 FluentNHibernate.dll" />
+		<static-file id="10" name="FluentNHibernate.XML" iterator="None" resource-name="NH2 FluentNHibernate.XML" />
+		<static-file id="11" name="GeoAPI.dll" iterator="None" resource-name="NH2 GeoAPI.dll" />
+		<static-file id="12" name="GeoAPI.xml" iterator="None" resource-name="NH2 GeoAPI.xml" />
+		<static-file id="13" name="Iesi.Collections.dll" iterator="None" resource-name="NH2 Iesi.Collections.dll" />
+		<static-file id="15" name="Iesi.Collections.pdb" iterator="None" resource-name="NH2 Iesi.Collections.pdb" />
+		<static-file id="16" name="Iesi.Collections.xml" iterator="None" resource-name="NH2 Iesi.Collections.xml" />
+		<static-file id="17" name="LinFu.DynamicProxy.dll" iterator="None" resource-name="NH2 LinFu.DynamicProxy.dll" />
+		<static-file id="18" name="LinFu.License.txt" iterator="None" resource-name="NH2 LinFu.License.txt" />
+		<static-file id="19" name="log4net.dll" iterator="None" resource-name="NH2 log4net.dll" />
+		<static-file id="20" name="log4net.license.txt" iterator="None" resource-name="NH2 log4net.license.txt" />
+		<static-file id="22" name="NetTopologySuite.dll" iterator="None" resource-name="NH2 NetTopologySuite.dll" />
+		<static-file id="23" name="NetTopologySuite.xml" iterator="None" resource-name="NH2 NetTopologySuite.xml" />
+		<static-file id="24" name="NHibernate.ByteCode.Castle.dll" iterator="None" resource-name="NH2 NHibernate.ByteCode.Castle.dll" />
+		<static-file id="25" name="NHibernate.ByteCode.Castle.pdb" iterator="None" resource-name="NH2 NHibernate.ByteCode.Castle.pdb" />
+		<static-file id="26" name="NHibernate.ByteCode.Castle.xml" iterator="None" resource-name="NH2 NHibernate.ByteCode.Castle.xml" />
+		<static-file id="27" name="NHibernate.ByteCode.LinFu.dll" iterator="None" resource-name="NH2 NHibernate.ByteCode.LinFu.dll" />
+		<static-file id="28" name="NHibernate.ByteCode.LinFu.pdb" iterator="None" resource-name="NH2 NHibernate.ByteCode.LinFu.pdb" />
+		<static-file id="29" name="NHibernate.ByteCode.LinFu.xml" iterator="None" resource-name="NH2 NHibernate.ByteCode.LinFu.xml" />
+		<static-file id="30" name="NHibernate.ByteCode.Spring.dll" iterator="None" resource-name="NH2 NHibernate.ByteCode.Spring.dll" />
+		<static-file id="31" name="NHibernate.ByteCode.Spring.pdb" iterator="None" resource-name="NH2 NHibernate.ByteCode.Spring.pdb" />
+		<static-file id="32" name="NHibernate.ByteCode.Spring.xml" iterator="None" resource-name="NH2 NHibernate.ByteCode.Spring.xml" />
+		<static-file id="33" name="NHibernate.dll" iterator="None" resource-name="NH2 NHibernate.dll" />
+		<static-file id="35" name="NHibernate.pdb" iterator="None" resource-name="NH2 NHibernate.pdb" />
+		<static-file id="36" name="NHibernate.Spatial.dll" iterator="None" resource-name="NH2 NHibernate.Spatial.dll" />
+		<static-file id="37" name="NHibernate.Spatial.MsSql2008.dll" iterator="None" resource-name="NH2 NHibernate.Spatial.MsSql2008.dll" />
+		<static-file id="38" name="NHibernate.Spatial.MsSqlSpatial.dll" iterator="None" resource-name="NH2 NHibernate.Spatial.MsSqlSpatial.dll" />
+		<static-file id="39" name="NHibernate.Spatial.xml" iterator="None" resource-name="NH2 NHibernate.Spatial.xml" />
+		<static-file id="40" name="NHibernate.Validator.dll" iterator="None" resource-name="NH2 NHibernate.Validator.dll" />
+		<static-file id="41" name="NHibernate.Validator.xml" iterator="None" resource-name="NH2 NHibernate.Validator.xml" />
+		<static-file id="42" name="NHibernate.xml" iterator="None" resource-name="NH2 NHibernate.xml" />
+		<static-file id="43" name="nhibernate-configuration.xsd" iterator="None" resource-name="NH2 nhibernate-configuration.xsd" />
+		<static-file id="44" name="nhibernate-mapping.xsd" iterator="None" resource-name="NH2 nhibernate-mapping.xsd" />
+		<static-file id="45" name="nunit.framework.dll" iterator="None" resource-name="NH2 nunit.framework.dll" />
+		<static-file id="46" name="nunit.framework.xml" iterator="None" resource-name="NH2 nunit.framework.xml" />
+		<static-file id="47" name="Spring.Aop.dll" iterator="None" resource-name="NH2 Spring.Aop.dll" />
+		<static-file id="48" name="Spring.Aop.xml" iterator="None" resource-name="NH2 Spring.Aop.xml" />
+		<static-file id="49" name="Spring.Core.dll" iterator="None" resource-name="NH2 Spring.Core.dll" />
+		<static-file id="50" name="Spring.Core.xml" iterator="None" resource-name="NH2 Spring.Core.xml" />
+		<static-file id="52" name="antlr.runtime.dll" iterator="None" resource-name="NH3 antlr.runtime.dll" />
+		<static-file id="53" name="Antlr3.Runtime.dll" iterator="None" resource-name="NH3 Antlr3.Runtime.dll" />
+		<static-file id="54" name="Castle.Core.dll" iterator="None" resource-name="NH3 Castle.Core.dll" />
+		<static-file id="55" name="Castle.Core.xml" iterator="None" resource-name="NH3 Castle.Core.xml" />
+		<static-file id="56" name="Common.Logging.dll" iterator="None" resource-name="NH3 Common.Logging.dll" />
+		<static-file id="57" name="Iesi.Collections.dll" iterator="None" resource-name="NH3 Iesi.Collections.dll" />
+		<static-file id="58" name="Iesi.Collections.pdb" iterator="None" resource-name="NH3 Iesi.Collections.pdb" />
+		<static-file id="59" name="Iesi.Collections.xml" iterator="None" resource-name="NH3 Iesi.Collections.xml" />
+		<static-file id="60" name="LinFu.DynamicProxy.dll" iterator="None" resource-name="NH3 LinFu.DynamicProxy.dll" />
+		<static-file id="61" name="LinFu.License.txt" iterator="None" resource-name="NH3 LinFu.License.txt" />
+		<static-file id="62" name="NHibernate.ByteCode.Castle.dll" iterator="None" resource-name="NH3 NHibernate.ByteCode.Castle.dll" />
+		<static-file id="63" name="NHibernate.ByteCode.Castle.pdb" iterator="None" resource-name="NH3 NHibernate.ByteCode.Castle.pdb" />
+		<static-file id="64" name="NHibernate.ByteCode.Castle.xml" iterator="None" resource-name="NH3 NHibernate.ByteCode.Castle.xml" />
+		<static-file id="65" name="NHibernate.ByteCode.LinFu.dll" iterator="None" resource-name="NH3 NHibernate.ByteCode.LinFu.dll" />
+		<static-file id="66" name="NHibernate.ByteCode.LinFu.pdb" iterator="None" resource-name="NH3 NHibernate.ByteCode.LinFu.pdb" />
+		<static-file id="67" name="NHibernate.ByteCode.LinFu.xml" iterator="None" resource-name="NH3 NHibernate.ByteCode.LinFu.xml" />
+		<static-file id="68" name="NHibernate.ByteCode.Spring.dll" iterator="None" resource-name="NH3 NHibernate.ByteCode.Spring.dll" />
+		<static-file id="69" name="NHibernate.ByteCode.Spring.pdb" iterator="None" resource-name="NH3 NHibernate.ByteCode.Spring.pdb" />
+		<static-file id="70" name="NHibernate.ByteCode.Spring.xml" iterator="None" resource-name="NH3 NHibernate.ByteCode.Spring.xml" />
+		<static-file id="71" name="NHibernate.dll" iterator="None" resource-name="NH3 NHibernate.dll" />
+		<static-file id="72" name="NHibernate.pdb" iterator="None" resource-name="NH3 NHibernate.pdb" />
+		<static-file id="73" name="NHibernate.xml" iterator="None" resource-name="NH3 NHibernate.xml" />
+		<static-file id="74" name="Remotion.Data.Linq.dll" iterator="None" resource-name="NH3 Remotion.Data.Linq.dll" />
+		<static-file id="75" name="Spring.Aop.dll" iterator="None" resource-name="NH3 Spring.Aop.dll" />
+		<static-file id="76" name="Spring.Aop.xml" iterator="None" resource-name="NH3 Spring.Aop.xml" />
+		<static-file id="77" name="Spring.Core.dll" iterator="None" resource-name="NH3 Spring.Core.dll" />
+		<static-file id="78" name="Spring.Core.xml" iterator="None" resource-name="NH3 Spring.Core.xml" />
+		<static-file id="79" name="nhibernate-configuration.xsd" iterator="None" resource-name="NH3 nhibernate-configuration.xsd" />
+		<static-file id="80" name="nhibernate-mapping.xsd" iterator="None" resource-name="NH3 nhibernate-mapping.xsd" />
+		<static-file id="81" name="log4net.dll" iterator="None" resource-name="NH3 log4net.dll" />
+		<static-file id="82" name="log4net.xml" iterator="None" resource-name="NH3 log4net.xml" />
+		<static-file id="83" name="NHibernate.Validator.dll" iterator="None" resource-name="NH3 NHibernate.Validator.dll" />
+		<static-file id="84" name="NHibernate.Validator.Specific.dll" iterator="None" resource-name="NH3 NHibernate.Validator.Specific.dll" />
+		<static-file id="85" name="NHibernate.Validator.Specific.xml" iterator="None" resource-name="NH3 NHibernate.Validator.Specific.xml" />
+		<static-file id="86" name="NHibernate.Validator.xml" iterator="None" resource-name="NH3 NHibernate.Validator.xml" />
+		<static-file id="87" name="log4net.xml" iterator="None" resource-name="NH2 log4net.xml" />
+		<static-file id="88" name="FluentNHibernate.dll" iterator="None" resource-name="NH3 FluentNHibernate.dll" />
+		<static-file id="89" name="FluentNHibernate.XML" iterator="None" resource-name="NH3 FluentNHibernate.XML" />
+	</folder>
+	<file id="8" name="nhvalidator.cfg.xml" iterator="None" syntax="Xml" encoding="Unicode (UTF-8)" />
+	<file id="9" name="hibernate.cfg.xml" iterator="None" syntax="Xml" encoding="Unicode" />
+	<file id="10" name="&lt;%=Project.Settings.Name%&gt;.sln" iterator="None" syntax="CSharp" encoding="Unicode" />
+	<file id="11" name="&lt;%=Project.Settings.Name%&gt;.csproj" iterator="None" syntax="Xml" encoding="Unicode" />
+	<file id="12" name="SessionManager.cs" iterator="None" syntax="CSharp" encoding="Unicode" />
+</visual-nhibernate-template>

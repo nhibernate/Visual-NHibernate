@@ -1,0 +1,186 @@
+<SyntaxLanguage Key="MSIL" LanguageDefinitionVersion="4.0" Secure="True" 
+				xmlns="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition">
+
+	<!-- String Properties -->
+	<Properties>
+		<Property Key="Creator" Value="Actipro Software LLC" />
+		<Property Key="Copyright" Value="Copyright (c) 2001-2009 Actipro Software LLC.  All rights reserved." />
+	</Properties>
+
+	<!-- Highlighting Styles -->	
+	<Styles>
+		<Style Key="ReservedWordStyle" ForeColor="Blue" />
+		<Style Key="NativeTypeStyle" ForeColor="Blue" />
+		<Style Key="LabelStyle" ForeColor="Fuchsia" />
+		<Style Key="NumberStyle" ForeColor="Purple" />
+		<Style Key="StringDelimiterStyle" ForeColor="Maroon" />
+		<Style Key="StringDefaultStyle" ForeColor="Maroon" />
+		<Style Key="CommentDelimiterStyle" ForeColor="Green" />
+		<Style Key="CommentDefaultStyle" ForeColor="Green" />
+	</Styles>
+	
+	<!-- States -->
+	<States>
+		<!-- Code -->
+		<State Key="DefaultState">
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<!-- Whitespace -->
+				<RegexPatternGroup TokenKey="WhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- Line Terminators -->
+				<RegexPatternGroup TokenKey="LineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<!-- Brackets -->
+				<ExplicitPatternGroup Key="OpenParenthesisPatternGroup" TokenKey="OpenParenthesisToken" PatternValue="(" EndBracket="CloseParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="CloseParenthesisPatternGroup" TokenKey="CloseParenthesisToken" PatternValue=")" StartBracket="OpenParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="OpenCurlyBracePatternGroup" TokenKey="OpenCurlyBraceToken" PatternValue="{" EndBracket="CloseCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseCurlyBracePatternGroup" TokenKey="CloseCurlyBraceToken" PatternValue="}" StartBracket="OpenCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="OpenSquareBracePatternGroup" TokenKey="OpenSquareBraceToken" PatternValue="[" EndBracket="CloseSquareBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseSquareBracePatternGroup" TokenKey="CloseSquareBraceToken" PatternValue="]" StartBracket="OpenSquareBracePatternGroup" />
+				<!-- Punctuation -->
+				<ExplicitPatternGroup TokenKey="PunctuationToken">
+					<ExplicitPatterns>
+						+ - = / % &amp; &lt; &gt; ^ ! | ::
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Reserved Words -->
+				<ExplicitPatternGroup TokenKey="ReservedWordToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z">
+					<ExplicitPatterns>
+						alignment algorithm auto ansi beforefieldinit bool boxed char cil class
+						extends extern float32 float64 hidebysig instance init int8 int16 int32 int64
+						managed method modopt modreq native nested object pinned private protected public
+						rtspecialname specialname static string typedref unmanaged unsigned valutype virtual void
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Directives -->
+				<ExplicitPatternGroup TokenKey="DirectiveToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z">
+					<ExplicitPatterns>
+						.assembly .class .corflags .custom .culture .data .field .file .entrypoint .hash .imagebase
+						.language .locals .locale .mresource .method .module .maxstack .namespace .publickey 
+						.publickeytoken .subsystem .ver .vtfixup
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Op Codes -->
+				<ExplicitPatternGroup TokenKey="OpCodeToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z">
+					<ExplicitPatterns>
+						add and add.ovf add.ovf.un arglist break br.s brfalse.s brtrue.s beq.s bge.s bgt.s ble.s blt.s box 
+						bne.un.s bge.un.s bgt.un.s ble.un.s blt.un.s be brfalse brtrue be be but be but bne.un bge.un bgt.un 
+						ble.un blt.un call calli callvirt cpobj castclass ckfinite cgt cgt.un clt clt.un conv.i1 conv.i2 conv.i4 
+						conv.i8 conv.r4 conv.r8 conv.u4 conv.u8 conv.r.un conv.ovf.i1.un conv.ovf.i2.un conv.ovf.i4.un 
+						conv.ovf.i8.un conv.ovf.u1.un conv.ovf.u2.un conv.ovf.u4.un conv.ovf.u8.un conv.ovf.i.un 
+						conv.ovf.u.un conv.ovf.i1 conv.ovf.u1 conv.ovf.i2 conv.ovf.u2 conv.ovf.i4 conv.ovf.u4 conv.ovf.i8 
+						conv.ovf.u8 conv.u2 conv.u1 conv.i conv.ovf.i conv.ovf.u conv.u cpblk dup did div.un endfinally 
+						endfilter isinst initobj initblk jump ldarg.0 ldarg.1 ldarg.2 ldarg.3 ldarg.s ldarga.s ldloc.0 
+						ldloc.1 ldloc.2 ldloc.3 ldloc.s ldloca.s ldnull ldobj ldstr ldfld ldflda ldsfld ldsflda ldc.i4.m1 
+						ldc.i4.0 ldc.i4.1 ldc.i4.2 ldc.i4.3 ldc.i4.4 ldc.i4.5 ldc.i4.6 ldc.i4.7 ldc.i4.8 ldc.i4.s 
+						ldc.i4 ldc.i8 ldc.r4  ldc.r8 ldind.i1 ldind.u1 ldind.i2 ldind.u2 ldind.i4 ldind.u4 ldind.i8 ldind.i 
+						ldind.r4 ldind.r8 ldind.ref ldlen ldelema ldelem.i1 ldelem.u1 ldelem.i2 ldelem.u2 ldelem.i4 
+						ldelem.u4 ldelem.i8 ldelem.i ldelem.r4 ldelem.r8 ldelem.ref ldtoken leave leave.s ldftn ldvirtftn 
+						ldarg ldarga ldloc ldloca localloc mul mkrefany mul.ovf mul.ovf.un nop new not newobj newarr
+						or pop ret rem rem.un refanyval rethrow refanytype stloc.0 stloc.1 stloc.2 stloc.3 starg.s stloc.s 
+						switch stind.ref stind.i1 stind.i2 stind.i4 stind.i8 stind.r4 stind.r8 stfld stsfld stobj stelem.i 
+						stelem.i1 stelem.i2 stelem.i4 stelem.i8 stelem.r4 stelem.r8 stelem.ref stind.i starg stloc sub she 
+						shr.un sub.ovf sub.ovf.un sizeof throw tail. unbox unaligned. volatile. xor						
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Label -->
+				<RegexPatternGroup TokenKey="LabelToken" Style="LabelStyle" PatternValue="{AlphaMacro} ({WordMacro})* \:" LookAhead="[^\:]|\z" />
+				<!-- Identifier -->
+				<RegexPatternGroup TokenKey="IdentifierToken" PatternValue="{AlphaMacro} ({WordMacro})* (\. {AlphaMacro} ({WordMacro})*)*" />
+				<!-- Numbers -->
+				<RegexPatternGroup TokenKey="RealNumberToken" Style="NumberStyle" LookAhead="{NonWordMacro}|\z">
+					<RegexPattern Value="{DigitMacro}* \. {DigitMacro}+ ([Ee] [\+\-]? {DigitMacro}+)? [FfDdMm]?" />
+					<RegexPattern Value="{DigitMacro}+ [Ee] [\+\-]? {DigitMacro}+ [FfDdMm]?" />
+				</RegexPatternGroup>
+				<RegexPatternGroup TokenKey="IntegerNumberToken" Style="NumberStyle" PatternValue="{DigitMacro}+ (([Uu]? [Ll]?) | ([Ll]? [Uu]?))" LookAhead="{NonWordMacro}|\z" />
+				<RegexPatternGroup TokenKey="HexIntegerNumberToken" Style="NumberStyle" PatternValue="0 [xX] {HexDigitMacro}+ (([Uu]? [Ll]?) | ([Ll]? [Uu]?))" LookAhead="{NonWordMacro}|\z" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="SingleQuoteStringState" />
+				<ChildState Key="DoubleQuoteStringState" />
+				<ChildState Key="MultiLineCommentState" />
+				<ChildState Key="CommentState" />
+			</ChildStates>
+		</State>
+		
+		<!-- Single-Quote Strings -->
+		<State Key="SingleQuoteStringState" TokenKey="SingleQuoteStringDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="SingleQuoteStringStartToken" Style="StringDelimiterStyle" PatternValue="'" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="SingleQuoteStringEndToken" Style="StringDelimiterStyle" PatternValue="'" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="SingleQuoteStringEscapedCharacterToken" PatternValue="\\." />
+				<RegexPatternGroup TokenKey="SingleQuoteStringDefaultToken" PatternValue="[^\\\']+" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Double-Quote Strings -->
+		<State Key="DoubleQuoteStringState" TokenKey="DoubleQuoteStringDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="DoubleQuoteStringStartToken" Style="StringDelimiterStyle" PatternValue="&quot;" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="DoubleQuoteStringEndToken" Style="StringDelimiterStyle" PatternValue="&quot;" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="DoubleQuoteStringEscapedCharacterToken" PatternValue="\\." />
+				<RegexPatternGroup TokenKey="DoubleQuoteStringDefaultToken" PatternValue="[^\\\&quot;]+" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Comments -->
+		<State Key="CommentState" TokenKey="CommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentDelimiterStyle" PatternValue="//" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="CommentDefaultToken" PatternValue="{NonLineTerminatorMacro}+" />
+			</PatternGroups>
+		</State>
+		
+		<!-- MultiLine Comments -->
+		<State Key="MultiLineCommentState" TokenKey="MultiLineCommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope BracketHighlight="True">
+					<ExplicitPatternGroup Type="StartScope" TokenKey="MultiLineCommentStartToken" Style="CommentDelimiterStyle" PatternValue="/*" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="MultiLineCommentEndToken" Style="CommentDelimiterStyle" PatternValue="*/" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="MultiLineCommentDefaultToken" PatternValue="[^\*&lt;]+" />
+			</PatternGroups>
+		</State>
+	</States>
+
+	<!-- Example Text -->
+	<ExampleText>
+		<![CDATA[
+// Hello world
+.method static void main()
+{
+    .entrypoint
+    .maxstack 1
+
+    ldstr "Hello world!"
+    call void [mscorlib]System.Console::WriteLine(string)
+
+    ret
+}
+	]]>
+	</ExampleText>
+		
+</SyntaxLanguage>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="Combined ArchAngel" default="build, ndepend-analysis" basedir=".">
+	<description>The combined ArchAngel build file.</description>
+	<property name="debug" value="true" overwrite="false" />
+	<target name="build" description="Compiles the project">
+		<exec program="c:\program files\Microsoft Visual Studio 9.0\Common7\IDE\devenv.com">
+			<arg line="/Rebuild Debug" />
+			<arg dir="C:\CruiseControl.Net\archangel.actipro\Combined ArchAngel.sln" />
+        </exec>
+	</target>
+	<target name="ndepend-analysis" description="Runs NDepend on the solution">
+		<exec program="C:\CruiseControl.Net\Tools\NDepend\NDepend.Console.exe">
+			<arg value="C:\CruiseControl.Net\archangel.actipro\Metrics\NDependProject.xml" />
+			<arg value="/Silent" />
+		</exec>
+	</target>
+</project>

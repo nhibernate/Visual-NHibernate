@@ -1,0 +1,106 @@
+using System;
+using Iesi.Collections.Generic;
+using SharpArch.Core.DomainModel;
+
+namespace <#=Project.Settings.Namespace#>.Core
+{
+	[Serializable]
+	public <#WriteIf(entity.IsAbstract, "abstract ")#><#WriteIf(Project.Settings.GeneratePartialClasses, "partial ")#>class <#=entity.Name#><# WriteIf(entity.IsInherited, " : " + entity.ParentName, " : Entity")#>
+	{
+		public <#=entity.Name#>()
+		{<#
+		foreach (Reference reference in entity.References)
+		{
+			if (reference.ReferenceType == ReferenceTypes.ManyToMany ||
+				reference.ReferenceType == ReferenceTypes.ManyToOne)
+			{
+				if (reference.CollectionType == CollectionTypes.Set ||
+					reference.CollectionType == CollectionTypes.IDBag)
+				{#>
+			<#=reference.Name#> = new HashedSet<<#=reference.ToEntity.Name#>>();<#
+				}
+				else if (reference.CollectionType == CollectionTypes.List ||
+					reference.CollectionType == CollectionTypes.Bag)
+				{#>
+			<#=reference.Name#> = new List<<#=reference.ToEntity.Name#>>();<#
+				}
+				else if (reference.CollectionType == CollectionTypes.Map)
+				{#>
+			<#=reference.Name#> = new Dictionary<<#=reference.ToKeyColumns[0].Type#>, <#=reference.ToEntity.Name#>>();<#
+				}
+			}
+		}#>		
+		}<# 
+		/* START Property Definitions */
+		foreach (Property property in entity.Properties.Where(p => !p.IsInherited))
+		{#>
+		public <#WriteIf(property.IsInherited, "override", "virtual")#> <#=property.Type#> <#=property.Name#>
+		{
+			get;
+			<#WriteIf(property.IsSetterPrivate, "private ")#>set;
+		}<#
+		}
+		/* END Property Definitions */
+		
+		/* Start Reference Definitions */
+		foreach (Reference reference in entity.References)
+		{#>
+		public virtual <#=reference.Type#> <#=reference.Name#>
+		{
+			get;
+			<#WriteIf(reference.IsSetterPrivate, "private ")#>set;
+		}<#
+		}
+		/* END Reference Definitions */
+		
+		/* START Component Definitions */
+		foreach (var component in entity.Components)
+		{#>
+		public virtual <#=component.Type#> <#=component.Name#>
+		{
+			get;
+			<#WriteIf(component.IsSetterPrivate, "private ")#>set;
+		}<#
+		}
+		/* END Component Definitions */
+		
+ 		if (entity.Settings.ImplementEqualityMembers)
+		{#>
+		
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(this, obj))
+				return true;
+				
+			return Equals(obj as <#=entity.Name#>);
+		}
+		
+		public virtual bool Equals(<#=entity.Name#> obj)
+		{
+			if (obj == null) return false;
+<#			foreach(var property in entity.Properties)
+			{#>
+			if (Equals(<#=property.Name#>, obj.<#=property.Name#>) == false) return false;<#
+			}#>
+			return true;
+		}
+		
+		public override int GetHashCode()
+		{
+			int result = 1;
+<#			foreach(var property in entity.Properties)
+			{
+				if (property.IsNullable)
+				{#>
+			result = (result * 397) ^ (<#=property.Name#> != null ? <#=property.Name#>.GetHashCode() : 0);<#
+				}
+				else
+				{#>
+			result = (result * 397) ^ <#=property.Name#>.GetHashCode();<#
+				}
+			} #>
+			return result;
+		}<#
+		}#>
+	}
+}

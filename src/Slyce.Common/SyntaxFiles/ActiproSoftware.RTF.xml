@@ -1,0 +1,38 @@
+﻿<SyntaxLanguage Key="RTF" LanguageDefinitionVersion="4.0" Secure="True" xmlns="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition">
+
+    <!-- String Properties -->
+    <Properties>
+        <Property Key="Creator" Value="Actipro Software LLC" />
+        <Property Key="Copyright" Value="Copyright (c) 2001-2009 Actipro Software LLC.  All rights reserved." />
+    </Properties>
+
+    <!-- Highlighting Styles -->
+    <Styles>
+        <Style Key="ControlWord" ForeColor="Gray" />
+        <Style Key="GroupDelimiter" ForeColor="Maroon" />
+        <Style Key="ControlSymbol" ForeColor="Blue" />
+    </Styles>
+
+    <!-- States -->
+    <States>
+        <!-- Default state -->
+        <State Key="DefaultState">
+            <!-- Patterns Groups -->
+            <PatternGroups>
+                <RegexPatternGroup TokenKey="ControlWordToken" Style="ControlWord" PatternValue="(\\)({AlphaMacro}+)((-)?({DigitMacro}+)|{DigitMacro}*)" IsWhitespace="True" />
+                <RegexPatternGroup TokenKey="ControlSymbolToken" Style="ControlSymbol" PatternValue="\\ [^\p{C}\p{Z}]" IsWhitespace="True" />
+                <RegexPatternGroup TokenKey="WhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+                <ExplicitPatternGroup TokenKey="BeginGroupToken" Style="GroupDelimiter" PatternValue="{" />
+                <ExplicitPatternGroup TokenKey="EndGroupToken" Style="GroupDelimiter" PatternValue="}" />
+            </PatternGroups>
+        </State>
+    </States>
+
+    <!-- Example Text -->
+    <ExampleText>
+    <![CDATA[{\rtf 
+{\fonttbl {\f0 Times New Roman;}} 
+{\*\generator Actipro SyntaxEditor;}\f0\fs60 Hello, World! 
+}]]></ExampleText>
+    
+</SyntaxLanguage>

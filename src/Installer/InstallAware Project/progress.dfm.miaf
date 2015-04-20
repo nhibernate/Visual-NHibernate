@@ -1,0 +1,12 @@
+IF (RemoveFlag.Caption <> TRUE)  THEN  InstallTitle.Visible := True;
+IF (RemoveFlag.Caption = TRUE)  THEN  InstallTitle.Visible := False;
+IF (RemoveFlag.Caption = TRUE)  THEN  UninstallTitle.Visible := True;
+IF (RemoveFlag.Caption <> TRUE)  THEN  UninstallTitle.Visible := False;
+IF (RemoveFlag.Caption <> TRUE)  THEN  InstallInfo.Visible := True;
+IF (RemoveFlag.Caption = TRUE)  THEN  InstallInfo.Visible := False;
+IF (RemoveFlag.Caption = TRUE)  THEN  UninstallInfo.Visible := True;
+IF (RemoveFlag.Caption <> TRUE)  THEN  UninstallInfo.Visible := False;
+IF (RemoveFlag.Caption <> TRUE)  THEN  InstallDescription.Visible := True;
+IF (RemoveFlag.Caption = TRUE)  THEN  InstallDescription.Visible := False;
+IF (RemoveFlag.Caption = TRUE)  THEN  UninstallDescription.Visible := True;
+IF (RemoveFlag.Caption <> TRUE)  THEN  UninstallDescription.Visible := False;

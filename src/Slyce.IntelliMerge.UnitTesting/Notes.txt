@@ -1,0 +1,35 @@
+﻿Naming standards for unit tests
+http://weblogs.asp.net/rosherove/archive/2005/04/03/TestNamingStandards.aspx
+
+WB.Generate (line 1155)
+
+WB.IntelliMerge.SlyceMergeWorker.StartAnalysis
+                                .AnalyseFile  *debug from here
+                                .ProcessFolder
+                                .PerformDiffOfFolder (needs attention)
+                                .SlyceMerge.Perform2WayDiff
+                                .PerformSuperDiff  (check binary files?)
+                                
+CodeProvider.Utility.CreateCombinedCodeRoot
+
+
+Definitions:				change to
+============
+  Parent    = PrevGen		PrevGen
+  User      = User			User
+  Generated = Template		NewGen
+  
+Code Comments - prefix with:
+============================
+  
+  DMW_Question
+  DMW_Suggest
+  DMW_Todo
+  DMW_NeedsRefactoring
+  DMW_Changed
+  
+  
+  
+  Test for unique char before using it. Use another if necessary.
+  
+  

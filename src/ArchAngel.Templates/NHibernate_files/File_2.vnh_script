@@ -1,0 +1,19 @@
+<% if (!entity.IsMapped && !entity.IsAbstract) 
+{
+	SkipThisFile = true; 
+	return "The entity has no mappings.";
+}
+if (entity.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerConcreteClass ||
+	entity.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerSubClass ||
+	entity.InheritanceTypeWithParent == IEntity.InheritanceTypes.TablePerHierarchy)
+{
+	SkipThisFile = true; 
+	return "The entity has is a child in a Table Per Concrete Class inheritance relationship, so has no HBM XML file.";
+}
+if (Project.Settings.UseFluentNHibernate)
+{
+	SkipThisFile = true;
+	return "Fluent NHibernate is being used instead of HBM XML.";
+}
+string xml = Helper.GetHbmXml(entity, Project.Settings.Name, Project.Settings.Namespace + ".Model", Project.Settings.AutoImport, Project.Settings.DefaultAccess, Project.Settings.DefaultCascade, Project.Settings.DefaultLazy);
+Write(xml);%>

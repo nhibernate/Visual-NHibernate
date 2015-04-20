@@ -1,0 +1,153 @@
+<SyntaxLanguage Key="PowerShell" LanguageDefinitionVersion="4.0" Secure="True" 
+				xmlns="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition">
+
+	<!-- String Properties -->
+	<Properties>
+		<Property Key="Creator" Value="Actipro Software LLC" />
+		<Property Key="Copyright" Value="Copyright (c) 2001-2009 Actipro Software LLC.  All rights reserved." />
+	</Properties>
+
+	<!-- Highlighting Styles -->	
+	<Styles>
+		<Style Key="ReservedWordStyle" ForeColor="Blue" />
+		<Style Key="OperatorStyle" ForeColor="Black" />
+		<Style Key="OperatorWordStyle" ForeColor="Teal" />
+		<Style Key="VariableStyle" ForeColor="Purple" />
+		<Style Key="NumberStyle" ForeColor="Black" />
+		<Style Key="StringDelimiterStyle" ForeColor="Maroon" />
+		<Style Key="StringDefaultStyle" ForeColor="Maroon" />
+		<Style Key="CommentDelimiterStyle" ForeColor="Green" />
+		<Style Key="CommentDefaultStyle" ForeColor="Green" />
+	</Styles>
+	
+	<!-- States -->
+	<States>
+		<!-- Code -->
+		<State Key="DefaultState">
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<!-- Whitespace -->
+				<RegexPatternGroup TokenKey="WhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- Line Terminators -->
+				<RegexPatternGroup TokenKey="LineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<!-- Brackets -->
+				<ExplicitPatternGroup Key="OpenParenthesisPatternGroup" TokenKey="OpenParenthesisToken" PatternValue="(" EndBracket="CloseParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="CloseParenthesisPatternGroup" TokenKey="CloseParenthesisToken" PatternValue=")" StartBracket="OpenParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="OpenCurlyBracePatternGroup" TokenKey="OpenCurlyBraceToken" PatternValue="{" EndBracket="CloseCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseCurlyBracePatternGroup" TokenKey="CloseCurlyBraceToken" PatternValue="}" StartBracket="OpenCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="OpenSquareBracePatternGroup" TokenKey="OpenSquareBraceToken" PatternValue="[" EndBracket="CloseSquareBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseSquareBracePatternGroup" TokenKey="CloseSquareBraceToken" PatternValue="]" StartBracket="OpenSquareBracePatternGroup" />
+				<!-- Punctuation -->
+				<ExplicitPatternGroup TokenKey="PunctuationToken">
+					<ExplicitPatterns>
+						. , ;
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Reserved Words -->
+				<ExplicitPatternGroup TokenKey="ReservedWordToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect">
+					<ExplicitPatterns>
+						begin break continue default do else elseif end filter finally for foreach function 
+						if in param process return switch throw trap until while
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Booleans -->
+				<ExplicitPatternGroup TokenKey="BooleanToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect">
+					<ExplicitPatterns>
+						FALSE $FALSE TRUE $TRUE
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Variable -->
+				<RegexPatternGroup TokenKey="VariableToken" Style="VariableStyle" PatternValue="\$ ({WordMacro})+ (\: ({WordMacro})+)?" LookAhead="{NonWordMacro}|\z" />
+				<RegexPatternGroup TokenKey="VariableToken" Style="VariableStyle" PatternValue="\$ \{ ({WordMacro})+ \}" />				
+				<!-- Identifier -->
+				<RegexPatternGroup TokenKey="IdentifierToken" PatternValue="(_ | {AlphaMacro})({WordMacro})*" />
+				<!-- Operators -->
+				<ExplicitPatternGroup TokenKey="OperatorToken" Style="OperatorWordStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="AutoCorrect">
+					<ExplicitPatterns>
+						-eq -ne -gt -ge -lt -le
+						-ieq -ine -igt -ige -ilt -ile
+						-ceq -cne -cgt -cge -clt -cle
+						-like -notlike -match -notmatch
+						-ilike -inotlike -imatch -inotmatch
+						-clike -cnotlike -cmatch -cnotmatch
+						-contains -notcontains
+						-icontains -inotcontains
+						-ccontains -cnotcontains
+						-isnot -is -as
+						-replace -ireplace -creplace
+						-and -or
+						-band -bor
+						-not -bnot
+						-f 
+						-casesensitive -exact -file -regex -wildcard 
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<ExplicitPatternGroup TokenKey="OperatorToken" Style="OperatorStyle">
+					<ExplicitPatterns>
+						++ --
+						= += -= *= /= %=
+						+ - * / %
+						:: .. | ? &gt;&gt; &gt; 
+						@ $ ! &amp;
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Numbers -->
+				<RegexPatternGroup TokenKey="RealNumberToken" Style="NumberStyle" LookAhead="{NonWordMacro}|\z">
+					<RegexPattern Value="{DigitMacro}* \. {DigitMacro}+ ([Ee] [\+\-]? {DigitMacro}+)?" />
+					<RegexPattern Value="{DigitMacro}+ [Ee] [\+\-]? {DigitMacro}+" />
+				</RegexPatternGroup>
+				<RegexPatternGroup TokenKey="IntegerNumberToken" Style="NumberStyle" PatternValue="{DigitMacro}+" LookAhead="{NonWordMacro}|\z" />
+				<RegexPatternGroup TokenKey="HexIntegerNumberToken" Style="NumberStyle" PatternValue="0 [xX] {HexDigitMacro}+" LookAhead="{NonWordMacro}|\z" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="DoubleQuoteStringState" />
+				<ChildState Key="CommentState" />
+			</ChildStates>
+		</State>
+		
+		<!-- Double-Quote Strings -->
+		<State Key="DoubleQuoteStringState" TokenKey="DoubleQuoteStringDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="DoubleQuoteStringStartToken" Style="StringDelimiterStyle" PatternValue="&quot;" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="DoubleQuoteStringEndToken" Style="StringDelimiterStyle" PatternValue="&quot;" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="DoubleQuoteStringEscapedCharacterToken" PatternValue="\`." />
+				<RegexPatternGroup TokenKey="DoubleQuoteStringDefaultToken" PatternValue="[^`\&quot;]+" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Comments -->
+		<State Key="CommentState" TokenKey="CommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentDelimiterStyle" PatternValue="#" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="CommentDefaultToken" PatternValue="{NonLineTerminatorMacro}+" />
+			</PatternGroups>
+		</State>
+		
+	</States>
+
+	<!-- Example Text -->
+	<ExampleText>
+		<![CDATA[cls
+# Powershell script to list the DLL files under the c:\MyFolder folder
+$Dir = get-childitem C:\MyFolder -recurse
+# $Dir |get-member
+$List = $Dir | where {$_.extension -eq ".dll"}
+$List | format-table name
+		]]>
+	</ExampleText>
+		
+</SyntaxLanguage>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ROOT about="This file is the settings file for an ArchAngel template project.">
+  <namespaces>System.Xml,System,System.Text,ArchAngel.Providers.Database.Model,ArchAngel.Providers.Database.Helper</namespaces>
+  <referencedfiles>..\..\ArchAngel.Providers.Database\bin\Release\ArchAngel.Providers.Database.dll|False</referencedfiles>
+  <config>
+    <project>
+      <name>UpdateModel</name>
+      <description>Setup</description>
+      <compilefile>..\UpdateModel.aal</compilefile>
+      <version>0.0.0</version>
+      <projecttype>Template</projecttype>
+      <optionCategories>
+        <category>General</category>
+      </optionCategories>
+      <options />
+      <rootoutput>
+        <rootfolder />
+      </rootoutput>
+    </project>
+  </config>
+  <function name="UpdateDatabase" returntype="void" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="database" type="Database" />foreach(ScriptObject scriptObject in database.ScriptObjects)
+{
+	foreach (Column column in scriptObject.Columns)
+	{
+	
+	}
+	
+	
+	if (scriptObject.GetType() == typeof(Table))
+	{
+		Table table = (Table)scriptObject;
+		foreach(MapColumn mapColumn in table.MapColumns)
+		{
+		
+		}
+	}
+}</function>
+  <function name="UpdateStoredProcedure" returntype="void" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="storedProcedure" type="View" />foreach(Column column in storedProcedure.Columns)
+{
+	
+}</function>
+  <function name="UpdateTable" returntype="void" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="table" type="Table" />foreach (Relationship relationship in table.Relationships)
+{
+	if (relationship.PrimaryColumns.Length != relationship.ForeignColumns.Length)
+	{
+		throw new Exception("relationship PrimaryColumns.Length must equal ForeignColumns.Length");
+	}
+	
+	for (int i=0; i&lt;relationship.PrimaryColumns.Length; i++)
+	{
+		Column primaryColumn = relationship.PrimaryColumns[i];
+		Column foreignColumn = relationship.ForeignColumns[i];
+		
+		Column column = Script.GetColumnByColumnAlias(table.Columns, foreignColumn.Parent.Alias);
+		if (column != null)
+		{
+			column.Alias += foreignColumn.Alias;
+		}
+		
+		if (relationship.Alias == relationship.Parent.Alias)
+		{
+			relationship.Alias = "Parent" + relationship.Alias;
+		}
+		
+		if (relationship.Alias == relationship.Parent.AliasPlural &amp;&amp; 
+			relationship.GetType() != typeof(OneToOneRelationship) &amp;&amp; relationship.GetType() != typeof(ManyToManyRelationship))
+		{
+			relationship.Alias = "Child" + relationship.Alias;
+		}
+	}
+}</function>
+  <function name="UpdateView" returntype="void" istemplatefunction="False" scriptlanguage="CSharp" description="" category="">
+    <parameter name="view" type="View" />foreach(Column column in view.Columns)
+{
+	
+}</function>
+</ROOT>

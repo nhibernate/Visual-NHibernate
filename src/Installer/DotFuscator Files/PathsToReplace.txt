@@ -1,0 +1,3 @@
+*Dotfuscator.xml
+C:\Projects\Slyce\ArchAngel\trunk
+D:\Contracting\ArchAngelRoot\trunk

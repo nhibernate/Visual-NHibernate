@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DocumentXProject Version="5.0" CompileHelpFile="True" RefreshIfExists="False" DocumentSourceCode="False" AlwaysCopySupportFiles="True" PropertyCommentsFrom="0" RelationshipsFrom="2" DefaultRelsOnlyForCollections="True" ProjectGroupName="" HTMLHelpVersion="2" HHNamespace="ArchAngel.Designer" HHIdentifier="" H2PlugIn="False" H2PlugInNamespace="" LocaleID="0" ExcludeFiltersRegExp="False" OutputFileExtension=".html">
+    <OutputLocation OutputFolder="." HelpFileName="..\ArchAngel.Designer\bin\Debug\ArchAngel.Designer.hxs" UseFilenameAliases="False" StripMetadata="False" ClearBeforeBuild="False" RemoveOutputFilesAfterCompile="False"/>
+    <HTMLHelpOptions UseALinkMenus="False"/>
+    <OtherOptions CreateContextLinks="True" WriteHelpDescriptions="True" CopySourceCode="False" CreateWinHelpStub="False" Language="English"/>
+    <IncludeFilters IncludePrivate="False" IncludeFriend="False" IncludeProtected="True" IdentifyVisibility="False">
+        <Namespaces/>
+    </IncludeFilters>
+    <CommentExtraction UnTaggedBlocks="False" UnTaggedEnumerations="False" UnTaggedEvents="False" UnTaggedModules="False" UnTaggedUDTs="False" UnTaggedVariables="False" HelpDescriptionImport="0"/>
+    <Diagrams PageNestingLevels="2" OverviewNestingLevels="3" SupressSingleObjectDiagrams="True" DiagramStyleSource="0" ObjFillColor="0" ObjTextColor="0" ObjBorderColor="0" ColFillColor="0" ColTextColor="0" ColBorderColor="0" UseDropShadow="False" CenterCaptions="False" DiagramBold="False" BorderWidth="0" UseDiagramShapes="False"/>
+    <VariableValues>
+        <VariableValue Name="FeedbackLink" Value="&lt;a href=&quot;mailto:support@slyce.com?subject=Documentation Feedback: %%FileName%%&quot;&gt;Send comments&lt;/a&gt; on this topic."/>
+    </VariableValues>
+    <AdditionalFiles/>
+    <ModelComments/>
+    <IgnoreRelationships/>
+    <NamespaceExclusions>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Exceptions.TypeNotFoundException</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.CompileHelper</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.TemplateSync.ScreenFileLayouts+TagInfo</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.TemplateSync.ScreenFileLayouts+TagInfo+FileTypes</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.TemplateSync.ScreenFileLayouts+ActionTypes</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.TemplateSync.ScreenFileLayouts+TreeNodeImages</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Settings</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.ucUserOptionsAPI+Images</e>
+        <e>ArchAngel.Designer~__Delegates</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.IntelliSense</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.IntelliSense+LookupType</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.TemplateSync.ScreenFunctions+TreeNodeImages</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.TemplateSync.ScreenFunctions+ActionTypes</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.TemplateSync.ScreenFunctions+FunctionContainer</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.ucGenerationChoices+TagInfo</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.ucGenerationChoices+TagInfo+FileTypes</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.ucGenerationChoices+TreeNodeImages</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Branding</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.TemplateSync.ScreenProjectDetails+TreeNodeImages</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.TemplateSync.ScreenProjectDetails+ActionTypes</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Wizards.frmOutputFileWizard+FileTypes</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Program</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.frmMain+ActionImages</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.frmMain+CustomProfessionalColors</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.frmSelectModelObject+PropertyAttributes</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.ucFunction+EmphasisType</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.ucFunction+LookupType</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.FunctionRunner</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.SearchHelper</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.SearchHelper+Scope</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.SearchHelper+SearchFunctions</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.ucActions+Images</e>
+        <e>ArchAngel.Designer~ArchAngel.Designer.Exceptions_namespace</e>
+        <e>Slyce.Loader~__Delegates</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.TextDiff+TextDiffStructuredDiff</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.TextDiff+TextDiffNodeInterface</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.TextDiff+Node</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.HashCodeProvider</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.NodeComparerWrapper</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.NodeComparerWrapper+Pair</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.Diff+Trio</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.Diff+Enumerator</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.IntList</e>
+        <e>Slyce.IntelliMerge~Algorithm.Diff.Range+Enumer</e>
+        <e>Slyce.IntelliMerge~Slyce.IntelliMerge.SlyceMerge+LineType</e>
+        <e>ArchAngel.Providers.CodeProvider~ArchAngel.Providers.CodeProvider.CSharp.IVisibilityModifiers</e>
+        <e>ArchAngel.Providers.CodeProvider~__Delegates</e>
+        <e>ArchAngel.Interfaces~__Delegates</e>
+        <e>ArchAngel.Interfaces~ArchAngel.Interfaces.ProjectHelper+DisplayNames</e>
+        <e>Slyce.Common~Slyce.Common.Controls.SystemTrayPopup</e>
+        <e>Slyce.Common~Slyce.Common.Controls.GlassButton+TransparentControl</e>
+        <e>Slyce.Common~__Delegates</e>
+        <e>Slyce.Common~Slyce.Common.SerializationWriter+SingletonTypeWrapper</e>
+        <e>Slyce.Common~Slyce.Common.SerializationWriter+UniqueStringList</e>
+        <e>Slyce.Common~Slyce.Common.SerializedType</e>
+        <e>ArchAngel.Debugger~ArchAngel.Debugger.Debugger+DebugProcess</e>
+    </NamespaceExclusions>
+    <DotNetProperties IncludeRelationshipDiagrams="True" IncludeInheritanceHierarchies="True" IncludeBaseMembers="False" StandardInterfaces="System.*,Microsoft.*" OnlyLinkInherited="True" ExternalDocs="True" UseCommentFiles="True" DrillCommentFiles="True" GenerateXMLLinks="False" XMLIsland="" NoInheritedTopics="True" NoInheritedInLists="False" CreateXMLCommentFile="False" ExcludedLanguages="VB,VBUsage,Delphi,JScript,CPP,CPP2005" GenerateAttributes="True" AttributeFilter="" AttributeFilterInclude="False" VBNETDefaultConstructor="False" LinkOverridenMembersToBaseImplementation="False" UseOverloadSummaryForMasterSummary="True" ExcludeEditorBrowsable="True" GenerateBreadCrumbs="True" IncludeAssemblyBreadCrumb="False"/>
+    <DatabaseProperties DocumentViewSource="True" DocumentTriggerSource="True" DocumentProcedureSource="True" RetainTaggedComments="False"/>
+    <XSDProperties UseCustomSettings="False" PageNestingLevels="2" SuppressSingleObjectDiagrams="True" ElementFillColor="15780518" ElementTextColor="0" ElementBorderColor="10789024" ElementBorders="True" ElementRefFillColor="12648447" ElementRefTextColor="0" ElementRefBorderColor="10789024" ElementRefBorders="True" ComplexTypeFillColor="15780518" ComplexTypeTextColor="0" ComplexTypeBorderColor="10789024" ComplexTypeBorders="True" AnyFillColor="13421772" AnyTextColor="0" AnyBorderColor="10789024" AnyBorders="True" NotationTextColor="8421504" RootLinesColor="10789024" DropShadows="False" BoldCaptions="True" GroupParticleSequenceImageFilename="C:\Program Files\Innovasys\documentx5\Configuration\Templates\XMLSchema\xDiagramImages\sequence.gif" GroupParticleChoiceImageFilename="C:\Program Files\Innovasys\documentx5\Configuration\Templates\XMLSchema\xDiagramImages\choice.gif" GroupParticleAllImageFilename="C:\Program Files\Innovasys\documentx5\Configuration\Templates\XMLSchema\xDiagramImages\all.gif"/>
+    <CommentFiles>
+        <CommentFile FileName="ArchAngel.Debugger.DebugProcess.dxc" DocType="dx.net" ItemMoniker="..\ArchAngel.Debugger.DebugProcess\bin\Debug\ArchAngel.Debugger.DebugProcess.exe"/>
+    </CommentFiles>
+    <CommunityExtensions CommunityProjectKey="" Enabled="false" ServerType="0" URL="" HostingId="" UseLocalProxyURL="false" LocalProxyURL=""/>
+    <DocType Name="dx.net" Template="Visual Studio 2005 Style" UseHelpTemplates="False">
+        <TOCSource TOCSource="0" SpecificTOCName=""/>
+        <ModelCommentProfile Version="6.0" Namespace="dx.net" Name="" Description=""/>
+    </DocType>
+    <NetAssemblies RootAssemblyName="">
+        <Assembly Version="5.0" FileName="..\ArchAngel.Designer\bin\Debug\ArchAngel.Designer.exe" mRootModule="" AssemblyName="ArchAngel.Designer" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\Slyce.Loader\bin\Debug\Slyce.Loader.dll" mRootModule="" AssemblyName="Slyce.Loader" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\Slyce.IntelliMerge\bin\Debug\Slyce.IntelliMerge.dll" mRootModule="" AssemblyName="Slyce.IntelliMerge" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\Slyce.IntelliMerge.UI\bin\Debug\Slyce.IntelliMerge.UI.dll" mRootModule="" AssemblyName="Slyce.IntelliMerge.UI" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\ArchAngel.Providers.CodeProvider\bin\Debug\ArchAngel.Providers.CodeProvider.dll" mRootModule="" AssemblyName="ArchAngel.Providers.CodeProvider" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\ArchAngel.Actions\bin\Debug\ArchAngel.Actions.dll" mRootModule="" AssemblyName="ArchAngel.Actions" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\ArchAngel.Interfaces\bin\Debug\ArchAngel.Interfaces.dll" mRootModule="" AssemblyName="ArchAngel.Interfaces" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\ArchAngel.Licensing\bin\Debug\ArchAngel.Licensing.dll" mRootModule="" AssemblyName="ArchAngel.Licensing" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\Slyce.Common\bin\Debug\Slyce.Common.dll" mRootModule="" AssemblyName="Slyce.Common" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\ArchAngel.Debugger\bin\Debug\ArchAngel.Debugger.dll" mRootModule="" AssemblyName="ArchAngel.Debugger" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+        <Assembly Version="5.0" FileName="..\ArchAngel.Debugger.DebugProcess\bin\Debug\ArchAngel.Debugger.DebugProcess.exe" mRootModule="" AssemblyName="ArchAngel.Debugger.DebugProcess" AssemblyType="1" ExamplesOnly="False" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivateItems="True"/>
+    </NetAssemblies>
+    <PropertyBag/>
+</DocumentXProject>

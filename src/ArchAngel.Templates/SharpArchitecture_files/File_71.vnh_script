@@ -1,0 +1,25 @@
+using <#=Project.Settings.Name#>.Wcf;
+using <#=Project.Settings.Name#>.Wcf.Dtos;
+using System.Collections.Generic;
+using System.ServiceModel.Channels;
+using System.ServiceModel;
+
+namespace <#=Project.Settings.Name#>.WcfServices
+{
+    /// <summary>
+    /// Provides a strongly typed client proxy to use the WCF service without having to configure 
+    /// it via WCF configuration.
+    /// </summary>
+    public partial class <#=entity.NamePlural#>WcfServiceClient : ClientBase<I<#=entity.NamePlural#>WcfService>, I<#=entity.NamePlural#>WcfService
+    {
+        public <#=entity.NamePlural#>WcfServiceClient() { }
+        public <#=entity.NamePlural#>WcfServiceClient(string endpointName) 
+            : base(endpointName) { }
+        public <#=entity.NamePlural#>WcfServiceClient(Binding binding, EndpointAddress address) 
+            : base(binding, address) { }
+
+        public IList<<#=entity.Name#>Dto> Get<#=entity.NamePlural#>() {
+            return Channel.Get<#=entity.NamePlural#>();
+        }
+    }
+}

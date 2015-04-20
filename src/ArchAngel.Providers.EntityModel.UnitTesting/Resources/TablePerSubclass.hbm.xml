@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="Project.Model" assembly="Project" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Transport" table="`Transport`">
+		<id name="ID" access="property" column="`ID`">
+			<generator class="identity" />
+		</id>
+		<property name="Name" column="`Name`" />
+		<joined-subclass name="Bike" table="Bike">
+			<key column="ID"/>
+			<property name="Code" column="`Code`" />
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

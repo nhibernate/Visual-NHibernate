@@ -1,0 +1,34 @@
+[Grammars]
+	CS.GDL, CS
+
+[Output]
+	ArchAngel.GMR, CSharp
+
+[Samples]
+	dfghdfg.cs, NULL
+	asdfjhsdf.TXT, compilation_unit
+	fgasfsdf.TXT, NULL
+	dfgsdf.TXT, compilation_unit, type_declaration
+	test1.txt, NULL
+	\, compilation_unit, block, class_body
+
+[Breakpoints]
+
+[Project Info]
+Version = 2
+
+
+[Project Settings]
+	ParseEntireInput = Y
+	InsertErrorNodes = Y
+	ReportParseTimes = N
+	StepIntoTerminals = Y
+	StepIntoSpaces = N
+	StepIntoTokens = N
+	StackShowBacktrackSymbols = N
+	BuildDebugTree = Y
+	ExpandNodesOption = 0
+	DataSourceOption = 0
+	SaveCache = Y
+	SaveTree = Y
+	SaveErrors = Y

@@ -1,0 +1,28 @@
+﻿using System;
+using System.Linq;
+using System.Text;
+
+namespace CodeInsertions
+{
+	public class BasicClass
+	{
+		public virtual string Property1 { set; get; }
+		public virtual string Property2 { set; get; }
+
+		public override string ToString()
+		{
+			return "";
+		}
+	}
+
+	public abstract class Class1
+	{
+		public virtual string Property1 { set; get; }
+		public virtual string Property2 { set; get; }
+		
+		public override string ToString()
+		{
+			return "";
+		}
+	}
+}

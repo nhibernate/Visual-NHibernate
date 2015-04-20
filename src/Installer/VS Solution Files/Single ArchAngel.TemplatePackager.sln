@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchAngel.TemplatePackager", "..\..\ArchAngel.TemplatePackager\ArchAngel.TemplatePackager.csproj", "{91AA6DA0-BFDC-4873-9AEF-398CDB8141AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91AA6DA0-BFDC-4873-9AEF-398CDB8141AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AA6DA0-BFDC-4873-9AEF-398CDB8141AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AA6DA0-BFDC-4873-9AEF-398CDB8141AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AA6DA0-BFDC-4873-9AEF-398CDB8141AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

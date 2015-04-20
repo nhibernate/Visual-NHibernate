@@ -1,0 +1,42 @@
+using System;
+
+namespace <%=Project.Settings.Namespace%>.Model
+{
+	[Serializable]
+	public partial class <%=component.Name%>
+	{<% 		
+		foreach (FieldDef property in component.Properties)
+		{
+%>
+		public virtual <%= property.Type %> <%=property.Name%> { get; <%WriteIf(property.IsSetterPrivate, "private ")%>set; }<%	
+		}%>
+		public override bool Equals(object obj)
+		{
+			if(ReferenceEquals(this, obj))
+				return true;
+			return Equals(obj as <%=component.Name%>);
+		}
+		
+		public virtual bool Equals(<%=component.Name%> obj)
+		{
+			if(obj == null) return false;
+<%			foreach(FieldDef property in component.Properties)
+			{%>
+			if(Equals(<%=property.Name%>, obj.<%=property.Name%>) == false)
+				return false;
+<%			}%>
+			return true;
+		}
+		
+		public override int GetHashCode()
+		{
+			int result = 1;
+<%			foreach(FieldDef property in component.Properties)
+			{
+%>
+			  result = (result * 397) ^ (<%=property.Name%> != null ? <%=property.Name%>.GetHashCode() : 0);<%
+			} %>			
+			return result;
+		}
+	}
+}

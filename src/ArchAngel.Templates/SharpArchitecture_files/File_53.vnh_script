@@ -1,0 +1,23 @@
+<%@ Page Title="<#=entity.Name#> Details" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" 
+	Inherits="System.Web.Mvc.ViewPage<<#=Project.Settings.Name#>.Core.<#=entity.Name#>>" %>
+<%@ Import Namespace="<#=Project.Settings.Name#>.Web.Controllers" %>
+
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+
+    <h1><#=entity.Name#> Details</h1>
+
+    <ul><#
+foreach (var property in entity.Properties)
+{#>
+		<li>
+			<label for="<#=entity.Name#>_<#=property.Name#>"><#=property.Name#>:</label>
+            <span id="<#=entity.Name#>_<#=property.Name#>"><%= Server.HtmlEncode(ViewData.Model.<#=property.Name#>.ToString()) %></span>
+		</li><#
+}#>
+    <li class="buttons">
+            <%= Html.Button("btnBack", "Back", HtmlButtonType.Button, 
+                "window.location.href = '" + Html.BuildUrlFromExpression<<#=entity.NamePlural#>Controller>(c => c.Index()) + "';") %>
+        </li>
+	</ul>
+
+</asp:Content>

@@ -1,0 +1,248 @@
+<SyntaxLanguage Key="Java" LanguageDefinitionVersion="4.0" Secure="True" 
+				xmlns="http://ActiproSoftware/SyntaxEditor/4.0/LanguageDefinition">
+
+	<!-- String Properties -->
+	<Properties>
+		<Property Key="Creator" Value="Actipro Software LLC" />
+		<Property Key="Copyright" Value="Copyright (c) 2001-2009 Actipro Software LLC.  All rights reserved." />
+	</Properties>
+
+	<!-- Triggers -->
+	<Triggers>
+		<KeyPressTrigger Key="MemberListTrigger" Character=".">
+			<KeyPressTriggerValidStates>
+				<KeyPressTriggerValidState State="DefaultState" />
+			</KeyPressTriggerValidStates>
+		</KeyPressTrigger>
+	</Triggers>
+	
+	<!-- Highlighting Styles -->	
+	<Styles>		
+		<Style Key="ReservedWordStyle" ForeColor="Blue" />
+		<Style Key="NativeTypeStyle" ForeColor="Blue" />
+		<Style Key="OperatorStyle" ForeColor="Black" />
+		<Style Key="NumberStyle" ForeColor="Black" />
+		<Style Key="StringDelimiterStyle" ForeColor="Black" />
+		<Style Key="StringDefaultStyle" ForeColor="Black" />
+		<Style Key="CommentDelimiterStyle" ForeColor="Green" />
+		<Style Key="CommentURLStyle" ForeColor="Green" UnderlineStyle="Solid" CursorName="Hand" CursorModifierKeys="AnyControl" />
+		<Style Key="CommentTagStyle" ForeColor="Gray" />
+		<Style Key="CommentDefaultStyle" ForeColor="Green" />
+	</Styles>
+	
+	<!-- Macros -->	
+	<Macros>
+		<!-- URL -->
+		<Macro Key="URLMacro" Value="https?:// [\w\-]+ (\. [\w\-]+)* (/ [\w\-./?%=]*)?" />
+	</Macros>
+
+	<!-- States -->
+	<States>
+		<!-- Code -->
+		<State Key="DefaultState">
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<!-- Whitespace -->
+				<RegexPatternGroup TokenKey="WhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- Line Terminators -->
+				<RegexPatternGroup TokenKey="LineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<!-- Brackets -->
+				<ExplicitPatternGroup Key="OpenParenthesisPatternGroup" TokenKey="OpenParenthesisToken" PatternValue="(" EndBracket="CloseParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="CloseParenthesisPatternGroup" TokenKey="CloseParenthesisToken" PatternValue=")" StartBracket="OpenParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="OpenCurlyBracePatternGroup" TokenKey="OpenCurlyBraceToken" PatternValue="{" EndBracket="CloseCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseCurlyBracePatternGroup" TokenKey="CloseCurlyBraceToken" PatternValue="}" StartBracket="OpenCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="OpenSquareBracePatternGroup" TokenKey="OpenSquareBraceToken" PatternValue="[" EndBracket="CloseSquareBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseSquareBracePatternGroup" TokenKey="CloseSquareBraceToken" PatternValue="]" StartBracket="OpenSquareBracePatternGroup" />
+				<!-- Punctuation -->
+				<ExplicitPatternGroup TokenKey="PunctuationToken">
+					<ExplicitPatterns>
+						. , : ;		
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Null -->
+				<ExplicitPatternGroup TokenKey="NullToken" Style="ReservedWordStyle" PatternValue="null" LookAhead="{NonWordMacro}|\z" CaseSensitivity="Sensitive" />
+				<!-- Native Types -->
+				<ExplicitPatternGroup TokenKey="NativeTypeToken" Style="NativeTypeStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="Sensitive">
+					<ExplicitPatterns>
+						boolean byte short int long char float double
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Booleans -->
+				<ExplicitPatternGroup TokenKey="BooleanToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="Sensitive">
+					<ExplicitPatterns>
+						false true
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Reserved Words -->
+				<ExplicitPatternGroup TokenKey="ReservedWordToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="Sensitive">
+					<ExplicitPatterns>
+						abstract assert break case catch class continue const
+						default do else enum extends final finally
+						for goto if implements import instanceof interface native
+						new package private protected public return static strictfp super
+						switch synchronized this throw throws transient try void volatile while
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Identifier -->
+				<RegexPatternGroup TokenKey="IdentifierToken" PatternValue="(_ | {AlphaMacro})({WordMacro})*" />
+				<!-- Operators -->
+				<ExplicitPatternGroup TokenKey="OperatorToken" Style="OperatorStyle">
+					<ExplicitPatterns>
+						== != 
+						= !
+						++ -- 
+						+= -= *= /= %=
+						+ - * / % 
+						&amp;&amp; || 
+						&amp;= |= ^=
+						&amp; | ~ ^ 
+						&lt;&lt;= &gt;&gt;&gt;= &gt;&gt;= 
+						&lt;&lt; &gt;&gt;&gt; &gt;&gt; 
+						&lt;= &lt; &gt;= &gt;  
+						? 
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Numbers -->
+				<RegexPatternGroup TokenKey="RealNumberToken" Style="NumberStyle" LookAhead="{NonWordMacro}|\z">
+					<RegexPattern Value="{DigitMacro}* \. {DigitMacro}+ ([Ee] [\+\-]? {DigitMacro}+)? [FfDd]?" />
+					<RegexPattern Value="{DigitMacro}+ [Ee] [\+\-]? {DigitMacro}+ [FfDd]" />
+				</RegexPatternGroup>
+				<RegexPatternGroup TokenKey="IntegerNumberToken" Style="NumberStyle" PatternValue="{DigitMacro}+ [Ll]?" LookAhead="{NonWordMacro}|\z" />
+				<RegexPatternGroup TokenKey="HexIntegerNumberToken" Style="NumberStyle" PatternValue="0 [xX] {HexDigitMacro}+ [Ll]?" LookAhead="{NonWordMacro}|\z" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="CharacterState" />
+				<ChildState Key="StringState" />
+				<ChildState Key="JavaDocCommentState" />
+				<ChildState Key="MultiLineCommentState" />
+				<ChildState Key="CommentState" />
+			</ChildStates>
+		</State>
+		
+		<!-- Characters -->
+		<State Key="CharacterState" TokenKey="CharacterDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CharacterStartToken" Style="StringDelimiterStyle" PatternValue="'" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CharacterEndToken" Style="StringDelimiterStyle" PatternValue="['\n]" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="CharacterEscapedCharacterToken" PatternValue="\\u {HexDigitMacro}{4,4}" />
+				<RegexPatternGroup TokenKey="CharacterEscapedCharacterToken" PatternValue="\\ [0-7]{1,3}" />
+				<RegexPatternGroup TokenKey="CharacterEscapedCharacterToken" PatternValue="\\." />
+				<RegexPatternGroup TokenKey="CharacterWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="CharacterWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="CharacterDefaultToken" PatternValue="[^'\n]" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Strings -->
+		<State Key="StringState" TokenKey="StringDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="StringStartToken" Style="StringDelimiterStyle" PatternValue="&quot;" />
+					<RegexPatternGroup Type="EndScope" TokenKey="StringEndToken" Style="StringDelimiterStyle" PatternValue="[\&quot;\n]" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="StringEscapedCharacterToken" PatternValue="\\u {HexDigitMacro}{4,4}" />
+				<RegexPatternGroup TokenKey="StringEscapedCharacterToken" PatternValue="\\ [0-7]{1,3}" />
+				<RegexPatternGroup TokenKey="StringEscapedCharacterToken" PatternValue="\\." />
+				<RegexPatternGroup TokenKey="StringWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="StringWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="StringDefaultToken" PatternValue="[^\&quot;\n]" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Comments -->
+		<State Key="CommentState" TokenKey="CommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentDelimiterStyle" PatternValue="//" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>			 
+				<RegexPatternGroup TokenKey="CommentDelimiterToken" Style="CommentDelimiterStyle" PatternValue="//" />
+				<RegexPatternGroup TokenKey="CommentWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="CommentURLToken" Style="CommentURLStyle" PatternValue="{URLMacro}" />
+				<RegexPatternGroup TokenKey="CommentLineTerminatorToken" PatternValue="{LineTerminatorMacro}" LookAhead="{WhitespaceMacro}* // [^/]" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="CommentWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="CommentDefaultToken" PatternValue="{NonLineTerminatorMacro}" />
+			</PatternGroups>
+		</State>
+		
+		<!-- JavaDoc Comments -->
+		<State Key="JavaDocCommentState" TokenKey="JavaDocCommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope BracketHighlight="True">
+					<ExplicitPatternGroup Type="StartScope" TokenKey="JavaDocCommentStartToken" Style="CommentDelimiterStyle" PatternValue="/**" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="JavaDocCommentEndToken" Style="CommentDelimiterStyle" PatternValue="*/" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="JavaDocCommentWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="JavaDocCommentLineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<ExplicitPatternGroup TokenKey="JavaDocTagToken" Style="CommentTagStyle" LookAhead="{NonWordMacro}|\z" CaseSensitivity="Sensitive">
+					<ExplicitPatterns>
+						@author @code @docRoot @deprecated @exception @inheritDoc @link @linkplain @literal 
+						@param @return @see @serial @serialData @serialField @since @throws @value @version  
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<RegexPatternGroup TokenKey="JavaDocCommentURLToken" Style="CommentURLStyle" PatternValue="{URLMacro}" />
+				<RegexPatternGroup TokenKey="JavaDocCommentWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="JavaDocCommentDefaultToken" PatternValue="[^*]" />
+			</PatternGroups>
+		</State>
+			
+		<!-- MultiLine Comments -->
+		<State Key="MultiLineCommentState" TokenKey="MultiLineCommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope BracketHighlight="True">
+					<ExplicitPatternGroup Type="StartScope" TokenKey="MultiLineCommentStartToken" Style="CommentDelimiterStyle" PatternValue="/*" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="MultiLineCommentEndToken" Style="CommentDelimiterStyle" PatternValue="*/" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="MultiLineCommentWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="MultiLineCommentLineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="MultiLineCommentURLToken" Style="CommentURLStyle" PatternValue="{URLMacro}" />
+				<RegexPatternGroup TokenKey="MultiLineCommentWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="MultiLineCommentDefaultToken" PatternValue="[^*]" />
+			</PatternGroups>
+		</State>
+			
+	</States>
+	
+	<!-- Example Text -->
+	<ExampleText>
+		<![CDATA[
+/** 
+ * The HelloWorld class implements a small application 
+ * that displays "Hello World!" to the standard output.
+ * @author Actipro Software
+ */
+class HelloWorld {
+
+    public static void main(String[] args) {
+		// Write to the console
+        System.out.println("Hello World!");
+    }
+    
+}
+		]]>
+	</ExampleText>
+		
+</SyntaxLanguage>

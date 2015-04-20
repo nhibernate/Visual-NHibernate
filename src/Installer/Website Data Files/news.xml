@@ -1,0 +1,1111 @@
+<news>
+  <item heading="Version 2.7.13.1450 released" date="30 Dec 2012" link="" id="170">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.12.1449 released" date="3 Jul 2012" link="" id="169">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.11.1448 released" date="19 Jun 2012" link="" id="168">
+    <snippet>Improvements and Fixes</snippet>
+    <full> 
+		Improvements and Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.10.1446 released" date="23 May 2012" link="" id="167">
+    <snippet>Improvements and Fixes</snippet>
+    <full> 
+		Improvements and Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.9.1442 released" date="15 May 2012" link="" id="166">
+    <snippet>Improvements and Fixes</snippet>
+    <full> 
+		Improvements and Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.6.1435 released" date="16 Apr 2012" link="" id="164">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.5.1434 released" date="12 Apr 2012" link="" id="163">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.4.1433 released" date="6 Apr 2012" link="" id="162">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.3.1429 released" date="25 Mar 2012" link="" id="161">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.2.1428 released" date="24 Feb 2012" link="" id="160">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.1.1427 released" date="22 Feb 2012" link="" id="159">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.1.1426 released" date="21 Feb 2012" link="" id="158">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.1.1425 released" date="8 Feb 2012" link="" id="157">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.7.0.1424 released" date="30 Jan 2012" link="" id="156">
+    <snippet>Improvements and fixes</snippet>
+    <full> 
+		Improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.5.1415 released" date="6 Sep 2011" link="" id="155">
+    <snippet>Improvements and fixes</snippet>
+    <full> 
+		Improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.4.1413 released" date="2 Sep 2011" link="" id="154">
+    <snippet>Improvements and fixes</snippet>
+    <full> 
+		Improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.2.1411 released" date="2 Aug 2011" link="" id="153">
+    <snippet>Some fixes</snippet>
+    <full> 
+		Some fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.1.1409 released" date="8 Jul 2011" link="" id="152">
+    <snippet>Runtime errors in templates were not getting reported correctly, especially with regards to line number in the template.</snippet>
+    <full> 
+		Runtime errors in templates were not getting reported correctly, especially with regards to line number in the template. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.0.1408 released" date="29 Jun 2011" link="" id="151">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.0.1407 released" date="27 Jun 2011" link="" id="150">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.0.1404 released" date="13 Jun 2011" link="" id="149">
+    <snippet>Fixes for IO errors.</snippet>
+    <full> 
+		Fixes for IO errors. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.0.1402 released" date="13 Jun 2011" link="" id="148">
+    <snippet>Strange 'DEBUG' characters sometimes appear in the generated output when templates are customised.</snippet>
+    <full> 
+		Strange 'DEBUG' characters sometimes appear in the generated output when templates are customised. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.0.1401 released" date="12 Jun 2011" link="" id="147">
+    <snippet>Opening a saved project that includes Table Per SubClass inheritance results in an seemingly empty project.</snippet>
+    <full> 
+		Opening a saved project that includes Table Per SubClass inheritance results in an seemingly empty project. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.6.0.1400 released" date="9 Jun 2011" link="" id="146">
+    <snippet>New features, improvements and fixes</snippet>
+    <full> 
+		New features, improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.5.1396 released" date="2 Jun 2011" link="" id="145">
+    <snippet>'Could not load file or assembly' error when loading a project via 'Recent Files'.</snippet>
+    <full> 
+		'Could not load file or assembly' error when loading a project via 'Recent Files'. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.5.1394 released" date="30 May 2011" link="" id="144">
+    <snippet>Fixes and better default values</snippet>
+    <full> 
+		Fixes and better default values. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.5.1392 released" date="26 May 2011" link="" id="143">
+    <snippet>Fixes and template improvements</snippet>
+    <full> 
+		Fixes and template improvements. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.4.1389 released" date="19 May 2011" link="" id="142">
+    <snippet>Relationship columns are sometimes mismatched when the primary key has multiple columns.</snippet>
+    <full> 
+		Relationship columns are sometimes mismatched when the primary key has multiple columns. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.4.1388 released" date="19 May 2011" link="" id="141">
+    <snippet>Some relationships are not imported correctly when importing database changes.</snippet>
+    <full> 
+		Some relationships are not imported correctly when importing database changes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.4.1386 released" date="15 May 2011" link="" id="140">
+    <snippet>Updated Sharp Architecture template to 1.9.6</snippet>
+    <full> 
+		Updated Sharp Architecture template to 1.9.6. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.3.1384 released" date="10 May 2011" link="" id="139">
+    <snippet>Fix: A saved project opens and appears empty when it contains views with keys.</snippet>
+    <full> 
+		Fix: A saved project opens and appears empty when it contains views with keys. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.2.1383 released" date="6 May 2011" link="" id="138">
+    <snippet>New validation check</snippet>
+    <full> 
+		Added new validation rule to check that lazy properties belong to a lazy entity. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.1.1381 released" date="5 May 2011" link="" id="137">
+    <snippet>Improved performance of database sync for Oralce and PostgreSql</snippet>
+    <full> 
+		Improved performance of database sync for Oracle and PostgreSql databases. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.0.1379 released" date="2 May 2011" link="" id="136">
+    <snippet>Fix: Database update script templates not included in base install.</snippet>
+    <full> 
+		Fix: Database update script templates not included in base install. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.5.0.1377 released" date="2 May 2011" link="" id="135">
+    <snippet>Added (beta) support for updating the database from the model.</snippet>
+    <full> 
+		Added support for creating database update scripts from the model. Only SQL Server is supported at this time. Support for other databases will be added soon. Please note: this functionality is still regarded as beta - let us know what needs to be improved! See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.19.1376 released" date="1 May 2011" link="" id="134">
+    <snippet>Added support for 'order-by' to collections.</snippet>
+    <full> 
+		Added support for 'order-by' to collections. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.18.1374 released" date="30 Apr 2011" link="" id="133">
+    <snippet>Fixes</snippet>
+    <full> 
+		Fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.17.1371 released" date="14 Apr 2011" link="" id="132">
+    <snippet>Fix for SQLite</snippet>
+    <full> 
+		Fix for SQLite. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.16.1370 released" date="12 Apr 2011" link="" id="131">
+    <snippet>SQLite now supported</snippet>
+    <full> 
+		Added support for SQLite. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.16.1368 released" date="11 Apr 2011" link="" id="130">
+    <snippet>Various fixes</snippet>
+    <full> 
+		Various fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.15.1363 released" date="2 Apr 2011" link="" id="129">
+    <snippet>Various fixes</snippet>
+    <full> 
+		Various fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.15.1362 released" date="1 Apr 2011" link="" id="128">
+    <snippet>Various improvements</snippet>
+    <full> 
+		Various improvements. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.14.1360 released" date="1 Apr 2011" link="" id="127">
+    <snippet>Saving and loading selected files in generation screen causing errors.</snippet>
+    <full> 
+		Saving and loading selected files in generation screen causing errors. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.14.1359 released" date="31 Mar 2011" link="" id="126">
+    <snippet>New feature to remember selected files on the generation screen between runs.</snippet>
+    <full> 
+		Added feature to remember selected (checked) files on the generation screen between runs. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.13.1356 released" date="25 Mar 2011" link="" id="125">
+    <snippet>A few fixes for Oracle.</snippet>
+    <full> 
+		A few fixes for Oracle. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.13.1355 released" date="24 Mar 2011" link="" id="124">
+    <snippet>Some improvements</snippet>
+    <full> 
+		Some improvements. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.13.1350 released" date="24 Mar 2011" link="" id="123">
+    <snippet>Added support for SQL Azure</snippet>
+    <full> 
+		Added support for SQL Azure as well as other improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.11.1341 released" date="8 Mar 2011" link="" id="122">
+    <snippet>New features and fixes</snippet>
+    <full> 
+		New features, improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.10.1338 released" date="18 Feb 2011" link="" id="121">
+    <snippet>Many enhancements</snippet>
+    <full> 
+		Many enhancements. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.9.1334 released" date="11 Feb 2011" link="" id="120">
+    <snippet>Fixed problem during generation</snippet>
+    <full> 
+		Problems during generation - some files not getting created. A test exception was being thrown. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.9.1333 released" date="10 Feb 2011" link="" id="119">
+    <snippet>Fixed problem with trial licenses</snippet>
+    <full> 
+		Fixed problem with trial licenses. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.9.1331 released" date="9 Feb 2011" link="" id="118">
+    <snippet>License wizard displayed for full licenses.</snippet>
+    <full> 
+		License wizard displayed for full licenses. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Blog - Using Templates" date="8 Feb 2011" link="" id="118">
+    <snippet>Blog post on NHForge about <a href="http://nhforge.org/blogs/nhibernate/archive/2011/02/08/visual-nhibernate-using-templates.aspx">creating and editing templates</a>.</snippet>
+    <full> 
+		Blog post on NHForge about <a href="http://nhforge.org/blogs/nhibernate/archive/2011/02/08/visual-nhibernate-using-templates.aspx">creating and editing templates</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.9.1327 released" date="8 Feb 2011" link="" id="117">
+    <snippet>Improved the displaying of the error grid on the Templates tab.</snippet>
+    <full> 
+		Improved the displaying of the error grid on the Templates tab. Select the Sharp Architecture template on the Templates tab. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.8.1325 released" date="2 Feb 2011" link="" id="116">
+    <snippet>Beta of Sharp Architecture template.</snippet>
+    <full> 
+		Added Sharp Architecture template (beta). Select the Sharp Architecture template on the Templates tab. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.7.1322 released" date="1 Feb 2011" link="" id="115">
+    <snippet>New features in template system.</snippet>
+    <full> 
+		Some new features in the template system. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.7.1319 released" date="27 Jan 2011" link="" id="114">
+    <snippet>Better handling of m:m relationships where one side is also part of a m:m relationship.</snippet>
+    <full> 
+		Better handling of m:m relationships where one side is also part of a m:m relationship. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.7.1317 released" date="26 Jan 2011" link="" id="113">
+    <snippet>Improvements and fixes</snippet>
+    <full> 
+		Improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.7.1316 released" date="24 Jan 2011" link="" id="112">
+    <snippet>Improvements and fixes</snippet>
+    <full> 
+		Improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.7.1312 released" date="20 Jan 2011" link="" id="111">
+    <snippet>New features and fixes</snippet>
+    <full> 
+		New features and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.6.1307 released" date="17 Jan 2011" link="" id="110">
+    <snippet>Improvements</snippet>
+    <full> 
+		A few improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.6.1304 released" date="17 Jan 2011" link="" id="109">
+    <snippet>Added ability to specify uni-directional references.</snippet>
+    <full> 
+		Added ability to specify uni-directional references. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.6.1303 released" date="14 Jan 2011" link="" id="108">
+    <snippet>Collection cascade values and property access value written to HBM files incorrectly.</snippet>
+    <full> 
+		Collection cascade values and property access value written to HBM files incorrectly. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.6.1301 released" date="14 Jan 2011" link="" id="107">
+    <snippet>UnauthorizedAccessException when the output folder has read-only files.</snippet>
+    <full> 
+		UnauthorizedAccessException when the output folder has read-only files. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.6.1299 released" date="13 Jan 2011" link="" id="106">
+    <snippet>Default values for the 'Access', 'Cascade', 'Lazy' attributes for properties can now be set at project-level and at entity-level.</snippet>
+    <full> 
+		Default values for the 'Access', 'Cascade', 'Lazy' attributes for properties can now be set at project-level and at entity-level. They can be overridden at entity-level and property-level. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.5.1298 released" date="12 Jan 2011" link="" id="105">
+    <snippet>Problems connecting to Oracle, PostgreSql, and MySQL databases.</snippet>
+    <full> 
+		Problems connecting to Oracle, PostgreSql, and MySQL databases. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.5.1297 released" date="11 Jan 2011" link="" id="104">
+    <snippet>Many new features.</snippet>
+    <full> 
+		Many new features. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.4.1288 released" date="31 Dec 2010" link="" id="103">
+    <snippet>HBM and Fluent mappings incorrect for self-referencing entities.</snippet>
+    <full> 
+		HBM and Fluent mappings incorrect for self-referencing entities. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.4.1286 released" date="29 Dec 2010" link="" id="102">
+    <snippet>A few fixes</snippet>
+    <full> 
+		A few fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.4.1284 released" date="28 Dec 2010" link="" id="101">
+    <snippet>Added support for NHibernate 3.0</snippet>
+    <full> 
+		Added support for NHibernate 3.0. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.3.1283 released" date="28 Dec 2010" link="" id="100">
+    <snippet>Added support for PostgreSQL sequences.</snippet>
+    <full> 
+		Added support for PostgreSQL sequences - to ensure that the correct NHibernate Generator is specified for an entity. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.2.1277 released" date="16 Dec 2010" link="" id="99">
+    <snippet>Reference Fetch Mode gets reset every time a project is opened.</snippet>
+    <full> 
+		Reference Fetch Mode gets reset every time a project is opened. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.2.1275 released" date="14 Dec 2010" link="" id="98">
+    <snippet>Three fixes.</snippet>
+    <full> 
+		Three fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.2.1269 released" date="9 Dec 2010" link="" id="97">
+    <snippet>Fix: Error when importing database changes.</snippet>
+    <full> 
+		Error when importing database changes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.2.1268 released" date="3 Dec 2010" link="" id="96">
+    <snippet>Error on start-up when some database script settings have been modified.</snippet>
+    <full> 
+		Error on start-up when some database script settings have been modified. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.2.1265 released" date="29 Nov 2010" link="" id="94">
+    <snippet>Support for database views</snippet>
+    <full> 
+		Added support for database views. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.1.1260 released" date="25 Nov 2010" link="" id="93">
+    <snippet>Fixes</snippet>
+    <full> 
+		When selecting an entity to add as a reference, entities that were already referenced using a different mapped relationship were not displayed to be selected. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.1.1259 released" date="15 Nov 2010" link="" id="92">
+    <snippet>References and mapped tables are now listed alphabetically in the diagrammer.</snippet>
+    <full> 
+		References and mapped tables are now listed alphabetically in the diagrammer. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.0.1253 released" date="3 Nov 2010" link="" id="91">
+    <snippet>Fix when importing database changes</snippet>
+    <full> 
+		When importing changes from the database, changes to the database field type are not applied to existing mapped properties. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.0.1252 released" date="1 Nov 2010" link="" id="90">
+    <snippet>Improvements &amp; fixes</snippet>
+    <full> 
+		A few small improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.0.1250 released" date="28 Oct 2010" link="" id="89">
+    <snippet>Small improvements</snippet>
+    <full> 
+		A few small improvements. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.0.1249 released" date="27 Oct 2010" link="" id="88">
+    <snippet>Occasional error when clicking on the validation results grid.</snippet>
+    <full> 
+		Occasional error when clicking on the validation results grid. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.0.1247 released" date="26 Oct 2010" link="" id="87">
+    <snippet>References deleted via the diagrammer do not get deleted correctly.</snippet>
+    <full> 
+		References deleted via the diagrammer do not get deleted correctly. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.4.0.1246 released" date="26 Oct 2010" link="" id="86">
+    <snippet>DateTime parse error on non-English machines.</snippet>
+    <full> 
+		DateTime parse error on non-English machines. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Full-version launched" date="26 Oct 2010" link="" id="85">
+    <snippet>Visual NHibernate finally released!</snippet>
+    <full> 
+		Visual NHibernate finally released! The beta period is now finished. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1234 released" date="12 Oct 2010" link="" id="84">
+    <snippet>Fix</snippet>
+    <full> 
+		Error when manually adding a relationship between two tables in the table diagram. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1232 released" date="5 Oct 2010" link="" id="83">
+    <snippet>Fix</snippet>
+    <full> 
+		Joins in the HBM were using incorrect key. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1231 released" date="5 Oct 2010" link="" id="82">
+    <snippet>Fix</snippet>
+    <full> 
+		Error when importing an existing VS project and a config file is found, but it doesn't contain NHibernate settings. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1230 released" date="5 Oct 2010" link="" id="81">
+    <snippet>Various fixes</snippet>
+    <full> 
+		Various fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1228 released" date="4 Oct 2010" link="" id="80">
+    <snippet>Improvements to the inheritance diagram</snippet>
+    <full> 
+		Improvements to the inheritance diagram. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1226 released" date="1 Oct 2010" link="" id="79">
+    <snippet>Fix for database sync issue</snippet>
+    <full> 
+		Error when importing database changes that include a new relationship on an association table. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1225 released" date="1 Oct 2010" link="" id="78">
+    <snippet>Fix for scrolling issues in diagrams</snippet>
+    <full> 
+		Fix for scrolling issues in diagrams. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1223 released" date="30 Sep 2010" link="" id="77">
+    <snippet>Fix for high CPU usage on diffs</snippet>
+    <full> 
+		Fix for high CPU usage on diffs. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1221 released" date="29 Sep 2010" link="" id="76">
+    <snippet>Fix for error during re-generation</snippet>
+    <full> 
+		Fix for error when analysing files during re-generation, when a code file contains nullable types. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1220 released" date="29 Sep 2010" link="" id="75">
+    <snippet>Improved: unmapping tables</snippet>
+    <full> 
+		Improvements to unmapping of tables. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1217 released" date="28 Sep 2010" link="" id="74">
+    <snippet>Entity merging</snippet>
+    <full> 
+		Added ability to merge entities that are mapped 1:1 or m:1. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1216 released" date="28 Sep 2010" link="" id="73">
+    <snippet>Added ability to delete components.</snippet>
+    <full> 
+		Added ability to delete components. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1214 released" date="28 Sep 2010" link="" id="72">
+    <snippet>Virtual primary keys</snippet>
+    <full> 
+		Virtual primary keys can be add to a table or an entity. The changes will get propagated both ways. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1213 released" date="26 Sep 2010" link="" id="71">
+    <snippet>Fix</snippet>
+    <full> 
+		Orphaned mappings were being serialized and throwing exceptions. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1212 released" date="26 Sep 2010" link="" id="70">
+    <snippet>Fix for project loading</snippet>
+    <full> 
+		Fix for loading existing projects. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1210 released" date="22 Sep 2010" link="" id="69">
+    <snippet>Fix for m:m</snippet>
+    <full> 
+		For for a special case of m:n relationships. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1209 released" date="21 Sep 2010" link="" id="68">
+    <snippet>Fixes.</snippet>
+    <full> 
+		Various fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.10.1207 released" date="25 Aug 2010" link="" id="67">
+    <snippet>Control entity and property auto-naming</snippet>
+    <full> 
+		Added templates to control how entities and properties are named when starting from an existing database. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.9.1205 released" date="18 Aug 2010" link="" id="66">
+    <snippet>Fix: Existing projects not loading correctly</snippet>
+    <full> 
+		Fix: Existing projects not loading correctly. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.9.1204 released" date="18 Aug 2010" link="" id="65">
+    <snippet>Improvements and fixes.</snippet>
+    <full> 
+		Improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.9.1203 released" date="12 Aug 2010" link="" id="64">
+    <snippet>Improvements and fixes.</snippet>
+    <full> 
+		Improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.9.1201 released" date="11 Aug 2010" link="" id="63">
+    <snippet>Many new inheritance features.</snippet>
+    <full> 
+		Many new inheritance features and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.8.1198 released" date="4 Aug 2010" link="" id="62">
+    <snippet>IntelliMerge fix</snippet>
+    <full> 
+		Fixed occasional error when IntelliMerge is merging into existing source code files. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.8.1197 released" date="4 Aug 2010" link="" id="61">
+    <snippet>3 types of inheritance</snippet>
+    <full>
+		Added support for all three types of inheritance. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.7.1192 released" date="26 Jul 2010" link="" id="60">
+    <snippet>Fix for collation issue.</snippet>
+    <full>
+		Fix for SQL server and SQL Server Express collation-related issue. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.7.1190 released" date="25 Jul 2010" link="" id="59">
+    <snippet>Improvements to database synchronization</snippet>
+    <full>
+		Various improvements to the database synchronization feature. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.7.1189 released" date="23 Jul 2010" link="" id="58">
+    <snippet>Improvements and fixes</snippet>
+    <full>
+		Many improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.7.1187 released" date="22 Jul 2010" link="" id="57">
+    <snippet>Improved support for Map and IDBag collections</snippet>
+    <full>
+		Improved support for Map and IDBag collections. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.7.1184 released" date="21 Jul 2010" link="" id="56">
+    <snippet>Improved error reporting options</snippet>
+    <full>
+		Improved error reporting to enable saving error report as a file which can be emailed to Slyce. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.7.1182 released" date="21 Jul 2010" link="" id="55">
+    <snippet>Added support for SQL Server 2000</snippet>
+    <full>
+		Added support for SQL Server 2000. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.7.1180 released" date="20 Jul 2010" link="" id="54">
+    <snippet>Database synchronization tool</snippet>
+    <full>
+		Database synchronization feature to import changes from the database and apply them to the model. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.7.1176 released" date="20 Jul 2010" link="" id="53">
+    <snippet>Fix for 'License not valid' error</snippet>
+    <full>
+		Fix for 'License not valid due to the problems with dotConnect Universal installation' error. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.7.1175 released" date="16 Jul 2010" link="" id="52">
+    <snippet>Added encoding selector to each template file</snippet>
+    <full>
+		Added encoding selector to each template file. Other fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.6.1172 released" date="15 Jul 2010" link="" id="51">
+    <snippet>Visualize Fluent Nhibernate projects</snippet>
+    <full>
+		Added the ability to import Fluent NHibernate projects. Now you can visualize and edit your Fluent NHibernate projects. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.5.1168 released" date="11 Jul 2010" link="" id="50">
+    <snippet>Fix: </snippet>
+    <full>
+		Fix: Error on the Options screen when changing the Default Cascade type. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.4.1167 released" date="11 Jul 2010" link="" id="49">
+    <snippet>.Net 4.0</snippet>
+    <full>
+		Moved to .Net 4.0. Many other improcements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.3.1160 released" date="8 Jul 2010" link="" id="48">
+    <snippet>Fixes</snippet>
+    <full>
+    A few more fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.2.1155 released" date="7 Jul 2010" link="" id="47">
+    <snippet>Fixes</snippet>
+    <full>
+    A few fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.1.1154 released" date="6 Jul 2010" link="" id="46">
+    <snippet>Fix: DirectoryNotFound</snippet>
+    <full>
+    Fix for DirectoryNotFound error. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.3.0.1153 released" date="6 Jul 2010" link="" id="45">
+    <snippet>Templates added to Visual NHibernate</snippet>
+    <full>
+    Visual NHibernate now has an advanced templating engine. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.19.1129 released" date="7 Jun 2010" link="" id="44">
+    <snippet>Auto-removal of specified prefixes</snippet>
+    <full>
+    Added support for specifying table and columns prefixes to be removed. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.18.1126 released" date="4 Jun 2010" link="" id="43">
+    <snippet>Select schemas and tables when importing.</snippet>
+    <full>
+    Added ability to select schemas and tables when importing, plus many other improvements. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.17.1120 released" date="21 May 2010" link="" id="42">
+    <snippet>Improvements and fixes.</snippet>
+    <full>
+    Many improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.16.1116 released" date="19 May 2010" link="" id="41">
+    <snippet>Fixes for SQL Server Express.</snippet>
+    <full>
+    Fixed problem with opening a saved SQL Server Express project. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.15.1115 released" date="17 May 2010" link="" id="40">
+    <snippet>Fixes for SQL Server multiple schemas.</snippet>
+    <full>
+    Fixes for working with SQL Server databases with multiple schemas having duplicate table-names. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Videos added to website" date="13 May 2010" link="" id="39">
+    <snippet>First video added to the website.</snippet>
+    <full>
+    We have created our first video. More will be added over the next few days and weeks. It shows how to create an NHibernate project from an existing database. <a href="/VisualNHibernate/Videos/GettingStartedFromDB/">Watch it here</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.14.1113 released" date="12 May 2010" link="" id="38">
+    <snippet>Add custom code</snippet>
+    <full>
+    Add custom code to entity classes: using statements, attributes, base-names (implements and base-class names), properties, methods. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.13.1108 released" date="3 May 2010" link="" id="37">
+    <snippet>Improved Fluent NHibernate output</snippet>
+    <full>
+    Many improvements to the output for Fluent NHibernate, also many other fixes and imrpovements. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.12.1102 released" date="28 Apr 2010" link="" id="36">
+    <snippet>Auto-create entities for blank project.</snippet>
+    <full>
+    When a database is selected in a blank project, then 'Refresh Schema' is clicked, the entities are auto-created. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.11.1100 released" date="27 Apr 2010" link="" id="35">
+    <snippet>Added ID generator support</snippet>
+    <full>
+    Added support for the various ID generator schemes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.10.1099 released" date="23 Apr 2010" link="" id="34">
+    <snippet>Added Firebird support</snippet>
+    <full>
+    Added support for Firebird databases. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.9.1098 released" date="21 Apr 2010" link="" id="33">
+    <snippet>Fixed SQL Server Express support</snippet>
+    <full>
+    Fixed support for SQL Server Express. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.8.1096 released" date="20 Apr 2010" link="" id="32">
+    <snippet>New features for association tables</snippet>
+    <full>
+    New features added to make working with association tables easier and more powerful. (m:n relationships). See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.7.1094 released" date="19 Apr 2010" link="" id="31">
+    <snippet>Added PostgreSQL support</snippet>
+    <full>
+    Added support for PostgreSQL. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.6.1091 released" date="13 Apr 2010" link="" id="30">
+    <snippet>Added virtual relationships</snippet>
+    <full>
+     Added ability to create new (virtual) relationships between tables. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Store launched with 30% beta discount" date="9 Apr 2010" link="" id="29">
+    <snippet>Online store is live with 30% beta discount</snippet>
+    <full>
+     Today we launched the online store where you can buy licenses for Visual NHibernate. We are offering a 30% discount on ALL purchases during the beta period. Check it out <a href="/Store/">here</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.5.1087 released" date="7 Apr 2010" link="" id="28">
+    <snippet>Fix: sporadic error when displaying validation grid</snippet>
+    <full>
+     An occasional error can occur when displaying validation results in the grid. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.4.1086 released" date="6 Apr 2010" link="" id="27">
+    <snippet>Improved naming, bug fixes</snippet>
+    <full>
+     Improved naming algorithm and many fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.3.1083 released" date="4 Apr 2010" link="" id="26">
+    <snippet>Added Oracle support</snippet>
+    <full>
+     Added support for Oracle. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.2.1081 released" date="3 Apr 2010" link="" id="25">
+    <snippet>Bug fix</snippet>
+    <full>
+     Some SQL Server data-types not handled correctly. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.1.1080 released" date="2 Apr 2010" link="" id="24">
+    <snippet>MySQL support</snippet>
+    <full>
+     Added support for MySQL. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="New screenshots" date="31 Mar 2010" link="" id="23">
+    <snippet>New screenshots added to the website</snippet>
+    <full>
+     New screenshots of version 2.2.0.1078 have been added to the screenshots page. See: <a href="/VisualNHibernate/Screenshots/">new screenshots!</a>.
+    </full>
+  </item>
+  <item heading="Version 2.2.0.1078 released" date="31 Mar 2010" link="" id="22">
+    <snippet>New diagrammer, streamlined workflow</snippet>
+    <full>
+     Many big fixes and improvements in this release. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.1.2.1072 released" date="1 Feb 2010" link="" id="21">
+    <snippet>Open existing VS projects with missing NH config file</snippet>
+    <full>
+     Added ability to select an NHibernate config file that is not in the current project when starting from an existing Visual Studio project. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.1.1.1065 released" date="29 Jan 2010" link="" id="20">
+    <snippet>Fix: 'NewFile' error when generating files</snippet>
+    <full>
+      An error occurs when generating new files. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.1.0.1063 released" date="26 Jan 2010" link="" id="19">
+    <snippet>New: integrated diff engine</snippet>
+    <full>
+      All files that are different to files on your disk are displayed so you can see the changes before writing them to disk. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.15.1054 released" date="21 Jan 2010" link="" id="18">
+    <snippet>Fixes for NH config section handling in existing projects</snippet>
+    <full>
+      Fixes for NH config section handling in existing projects. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.14.1053 released" date="20 Jan 2010" link="" id="17">
+    <snippet>Important fixes for references</snippet>
+    <full>
+      Many improvements and fixes. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.13.1047 released" date="14 Jan 2010" link="" id="16">
+    <snippet>Added support for Fluent NHibernate</snippet>
+    <full>
+      Added option to generate Fluent NHibernate mappings. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.12.1032 released" date="19 Dec 2009" link="" id="15">
+    <snippet>Fixed error when setting output folder</snippet>
+    <full>
+      Error when setting output folder. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.11.1031 released" date="18 Dec 2009" link="" id="14">
+    <snippet>Added support for many NHibernate features</snippet>
+    <full>
+      Added support for many NHibernate features, such as lazy-loading, dynamic-insert, dynamic-update and others. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.10.1026 released" date="16 Dec 2009" link="" id="13">
+    <snippet>Composite keys to components</snippet>
+    <full>
+      Added ability to turn a composite primary key into a component. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version RSS feed" date="10 Dec 2009" link="" id="12">
+    <snippet>RSS feed added for new version announcements</snippet>
+    <full>
+      We have added an RSS feed to notify you about when new versions of Visual NHibernate are released, as well as other related news. See the <a href="/VisualNHibernate/VersionHistory/">Release Notes</a> page or the  <a href="/Downloads/">Downloads</a> page for the link.
+    </full>
+  </item>
+  <item heading="Version 2.0.9.1018 released" date="09 Dec 2009" link="" id="11">
+    <snippet>Many-to-many association tables suppressed in entity model.</snippet>
+    <full>
+      Improved handling of many-to-many relationships, optional private property setters. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Screenshots added" date="02 Dec 2009" link="" id="10">
+    <snippet>Screenshots of Visual NHibernate have been added to the website.</snippet>
+    <full>
+      Various <a href="/VisualNHibernate/Screenshots/">screenshots</a> of Visual NHibernate have been added to the website.
+    </full>
+  </item>
+  <item heading="Version 2.0.8.1007 released" date="02 Dec 2009" link="" id="9">
+    <snippet>Improved handling of existing VS projects</snippet>
+    <full>
+      Improved import from existing Visual Studio NHibernate projects. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.7.1005 released" date="01 Dec 2009" link="" id="8">
+    <snippet>Improved pluralisation of references.</snippet>
+    <full>
+      Improved pluralisation of references between entities. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.6.1001 released" date="27 Nov 2009" link="" id="7">
+    <snippet>Added code-insertions, NH Validator support.</snippet>
+    <full>
+      Added code-insertions to work with existing code. Also added NHibernate Validator support. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.5.983 released" date="22 Oct 2009" link="" id="6">
+    <snippet>Added reverse engineering of existing NHibernate projects.</snippet>
+    <full>
+      Reverse engineering of existing NHibernate projects, and a start on database migration support. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.4.977 released" date="11 Oct 2009" link="" id="5">
+    <snippet>Update check fixed.</snippet>
+    <full>
+      Fixed the update checker, as well as some UI fixes and improvements. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.3.974 released" date="07 Oct 2009" link="" id="4">
+    <snippet>Entity-first modeling.</snippet>
+    <full>
+      Added support for entity-first modeling, as well as many small fixes and improvements. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.2.967 released" date="25 Sep 2009" link="" id="3">
+    <snippet>Model manipulation improvements and more.</snippet>
+    <full>
+      Improvements to model manipulation, and a fix for error when clicking a table relationship in the database diagram. See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Version 2.0.1.963 released" date="17 Sep 2009" link="" id="2">
+    <snippet>New features and small UI fixes.</snippet>
+    <full>
+      New version includes user-requested features such as bytecode generator selection and auto-completion for property types, as well as many small UI fixes.  See full <a href="/VisualNHibernate/VersionHistory/">Release Notes</a>.
+    </full>
+  </item>
+  <item heading="Beta is launched" date="08 Sep 2009" link="" id="1">
+    <snippet>Visual NHibernate beta is launched.</snippet>
+    <full>Today, Slyce Software Limited launched Visual NHibernate. This is the first visual modelling tool for NHibernate projects that makes the full power of NHibernate available to developers. All of NHibernate's complex mapping scenarios can be modelled in Visual NHibernate.</full>
+  </item>
+  <!--<item heading="The Best News Ever" date="16 Dec 2008" link="" id="1">
+    <snippet>Small amount of text here. This must be just a simple sentence - no markup allowed.</snippet>
+    <full>
+      The full text goes <b>here</b>.
+    </full>
+  </item>
+  <item heading="New product" date="10 Dec 2008" id="2">
+    <snippet>Small amount of text here. Thhis must be just a simple sentence - no markup allowed.</snippet>
+    <full>
+      In <i>March of 2006</i> I <b>published my initial thoughts</b> on NHibernate best practices with ASP.NET, generics and unit tests. I've been delighted to learn that these ideas have been implemented in a number of real-world scenarios with strong success. Since then, I've worked with many people to refine these ideas, learn from mistakes and leverage a more powerful version of NHibernate.
+
+      <p/>
+      Accordingly, although only a modest, yet important, amount of modification has been made to the underlying Aarchitecture, some other important factors have been updated and addressed in this article:
+
+      <ul>
+        <li>Quite simply, NHibernate is awesome. In the Previous edition of this article, I assumed you already knew this...but I now try to convince the dissenters as well.</li>
+        <li>NHibernate 1.2 natively supports generics.</li>
+        <li>NHibernate 1.2 natively supports nullable types.</li>
+        <li>NHibernate 1.2 natively supports mapping attributes.</li>
+        <li>NHibernate 1.2 can communicate with stored procedures.</li>
+        <li>Using CallContext for ISession storage in ASP.NET was susceptible to failure under load.</li>
+        <li>Exposing a publicly settable ID property created a point-of-susceptibility.</li>
+        <li>Providing automatic parent/child wiring, via Ayende's very helpful NHibernate.Generics, was more headache than help.</li>
+        <li>Have you used Rhino Mocks 3.0, NUnitAsp, or Fit? Well, these are all discussed with an expanded emphasis on test-driven development.</li>
+        <li>As an alternative to my recommendations, also consider Castle Project's offerings such as MonoRail and/or ActiveRecord for a simple yet powerful out-of-the-box framework for ASP.NET. In fact, if it's technically feasible and you can generate buy-in on your team for these off-the-shelf tools, I would recommend using them over a ground-up solution. But even if you do use Castle Project facilities, this article should still have a lot of useful information for you!</li>
+        <li>In addition to those listed above, there are other important refactorings and fixes throughout the article and the code. This edition is by no means just a light touch-up of the original article.</li>
+        <li>
+          In addition to an overhaul of the original sample code, an expanded "enterprise" sample has been included demonstrating:
+          <ul>
+            <li>NHibernate with web services</li>
+            <li>NHibernate with multiple databases</li>
+            <li>Integration with Castle Windsor</li>
+            <li>A reusable data layer for the data access components.</li>
+            <li>A simple example of Model-View-Presenter</li>
+          </ul>
+        </li>
+      </ul>
+    </full>
+  </item>
+  <item heading="Something cool coming soon" date="4 Nov 2008" link="" id="3">
+    <snippet>Small amount of text here. This must be just a simple sentence - no markup allowed. Hello.</snippet>
+    <full>
+      This is the whole text for <p/>id 3. <b>here</b>.
+    </full>
+  </item>
+
+  <item heading="The Best News Ever" date="16 Dec 2008" link="" id="4">
+    <snippet>Small amount of text here. This must be just a simple sentence - no markup allowed.</snippet>
+    <full>
+      The full text goes <b>here</b>.
+    </full>
+  </item>
+  <item heading="New product" date="10 Dec 2008" link="" id="5">
+    <snippet>Small amount of text here. Thhis must be just a simple sentence - no markup allowed.</snippet>
+    <full>
+      In <i>March of 2006</i> I <b>published my initial thoughts</b> on NHibernate best practices with ASP.NET, generics and unit tests. I've been delighted to learn that these ideas have been implemented in a number of real-world scenarios with strong success. Since then, I've worked with many people to refine these ideas, learn from mistakes and leverage a more powerful version of NHibernate.
+
+      <p/>
+      Accordingly, although only a modest, yet important, amount of modification has been made to the underlying Aarchitecture, some other important factors have been updated and addressed in this article:
+
+      <ul>
+        <li>Quite simply, NHibernate is awesome. In the previous edition of this article, I assumed you already knew this...but I now try to convince the dissenters as well.</li>
+        <li>NHibernate 1.2 natively supports generics.</li>
+        <li>NHibernate 1.2 natively supports nullable types.</li>
+        <li>NHibernate 1.2 natively supports mapping attributes.</li>
+        <li>NHibernate 1.2 can communicate with stored procedures.</li>
+        <li>Using CallContext for ISession storage in ASP.NET was susceptible to failure under load.</li>
+        <li>Exposing a publicly settable ID property created a point-of-susceptibility.</li>
+        <li>Providing automatic parent/child wiring, via Ayende's very helpful NHibernate.Generics, was more headache than help.</li>
+        <li>Have you used Rhino Mocks 3.0, NUnitAsp, or Fit? Well, these are all discussed with an expanded emphasis on test-driven development.</li>
+        <li>As an alternative to my recommendations, also consider Castle Project's offerings such as MonoRail and/or ActiveRecord for a simple yet powerful out-of-the-box framework for ASP.NET. In fact, if it's technically feasible and you can generate buy-in on your team for these off-the-shelf tools, I would recommend using them over a ground-up solution. But even if you do use Castle Project facilities, this article should still have a lot of useful information for you!</li>
+        <li>In addition to those listed above, there are other important refactorings and fixes throughout the article and the code. This edition is by no means just a light touch-up of the original article.</li>
+        <li>
+          In addition to an overhaul of the original sample code, an expanded "enterprise" sample has been included demonstrating:
+          <ul>
+            <li>NHibernate with web services</li>
+            <li>NHibernate with multiple databases</li>
+            <li>Integration with Castle Windsor</li>
+            <li>A reusable data layer for the data access components.</li>
+            <li>A simple example of Model-View-Presenter</li>
+          </ul>
+        </li>
+      </ul>
+    </full>
+  </item>
+  <item heading="Something cool coming soon" date="4 Nov 2008" link="" id="6">
+    <snippet>Small amount of text here. This must be just a simple sentence - no markup allowed. Hello.</snippet>
+    <full>
+      This is the whole text for <p/>id 3. <b>here</b>.
+    </full>
+  </item>
+  <item heading="ArchAngel 1.2.0.1" date="4 Nov 2008" link="/ArchAngel/VersionHistory/" id="7">
+    <snippet>New build: bug-fixes.</snippet>
+    <full>
+      This is the <i>whole</i> text for <p/>id 3. <b>here</b>.
+    </full>
+  </item>-->
+</news>

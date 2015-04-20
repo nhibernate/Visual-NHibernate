@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Iesi.Collections.Generic;
+using <#=Project.Settings.Name#>.Core;
+
+namespace <#=Project.Settings.Name#>.Wcf.Dtos
+{
+    public class <#=entity.Name#>Dto
+    {
+        /// <summary>
+        /// Transfers the <#=entity.Name#> entity's property values to the DTO.
+        /// Strongly consider Jimmy Bogard's AutoMapper (http://automapper.codeplex.com/) 
+        /// for doing this kind of work in a more automated fashion.
+        /// </summary>
+        public static <#=entity.Name#>Dto Create(<#=entity.Name#> <#=entity.NameCamelCase#>) {
+            if (<#=entity.NameCamelCase#> == null)
+                return null;
+
+            return new <#=entity.Name#>Dto() {<#
+// Properties
+for (int i = 0; i < entity.Properties.Count; i++)
+{
+	var property = entity.Properties[i];#>
+				<#=property.Name#> = <#=entity.NameCamelCase#>.<#=property.Name#><#
+	WriteIf(i < entity.Properties.Count - 1 || (entity.References.Count > 0 || entity.Components.Count > 0), ",");
+}
+// References
+for (int i = 0; i < entity.References.Count; i++)
+{
+	var reference = entity.References[i];#>
+				<#=reference.Name#> = <#=entity.NameCamelCase#>.<#=reference.Name#><#
+	WriteIf(i < entity.References.Count - 1 || entity.Components.Count > 0, ",");
+}
+// Components
+for (int i = 0; i < entity.Components.Count; i++)
+{
+	var component = entity.Properties[i];#>
+				<#=component.Name#> = <#=entity.NameCamelCase#>.<#=component.Name#><#
+	WriteIf(i < entity.Properties.Count - 1, ",");
+}
+			#>
+            };
+        }
+
+        private <#=entity.Name#>Dto() { }
+		
+<#
+		/* START Property Definitions */
+		foreach (Property property in entity.Properties.Where(p => !p.IsInherited))
+		{#>
+		public <#WriteIf(property.IsInherited, "override", "virtual")#> <#=property.Type#> <#=property.Name#> { get; <#WriteIf(property.IsSetterPrivate, "private ")#>set; }<#
+		}
+		/* END Property Definitions */
+		
+		/* Start Reference Definitions */
+		foreach (Reference reference in entity.References)
+		{#>
+		public virtual <#=reference.Type#> <#=reference.Name#> { get; <#WriteIf(reference.IsSetterPrivate, "private ")#>set; }<#
+		}
+		/* END Reference Definitions */
+		
+		/* START Component Definitions */
+		foreach (var component in entity.Components)
+		{#>
+		public virtual <#=component.Type#> <#=component.Name#> { get; <#WriteIf(component.IsSetterPrivate, "private ")#>set; }<#
+		}
+		/* END Component Definitions */
+#>
+    }
+}

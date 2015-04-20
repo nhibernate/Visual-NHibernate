@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Addons.DotNet", "Addons.DotNet.csproj", "{55AF3792-B7C4-411B-9051-6D0E11832779}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		BetaRelease|Any CPU = BetaRelease|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		FullRelease|Any CPU = FullRelease|Any CPU
+		PreRelease|Any CPU = PreRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55AF3792-B7C4-411B-9051-6D0E11832779}.BetaRelease|Any CPU.ActiveCfg = BetaRelease|Any CPU
+		{55AF3792-B7C4-411B-9051-6D0E11832779}.BetaRelease|Any CPU.Build.0 = BetaRelease|Any CPU
+		{55AF3792-B7C4-411B-9051-6D0E11832779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AF3792-B7C4-411B-9051-6D0E11832779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AF3792-B7C4-411B-9051-6D0E11832779}.FullRelease|Any CPU.ActiveCfg = FullRelease|Any CPU
+		{55AF3792-B7C4-411B-9051-6D0E11832779}.FullRelease|Any CPU.Build.0 = FullRelease|Any CPU
+		{55AF3792-B7C4-411B-9051-6D0E11832779}.PreRelease|Any CPU.ActiveCfg = PreRelease|Any CPU
+		{55AF3792-B7C4-411B-9051-6D0E11832779}.PreRelease|Any CPU.Build.0 = PreRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

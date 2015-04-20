@@ -1,0 +1,170 @@
+<Project DefaultTargets="CodeCoverage" 
+        ToolsVersion="2.0" 
+        xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+
+<!-- custom MSBuild task to refresh source once/day -->
+  <UsingTask TaskName="SourceRefreshIntervalTask" AssemblyFile="C:\Program Files\CruiseControl.NET\server\SerkoCustomBuildTasks.dll"/>
+  <UsingTask TaskName="NCoverExplorer.MSBuildTasks.NCoverExplorer" 
+            AssemblyFile="C:\Program Files\NCover\NCoverExplorer.Extras\bin\NCoverExplorer.MSBuildTasks.dll"/>
+  <UsingTask TaskName="NCoverExplorer.MSBuildTasks.NCover" 
+            AssemblyFile="C:\Program Files\NCover\NCoverExplorer.Extras\bin\NCoverExplorer.MSBuildTasks.dll"/>
+
+  <PropertyGroup>
+    <Configuration>Debug</Configuration> <!-- This is overridden by the value from the command line. -->
+	<Platform>AnyCPU</Platform>
+	<TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+	<DevEnvDir>C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE</DevEnvDir>
+	<CCNetProject>ArchAngel</CCNetProject>
+    <AppName>$(CCNetProject)</AppName>
+    <WorkingDir>C:\CruiseControl.Net\$(AppName)</WorkingDir>
+    <BuildDir>$(WorkingDir)\Build</BuildDir>
+    <CCNetArtifactDirectory>$(BuildDir)\Artifacts</CCNetArtifactDirectory>
+    <SourceDir>$(WorkingDir)\Source</SourceDir>
+    <NUnitExe>&quot;C:\Program Files\NUnit 2.4.8\bin\nunit-console.exe&quot;</NUnitExe>
+    <NUnitArgs>/nologo</NUnitArgs>
+    <NUnitOutput>$(CCNetArtifactDirectory)\nunit-results.xml</NUnitOutput>
+
+    <NUnitWorkingDir>$(CCNetArtifactDirectory)</NUnitWorkingDir>
+	<NCoverPath>C:\Program Files\NCover</NCoverPath>
+    <NCoverExe>&quot;C:\Program Files\NCover\ncover.console.exe&quot;</NCoverExe>
+    <NCoverOutput>$(CCNetArtifactDirectory)\ncover-output.xml</NCoverOutput>
+    <NCoverHtml>$(CCNetArtifactDirectory)\ncover-results.html</NCoverHtml>
+    <NCoverLog>$(CCNetArtifactDirectory)\ncover-results.log</NCoverLog>
+
+    <SvnUrl>https://slyce.devguard.com/svn/archangel/trunk</SvnUrl>
+    <SvnUser>jamie.penney</SvnUser>
+    <SvnPass>9ksnfng6</SvnPass>
+    
+    <NCoverExplorerDir>C:\Program Files\NCover\</NCoverExplorerDir>
+    <CoverageExclusions> 
+      <CoverageExclusion>
+        <ExclusionType>Assembly</ExclusionType>
+        <Pattern>*.UnitTesting.DLL</Pattern> 
+      </CoverageExclusion> 
+	  <CoverageExclusion>
+        <ExclusionType>Assembly</ExclusionType>
+        <Pattern>*.Tests.DLL</Pattern> 
+      </CoverageExclusion>
+    </CoverageExclusions>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ArtifactsToDelete Include="$(CCNetArtifactDirectory)\*.xml" />
+    <ArtifactsToDelete Include="$(CCNetArtifactDirectory)\*.log" />
+    <ArtifactsToDelete Include="$(CCNetArtifactDirectory)\ncover-results.html\**\*" />
+	<ArtifactsToDelete Include="$(BuildDir)\*.Coverage.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--<SolutionFile Include="$(SourceDir)\**\*.csproj" Exclude="$(SourceDir)\SI.Engine*.csproj" /> -->
+	<SolutionFile Include="$(SourceDir)\**\*.csproj" Exclude="$(SourceDir)\**\mdbg.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UnitTestAssemblies Include="$(SourceDir)\Slyce.Common.UnitTesting\bin\Debug\Slyce.Common.UnitTesting.dll" />
+	<UnitTestAssemblies Include="$(SourceDir)\Slyce.IntelliMerge.UnitTesting\bin\Debug\Slyce.IntelliMerge.UnitTesting.dll" />
+	<UnitTestAssemblies Include="$(SourceDir)\ArchAngel.Workbench.Tests\bin\Debug\ArchAngel.Workbench.Tests.dll" />
+	<NCoverCoverageFiles Include="**.Coverage.xml" />
+  </ItemGroup>
+
+ <Target Name="CheckSourceRefreshRequired">
+    <Message Text="***     Checking source refresh required     ***" />
+    <SourceRefreshIntervalTask FileWithPathToCheck="$(BuildDir)\RefreshCheck.txt">
+	    <Output TaskParameter="RequiresRefresh" PropertyName="RequiresRefresh" />
+    </SourceRefreshIntervalTask>
+    <Message Text="***     refresh required = $(RequiresRefresh)     ***" />
+  </Target>
+
+  <Target Name="CleanSource" DependsOnTargets="CheckSourceRefreshRequired" >
+    <Message Text="***     Removing all source files from $(SourceDir)     ***" />
+    <RemoveDir Directories="$(SourceDir)" Condition="Exists($(SourceDir)) And '$(RequiresRefresh)'=='true'" />
+    <MakeDir Directories="$(SourceDir)" />
+  </Target>
+
+  <Target Name="CleanPreviousArtifacts"
+          DependsOnTargets="CleanSource">
+    <Message Text="***     Cleaning previous XML output files from $(CCNetArtifactDirectory)     ***" />
+    <Delete Files="@(ArtifactsToDelete)" />
+  </Target>
+
+
+  <Target Name="GetSource" DependsOnTargets="CleanPreviousArtifacts">
+    <Message Text="***     Checking out trunk into $(SourceDir)     ***" />
+    <SvnCheckout RepositoryPath="$(SvnUrl)" LocalPath="$(SourceDir)" UserName="$(SvnUser)" Password="$(SvnPass)"> 
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnCheckout>
+  </Target>
+
+
+  <Target Name="DebugBuild" DependsOnTargets="GetSource">
+   <Message Text="***     Build solution for build $(CCNetLabel)     ***" />
+   <Message Text="***     MSBuildToolsPath $(MSBuildToolsPath)     ***" />
+   <Sleep Milliseconds="2500" /> <!-- let the OS write all the files before we start -->
+   
+   <MSBuild
+      Projects="@(SolutionFile)"
+      Targets="Build" >
+	  <Output TaskParameter="TargetOutputs" ItemName="BuiltAssemblies"/>
+	</MSBuild>
+
+
+   <Message Text="***     Built debug version     ***" />
+  </Target>
+
+  <Target Name="CodeCoverage"
+        DependsOnTargets="DebugBuild">
+    <Message Text="***     Running code coverage and unit tests     ***" />
+	<NCover ToolPath="$(NCoverPath)"
+	    CommandLineArgs="%(UnitTestAssemblies.FullPath) /xml=%(UnitTestAssemblies.Filename)-nunit-results.xml /labels /nologo"
+	    CommandLineExe="$(NUnitExe)"
+	    CoverageFile="%(UnitTestAssemblies.Filename).Coverage.xml"     
+	    LogFile="$(NCoverLog)"
+	    WorkingDirectory="$(NUnitWorkingDir)"
+		Assemblies="@(BuiltAssemblies)"
+		ContinueOnError="True"
+	/>
+    <Message Text="***     Run code coverage report     ***" />
+	
+	<NCoverExplorer
+	    ProjectName="$(CCNetProject)"
+	    ReportType="ModuleNamespaceSummary"
+	    OutputDir="$(CCNetArtifactDirectory)"
+	    XmlReportName="ncover-results.xml"
+	    ShowExcluded="False"
+	    SatisfactoryCoverage="80"
+		MinimumCoverage="10"
+		FailMinimum="False"
+	    CoverageFiles="@(NCoverCoverageFiles)"
+	    Sort="CoveragePercentageAscending"
+	    ToolPath="$(NCoverExplorerDir)"
+		Filter="None"
+		ContinueOnError="True"
+	/>
+	<!--
+	<Exec ContinueOnError="true" Command="$(NCoverExe) //x $(NCoverOutput) //h $(NCoverHtml) //l $(NCoverLog) //w $(NUnitWorkingDir) $(NUnitExe) $(NUnitArgs) /xml=$(NUnitOutput) @(UnitTestAssemblies, ' ')"
+        WorkingDirectory="$(NUnitWorkingDir)"
+        Condition="Exists('$(SourceDir)\Slyce.IntelliMerge.UnitTesting\bin\Debug\Slyce.IntelliMerge.UnitTesting.dll')">
+      <Output TaskParameter="ExitCode" ItemName="ExitCodes"/>
+    </Exec>
+    <Error Text="UnitTest error occurred" Condition="'%(ExitCodes.Identity)'>0"/> -->
+	<!--
+    <NCoverExplorer ToolPath="$(NCoverExplorerDir)"
+        ProjectName="$(CCNetProject)" 
+        ReportType="ModuleNamespaceSummary"
+        Sort="CoveragePercentageAscending"
+        Filter="None"
+        OutputDir="$(CCNetArtifactDirectory)"
+        XmlReportName="ncover-results.xml"
+        CoverageFiles="$(CCNetArtifactDirectory)\ncover-output.xml"
+        Exclusions="$(CoverageExclusions)"
+        ShowExcluded="False"
+        SatisfactoryCoverage="80"
+        MinimumCoverage="10"
+        FailMinimum="False"
+    />
+-->
+  </Target>
+
+</Project>

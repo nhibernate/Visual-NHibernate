@@ -1,0 +1,1158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchAngel.Providers.EntityModel</RootNamespace>
+    <AssemblyName>ArchAngel.Providers.EntityModel</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ArchAngel.Providers.EntityModel.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ArchAngel.Providers.EntityModel.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>bin\Debug\ArchAngel.Providers.Database.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\ArchAngel.Providers.Database.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.103.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.283.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.103.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\3rd_Party_Libs\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.81.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Universal, Version=3.10.12.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Devart.Data.Universal.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.7.0.4, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=2.5.2.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Inflector.Net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Inflector.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NHibernate">
+      <HintPath>..\3rd_Party_Libs\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\3rd_Party_Libs\System.Data.SqlServerCe.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\DatabaseLayer\DatabaseLoader.cs" />
+    <Compile Include="Controller\DatabaseLayer\DatabaseLoaderException.cs" />
+    <Compile Include="Controller\DatabaseLayer\DatabaseMergeResult.cs" />
+    <Compile Include="Controller\DatabaseLayer\DatabaseProcessor.cs" />
+    <Compile Include="Controller\DatabaseLayer\DatabaseTypes.cs" />
+    <Compile Include="Controller\DatabaseLayer\Exceptions.cs" />
+    <Compile Include="Controller\DatabaseLayer\FirebirdDatabaseConnector.cs" />
+    <Compile Include="Controller\DatabaseLayer\FirebirdDatabaseLoader.cs" />
+    <Compile Include="Controller\DatabaseLayer\IDatabaseConnector.cs" />
+    <Compile Include="Controller\DatabaseLayer\IDatabaseLoader.cs" />
+    <Compile Include="Controller\DatabaseLayer\MySQLDatabaseConnector.cs" />
+    <Compile Include="Controller\DatabaseLayer\MySQLDatabaseLoader.cs" />
+    <Compile Include="Controller\DatabaseLayer\OracleDatabaseConnector.cs" />
+    <Compile Include="Controller\DatabaseLayer\OracleDatabaseLoader.cs" />
+    <Compile Include="Controller\DatabaseLayer\PostgreSQLDatabaseConnector.cs" />
+    <Compile Include="Controller\DatabaseLayer\PostgreSQLDatabaseLoader.cs" />
+    <Compile Include="Controller\DatabaseLayer\SchemaData.cs" />
+    <Compile Include="Controller\DatabaseLayer\SQLiteDatabaseConnector.cs" />
+    <Compile Include="Controller\DatabaseLayer\SQLiteDatabaseLoader.cs" />
+    <Compile Include="Controller\DatabaseLayer\SQLiteParsing\SQLiteLexer.cs" />
+    <Compile Include="Controller\DatabaseLayer\SQLiteParsing\SQLiteParser.cs" />
+    <Compile Include="Controller\DatabaseLayer\SqlServerExpressDatabaseConnector.cs" />
+    <Compile Include="Controller\DatabaseLayer\SqlServerExpressDatabaseLoader.cs" />
+    <Compile Include="Controller\MappingLayer\MappingProcessor.cs" />
+    <Compile Include="Controller\DatabaseLayer\MergeOperations.cs" />
+    <Compile Include="Controller\DatabaseLayer\SQLCEDatabaseConnector.cs" />
+    <Compile Include="Controller\DatabaseLayer\SQLCEDatabaseLoader.cs" />
+    <Compile Include="Controller\DatabaseLayer\SQLServer2005DatabaseConnector.cs" />
+    <Compile Include="Controller\DatabaseLayer\SQLServer2005DatabaseLoader.cs" />
+    <Compile Include="Controller\DatabaseLayer\TableProcessor.cs" />
+    <Compile Include="Controller\Validation\ExceptionValidationRule.cs" />
+    <Compile Include="Controller\Validation\Rules\AllColumnsHaveADataTypeRule.cs" />
+    <Compile Include="Controller\Validation\Rules\AllEntitiesHaveAPrimaryKeyRule.cs" />
+    <Compile Include="Controller\Validation\Rules\AllPrimaryColumnsUsedRule.cs" />
+    <Compile Include="Controller\Validation\Rules\AllPropertiesHaveADataTypeRule.cs" />
+    <Compile Include="Controller\Validation\Modules\ValidateModelModule.cs" />
+    <Compile Include="Controller\Validation\Rules\AllReferencesHaveBackingDataRule.cs" />
+    <Compile Include="Controller\Validation\Rules\AllRelationshipsHaveValidKeys.cs" />
+    <Compile Include="Controller\Validation\Rules\CheckAllPropertiesMappedRule.cs" />
+    <Compile Include="Controller\Validation\Rules\CheckEntityComponentsRule.cs" />
+    <Compile Include="Controller\Validation\Rules\CheckEntityInheritanceForTablePerConcreteClassRule.cs" />
+    <Compile Include="Controller\Validation\Rules\CheckEntityInheritanceForTablePerHierarchyRule.cs" />
+    <Compile Include="Controller\Validation\Rules\CheckEntityInheritanceForTablePerSubclassRule.cs" />
+    <Compile Include="Controller\Validation\Rules\AllComponentPropertiesHaveADataTypeRule.cs" />
+    <Compile Include="Controller\Validation\Rules\CheckInheritanceClassesAreNotRelated.cs" />
+    <Compile Include="Controller\Validation\Rules\DatabaseNamingRule.cs" />
+    <Compile Include="Controller\Validation\Rules\EntityNamingRule.cs" />
+    <Compile Include="Controller\Validation\Modules\OneToOneDatabaseMappingModule.cs" />
+    <Compile Include="Controller\Validation\Interfaces.cs" />
+    <Compile Include="Controller\Validation\ValidationResult.cs" />
+    <Compile Include="Controller\Validation\ValidationRulesEngine.cs" />
+    <Compile Include="Helper\ConnectionStringHelper.cs" />
+    <Compile Include="Model\Attributes.cs" />
+    <Compile Include="Model\EntityLayer\Cache.cs" />
+    <Compile Include="Model\EntityLayer\ComponentSpecification.cs" />
+    <Compile Include="Model\EntityLayer\Discriminator.cs" />
+    <Compile Include="Model\EntityLayer\EntityGenerator.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\Component.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\ComponentSpecification.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\Computation.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\Entity.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\EntityKey.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\EntitySet.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\IDiscriminator.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\IEntityGenerator.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\IPropertyContainer.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\Property.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\Reference.cs" />
+    <Compile Include="Model\EntityLayer\ValidationOptions.cs" />
+    <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\EventAggregator.cs" />
+    <Compile Include="Model\IItemContainer.cs" />
+    <Compile Include="Model\DatabaseLayer\Interfaces.cs" />
+    <Compile Include="Model\EntityLayer\EntitySetDeserialisationScheme.cs" />
+    <Compile Include="Model\EntityLayer\EntitySetSerialisationScheme.cs" />
+    <Compile Include="Model\DatabaseLayerExtensions.cs" />
+    <Compile Include="Model\EntityLayerExtensions.cs" />
+    <Compile Include="Model\MappingLayer\ComponentMapping.cs" />
+    <Compile Include="Model\MappingLayer\FluentInterfaces.cs" />
+    <Compile Include="Model\MappingLayer\MappingCache.cs" />
+    <Compile Include="Model\MappingLayer\MappingSet.cs" />
+    <Compile Include="Model\MappingLayer\MappingSetDeserialisationScheme.cs" />
+    <Compile Include="Model\MappingLayer\MappingSetSerialisationScheme.cs" />
+    <Compile Include="Model\MappingLayer\RelationshipReferenceMapping.cs" />
+    <Compile Include="Model\MappingLayer\TableReferenceMapping.cs" />
+    <Compile Include="Model\MappingLayerExtensions.cs" />
+    <Compile Include="Model\ModelObject.cs" />
+    <Compile Include="Model\VirtualPropertySerialisation.cs" />
+    <Compile Include="Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings1.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsEngine.cs" />
+    <Compile Include="UI\Editors\ComponentDetailsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ComponentDetailsEditor.Designer.cs">
+      <DependentUpon>ComponentDetailsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\ComponentMappingDiagram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ComponentMappingDiagram.Designer.cs">
+      <DependentUpon>ComponentMappingDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\ComponentPropertiesEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ComponentPropertiesEditor.Designer.cs">
+      <DependentUpon>ComponentPropertiesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\DetailsEditorHelper.cs" />
+    <Compile Include="UI\Editors\EntityDetailsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\EntityDetailsEditor.Designer.cs">
+      <DependentUpon>EntityDetailsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\EntityHybridDiagram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\EntityHybridDiagram.Designer.cs">
+      <DependentUpon>EntityHybridDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\EntityInheritanceDiagram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\EntityInheritanceDiagram.Designer.cs">
+      <DependentUpon>EntityInheritanceDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\EntityMappingDiagram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\EntityMappingDiagram.Designer.cs">
+      <DependentUpon>EntityMappingDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\EntityPropertiesEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\EntityPropertiesEditor.Designer.cs">
+      <DependentUpon>EntityPropertiesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\TableDetailsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\TableDetailsEditor.Designer.cs">
+      <DependentUpon>TableDetailsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\TableKeysEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\TableKeysEditor.Designer.cs">
+      <DependentUpon>TableKeysEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\TableColumnsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\TableColumnsEditor.Designer.cs">
+      <DependentUpon>TableColumnsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\TableMappingDiagram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\TableMappingDiagram.Designer.cs">
+      <DependentUpon>TableMappingDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\DatabaseChanges.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\DatabaseChanges.Designer.cs">
+      <DependentUpon>DatabaseChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\DatabaseSynchroEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\DatabaseSynchroEditor.Designer.cs">
+      <DependentUpon>DatabaseSynchroEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormAttributeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormAttributeEditor.Designer.cs">
+      <DependentUpon>FormAttributeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormComponentMappingEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormComponentMappingEditor.Designer.cs">
+      <DependentUpon>FormComponentMappingEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormEntityMappingEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormEntityMappingEditor.Designer.cs">
+      <DependentUpon>FormEntityMappingEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSelectExistingEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSelectExistingEntity.Designer.cs">
+      <DependentUpon>FormSelectExistingEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSelectSchemas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSelectSchemas.Designer.cs">
+      <DependentUpon>FormSelectSchemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSubClassDiscriminator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSubClassDiscriminator.Designer.cs">
+      <DependentUpon>FormSubClassDiscriminator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\InheritanceHierarchy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\InheritanceHierarchy.Designer.cs">
+      <DependentUpon>InheritanceHierarchy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormInheritanceHierarchy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormInheritanceHierarchy.Designer.cs">
+      <DependentUpon>FormInheritanceHierarchy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormInheritanceInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormInheritanceInfo.Designer.cs">
+      <DependentUpon>FormInheritanceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormRefactorToComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormRefactorToComponent.Designer.cs">
+      <DependentUpon>FormRefactorToComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormReferenceEditor2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormReferenceEditor2.Designer.cs">
+      <DependentUpon>FormReferenceEditor2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormRelationshipEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormRelationshipEditor.Designer.cs">
+      <DependentUpon>FormRelationshipEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSelectEntityForInheritance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSelectEntityForInheritance.Designer.cs">
+      <DependentUpon>FormSelectEntityForInheritance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSelectTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormSelectTable.Designer.cs">
+      <DependentUpon>FormSelectTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormTableRelationshipEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\FormTableRelationshipEditor.Designer.cs">
+      <DependentUpon>FormTableRelationshipEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\ModelChanges.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\ModelChanges.Designer.cs">
+      <DependentUpon>ModelChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\NamespaceInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\NamespaceInput.Designer.cs">
+      <DependentUpon>NamespaceInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\SynchroGrid\SynchroCanvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\SynchroGrid\SynchroCanvas.Designer.cs">
+      <DependentUpon>SynchroCanvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Editors\UserControls\SynchroGrid\TableRow.cs" />
+    <Compile Include="UI\Presenters\DatabasePresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Presenters\DetailedDBMergeResultPresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Presenters\FirebirdHelper.cs" />
+    <Compile Include="UI\Presenters\IDatabaseFormFiller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Presenters\IDBMergeResultProcessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Presenters\MySQLHelper.cs" />
+    <Compile Include="UI\Presenters\OracleHelper.cs" />
+    <Compile Include="UI\Presenters\PostgreSQLHelper.cs" />
+    <Compile Include="UI\Presenters\PresenterBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Presenters\SimpleDBMergeResultPresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Presenters\SQLiteHelper.cs" />
+    <Compile Include="UI\Presenters\SqlServer2005Helper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\Presenters\SqlServerExpressHelper.cs" />
+    <Compile Include="UI\PropertyGrids\EntityForm2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\EntityForm2.Designer.cs">
+      <DependentUpon>EntityForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormDatabaseUpdateScripts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormDatabaseUpdateScripts.Designer.cs">
+      <DependentUpon>FormDatabaseUpdateScripts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormPrefixes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormPrefixes.Designer.cs">
+      <DependentUpon>FormPrefixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\ValidationPropertyGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\ValidationPropertyGrid.Designer.cs">
+      <DependentUpon>ValidationPropertyGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Wizards\ConvertKeyToComponentModelInformation.cs" />
+    <Compile Include="UI\Wizards\FormConvertKeyToComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Wizards\FormConvertKeyToComponent.Designer.cs">
+      <DependentUpon>FormConvertKeyToComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSelect.Designer.cs">
+      <DependentUpon>FormSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormDetailedDatabaseChanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormDetailedDatabaseChanges.Designer.cs">
+      <DependentUpon>FormDetailedDatabaseChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormSelectColumn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSelectColumn.Designer.cs">
+      <DependentUpon>FormSelectColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormSelectEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSelectEntity.Designer.cs">
+      <DependentUpon>FormSelectEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\EditModel.Designer.cs">
+      <DependentUpon>EditModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormSelectComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSelectComponent.Designer.cs">
+      <DependentUpon>FormSelectComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IUserInteractor.cs" />
+    <Compile Include="UI\LoadDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoadDatabaseForm.Designer.cs">
+      <DependentUpon>LoadDatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormCreateNewRelationship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormCreateNewRelationship.Designer.cs">
+      <DependentUpon>FormCreateNewRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormComponent.Designer.cs">
+      <DependentUpon>FormComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormComponentSpecification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormComponentSpecification.Designer.cs">
+      <DependentUpon>FormComponentSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormCreateOneToOneMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormCreateOneToOneMapping.Designer.cs">
+      <DependentUpon>FormCreateOneToOneMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormEntityKey.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormEntityKey.Designer.cs">
+      <DependentUpon>FormEntityKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ucDatabaseInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ucDatabaseInformation.Designer.cs">
+      <DependentUpon>ucDatabaseInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\VirtualPropertyGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\VirtualPropertyGrid.Designer.cs">
+      <DependentUpon>VirtualPropertyGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ComboTreeGridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ComboTreeGridControl.Designer.cs">
+      <DependentUpon>ComboTreeGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormCollectionAdapter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormColumn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormColumn.Designer.cs">
+      <DependentUpon>FormColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormEntity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormEntity.Designer.cs">
+      <DependentUpon>FormEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormItemCollection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormItemCollection.Designer.cs">
+      <DependentUpon>FormItemCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormDatabase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormDatabase.Designer.cs">
+      <DependentUpon>FormDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormDatabaseRefreshResults.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormDatabaseRefreshResults.Designer.cs">
+      <DependentUpon>FormDatabaseRefreshResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormIndex.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormIndex.Designer.cs">
+      <DependentUpon>FormIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormKey.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormKey.Designer.cs">
+      <DependentUpon>FormKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormDatabaseTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormDatabaseTable.Designer.cs">
+      <DependentUpon>FormDatabaseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormMapping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormMapping.Designer.cs">
+      <DependentUpon>FormMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormProperty.Designer.cs">
+      <DependentUpon>FormProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\Interfaces.cs">
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormRelationship.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormRelationship.Designer.cs">
+      <DependentUpon>FormRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\DatabaseConstant.cs" />
+    <Compile Include="Helper\SQLServer.cs" />
+    <Compile Include="Model\DatabaseLayer\Column.cs" />
+    <Compile Include="Model\DatabaseLayer\Database.cs" />
+    <Compile Include="Model\DatabaseLayer\DatabaseDefinedAttribute.cs" />
+    <Compile Include="Model\DatabaseLayer\DatabaseDeserialisationScheme.cs" />
+    <Compile Include="Model\DatabaseLayer\DatabaseSerialisationScheme.cs" />
+    <Compile Include="Model\EntityLayer\Entity.cs" />
+    <Compile Include="Model\EntityLayer\EntitySet.cs" />
+    <Compile Include="Model\EntityLayer\Interfaces\ComponentProperty.cs" />
+    <Compile Include="Model\EntityLayer\Key.cs" />
+    <Compile Include="Model\EntityLayer\Property.cs" />
+    <Compile Include="Model\EntityLayer\Reference.cs" />
+    <Compile Include="Model\DatabaseLayer\Index.cs" />
+    <Compile Include="Model\DatabaseLayer\Key.cs" />
+    <Compile Include="Model\DatabaseLayer\EntityObject.cs" />
+    <Compile Include="Controller\MappingLayer\EntityProcessor.cs" />
+    <Compile Include="Model\MappingLayer\Interfaces.cs" />
+    <Compile Include="Model\MappingLayer\MappingImpl.cs" />
+    <Compile Include="Model\DatabaseLayer\Relationship.cs" />
+    <Compile Include="Model\DatabaseLayer\Table.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderInfo.cs" />
+    <Compile Include="Model\DatabaseLayer\ScriptBase.cs" />
+    <Compile Include="UI\PropertyGrids\FormReference.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrids\FormReference.Designer.cs">
+      <DependentUpon>FormReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ValidationFailureView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ValidationFailureView.Designer.cs">
+      <DependentUpon>ValidationFailureView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Wizards\ConvertKeyToComponentResults.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Model\DatabaseLayer\Model2ClassDiagram.cd" />
+    <None Include="slyce_strong_name_key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Helper\DataTypeSQL.txt" />
+    <EmbeddedResource Include="Helper\ReservedWordCSharp.txt" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\EditModel.resx">
+      <DependentUpon>EditModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ComboTreeGridControl.resx">
+      <DependentUpon>ComboTreeGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\EntityInheritanceDiagram.resx">
+      <DependentUpon>EntityInheritanceDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\DatabaseChanges.resx">
+      <DependentUpon>DatabaseChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\FormSelectExistingEntity.resx">
+      <DependentUpon>FormSelectExistingEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\FormSelectSchemas.resx">
+      <DependentUpon>FormSelectSchemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\FormSubClassDiscriminator.resx">
+      <DependentUpon>FormSubClassDiscriminator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\InheritanceHierarchy.resx">
+      <DependentUpon>InheritanceHierarchy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\FormInheritanceHierarchy.resx">
+      <DependentUpon>FormInheritanceHierarchy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\FormInheritanceInfo.resx">
+      <DependentUpon>FormInheritanceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\ModelChanges.resx">
+      <DependentUpon>ModelChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormColumn.resx">
+      <DependentUpon>FormColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormDatabaseUpdateScripts.resx">
+      <DependentUpon>FormDatabaseUpdateScripts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormItemCollection.resx">
+      <DependentUpon>FormItemCollection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormDatabase.resx">
+      <DependentUpon>FormDatabase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormDatabaseRefreshResults.resx">
+      <DependentUpon>FormDatabaseRefreshResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormIndex.resx">
+      <DependentUpon>FormIndex.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormKey.resx">
+      <DependentUpon>FormKey.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormDatabaseTable.resx">
+      <DependentUpon>FormDatabaseTable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormRelationship.resx">
+      <DependentUpon>FormRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\reset.png" />
+    <EmbeddedResource Include="Resources\refresh_database.ico" />
+    <EmbeddedResource Include="Resources\refresh_database.png" />
+    <EmbeddedResource Include="UI\PropertyGrids\FormReference.resx">
+      <DependentUpon>FormReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <Resource Include="Resources\Column.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
+      <Project>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</Project>
+      <Name>ArchAngel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj">
+      <Project>{AA16CFFA-3659-4F91-9F07-C22360882B39}</Project>
+      <Name>ArchAngel.Providers.CodeProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ShapeStyles.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormEntity.resx">
+      <DependentUpon>FormEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormMapping.resx">
+      <DependentUpon>FormMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormProperty.resx">
+      <DependentUpon>FormProperty.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AddDB_32.png" />
+    <EmbeddedResource Include="Resources\doc_add_32.png" />
+    <EmbeddedResource Include="Resources\field_insert_b_16.png" />
+    <EmbeddedResource Include="Resources\folder_add_32.png" />
+    <EmbeddedResource Include="Resources\OneToOne_32.png" />
+    <EmbeddedResource Include="Resources\treenode_add_32.png" />
+    <EmbeddedResource Include="Resources\treenode_delete_32.png" />
+    <EmbeddedResource Include="UI\PropertyGrids\VirtualPropertyGrid.resx">
+      <DependentUpon>VirtualPropertyGrid.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FunctionInfo.xml" />
+    <EmbeddedResource Include="UI\PropertyGrids\FormCreateOneToOneMapping.resx">
+      <DependentUpon>FormCreateOneToOneMapping.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\edit_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\table_to_entity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\RemoveEntity_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AddReference_32.png" />
+    <EmbeddedResource Include="UI\FormSelectComponent.resx">
+      <DependentUpon>FormSelectComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormComponent.resx">
+      <DependentUpon>FormComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormComponentSpecification.resx">
+      <DependentUpon>FormComponentSpecification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ucDatabaseInformation.resx">
+      <DependentUpon>ucDatabaseInformation.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_a_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_16_h1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\flow_chart_32_h.png" />
+    <EmbeddedResource Include="Resources\insert_32_h.png" />
+    <EmbeddedResource Include="UI\FormSelectColumn.resx">
+      <DependentUpon>FormSelectColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormSelectEntity.resx">
+      <DependentUpon>FormSelectEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormCreateNewRelationship.resx">
+      <DependentUpon>FormCreateNewRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\licenses.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\field_insert_b_161.png" />
+    <None Include="Settings1.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\add_entity_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Remove_Reference_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\remove_32_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Add_Component_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Remove_Component_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Add_Table_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Remove_Table_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Add_Relationship_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Remove_Relationship_32.png" />
+    <EmbeddedResource Include="UI\PropertyGrids\ValidationPropertyGrid.resx">
+      <DependentUpon>ValidationPropertyGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Wizards\FormConvertKeyToComponent.resx">
+      <DependentUpon>FormConvertKeyToComponent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormSelect.resx">
+      <DependentUpon>FormSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormDetailedDatabaseChanges.resx">
+      <DependentUpon>FormDetailedDatabaseChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoadDatabaseForm.resx">
+      <DependentUpon>LoadDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\FormEntityKey.resx">
+      <DependentUpon>FormEntityKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ValidationFailureView.resx">
+      <DependentUpon>ValidationFailureView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ColumnInherited.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\tick_32.png" />
+    <EmbeddedResource Include="Resources\tick_32_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\import_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\transfer_data_32.png" />
+    <EmbeddedResource Include="UI\Editors\EntityMappingDiagram.resx">
+      <DependentUpon>EntityMappingDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\EntityPropertiesEditor.resx">
+      <DependentUpon>EntityPropertiesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\FormReferenceEditor2.resx">
+      <DependentUpon>FormReferenceEditor2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\FormSelectEntityForInheritance.resx">
+      <DependentUpon>FormSelectEntityForInheritance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrids\EntityForm2.resx">
+      <DependentUpon>EntityForm2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\EntityDetailsEditor.resx">
+      <DependentUpon>EntityDetailsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\EntityHybridDiagram.resx">
+      <DependentUpon>EntityHybridDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\Resources\delete_x_16.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\filter16.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\filter16_d.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\Filter2HS.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\plus_16.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\FormSelectTable.resx">
+      <DependentUpon>FormSelectTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\join_video24.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\split_video24.png" />
+    <EmbeddedResource Include="UI\Editors\TableDetailsEditor.resx">
+      <DependentUpon>TableDetailsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\TableKeysEditor.resx">
+      <DependentUpon>TableKeysEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\TableColumnsEditor.resx">
+      <DependentUpon>TableColumnsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\FormRelationshipEditor.resx">
+      <DependentUpon>FormRelationshipEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\about_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\TableHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\square_light_blue_16.png" />
+    <EmbeddedResource Include="UI\Editors\TableMappingDiagram.resx">
+      <DependentUpon>TableMappingDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\delete_x_16_h.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\plus_16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\filter16_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\tree_24.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\tree_24_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\ComponentDetailsEditor.resx">
+      <DependentUpon>ComponentDetailsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ComponentMappingDiagram.resx">
+      <DependentUpon>ComponentMappingDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ComponentPropertiesEditor.resx">
+      <DependentUpon>ComponentPropertiesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\Resources\view24.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\view24_d.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\FormComponentMappingEditor.resx">
+      <DependentUpon>FormComponentMappingEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\insert_16.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\insert_16_h.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\FormEntityMappingEditor.resx">
+      <DependentUpon>FormEntityMappingEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\undo_square_16.png" />
+    <EmbeddedResource Include="UI\Editors\Resources\undo_square_16_d.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\FormTableRelationshipEditor.resx">
+      <DependentUpon>FormTableRelationshipEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\Exit2.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\FormAttributeEditor.resx">
+      <DependentUpon>FormAttributeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\NamespaceInput.resx">
+      <DependentUpon>NamespaceInput.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\flow_chart_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\doc_arrow_right_green_16.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\DatabaseSynchroEditor.resx">
+      <DependentUpon>DatabaseSynchroEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\SynchroCanvas.resx">
+      <DependentUpon>SynchroCanvas.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\UserControls\FormRefactorToComponent.resx">
+      <DependentUpon>FormRefactorToComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\Resources\arrow_left_light_green_16.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\Resources\arrow_left_light_green_24.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\Resources\arrow_left_orange_16.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\Resources\arrow_left_orange_24.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\Resources\arrow_right_light_green_16.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\Resources\arrow_right_light_green_24.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\Resources\arrow_right_orange_16.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\Resources\arrow_right_orange_24.png" />
+    <EmbeddedResource Include="UI\Editors\UserControls\SynchroGrid\Resources\stop_16.png" />
+    <EmbeddedResource Include="UI\PropertyGrids\FormPrefixes.resx">
+      <DependentUpon>FormPrefixes.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\tick_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\stop_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Editors\Resources\print_preview_16.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,3 @@
+ArchAngel 1.mia
+C:\Projects\SVN\ArchAngel\trunk
+D:\Contracting\ArchAngelRoot\trunk

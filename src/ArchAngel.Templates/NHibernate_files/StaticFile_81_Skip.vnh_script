@@ -1,0 +1,2 @@
+if (Project.Settings.NHibernateVersion != ArchAngel.NHibernateHelper.NHibernateVersions.v3)
+	SkipThisFile = true;

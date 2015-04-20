@@ -1,0 +1,234 @@
+<%
+// Check if we should overwrite the existing file or if this entity's class already exists in an existing file.
+if (Project.OverwriteFiles || entity.MappedClass == null)
+{
+	// This is the first time this file is being generated.
+	// No existing file was found on the hard-drive so no need to weave code
+	// to preserve custom edits that were made after the previous file-generation.
+%>using System;
+using System.Collections.Generic;
+
+namespace <%=Project.Settings.Namespace%>.Model
+{
+	[Serializable]
+	public <%WriteIf(entity.IsAbstract, "abstract ")%><%WriteIf(Project.Settings.GeneratePartialClasses, "partial ")%>class <%=entity.Name%><% WriteIf(entity.IsInherited, " : " + entity.ParentName)%>
+	{
+		public <%=entity.Name%>()
+		{<%
+		foreach (Reference reference in entity.References)
+		{
+			if (reference.ReferenceType == ReferenceTypes.ManyToMany ||
+				reference.ReferenceType == ReferenceTypes.ManyToOne)
+			{
+				if (reference.CollectionType == CollectionTypes.Set ||
+					reference.CollectionType == CollectionTypes.IDBag)
+				{%>
+			<%=reference.Name%> = new Iesi.Collections.Generic.HashedSet<<%=reference.ToEntity.Name%>>();<%
+				}
+				else if (reference.CollectionType == CollectionTypes.List ||
+					reference.CollectionType == CollectionTypes.Bag)
+				{%>
+			<%=reference.Name%> = new List<<%=reference.ToEntity.Name%>>();<%
+				}
+				else if (reference.CollectionType == CollectionTypes.Map)
+				{%>
+			<%=reference.Name%> = new Dictionary<<%=reference.ToKeyColumns[0].Type%>, <%=reference.ToEntity.Name%>>();<%
+				}
+			}
+		}%>		
+		}<% 
+		/* START Property Definitions */
+		foreach (Property property in entity.Properties.Where(p => !p.IsInherited))
+		{%>
+		public <%WriteIf(property.IsInherited, "override", "virtual")%> <%=property.Type%> <%=property.Name%>
+		{
+			get;
+			<%WriteIf(property.IsSetterPrivate, "private ")%>set;
+		}<%
+		}
+		/* END Property Definitions */
+		
+		/* Start Reference Definitions */
+		foreach (Reference reference in entity.References)
+		{%>
+		public virtual <%=reference.Type%> <%=reference.Name%>
+		{
+			get;
+			<%WriteIf(reference.IsSetterPrivate, "private ")%>set;
+		}<%
+		}
+		/* END Reference Definitions */
+		
+		/* START Component Definitions */
+		foreach (var component in entity.Components)
+		{%>
+		public virtual <%=component.Type%> <%=component.Name%>
+		{
+			get;
+			<%WriteIf(component.IsSetterPrivate, "private ")%>set;
+		}<%
+		}
+		/* END Component Definitions */
+		
+ 		if (entity.Settings.ImplementEqualityMembers)
+		{%>
+		
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(this, obj))
+				return true;
+				
+			return Equals(obj as <%=entity.Name%>);
+		}
+		
+		public virtual bool Equals(<%=entity.Name%> obj)
+		{
+			if (obj == null) return false;
+<%			foreach(var property in entity.Properties)
+			{%>
+			if (Equals(<%=property.Name%>, obj.<%=property.Name%>) == false) return false;<%
+			}%>
+			return true;
+		}
+		
+		public override int GetHashCode()
+		{
+			int result = 1;
+<%			foreach(var property in entity.Properties)
+			{
+				if (property.IsNullable)
+				{%>
+			result = (result * 397) ^ (<%=property.Name%> != null ? <%=property.Name%>.GetHashCode() : 0);<%
+				}
+				else
+				{%>
+			result = (result * 397) ^ <%=property.Name%>.GetHashCode();<%
+				}
+			} %>
+			return result;
+		}<%
+		}%>
+	}
+}<%
+}
+else
+{
+	/* The file already exists, so we just weave the required properties etc. into
+	 * the existing source-code, without overwriting existing code.
+	 */
+	
+	// Ensure the source code of the existing class has the [Serializable] attribute
+	entity.MappedClass.EnsureAttributeExists(new SourceAttribute() { Name = "Serializable" });
+	
+	// Ensure the source code of the existing class has the required properties
+	foreach (Property property in entity.Properties.Where(p => !p.IsInherited))
+	{
+		List<string> modifiers = new List<string>();
+		modifiers.Add("public");
+		modifiers.Add(property.IsInherited ? "override" : "virtual");
+		string setAccessorModifier = property.IsSetterPrivate ? "private" : "";
+		
+		SourceProperty sourceProperty = new SourceProperty()
+			{ 
+				Name = property.Name, 
+				Type = property.Type,
+				PreviousNames = property.PreviousNames,
+				Modifiers = modifiers,
+				GetAccessor = new SourceProperty.Accessor() { Modifier = "", Body = "" },
+				SetAccessor = new SourceProperty.Accessor() { Modifier = setAccessorModifier, Body = "" }
+			};
+		entity.MappedClass.EnsurePropertyExists(sourceProperty);
+	}
+	foreach (Reference reference in entity.References)
+	{
+		List<string> modifiers = new List<string>();
+		modifiers.Add("public");
+		modifiers.Add("virtual");
+		string setAccessorModifier = reference.IsSetterPrivate ? "private" : "";
+		
+		SourceProperty sourceProperty = new SourceProperty()
+			{ 
+				Name = reference.Name, 
+				Type = reference.Type,
+				PreviousNames = reference.PreviousNames,
+				Modifiers = modifiers,
+				GetAccessor = new SourceProperty.Accessor() { Modifier = "", Body = "" },
+				SetAccessor = new SourceProperty.Accessor() { Modifier = setAccessorModifier, Body = "" }
+			};
+		entity.MappedClass.EnsurePropertyExists(sourceProperty);
+	}
+	foreach (var component in entity.Components)
+	{
+		List<string> modifiers = new List<string>();
+		modifiers.Add("public");
+		modifiers.Add("virtual");
+		string setAccessorModifier = component.IsSetterPrivate ? "private" : "";
+		
+		SourceProperty sourceProperty = new SourceProperty()
+			{ 
+				Name = component.Name, 
+				Type = component.Type,
+				Modifiers = modifiers,
+				GetAccessor = new SourceProperty.Accessor() { Modifier = "", Body = "" },
+				SetAccessor = new SourceProperty.Accessor() { Modifier = setAccessorModifier, Body = "" }
+			};
+		entity.MappedClass.EnsurePropertyExists(sourceProperty);
+	}
+	// Equals function
+	List<string> functionModifiers = new List<string>();
+	functionModifiers.Add("public");
+	functionModifiers.Add("virtual");
+	
+	SourceFunction sourceFunction = new SourceFunction()
+		{ 
+			Name = "Equals", 
+			ReturnType = "bool",
+			Modifiers = functionModifiers
+		};
+	sourceFunction.AddParameter("obj", entity.Name);
+	StringBuilder body = new StringBuilder();
+	body.AppendLine("\t\t{");
+	body.AppendLine("\t\t\tif (obj == null) return false;");
+	body.AppendLine();
+	
+	foreach(var property in entity.Properties)
+		body.AppendLine(string.Format("\t\t\tif (Equals({0}, obj.{0}) == false) return false;", property.Name));
+	
+	body.AppendLine("\t\t\treturn true;");
+	body.AppendLine("\t\t}");
+	sourceFunction.Body = body.ToString();
+	entity.MappedClass.EnsureFunctionExists(sourceFunction);
+	
+	// GetHashCode function
+	functionModifiers = new List<string>();
+	functionModifiers.Add("public");
+	functionModifiers.Add("override");
+		
+	sourceFunction = new SourceFunction()
+		{ 
+			Name = "GetHashCode", 
+			ReturnType = "int",
+			Modifiers = functionModifiers
+		};
+	body = new StringBuilder();
+	body.AppendLine("\t\t{");
+	body.AppendLine("\t\t\tint result = 1;");
+	body.AppendLine();
+	
+	foreach(var property in entity.Properties)
+	{
+		if (property.IsNullable)
+			body.AppendLine(string.Format("\t\t\tresult = (result * 397) ^ ({0} != null ? {0}.GetHashCode() : 0);", property.Name));
+		else
+			body.AppendLine(string.Format("\t\t\tresult = (result * 397) ^ {0}.GetHashCode();", property.Name));
+	}
+	body.AppendLine("\t\t\treturn result;");
+	body.AppendLine("\t\t}");
+	sourceFunction.Body = body.ToString();
+	entity.MappedClass.EnsureFunctionExists(sourceFunction);
+		
+	string existingFilePath;
+	string mergedSourceCode = Helper.GetMergedSourceCodeForExistingFile(entity, out existingFilePath);
+	CurrentFilePath = existingFilePath;
+	return mergedSourceCode;
+}

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="Test" assembly="Test" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="BasicClass1" table="`Table1`">
+		<id name="ID" access="property" column="`ID`" />
+		<set name="Class2s" table="`Class1Class2`" cascade="save-update">
+			<key column="`Class1ID`" />
+			<many-to-many class="BasicClass2" column="`Class2ID`" />
+		</set>
+	</class>
+	<class name="BasicClass2" table="`Table2`">
+		<id name="ID" access="property" column="`ID`" />
+		<set name="Class1s" table="`Class1Class2`" cascade="save-update">
+			<key column="`Class2ID`" />
+			<many-to-many class="BasicClass1" column="`Class1ID`" />
+		</set>
+	</class>
+</hibernate-mapping>

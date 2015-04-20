@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="Test" assembly="Test" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="ClassName" table="`TableName`">
+    <id name="ID" access="property" column="`ID`" />
+		<discriminator column="Discriminator" />
+		<property name="Speed" column="`Speed`" />
+    <property name="Name" column="`Name`" />
+		
+    <subclass name="Car" discriminator-value="C">
+      <key column="`ID`" />
+      <property name="Make" column="`Car_Make`"/>
+    </subclass>
+    <subclass name="Bike" discriminator-value="B">
+      <key column="`ID`" />
+      <property name="Model" column="`Bike_Model`"/>
+    </subclass>
+	</class>
+</hibernate-mapping>

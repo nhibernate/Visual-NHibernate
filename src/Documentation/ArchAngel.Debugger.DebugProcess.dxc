@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DocumentXComments Version="5.0" Moniker="..\ArchAngel.Debugger.DebugProcess\bin\Debug\ArchAngel.Debugger.DebugProcess.exe" DocType="dx.Net" Template="Visual Studio 2005 Style" ShowInherited="False" SpellLastCheckDateTime="30/12/1899 00:00:00" TreePath="ArchAngel.Debugger.DebugProcess" RelatedProject="Documentation.dxp" RelatedHSProject="" LoadIncludeFilter="" LoadExcludeFilter="" LoadPrivate="False" LoadOnDemand="True" LoadSourceComments="False">
+    <IgnoreWordList/>
+<UserData>
+    <InPlaceEditor>
+        <dtscrollpos>0</dtscrollpos>
+        <inheritedMembers>on</inheritedMembers>
+        <protectedMembers>on</protectedMembers>
+    </InPlaceEditor>
+</UserData>
+<c eid="ArchAngel.Debugger.DebugProcess" tid="##SUMMARY" q="" cd="39519.9465856481">This assembly contains the classes used in the Debug Process. It contains a single Main method, which is used to start up the Debug Process. Once started, it registers a CommandReceiver object with Remoting, and informs the ArchAngel process that it has started and where it can access the CommandReceiver. It continues to run until the ArchAngel process sends an ExitCommand, or the ArchAngel process exits. If the ArchAngel process exits unexpectedly, it will shutdown within the next 10 seconds.</c>
+<c eid="ArchAngel.Debugger.DebugProcess~ArchAngel.Debugger_namespace" tid="##SUMMARY" q="" cd="39519.9513194444">This namespace contains the class with the Main method that starts the Debug Process.</c>
+<c eid="ArchAngel.Debugger.DebugProcess~ArchAngel.Debugger.Common_namespace" tid="##SUMMARY" q="" cd="39519.9484143518">This namespace contains the common classes that are needed in both the Debug Process and the ArchAngel process. It holds the Command classes, various support classes for the commands, and the DebugProcessInfoService class, which is used to communicate the URI of the CommandReceiver back to ArchAngel.</c>
+    </DocumentXComments>

@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slyce.Common</RootNamespace>
+    <AssemblyName>Slyce.Common</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Slyce.Common.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Slyce.Common.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>bin\Debug\Slyce.Common.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\Slyce.Common.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=9.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Inflector.Net">
+      <HintPath>..\3rd_Party_Libs\Inflector.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.7.2.11, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AASettingsProvider.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="CLRTypes.cs" />
+    <Compile Include="CollectionChangedEvent.cs" />
+    <Compile Include="ColorUtility.cs" />
+    <Compile Include="ComboBoxItemEx.cs" />
+    <Compile Include="ConfigurationUtility.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\LineCaps.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\LinkLine.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\RawCategory.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\RawComponent.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\RawEntity.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\RawProperty.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\RawShape.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\RawTable.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\ReferenceLine.cs" />
+    <Compile Include="Controls\Diagramming\Shapes\ShapeCanvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Diagramming\Shapes\ShapeCanvas.Designer.cs">
+      <DependentUpon>ShapeCanvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Diagramming\Shapes\ShapeHelper.cs" />
+    <Compile Include="Controls\Diagramming\SlyceGrid\ColumnItem.cs" />
+    <Compile Include="Controls\Diagramming\SlyceGrid\DataGridViewComboBoxColumnEx.cs" />
+    <Compile Include="Controls\Diagramming\SlyceGrid\DataGridViewComboBoxCellEx.cs" />
+    <Compile Include="Controls\Diagramming\SlyceGrid\DataGridViewTextBoxCellEx.cs" />
+    <Compile Include="Controls\Diagramming\SlyceGrid\DataGridViewTextBoxColumnEx.cs" />
+    <Compile Include="Controls\Diagramming\SlyceGrid\DatGridViewGFH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Diagramming\SlyceGrid\SlyceGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Diagramming\SlyceGrid\SlyceGrid.Designer.cs">
+      <DependentUpon>SlyceGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Diagramming\SlyceGrid\SlyceTreeGridCellItem.cs" />
+    <Compile Include="Controls\Diagramming\SlyceGrid\SlyceTreeGridItem.cs" />
+    <Compile Include="Controls\FloatingToolstrip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FloatingToolstrip.Designer.cs">
+      <DependentUpon>FloatingToolstrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Line.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageBoxWithFileSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageBoxWithFileSelector.Designer.cs">
+      <DependentUpon>MessageBoxWithFileSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MessagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MessagePanel.Designer.cs">
+      <DependentUpon>MessagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SlyceMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SlyceMessageBox.Designer.cs">
+      <DependentUpon>SlyceMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SpinningProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SpinningProgress.designer.cs">
+      <DependentUpon>SpinningProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SystemTrayPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SystemTrayPopup.Designer.cs">
+      <DependentUpon>SystemTrayPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Grouper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NumEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DistinctStatus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TableLayoutPanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TableLayoutPanelEx.Designer.cs">
+      <DependentUpon>TableLayoutPanelEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TransparentPanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ucHeading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucHeading.Designer.cs">
+      <DependentUpon>ucHeading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucHoverList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucHoverList.Designer.cs">
+      <DependentUpon>ucHoverList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VersionInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\VersionInfo.Designer.cs">
+      <DependentUpon>VersionInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrossThreadHelper.cs" />
+    <Compile Include="CSProjFile.cs" />
+    <Compile Include="DoubleLookup.cs" />
+    <Compile Include="Enumeration.cs" />
+    <Compile Include="EventExtensions.cs" />
+    <Compile Include="EventList.cs" />
+    <Compile Include="Exceptions\DeserialisationException.cs" />
+    <Compile Include="Exceptions\FileLockedException.cs" />
+    <Compile Include="Exceptions\InvalidPathException.cs" />
+    <Compile Include="Extension Methods\DictionaryExtensions.cs" />
+    <Compile Include="Extension Methods\ReflectionExtensions.cs" />
+    <Compile Include="Extension Methods\XmlExtensionMethods.cs" />
+    <Compile Include="FastSerializer.cs" />
+    <Compile Include="FormHelper.cs" />
+    <Compile Include="FtpUtility.cs" />
+    <Compile Include="GenericEventArgs.cs" />
+    <Compile Include="IFileController.cs" />
+    <Compile Include="Extension Methods\IEnumerableExtensions.cs" />
+    <Compile Include="IOHelper.cs" />
+    <Compile Include="KeyboardHelper.cs" />
+    <Compile Include="LookupList.cs" />
+    <Compile Include="NameHelper.cs" />
+    <Compile Include="NodeProcessor.cs" />
+    <Compile Include="ObservableTraceListener.cs" />
+    <Compile Include="ParallelHelper.cs" />
+    <Compile Include="PathHelper.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReflectionHelper.cs" />
+    <Compile Include="RegistryMonitor.cs" />
+    <Compile Include="RelativePaths.cs" />
+    <Compile Include="Scripter.cs" />
+    <Compile Include="SmartAssembly.Attributes.cs" />
+    <Compile Include="StringExtensionMethods.cs" />
+    <Compile Include="SyntaxEditorHelper.cs" />
+    <Compile Include="TextBoxFocusHelper.cs" />
+    <Compile Include="TreelistUtility.cs" />
+    <Compile Include="Updates\frmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Updates\frmUpdate.Designer.cs">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VersionNumber.cs" />
+    <Compile Include="VersionNumberComparer.cs" />
+    <Compile Include="XmlSqueezer.cs" />
+    <Compile Include="XmlUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\DistinctStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DistinctStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Diagramming\Shapes\ShapeCanvas.resx">
+      <DependentUpon>ShapeCanvas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Diagramming\SlyceGrid\SlyceGrid.resx">
+      <DependentUpon>SlyceGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessageBoxWithFileSelector.resx">
+      <DependentUpon>MessageBoxWithFileSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessagePanel.resx">
+      <DependentUpon>MessagePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SlyceMessageBox.resx">
+      <DependentUpon>SlyceMessageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SpinningProgress.resx">
+      <DependentUpon>SpinningProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SystemTrayPopup.resx">
+      <DependentUpon>SystemTrayPopup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucHeading.resx">
+      <DependentUpon>ucHeading.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\VersionInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VersionInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.Assembly.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.BatchFile.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.CSharp.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.CSS.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.HTML.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.INIFile.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.Java.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.JScript.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.Lua.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.MSIL.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.Pascal.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.Perl.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.PHP.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.PlainText.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.Python.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.SQL.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.VBDotNet.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.VBScript.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.XML.xml" />
+    <EmbeddedResource Include="Updates\frmUpdate.resx">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="slyce_strong_name_key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Diagramming\SlyceGrid\Resources\delete_x_16.png" />
+    <EmbeddedResource Include="Controls\Diagramming\SlyceGrid\Resources\plus_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Diagramming\SlyceGrid\Resources\delete16.png" />
+    <EmbeddedResource Include="Controls\FloatingToolstrip.resx">
+      <DependentUpon>FloatingToolstrip.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.C.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.Cpp.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.GrammarProduction.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.PowerShell.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.RTF.xml" />
+    <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.XAML.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

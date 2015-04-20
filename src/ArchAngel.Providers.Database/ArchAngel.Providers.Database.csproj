@@ -1,0 +1,419 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D1CE9793-09C1-4EDE-B964-B0E76CB2C4BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchAngel.Providers.Database</RootNamespace>
+    <AssemblyName>ArchAngel.Providers.Database</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ArchAngel.Providers.Database.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ArchAngel.Providers.Database.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.UIStudio.Dock.Net20, Version=2.0.97.0, Culture=neutral, PublicKeyToken=be939c973e8cb8a6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.UIStudio.Dock.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLab.UniDirect, Version=2.10.9.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\CoreLab.UniDirect.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.6.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessDAL\AccessBase.cs" />
+    <Compile Include="AccessDAL\StoredProcedure.cs" />
+    <Compile Include="AccessDAL\Table.cs" />
+    <Compile Include="AccessDAL\View.cs" />
+    <Compile Include="BLL\ConnectionStringHelper.cs" />
+    <Compile Include="BLL\Database.cs" />
+    <Compile Include="BLL\Helper.cs" />
+    <Compile Include="BLL\ScriptBLL.cs" />
+    <Compile Include="BLL\Search.cs" />
+    <Compile Include="BLL\StoredProcedure.cs" />
+    <Compile Include="BLL\Table.cs" />
+    <Compile Include="BLL\Version2SerializationBinder.cs" />
+    <Compile Include="BLL\View.cs" />
+    <Compile Include="Controls\AssociationWizard\frmAssociationWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\AssociationWizard\frmAssociationWizard.Designer.cs">
+      <DependentUpon>frmAssociationWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AssociationWizard\Screen1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AssociationWizard\Screen1.Designer.cs">
+      <DependentUpon>Screen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AssociationWizard\Screen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AssociationWizard\Screen2.Designer.cs">
+      <DependentUpon>Screen2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentItems\EditModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ContentItems\EditModel.Designer.cs">
+      <DependentUpon>EditModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentItems\SetupDatabase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ContentItems\SetupDatabase.Designer.cs">
+      <DependentUpon>SetupDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterColumns.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterColumns.Designer.cs">
+      <DependentUpon>ucFilterColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterReturnOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterReturnOrder.Designer.cs">
+      <DependentUpon>ucFilterReturnOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterStart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterStart.Designer.cs">
+      <DependentUpon>ucFilterStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterSummary.Designer.cs">
+      <DependentUpon>ucFilterSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterWhere.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterWizard\ucFilterWhere.Designer.cs">
+      <DependentUpon>ucFilterWhere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormColumn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormColumn.Designer.cs">
+      <DependentUpon>FormColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormFilter.Designer.cs">
+      <DependentUpon>FormFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormFilter2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormFilter2.Designer.cs">
+      <DependentUpon>FormFilter2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormIndex.Designer.cs">
+      <DependentUpon>FormIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormKey.Designer.cs">
+      <DependentUpon>FormKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormLookup.Designer.cs">
+      <DependentUpon>FormLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormMapColumn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormMapColumn.Designer.cs">
+      <DependentUpon>FormMapColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormRelationship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormRelationship.Designer.cs">
+      <DependentUpon>FormRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormScriptObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormScriptObject.Designer.cs">
+      <DependentUpon>FormScriptObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormSelectDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormSelectDatabase.Designer.cs">
+      <DependentUpon>FormSelectDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DALFactory\DataAccess.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Helper\CSharp.cs" />
+    <Compile Include="Helper\DatabaseConstant.cs" />
+    <Compile Include="Helper\Parameter.cs" />
+    <Compile Include="Helper\Script.cs" />
+    <Compile Include="Helper\SQLServer.cs" />
+    <Compile Include="Helper\Utility.cs" />
+    <Compile Include="IDAL\IHelper.cs" />
+    <Compile Include="IDAL\IStoredProcedure.cs" />
+    <Compile Include="IDAL\ITable.cs" />
+    <Compile Include="IDAL\IView.cs" />
+    <Compile Include="Model\ArchangelEditorInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Association.cs" />
+    <Compile Include="Model\Column.cs" />
+    <Compile Include="Model\Compare.cs" />
+    <Compile Include="Model\Database.cs" />
+    <Compile Include="Model\DatabaseConnection.cs" />
+    <Compile Include="Model\DataTypes.cs" />
+    <Compile Include="Model\Filter.cs" />
+    <Compile Include="Model\Index.cs" />
+    <Compile Include="Model\IScriptBase.cs" />
+    <Compile Include="Model\Key.cs" />
+    <Compile Include="Model\Lookup.cs" />
+    <Compile Include="Model\LookupValue.cs" />
+    <Compile Include="Model\ManyToManyRelationship.cs" />
+    <Compile Include="Model\ManyToOneRelationship.cs" />
+    <Compile Include="Model\MapColumn.cs" />
+    <Compile Include="Model\OneToManyRelationship.cs" />
+    <Compile Include="Model\OneToOneRelationship.cs" />
+    <Compile Include="Model\Relationship.cs" />
+    <Compile Include="Model\ScriptBase.cs" />
+    <Compile Include="Model\ScriptObject.cs" />
+    <Compile Include="Model\StoredProcedure.cs" />
+    <Compile Include="Model\Table.cs" />
+    <Compile Include="Model\View.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderInfo.cs" />
+    <Compile Include="SerializerHelper.cs" />
+    <Compile Include="SQLServerDAL_2005\ColumnHelper.cs" />
+    <Compile Include="SQLServerDAL_2005\Database.cs" />
+    <Compile Include="SQLServerDAL_2005\Helper.cs" />
+    <Compile Include="SQLServerDAL_2005\SQLServer.cs" />
+    <Compile Include="SQLServerDAL_2005\SQLServerBase.cs" />
+    <Compile Include="SQLServerDAL_2005\StoredProcedure.cs" />
+    <Compile Include="SQLServerDAL_2005\Table.cs" />
+    <Compile Include="SQLServerDAL_2005\View.cs" />
+    <Compile Include="SQLServerDAL_ADONET\ColumnHelper.cs" />
+    <Compile Include="SQLServerDAL_ADONET\SQLServerBase.cs" />
+    <Compile Include="SQLServerDAL_ADONET\StoredProcedure.cs" />
+    <Compile Include="SQLServerDAL_ADONET\Table.cs" />
+    <Compile Include="SQLServerDAL_ADONET\View.cs" />
+    <Compile Include="SQLServerDAL_Express\ColumnHelper.cs" />
+    <Compile Include="SQLServerDAL_Express\Database.cs" />
+    <Compile Include="SQLServerDAL_Express\Helper.cs" />
+    <Compile Include="SQLServerDAL_Express\SQLServer.cs" />
+    <Compile Include="SQLServerDAL_Express\SQLServerBase.cs" />
+    <Compile Include="SQLServerDAL_Express\StoredProcedure.cs" />
+    <Compile Include="SQLServerDAL_Express\Table.cs" />
+    <Compile Include="SQLServerDAL_Express\View.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Docs\ArchAngel Features.doc" />
+    <None Include="slyce_strong_name_key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\AssociationWizard\frmAssociationWizard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAssociationWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AssociationWizard\Screen1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Screen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AssociationWizard\Screen2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Screen2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ContentItems\EditModel.resx">
+      <DependentUpon>EditModel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ContentItems\SetupDatabase.resx">
+      <DependentUpon>SetupDatabase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterWizard\ucFilterColumns.resx">
+      <DependentUpon>ucFilterColumns.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterWizard\ucFilterReturnOrder.resx">
+      <DependentUpon>ucFilterReturnOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterWizard\ucFilterStart.resx">
+      <DependentUpon>ucFilterStart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterWizard\ucFilterSummary.resx">
+      <DependentUpon>ucFilterSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterWizard\ucFilterWhere.resx">
+      <DependentUpon>ucFilterWhere.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helper\DataTypeSQL.txt" />
+    <EmbeddedResource Include="Helper\ReservedWordCSharp.txt" />
+    <EmbeddedResource Include="Helper\ReservedWordSQL.txt" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\FormColumn.resx">
+      <DependentUpon>FormColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormFilter.resx">
+      <DependentUpon>FormFilter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormFilter2.resx">
+      <DependentUpon>FormFilter2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormIndex.resx">
+      <DependentUpon>FormIndex.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormKey.resx">
+      <DependentUpon>FormKey.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormLookup.resx">
+      <DependentUpon>FormLookup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormMapColumn.resx">
+      <DependentUpon>FormMapColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormRelationship.resx">
+      <DependentUpon>FormRelationship.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormScriptObject.resx">
+      <DependentUpon>FormScriptObject.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormSelectDatabase.resx">
+      <DependentUpon>FormSelectDatabase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\reset.png" />
+    <EmbeddedResource Include="Resources\refresh_database.ico" />
+    <EmbeddedResource Include="Resources\refresh_database.png" />
+    <Content Include="SQLServerDAL_ADONET\DB Restrictions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
+      <Project>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</Project>
+      <Name>ArchAngel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

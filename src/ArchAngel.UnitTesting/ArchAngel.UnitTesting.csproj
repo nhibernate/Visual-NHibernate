@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3B8857E-2DB0-43B7-8FD3-062BCF2C8C29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchAngel.Workbench.Tests</RootNamespace>
+    <AssemblyName>ArchAngel.UnitTesting</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.6.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Unit Testing\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.4.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\Unit Testing\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSharpFormatter\Test Files\Attributes.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="CSharpFormatter\Test Files\Comments.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CSharpFormatter\Test Files\OneLineIfStatements.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CSharpFormatter\Test Files\Complex.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CSharpFormatter\Test Files\LineBreaksBetweenFunctions.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CSharpFormatter\Test Files\CommentOrdering.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="slyce_strong_name_key.snk" />
+    <Compile Include="CSharpFormatter\TestCSharpFormatter.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Loading__StaticFiles.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Saving__StaticFiles.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Loading__Outputs.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Loading__ProjectFile.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Loading__ApiExtensions.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Loading__UserOptions.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Loading__Functions.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Saving__Outputs.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Saving__ApiExtensions.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Saving__ProjectFile.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Saving__UserOptions.cs" />
+    <Compile Include="Designer\Serialisation\Specs_For_Project_Saving__Functions.cs" />
+    <Compile Include="Designer\Specs_For_CompileHelper__VirtualProperties.cs" />
+    <Compile Include="IntelliMerge\TestDiff.cs" />
+    <Compile Include="TestAnalysisHelper.cs" />
+    <Compile Include="TestGenerationHelper.cs" />
+    <Compile Include="TestIntellimerge.cs" />
+    <Compile Include="TestProjectFileTree.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Designer\ArchAngel.Designer.csproj">
+      <Project>{47711AEC-E127-4141-9EAA-BE2BAD8F0597}</Project>
+      <Name>ArchAngel.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Common\ArchAngel.Common.csproj">
+      <Project>{48E0EF31-1EE1-484A-9387-55483922F310}</Project>
+      <Name>ArchAngel.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
+      <Project>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</Project>
+      <Name>ArchAngel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj">
+      <Project>{AA16CFFA-3659-4F91-9F07-C22360882B39}</Project>
+      <Name>ArchAngel.Providers.CodeProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.WorkBench\ArchAngel.Workbench.csproj">
+      <Project>{CD04EC14-7CB9-42B0-97B4-F06E59F65257}</Project>
+      <Name>ArchAngel.Workbench</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.IntelliMerge\Slyce.IntelliMerge.csproj">
+      <Project>{694BB413-2742-4476-9984-474E033770C1}</Project>
+      <Name>Slyce.IntelliMerge</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
