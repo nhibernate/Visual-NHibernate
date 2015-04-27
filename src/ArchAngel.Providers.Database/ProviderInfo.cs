@@ -65,7 +65,17 @@ namespace ArchAngel.Providers.Database
             set { _TheBllDatabase = value; }
         }
 
-        [DotfuscatorDoNotRename]
+	    public override void InitialisePreGeneration(PreGenerationData data)
+	    {
+		    throw new NotImplementedException();
+	    }
+
+	    public override void InitialiseScriptObjects(PreGenerationData data)
+	    {
+		    throw new NotImplementedException();
+	    }
+
+	    [DotfuscatorDoNotRename]
         public override IEnumerable<object> RootPreviewObjects
         {
             get

@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Slyce.Common</RootNamespace>
     <AssemblyName>Slyce.Common</AssemblyName>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -89,6 +89,7 @@
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=9.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="Inflector.Net">
       <HintPath>..\3rd_Party_Libs\Inflector.Net.dll</HintPath>

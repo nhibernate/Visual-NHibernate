@@ -11,7 +11,7 @@
     <RootNamespace>ArchAngel.Workbench</RootNamespace>
     <AssemblyName>ArchAngel.Workbench</AssemblyName>
     <ApplicationIcon>Workbench.ico</ApplicationIcon>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
     <TargetZone>LocalIntranet</TargetZone>
     <GenerateManifests>false</GenerateManifests>
@@ -283,6 +283,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmIntelliMergeTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="ucFindResults.resx">
       <DependentUpon>ucFindResults.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,7 +300,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>ItemEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -430,7 +430,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ArchAngel.Common\ArchAngel.Common.csproj">
-      <Project>{48E0EF31-1EE1-484A-9387-55483922F310}</Project>
+      <Project>{48e0ef31-1ee1-484a-9387-55483922f310}</Project>
       <Name>ArchAngel.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
@@ -442,15 +442,19 @@
       <Name>ArchAngel.Licensing</Name>
     </ProjectReference>
     <ProjectReference Include="..\ArchAngel.NHibernateHelper\ArchAngel.NHibernateHelper.csproj">
-      <Project>{DA1B3DC6-85E3-4501-8239-E10A4C64DCEC}</Project>
+      <Project>{da1b3dc6-85e3-4501-8239-e10a4c64dcec}</Project>
       <Name>ArchAngel.NHibernateHelper</Name>
     </ProjectReference>
     <ProjectReference Include="..\ArchAngel.Providers.CodeProvider\ArchAngel.Providers.CodeProvider.csproj">
       <Project>{AA16CFFA-3659-4F91-9F07-C22360882B39}</Project>
       <Name>ArchAngel.Providers.CodeProvider</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.Database\ArchAngel.Providers.Database.csproj">
+      <Project>{d1ce9793-09c1-4ede-b964-b0e76cb2c4bd}</Project>
+      <Name>ArchAngel.Providers.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ArchAngel.Providers.EntityModel\ArchAngel.Providers.EntityModel.csproj">
-      <Project>{8A37DC98-F9E2-4C54-9FCA-7FAD7DCEE258}</Project>
+      <Project>{8a37dc98-f9e2-4c54-9fca-7fad7dcee258}</Project>
       <Name>ArchAngel.Providers.EntityModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
