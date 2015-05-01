@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchAngel.Workbench", "ArchAngel.WorkBench\ArchAngel.Workbench.csproj", "{CD04EC14-7CB9-42B0-97B4-F06E59F65257}"
 EndProject
@@ -13,15 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchAngel.Providers.CodePro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchAngel.Interfaces", "ArchAngel.Interfaces\ArchAngel.Interfaces.csproj", "{27118B67-F8BD-49B3-97CE-56B3E051F0A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Providers.Test", "Sample Projects\Custom Provider\Demo.Providers.Test.csproj", "{3532A689-4EC9-4BB7-9820-FC941FA834E2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slyce.IntelliMerge", "Slyce.IntelliMerge\Slyce.IntelliMerge.csproj", "{694BB413-2742-4476-9984-474E033770C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchAngel.Licensing", "ArchAngel.Licensing\ArchAngel.Licensing.csproj", "{04E45D06-957C-494E-A6CC-7C498E9B73EE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slyce.IntelliMerge.UnitTesting", "Slyce.IntelliMerge.UnitTesting\Slyce.IntelliMerge.UnitTesting.csproj", "{538FC3A4-ADED-454E-A63C-769C018AE92D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slyce.Common.UnitTesting", "Slyce.Common.UnitTesting\Slyce.Common.UnitTesting.csproj", "{7D825B1D-8B74-47ED-AC26-0BD28AE55FF0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchAngel.Common", "ArchAngel.Common\ArchAngel.Common.csproj", "{48E0EF31-1EE1-484A-9387-55483922F310}"
 EndProject
@@ -75,12 +69,6 @@ Global
 		{27118B67-F8BD-49B3-97CE-56B3E051F0A8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{27118B67-F8BD-49B3-97CE-56B3E051F0A8}.Release|x86.ActiveCfg = Release|x86
 		{27118B67-F8BD-49B3-97CE-56B3E051F0A8}.Release|x86.Build.0 = Release|x86
-		{3532A689-4EC9-4BB7-9820-FC941FA834E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3532A689-4EC9-4BB7-9820-FC941FA834E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3532A689-4EC9-4BB7-9820-FC941FA834E2}.Debug|x86.ActiveCfg = Debug|x86
-		{3532A689-4EC9-4BB7-9820-FC941FA834E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3532A689-4EC9-4BB7-9820-FC941FA834E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3532A689-4EC9-4BB7-9820-FC941FA834E2}.Release|x86.ActiveCfg = Release|x86
 		{694BB413-2742-4476-9984-474E033770C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{694BB413-2742-4476-9984-474E033770C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{694BB413-2742-4476-9984-474E033770C1}.Debug|x86.ActiveCfg = Debug|x86
@@ -97,18 +85,6 @@ Global
 		{04E45D06-957C-494E-A6CC-7C498E9B73EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04E45D06-957C-494E-A6CC-7C498E9B73EE}.Release|x86.ActiveCfg = Release|x86
 		{04E45D06-957C-494E-A6CC-7C498E9B73EE}.Release|x86.Build.0 = Release|x86
-		{538FC3A4-ADED-454E-A63C-769C018AE92D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{538FC3A4-ADED-454E-A63C-769C018AE92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{538FC3A4-ADED-454E-A63C-769C018AE92D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{538FC3A4-ADED-454E-A63C-769C018AE92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{538FC3A4-ADED-454E-A63C-769C018AE92D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{538FC3A4-ADED-454E-A63C-769C018AE92D}.Release|x86.ActiveCfg = Release|Any CPU
-		{7D825B1D-8B74-47ED-AC26-0BD28AE55FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D825B1D-8B74-47ED-AC26-0BD28AE55FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D825B1D-8B74-47ED-AC26-0BD28AE55FF0}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7D825B1D-8B74-47ED-AC26-0BD28AE55FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D825B1D-8B74-47ED-AC26-0BD28AE55FF0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D825B1D-8B74-47ED-AC26-0BD28AE55FF0}.Release|x86.ActiveCfg = Release|Any CPU
 		{48E0EF31-1EE1-484A-9387-55483922F310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{48E0EF31-1EE1-484A-9387-55483922F310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48E0EF31-1EE1-484A-9387-55483922F310}.Debug|x86.ActiveCfg = Debug|x86
