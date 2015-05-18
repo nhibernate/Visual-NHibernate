@@ -12,7 +12,6 @@ using ArchAngel.Common;
 using ArchAngel.Interfaces;
 using ArchAngel.Interfaces.Controls.ContentItems;
 using ArchAngel.Interfaces.Wizards.NewProject;
-using ArchAngel.Licensing;
 using ArchAngel.Workbench.Properties;
 using ArchAngel.Workbench.Wizards.NewProject;
 using DevComponents.DotNetBar;
@@ -140,51 +139,51 @@ namespace ArchAngel.Workbench
 
 		private void PopulateLicenseStatus()
 		{
-			labelVersion.Text = string.Format("Version:  {0}", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
+			labelVersion.Text = string.Format("Version:  {0}", Assembly.GetExecutingAssembly().GetName().Version);
 
-			string message;
-			int daysRemaining;
-			bool errorOccurred;
-			bool demo = false;
-			SlyceAuthorizer.LockTypes lockType;
-			SlyceAuthorizer.LicenseStates status;
-			bool licensed = SlyceAuthorizer.IsLicensed("Visual NHibernate License.SlyceLicense", out message, out daysRemaining, out errorOccurred, out demo, out lockType, out status);
+			//string message;
+			//int daysRemaining;
+			//bool errorOccurred;
+			//bool demo = false;
+			//SlyceAuthorizer.LockTypes lockType;
+			//SlyceAuthorizer.LicenseStates status;
+			//bool licensed = SlyceAuthorizer.IsLicensed("Visual NHibernate License.SlyceLicense", out message, out daysRemaining, out errorOccurred, out demo, out lockType, out status);
 
-			if (errorOccurred)
-			{
-				labelErrorMessage.Text = "An error occurred with the Slyce licensing system. Please inform support@slyce.com about this error:\n\nError: " + message;
-			}
-			else if (licensed && !demo)
-			{
-				if (message.Length > 0)
-				{
-					labelErrorMessage.Text = message;
-				}
-				labelLicenseDetails.Text = "License Details";
-				//buttonRemove.Enabled = true;
-				string registrationDetails = string.Format("{1}{0}{2}{0}{3}{0}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}",
-					Environment.NewLine,
-					SlyceAuthorizer.Lic.Name,
-					SlyceAuthorizer.Lic.Email,
-					SlyceAuthorizer.Lic.Phone,
-					SlyceAuthorizer.Lic.Company,
-					SlyceAuthorizer.Lic.AddressLine1,
-					SlyceAuthorizer.Lic.AddressLine2,
-					SlyceAuthorizer.Lic.AddressCity,
-					SlyceAuthorizer.Lic.AddressCountry);
+			//if (errorOccurred)
+			//{
+			//	labelErrorMessage.Text = "An error occurred with the Slyce licensing system. Please inform support@slyce.com about this error:\n\nError: " + message;
+			//}
+			//else if (licensed && !demo)
+			//{
+			//	if (message.Length > 0)
+			//	{
+			//		labelErrorMessage.Text = message;
+			//	}
+			//	labelLicenseDetails.Text = "License Details";
+			//	//buttonRemove.Enabled = true;
+			//	string registrationDetails = string.Format("{1}{0}{2}{0}{3}{0}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}",
+			//		Environment.NewLine,
+			//		SlyceAuthorizer.Lic.Name,
+			//		SlyceAuthorizer.Lic.Email,
+			//		SlyceAuthorizer.Lic.Phone,
+			//		SlyceAuthorizer.Lic.Company,
+			//		SlyceAuthorizer.Lic.AddressLine1,
+			//		SlyceAuthorizer.Lic.AddressLine2,
+			//		SlyceAuthorizer.Lic.AddressCity,
+			//		SlyceAuthorizer.Lic.AddressCountry);
 
-				labelSerialNumber.Text = SlyceAuthorizer.Lic.Serial;
-				labelLicenseRegistrationDetails.Text = registrationDetails.Replace(Environment.NewLine + Environment.NewLine, Environment.NewLine);
-			}
-			else if (licensed && demo)
-			{
-				labelLicenseDetails.Text = string.Format("License Details", daysRemaining);
-				labelRegisteredTo.Text = string.Format(@"Trial version: <font color='Red'>{0} days</font> remaining", daysRemaining);
-				//labelStatus.Text = string.Format("{0} days remaining of your extended trial.", daysRemaining);
-				//buttonRemove.Enabled = false;
-			}
-			else
-			{
+			//	labelSerialNumber.Text = SlyceAuthorizer.Lic.Serial;
+			//	labelLicenseRegistrationDetails.Text = registrationDetails.Replace(Environment.NewLine + Environment.NewLine, Environment.NewLine);
+			//}
+			//else if (licensed && demo)
+			//{
+			//	labelLicenseDetails.Text = string.Format("License Details", daysRemaining);
+			//	labelRegisteredTo.Text = string.Format(@"Trial version: <font color='Red'>{0} days</font> remaining", daysRemaining);
+			//	//labelStatus.Text = string.Format("{0} days remaining of your extended trial.", daysRemaining);
+			//	//buttonRemove.Enabled = false;
+			//}
+			//else
+			//{
 				//switch (lockType)
 				//{
 				//    case SlyceAuthorizer.LockTypes.Days:
@@ -194,17 +193,17 @@ namespace ArchAngel.Workbench
 				//        labelStatus.Text = string.Format("{0} days remaining of your trial.", daysRemaining);
 				//        break;
 				//}
-				labelLicenseDetails.Text = string.Format("License Details", daysRemaining);
-				labelRegisteredTo.Text = string.Format(@"Trial version: <font color='Red'>{0} days</font> remaining", daysRemaining);
+				//labelLicenseDetails.Text = string.Format("License Details", daysRemaining);
+				//labelRegisteredTo.Text = string.Format(@"Trial version: <font color='Red'>{0} days</font> remaining", daysRemaining);
 				//labelStatus.Text = string.Format("{0} days remaining of your trial.", daysRemaining);
 				//buttonRemove.Enabled = false;
-			}
-			if (!licensed)
-			{
-				labelSerialNumber.Visible = false;
-				buttonCopySerial.Visible = false;
-				labelLicenseRegistrationDetails.Visible = false;
-			}
+			//}
+			//if (!licensed)
+			//{
+			//	labelSerialNumber.Visible = false;
+			//	buttonCopySerial.Visible = false;
+			//	labelLicenseRegistrationDetails.Visible = false;
+			//}
 			//if (licensed || demo)
 			//{
 			//    Dictionary<string, string> licenseDetails = SlyceAuthorizer.AdditionalLicenseInfo;
@@ -1198,11 +1197,11 @@ namespace ArchAngel.Workbench
 
 		private void ShowLicense()
 		{
-			Refresh();
-			Controller.Instance.ShadeMainForm();
-			Licensing.frmStatus form = new Licensing.frmStatus("Visual NHibernate License.SlyceLicense");
-			form.ShowDialog(this);
-			Controller.Instance.UnshadeMainForm();
+			//Refresh();
+			//Controller.Instance.ShadeMainForm();
+			//Licensing.frmStatus form = new Licensing.frmStatus("Visual NHibernate License.SlyceLicense");
+			//form.ShowDialog(this);
+			//Controller.Instance.UnshadeMainForm();
 		}
 
 		private void FormMain_KeyDown(object sender, KeyEventArgs e)

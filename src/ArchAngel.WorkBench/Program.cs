@@ -11,7 +11,7 @@ namespace ArchAngel.Workbench
 	public static class Program
 	{
 		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(Program));
-		private static FormSplash _SplashScreen;
+		//private static FormSplash _SplashScreen;
 
 		/// <summary>
 		/// The main entry point for the application.
@@ -21,18 +21,7 @@ namespace ArchAngel.Workbench
 		{
 			//try
 			//{
-#if DEBUG
-			//for(int i = 0; i < args.Length; i++)
-			//{
-			//    if(args[i] == "-brand" && i <= args.Length - 2)
-			//    {
-			//        ApplicationBrand? brand = args[i + 1].As<ApplicationBrand>();
-			//        if (brand != null)
-			//            Branding.ProductBranding = brand.Value;
-			//    }
-			//}
 			Branding.ProductBranding = ApplicationBrand.VisualNHibernate;
-#endif
 			//Application.SetUnhandledExceptionMode(UnhandledExceptionMode.Automatic);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
@@ -50,101 +39,101 @@ namespace ArchAngel.Workbench
 			log.Debug("=============");
 
 			//AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-			string message;
-			int daysRemaining;
-			bool errorOccurred;
-			bool demo = false;
-			Licensing.SlyceAuthorizer.LockTypes lockType;
-			Licensing.SlyceAuthorizer.SetLicenseFilename("Visual NHibernate License.SlyceLicense");
-			Licensing.SlyceAuthorizer.LicenseStates status;
-			Licensing.SlyceAuthorizer.LicenseFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Branding.ProductName);
+			//string message;
+			//int daysRemaining;
+			//bool errorOccurred;
+			//bool demo = false;
+			//Licensing.SlyceAuthorizer.LockTypes lockType;
+			//Licensing.SlyceAuthorizer.SetLicenseFilename("Visual NHibernate License.SlyceLicense");
+			//Licensing.SlyceAuthorizer.LicenseStates status;
+			//Licensing.SlyceAuthorizer.LicenseFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Branding.ProductName);
 
-			if (args.Length == 1 && File.Exists(args[0]) && Path.GetExtension(args[0]).ToLowerInvariant() == ".slycelicense")
-			{
-				string officialLicenseFile = Path.Combine(Licensing.SlyceAuthorizer.LicenseFolder, "Visual NHibernate License.SlyceLicense");
+			//if (args.Length == 1 && File.Exists(args[0]) && Path.GetExtension(args[0]).ToLowerInvariant() == ".slycelicense")
+			//{
+			//	string officialLicenseFile = Path.Combine(Licensing.SlyceAuthorizer.LicenseFolder, "Visual NHibernate License.SlyceLicense");
 
-				if (args[0].ToLowerInvariant() != officialLicenseFile.ToLowerInvariant())
-				{
-					Slyce.Common.Utility.DeleteFileBrute(officialLicenseFile);
-					File.Copy(args[0], officialLicenseFile);
-				}
-			}
-			bool licensed = Licensing.SlyceAuthorizer.IsLicensed("Visual NHibernate License.SlyceLicense", out message, out daysRemaining, out errorOccurred, out demo, out lockType, out status);
+			//	if (args[0].ToLowerInvariant() != officialLicenseFile.ToLowerInvariant())
+			//	{
+			//		Slyce.Common.Utility.DeleteFileBrute(officialLicenseFile);
+			//		File.Copy(args[0], officialLicenseFile);
+			//	}
+			//}
+			//bool licensed = Licensing.SlyceAuthorizer.IsLicensed("Visual NHibernate License.SlyceLicense", out message, out daysRemaining, out errorOccurred, out demo, out lockType, out status);
 			//System.Windows.Forms.MessageBox.Show(string.Format("Program.Main.message = {0}, daysRemaining={1}, errorOccurred={2}", message, daysRemaining, errorOccurred));
-			string temp = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), Branding.ProductName + Path.DirectorySeparatorChar + "Temp");
+			//string temp = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), Branding.ProductName + Path.DirectorySeparatorChar + "Temp");
 
-			try
-			{
-				Slyce.Common.Utility.DeleteDirectoryBrute(temp);
-			}
-			catch
-			{
+			//try
+			//{
+			//	Slyce.Common.Utility.DeleteDirectoryBrute(temp);
+			//}
+			//catch
+			//{
 				// Do nothing. Error caused by user selecting My Documents etc for output folder. All files get copied to temp,
 				// including read-only files.
-			}
-			try
-			{
-				Slyce.Common.Utility.DeleteDirectoryBrute(Path.Combine(Path.GetTempPath(), "ArchAngel"));
-			}
-			catch
-			{
+			//}
+			//try
+			//{
+			//	Slyce.Common.Utility.DeleteDirectoryBrute(Path.Combine(Path.GetTempPath(), "ArchAngel"));
+			//}
+			//catch
+			//{
 				// Do nothing
-			}
+			//}
 
-			if (errorOccurred)
-			{
-				message = "An error occurred with the Slyce licensing system. Please inform support@slyce.com about this error:\n\nError: " + message;
-				MessageBox.Show(message, "Licensing Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				Application.Exit();
-			}
-			else if (licensed && !demo)
-			{
-				if (message.Length > 0)
-				{
-					MessageBox.Show(message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
+			//if (errorOccurred)
+			//{
+			//	message = "An error occurred with the Slyce licensing system. Please inform support@slyce.com about this error:\n\nError: " + message;
+			//	MessageBox.Show(message, "Licensing Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			//	Application.Exit();
+			//}
+			//else if (licensed && !demo)
+			//{
+			//	if (message.Length > 0)
+			//	{
+			//		MessageBox.Show(message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			//	}
+			//	FormMain mainForm = new FormMain();
+			//	//ShowSplashScreen(mainForm);
+			//	Application.Run(mainForm);
+			//}
+			//else
+			//{
+			//	Licensing.LicenseWizard.frmLicenseWizard form = new Licensing.LicenseWizard.frmLicenseWizard(daysRemaining, lockType, status);
+			//	Application.Run(form);
+			//	// Re-read the license info
+			//	ArchAngel.Licensing.SlyceAuthorizer.Reset();
+			//	licensed = Licensing.SlyceAuthorizer.IsLicensed("Visual NHibernate License.SlyceLicense", out message, out daysRemaining, out errorOccurred, out demo, out lockType, out status);
+
+			//	if (Licensing.LicenseWizard.frmLicenseWizard.Result == Licensing.LicenseWizard.ScreenStart.Actions.Trial)
+			//	{
+			//		// Make sure user still has days left
+			//		if (daysRemaining < 0)
+			//		{
+			//			Application.Exit();
+			//			return;
+			//		}
+			//	}
+			//	else if (Licensing.LicenseWizard.frmLicenseWizard.Result == Licensing.LicenseWizard.ScreenStart.Actions.Activate)
+			//	{
+			//		// Supposedly the user has activated, let's check
+			//		if (!Licensing.SlyceAuthorizer.IsLicensed("Visual NHibernate License.SlyceLicense", out message, out daysRemaining, out errorOccurred, out demo, out lockType, out status))
+			//		{
+			//			if (!demo || (demo && daysRemaining < 0))
+			//			{
+			//				Application.Exit();
+			//				return;
+			//			}
+			//		}
+			//	}
+			//	else if (Licensing.LicenseWizard.frmLicenseWizard.Result == Licensing.LicenseWizard.ScreenStart.Actions.None)
+			//	{
+			//		Application.Exit();
+			//		return;
+			//	}
 				FormMain mainForm = new FormMain();
 				//ShowSplashScreen(mainForm);
 				Application.Run(mainForm);
-			}
-			else
-			{
-				Licensing.LicenseWizard.frmLicenseWizard form = new Licensing.LicenseWizard.frmLicenseWizard(daysRemaining, lockType, status);
-				Application.Run(form);
-				// Re-read the license info
-				ArchAngel.Licensing.SlyceAuthorizer.Reset();
-				licensed = Licensing.SlyceAuthorizer.IsLicensed("Visual NHibernate License.SlyceLicense", out message, out daysRemaining, out errorOccurred, out demo, out lockType, out status);
-
-				if (Licensing.LicenseWizard.frmLicenseWizard.Result == Licensing.LicenseWizard.ScreenStart.Actions.Trial)
-				{
-					// Make sure user still has days left
-					if (daysRemaining < 0)
-					{
-						Application.Exit();
-						return;
-					}
-				}
-				else if (Licensing.LicenseWizard.frmLicenseWizard.Result == Licensing.LicenseWizard.ScreenStart.Actions.Activate)
-				{
-					// Supposedly the user has activated, let's check
-					if (!Licensing.SlyceAuthorizer.IsLicensed("Visual NHibernate License.SlyceLicense", out message, out daysRemaining, out errorOccurred, out demo, out lockType, out status))
-					{
-						if (!demo || (demo && daysRemaining < 0))
-						{
-							Application.Exit();
-							return;
-						}
-					}
-				}
-				else if (Licensing.LicenseWizard.frmLicenseWizard.Result == Licensing.LicenseWizard.ScreenStart.Actions.None)
-				{
-					Application.Exit();
-					return;
-				}
-				FormMain mainForm = new FormMain();
-				//ShowSplashScreen(mainForm);
-				Application.Run(mainForm);
-			}
+			//}
 			Slyce.Common.SyntaxEditorHelper.DeleteResources();
 			//}
 			//catch (Exception ex)
@@ -168,10 +157,10 @@ namespace ArchAngel.Workbench
 			//}
 		}
 
-		private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-		{
-			return Slyce.Common.Utility.FindAssembly(args.Name, new List<string>(SharedData.AssemblySearchPaths), "Workbench");
-		}
+		//private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+		//{
+		//	return Slyce.Common.Utility.FindAssembly(args.Name, new List<string>(SharedData.AssemblySearchPaths), "Workbench");
+		//}
 
 		//static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
 		//{

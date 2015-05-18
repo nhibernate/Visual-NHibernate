@@ -437,10 +437,6 @@
       <Project>{27118B67-F8BD-49B3-97CE-56B3E051F0A8}</Project>
       <Name>ArchAngel.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ArchAngel.Licensing\ArchAngel.Licensing.csproj">
-      <Project>{04E45D06-957C-494E-A6CC-7C498E9B73EE}</Project>
-      <Name>ArchAngel.Licensing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ArchAngel.NHibernateHelper\ArchAngel.NHibernateHelper.csproj">
       <Project>{da1b3dc6-85e3-4501-8239-e10a4c64dcec}</Project>
       <Name>ArchAngel.NHibernateHelper</Name>
