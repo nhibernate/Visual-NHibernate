@@ -13,7 +13,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -138,9 +139,6 @@
       <Project>{694BB413-2742-4476-9984-474E033770C1}</Project>
       <Name>Slyce.IntelliMerge</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="slyce_strong_name_key.snk" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

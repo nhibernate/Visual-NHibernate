@@ -54,12 +54,12 @@ namespace ArchAngel.Workbench.Wizards.NewProject
 			if (Branding.ProductBranding == ApplicationBrand.VisualNHibernate)
 			{
 
-#if DEBUG
-				string templateFile = Slyce.Common.RelativePaths.RelativeToAbsolutePath(Path.GetDirectoryName(Application.ExecutablePath), @"..\..\..\ArchAngel.Templates\NHibernate\Template\NHibernate.AAT.DLL");
-#else
-				//string templateFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), Branding.ProductName + Path.DirectorySeparatorChar + "Templates" + Path.DirectorySeparatorChar + "NHibernate.AAT.DLL");
+//#if DEBUG
+//				string templateFile = Slyce.Common.RelativePaths.RelativeToAbsolutePath(Path.GetDirectoryName(Application.ExecutablePath), @"..\..\..\ArchAngel.Templates\NHibernate\Template\NHibernate.AAT.DLL");
+//#else
+//				//string templateFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), Branding.ProductName + Path.DirectorySeparatorChar + "Templates" + Path.DirectorySeparatorChar + "NHibernate.AAT.DLL");
 				string templateFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "NHibernate.AAT.DLL");
-#endif
+//#endif
 				NewProjectTemplate = templateFile;
 				switch (SetupAction)
 				{

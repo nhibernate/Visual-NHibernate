@@ -28,7 +28,8 @@ namespace ArchAngel.Providers.CodeProvider
 			LongPrimitiveNameToShortName.Add("System.Byte", "byte");
 			LongPrimitiveNameToShortName.Add("System.Object", "object");
 			LongPrimitiveNameToShortName.Add("System.Decimal", "decimal");
-			LongPrimitiveNameToShortName.Add(TypeReference.AnonymousTypeName, "var");
+			// TODO: Find correspondent enum value for new ActiPro version
+			//LongPrimitiveNameToShortName.Add(TypeReference.AnonymousTypeName, "var");
 
 
 			OperatorNames.Add(OperatorType.Addition, "+");
@@ -238,14 +239,15 @@ namespace ArchAngel.Providers.CodeProvider
 			}
 			else
 			{
-				if (t.Name == TypeReference.AnonymousTypeName)
-				{
-					t.Name = "var";
-				}
-				else if (LongPrimitiveNameToShortName.ContainsKey(t.Name))
-				{
+				// TODO: Find correspondent enum value for new ActiPro version
+				//if (t.Name == TypeReference.AnonymousTypeName)
+				//{
+				//	t.Name = "var";
+				//}
+				//else if (LongPrimitiveNameToShortName.ContainsKey(t.Name))
+				//{
 					t.Name = originalName;
-				}
+				//}
 			}
 
 			foreach (IAstNode node in typeRef.GenericTypeArguments)

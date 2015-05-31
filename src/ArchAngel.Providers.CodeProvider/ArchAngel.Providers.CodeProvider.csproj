@@ -150,17 +150,14 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.Shared.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Version=4.0.283.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.SyntaxEditor.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

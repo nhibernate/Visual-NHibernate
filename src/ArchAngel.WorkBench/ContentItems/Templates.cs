@@ -2062,7 +2062,9 @@ namespace ArchAngel.Workbench.ContentItems
 
 			syntaxEditorOffscreen.Document.Text = GetCSharpCode(editor.Document.GetText(LineTerminator.Newline), editor.Caret.Offset, extraCode);
 			syntaxEditorOffscreen.Caret.Offset = syntaxEditorOffscreen.Document.Text.Length - 1;
-			((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).ShowIntelliPromptMemberList(syntaxEditorOffscreen, editor);
+			// TODO: Test, if conversion to new method signature is ok
+			//((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).ShowIntelliPromptMemberList(syntaxEditorOffscreen, editor);
+			((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).ShowIntelliPromptMemberList(editor);
 			return;
 		}
 
@@ -2121,14 +2123,18 @@ namespace ArchAngel.Workbench.ContentItems
 					syntaxEditorOffscreen.Document.Text = GetCSharpCode(editor.Document.GetText(LineTerminator.Newline), editor.Caret.Offset, extraCode) + "}";
 					syntaxEditorOffscreen.Caret.Offset = syntaxEditorOffscreen.Document.GetText(ActiproSoftware.SyntaxEditor.LineTerminator.Newline).Length - 1;
 
-					((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).IntelliPromptCompleteWord(syntaxEditorOffscreen, editor);
+					// TODO: Test, if conversion to new method signature is ok
+					//((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).IntelliPromptCompleteWord(syntaxEditorOffscreen, editor);
+					((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).IntelliPromptCompleteWord(editor);
 				}
 				else if (e.Shift && e.KeyValue == openParen)
 				{
 					syntaxEditorOffscreen.Document.Text = GetCSharpCode(editor.Document.GetText(LineTerminator.Newline), editor.Caret.Offset, extraCode) + "(";
 					syntaxEditorOffscreen.Caret.Offset = syntaxEditorOffscreen.Document.GetText(ActiproSoftware.SyntaxEditor.LineTerminator.Newline).Length;// -1;
 					//syntaxEditorOffscreen.Focus();
-					((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).ShowIntelliPromptParameterInfo(syntaxEditorOffscreen, editor);
+			// TODO: Test, if conversion to new method signature is ok
+					//((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).ShowIntelliPromptParameterInfo(syntaxEditorOffscreen, editor);
+					((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).ShowIntelliPromptParameterInfo(editor);
 				}
 			}
 		}
@@ -2559,7 +2565,9 @@ namespace ArchAngel.Workbench.ContentItems
 				else
 					iteratorName = comboBoxIterator.Text.Substring(comboBoxIterator.Text.IndexOf(" per ") + 5).ToLower();
 
-				((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).IntelliPromptCompleteWord(syntaxEditorOffscreen, syntaxEditorSkipStaticFile);//, syntaxEditor1);
+				// TODO: Test, if conversion to new method signature is ok
+				//((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).IntelliPromptCompleteWord(syntaxEditorOffscreen, syntaxEditorSkipStaticFile);//, syntaxEditor1);
+				((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).IntelliPromptCompleteWord(syntaxEditorSkipStaticFile);//, syntaxEditor1);
 			}
 		}
 
@@ -2571,7 +2579,9 @@ namespace ArchAngel.Workbench.ContentItems
 
 			syntaxEditorOffscreen.Document.Text = GetCSharpCode(ArchAngel.Interfaces.SharedData.CurrentProject.TemplateProject.DelimiterStart + editor.Document.GetText(LineTerminator.Newline) + ArchAngel.Interfaces.SharedData.CurrentProject.TemplateProject.DelimiterEnd, editor.Caret.Offset + 2, extraCode);
 			syntaxEditorOffscreen.Caret.Offset = syntaxEditorOffscreen.Document.Text.Length - 1;
-			((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).ShowIntelliPromptMemberList(syntaxEditorOffscreen, syntaxEditorSkipStaticFile);
+			// TODO: Test, if conversion to new method signature is ok
+			//((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).ShowIntelliPromptMemberList(syntaxEditorOffscreen, syntaxEditorSkipStaticFile);
+			((ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage)syntaxEditorOffscreen.SelectedView.GetCurrentLanguageForContext()).ShowIntelliPromptMemberList(syntaxEditorSkipStaticFile);
 		}
 
 		private void syntaxEditorFilename_KeyDown(object sender, KeyEventArgs e)

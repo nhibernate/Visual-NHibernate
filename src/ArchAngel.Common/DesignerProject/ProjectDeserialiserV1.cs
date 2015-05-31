@@ -461,7 +461,8 @@ namespace ArchAngel.Common.DesignerProject
 		{
 			if (string.IsNullOrEmpty(typeName)) return null;
 
-			foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies())
+			Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+      foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies())
 			{
 				Type type = asm.GetType(typeName);
 				if (type != null) return type;

@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchAngel.Designer", "ArchAngel.Designer\ArchAngel.Designer.csproj", "{47711AEC-E127-4141-9EAA-BE2BAD8F0597}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slyce.Common", "Slyce.Common\Slyce.Common.csproj", "{52DFACC2-CE94-4A9F-A27F-BA5797381AED}"

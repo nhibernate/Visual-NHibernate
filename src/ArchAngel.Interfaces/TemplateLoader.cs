@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Security.Permissions;
+
 using ArchAngel.Interfaces.ITemplate;
 using ArchAngel.Interfaces.Wizards.NewProject;
 
@@ -298,11 +301,13 @@ namespace ArchAngel.Interfaces
 			return "0.0.0.0";
 		}
 
+		[ReflectionPermission(SecurityAction.Assert, MemberAccess = true)]
 		public string GetProjectInfoXml()
 		{
 			Type objType = _TemplateGenInstance.GetType();
-			Stream s = (Stream)objType.InvokeMember("GetProjectInfoXml", BindingFlags.InvokeMethod, null, null, null);
-			string docText = new StreamReader(s).ReadToEnd();
+			//Stream s = (Stream)objType.InvokeMember("GetProjectInfoXml", BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, null);
+			//string docText = new StreamReader(s).ReadToEnd();
+			string docText = (string)objType.InvokeMember("GetProjectInfoXml", BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, null);
 			System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
 			doc.LoadXml(docText);
 			return doc.OuterXml;

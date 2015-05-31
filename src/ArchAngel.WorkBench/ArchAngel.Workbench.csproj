@@ -83,27 +83,16 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.Docking.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Version=4.0.285.0, Culture=neutral, PublicKeyToken=5504180c8d344a1e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll</HintPath>
-    </Reference>
-    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.Shared.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763">
       <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.UIStudio.Dock.Net20, Version=2.0.111.0, Culture=neutral, PublicKeyToken=be939c973e8cb8a6, processorArchitecture=MSIL">
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.UIStudio.Dock.Net20.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.SyntaxEditor.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=7.6.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
@@ -152,6 +141,12 @@
       <DependentUpon>Templates.cs</DependentUpon>
     </Compile>
     <Compile Include="ContentItems\TreelistNodeSort.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFind.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +263,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>Options.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -283,7 +281,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmIntelliMergeTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="ucFindResults.resx">
       <DependentUpon>ucFindResults.cs</DependentUpon>
     </EmbeddedResource>
@@ -452,6 +449,10 @@
     <ProjectReference Include="..\ArchAngel.Providers.EntityModel\ArchAngel.Providers.EntityModel.csproj">
       <Project>{8a37dc98-f9e2-4c54-9fca-7fad7dcee258}</Project>
       <Name>ArchAngel.Providers.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NHibernate.AAT\NHibernate.AAT.csproj">
+      <Project>{d52850fa-c42d-4abe-914d-67c578d59025}</Project>
+      <Name>NHibernate.AAT</Name>
     </ProjectReference>
     <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
       <Project>{52DFACC2-CE94-4A9F-A27F-BA5797381AED}</Project>
