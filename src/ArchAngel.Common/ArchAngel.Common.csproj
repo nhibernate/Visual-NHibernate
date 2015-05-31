@@ -12,8 +12,9 @@
     <AssemblyName>ArchAngel.Common</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -74,10 +75,6 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
-    </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=7.9.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\3rd_Party_Libs\DevComponents.DotNetBar2.dll</HintPath>
@@ -142,9 +139,6 @@
       <Project>{694BB413-2742-4476-9984-474E033770C1}</Project>
       <Name>Slyce.IntelliMerge</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="slyce_strong_name_key.snk" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

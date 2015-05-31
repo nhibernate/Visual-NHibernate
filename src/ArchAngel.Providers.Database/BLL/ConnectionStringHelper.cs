@@ -18,7 +18,7 @@ namespace ArchAngel.Providers.Database.BLL
         public DatabaseTypes CurrentDbType;
         public bool SqlExpressDbIsAlreadyAttached = false;
         [NonSerialized]
-        private CoreLab.UniDirect.UniConnection _UniDirectConnection;
+        private Devart.Data.Universal.UniConnection _UniDirectConnection;
 
         public ConnectionStringHelper()
         {
@@ -51,7 +51,7 @@ namespace ArchAngel.Providers.Database.BLL
 				UseFileName == comparisonConnStringHelper.UseFileName);
 		}
 
-        public CoreLab.UniDirect.UniConnection UniDirectConnection
+        public Devart.Data.Universal.UniConnection UniDirectConnection
         {
             get
             {
@@ -62,7 +62,7 @@ namespace ArchAngel.Providers.Database.BLL
                     _UniDirectConnection.Password != Password ||
                     _UniDirectConnection.Port != Port)
                 {
-                    _UniDirectConnection = new CoreLab.UniDirect.UniConnection();
+                    _UniDirectConnection = new Devart.Data.Universal.UniConnection();
                     
                     switch (CurrentDbType)
                     {

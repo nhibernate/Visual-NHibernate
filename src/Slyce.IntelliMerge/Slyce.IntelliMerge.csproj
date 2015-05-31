@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Slyce.IntelliMerge</RootNamespace>
     <AssemblyName>Slyce.IntelliMerge</AssemblyName>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -79,21 +79,17 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.Docking.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.Shared.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.UIStudio.Dock.Net20, Version=2.0.99.0, Culture=neutral, PublicKeyToken=be939c973e8cb8a6, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.UIStudio.Dock.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.SyntaxEditor.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=7.9.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -363,7 +359,6 @@
     <EmbeddedResource Include="Resources\green_arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Projekte\OpenSource\VNH_Luedi\src\3rd_Party_Libs\NHibernate.AAT.DLL-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D52850FA-C42D-4ABE-914D-67C578D59025}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>NHibernate.AAT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>NHibernate</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\ArchAngel.Templates\NHibernate\Template\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ScriptFunctionWrapper.cs" />
+    <Compile Include="LanguageAttribute.cs" />
+    <Compile Include="ApiExtensionMethods.cs" />
+    <Compile Include="TemplateGenExtensionMethods.cs" />
+    <Compile Include="VirtualProperties.cs" />
+    <Compile Include="TemplateGen.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="options.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArchAngel.Interfaces\ArchAngel.Interfaces.csproj">
+      <Project>{27118b67-f8bd-49b3-97ce-56b3e051f0a8}</Project>
+      <Name>ArchAngel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.NHibernateHelper\ArchAngel.NHibernateHelper.csproj">
+      <Project>{da1b3dc6-85e3-4501-8239-e10a4c64dcec}</Project>
+      <Name>ArchAngel.NHibernateHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArchAngel.Providers.EntityModel\ArchAngel.Providers.EntityModel.csproj">
+      <Project>{8a37dc98-f9e2-4c54-9fca-7fad7dcee258}</Project>
+      <Name>ArchAngel.Providers.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slyce.Common\Slyce.Common.csproj">
+      <Project>{52dfacc2-ce94-4a9f-a27f-ba5797381aed}</Project>
+      <Name>Slyce.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

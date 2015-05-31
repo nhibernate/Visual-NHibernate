@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Slyce.Common</RootNamespace>
     <AssemblyName>Slyce.Common</AssemblyName>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>slyce_strong_name_key.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -75,20 +75,18 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.Shared.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.Shared.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.276.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.95.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd_Party_Libs\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+    <Reference Include="ActiproSoftware.SyntaxEditor.WinForms, Version=14.1.322.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL">
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=9.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd_Party_Libs\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="Inflector.Net">
       <HintPath>..\3rd_Party_Libs\Inflector.Net.dll</HintPath>
@@ -325,7 +323,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>VersionInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.Assembly.xml" />
     <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.BatchFile.xml" />
     <EmbeddedResource Include="SyntaxFiles\ActiproSoftware.CSharp.xml" />

@@ -18,7 +18,7 @@
 			this.components = new System.ComponentModel.Container();
 			ActiproSoftware.SyntaxEditor.Document document11 = new ActiproSoftware.SyntaxEditor.Document();
 			ActiproSoftware.SyntaxEditor.Document document12 = new ActiproSoftware.SyntaxEditor.Document();
-			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.timer1 = new System.Windows.Forms.Timer(components);
 			this.syntaxEditorOffscreen = new ActiproSoftware.SyntaxEditor.SyntaxEditor();
 			this.syntaxEditorScriptHeader = new ActiproSoftware.SyntaxEditor.SyntaxEditor();
 			this.backgroundWorkerAddReferences = new System.ComponentModel.BackgroundWorker();
